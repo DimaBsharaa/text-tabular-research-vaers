@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_FOOD_WINE_REVIEW",
+  "slug": "multabench-wine-review",
+  "target": "variety",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 84123,
+  "num_features": 5,
+  "num_classes": 30
+}

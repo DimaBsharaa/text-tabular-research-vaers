@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES",
+  "slug": "multabench-rotten-tomatoes",
+  "target": "RatingValue",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 7158,
+  "num_features": 15
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-imdb-genre",
+  "target": "Genre",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 800,
+  "num_features": 11,
+  "num_classes": 2
+}

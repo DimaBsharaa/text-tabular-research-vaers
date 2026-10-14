@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_CONSUMER_BABIES_R_US_PRICES",
+  "slug": "multabench-babies-prices",
+  "target": "price",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 5085,
+  "num_features": 12
+}

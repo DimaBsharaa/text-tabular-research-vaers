@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION",
+  "slug": "multabench-book-price",
+  "target": "Price in USD",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 4989,
+  "num_features": 8
+}

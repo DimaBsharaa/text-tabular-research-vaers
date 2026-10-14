@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW",
+  "slug": "multabench-women-clothing-review",
+  "target": "Rating",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 18788,
+  "num_features": 10,
+  "num_classes": 5
+}

@@ -1,0 +1,10 @@
+{
+  "dataset_id": "BIN_TEXT_SOCIAL_JIGSAW_TOXICITY",
+  "slug": "multabench-jigsaw-toxicity",
+  "target": "Is Toxic",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 100000,
+  "num_features": 31,
+  "num_classes": 2
+}

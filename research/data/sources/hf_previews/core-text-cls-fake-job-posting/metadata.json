@@ -1,0 +1,10 @@
+{
+  "dataset_id": "BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING",
+  "slug": "multabench-fake-job-posting",
+  "target": "fraudulent",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 12725,
+  "num_features": 5,
+  "num_classes": 2
+}

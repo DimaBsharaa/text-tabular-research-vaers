@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_SOCIAL_SPOTIFY_GENRES",
+  "slug": "multabench-spotify-genres",
+  "target": "track_genre",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 114000,
+  "num_features": 18,
+  "num_classes": 114
+}

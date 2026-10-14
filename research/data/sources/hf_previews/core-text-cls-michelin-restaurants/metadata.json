@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS",
+  "slug": "multabench-michelin-restaurants",
+  "target": "Award",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 18843,
+  "num_features": 11,
+  "num_classes": 5
+}

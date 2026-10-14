@@ -1,0 +1,13 @@
+{
+  "slug": "multabench-full-airbnb-seattle",
+  "target": "price",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 3818,
+  "num_features": 65,
+  "date_cols": [
+    "host_since",
+    "first_review",
+    "last_review"
+  ]
+}

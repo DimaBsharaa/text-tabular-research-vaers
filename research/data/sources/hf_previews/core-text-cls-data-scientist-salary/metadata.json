@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY",
+  "slug": "multabench-data-scientist-salary",
+  "target": "salary",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 15841,
+  "num_features": 6,
+  "num_classes": 6
+}

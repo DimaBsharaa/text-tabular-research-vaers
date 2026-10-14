@@ -1,0 +1,13 @@
+{
+  "slug": "multabench-full-california-prices",
+  "target": "Sold_Price",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 37951,
+  "num_features": 39,
+  "date_cols": [
+    "Listed_On",
+    "Last_Sold_On"
+  ],
+  "num_classes": 2
+}

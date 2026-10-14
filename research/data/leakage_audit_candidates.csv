@@ -1,0 +1,39 @@
+dataset_id,dataset_name,column_name,audit_reason,evidence_scope
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,State,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,salary_range,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Revenue (Millions),name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Metascore,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Recommended IND,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Price,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,price,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,state,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_accuracy,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_cleanliness,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_checkin,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_communication,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_location,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_value,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,State,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Ratings,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,price,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,state,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_accuracy,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_cleanliness,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_checkin,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_communication,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_location,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_value,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Elementary_School_Score,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Middle_School_Score,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,High_School_Score,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Listed_Price,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Last_Sold_Price,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,State,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,NumberofRatings,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Content Rating,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,RatingCount,name overlaps outcome-like concepts; review timing and definition,current public preview/card; manual audit required

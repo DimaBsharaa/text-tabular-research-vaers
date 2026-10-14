@@ -1,0 +1,13 @@
+{
+  "slug": "multabench-full-consumer-complaint",
+  "target": "Company response to consumer",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 100000,
+  "num_features": 16,
+  "date_cols": [
+    "Date received",
+    "Date sent to company"
+  ],
+  "num_classes": 8
+}

@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER",
+  "slug": "multabench-vancouver-salaries",
+  "target": "remuneration",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 44574,
+  "num_features": 5
+}

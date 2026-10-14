@@ -1,0 +1,14 @@
+{
+  "slug": "multabench-full-melbourne-airbnb",
+  "target": "price_label",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 18316,
+  "num_features": 88,
+  "date_cols": [
+    "host_since",
+    "first_review",
+    "last_review"
+  ],
+  "num_classes": 10
+}

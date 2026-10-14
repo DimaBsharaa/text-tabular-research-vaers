@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR",
+  "slug": "multabench-book-readability",
+  "target": "New Dale Chall Readability Formula",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 4724,
+  "num_features": 30
+}

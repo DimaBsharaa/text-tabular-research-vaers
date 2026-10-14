@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23",
+  "slug": "multabench-us-accidents",
+  "target": "Severity",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 100001,
+  "num_features": 44,
+  "num_classes": 4
+}

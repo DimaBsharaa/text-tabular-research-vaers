@@ -1,0 +1,733 @@
+dataset_id,dataset_name,column_name,released_dtype,is_target,sample_n_rows,sample_missing_rate,sample_n_unique
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Date received,datetime,False,50,0.0,49
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Product,categorical,False,50,0.0,12
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Sub-product,categorical,False,50,0.22,20
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Issue,string,False,50,0.0,28
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Sub-issue,string,False,50,0.48,19
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Consumer complaint narrative,string,False,50,0.7,15
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Company public response,categorical,False,50,0.74,2
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Company,string,False,50,0.0,29
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,State,categorical,False,50,0.04,19
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,ZIP code,string,False,50,0.08,43
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Tags,categorical,False,50,0.8,3
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Consumer consent provided?,categorical,False,50,0.56,2
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Submitted via,categorical,False,50,0.0,4
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Date sent to company,datetime,False,50,0.0,50
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Timely response?,categorical,False,50,0.0,2
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Consumer disputed?,categorical,False,50,0.34,2
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,Company response to consumer,string,True,50,0.0,4
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,title,string,False,50,0.0,49
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,salary_range,string,False,50,0.78,11
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,description,string,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,required_experience,categorical,False,50,0.4,6
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,required_education,categorical,False,50,0.34,4
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,fraudulent,int,True,50,0.0,2
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,name,string,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,desc,string,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,goal,float,False,50,0.0,28
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,keywords,string,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,disable_communication,bool,False,50,0.0,1
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,country,categorical,False,50,0.0,5
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,currency,categorical,False,50,0.0,5
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,deadline,datetime,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,created_at,datetime,False,50,0.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,Funding Status,string,True,50,0.0,2
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Rank,int,False,50,0.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Title,string,False,50,0.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Description,string,False,50,0.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Director,string,False,50,0.0,49
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Actors,string,False,50,0.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Year,int,False,50,0.0,11
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Runtime (Minutes),int,False,50,0.0,34
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Rating,float,False,50,0.0,27
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Votes,int,False,50,0.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Revenue (Millions),float,False,50,0.18,40
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Metascore,float,False,50,0.12,33
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,Genre,string,True,50,0.0,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,comment_text,string,False,50,0.0,50
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,asian,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,atheist,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,bisexual,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,black,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,buddhist,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,christian,float,False,50,0.76,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,female,float,False,50,0.76,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,heterosexual,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,hindu,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,homosexual_gay_or_lesbian,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,intellectual_or_learning_disability,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,jewish,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,latino,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,male,float,False,50,0.76,4
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,muslim,float,False,50,0.76,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,other_disability,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,other_gender,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,other_race_or_ethnicity,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,other_religion,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,other_sexual_orientation,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,physical_disability,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,psychiatric_or_mental_illness,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,transgender,float,False,50,0.76,1
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,white,float,False,50,0.76,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,created_date,datetime,False,50,0.0,50
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,funny,int,False,50,0.0,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,wow,int,False,50,0.0,2
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,sad,int,False,50,0.0,3
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,likes,int,False,50,0.0,13
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,disagree,int,False,50,0.0,7
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,Is Toxic,bool,True,50,0.0,2
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Event Date,datetime,False,50,0.0,3
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Abstract Text,string,False,50,0.0,50
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Event Description,string,False,50,0.0,50
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Event Keywords,string,False,50,0.0,50
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Construction End Use,categorical,False,50,0.0,5
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Building Stories,categorical,False,50,0.0,5
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Project Cost,categorical,False,50,0.0,5
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Project Type,categorical,False,50,0.0,3
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Degree of Injury,categorical,False,50,0.0,2
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Nature of Injury,categorical,False,50,0.0,13
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Part of Body,categorical,False,50,0.0,14
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Event type,categorical,False,50,0.0,9
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Environmental Factor,categorical,False,50,0.02,9
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Human Factor,categorical,False,50,0.0,11
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,hazsub,categorical,False,50,0.0,1
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,fat_cause,int,False,50,0.0,6
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,Task Assigned,string,True,50,0.0,2
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,Product_Description,string,False,50,0.0,50
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,Product_Type,int,False,50,0.0,8
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,Sentiment,string,True,50,0.0,4
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Unnamed  0,int,False,50,0.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Clothing ID,int,False,50,0.0,42
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Age,int,False,50,0.0,32
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Title,string,False,50,0.1,45
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Review Text,string,False,50,0.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Recommended IND,int,False,50,0.0,2
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Positive Feedback Count,int,False,50,0.0,10
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Division Name,categorical,False,50,0.0,3
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Department Name,categorical,False,50,0.0,5
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Class Name,categorical,False,50,0.0,14
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,Rating,int,True,50,0.0,5
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Name,string,False,50,0.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Address,string,False,50,0.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Location,string,False,50,0.0,41
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Price,categorical,False,50,0.0,2
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Cuisine,string,False,50,0.0,9
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Longitude,float,False,50,0.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Latitude,float,False,50,0.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,PhoneNumber,float,False,50,0.04,48
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,GreenStar,int,False,50,0.0,2
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,FacilitiesAndServices,string,False,50,0.1,29
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Description,string,False,50,0.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,Award,string,True,50,0.0,1
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,country,categorical,False,50,0.0,10
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,description,string,False,50,0.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,points,int,False,50,0.0,11
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,price,float,False,50,0.16,27
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,province,string,False,50,0.0,26
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,variety,string,True,50,0.0,21
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,name,string,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,summary,string,False,50,0.02,49
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,space,string,False,50,0.26,37
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,description,string,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,neighborhood_overview,string,False,50,0.44,28
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,notes,string,False,50,0.48,26
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,transit,string,False,50,0.4,30
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,access,string,False,50,0.3,35
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,interaction,string,False,50,0.34,33
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,house_rules,string,False,50,0.46,25
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_id,int,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_name,string,False,50,0.0,48
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_since,datetime,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_location,string,False,50,0.0,19
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_about,string,False,50,0.52,24
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_response_time,categorical,False,50,0.36,4
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_response_rate,categorical,False,50,0.36,6
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_is_superhost,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_neighborhood,string,False,50,0.2,19
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications,string,False,50,0.0,20
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_has_profile_pic,categorical,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_identity_verified,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,street,string,False,50,0.0,30
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,neighborhood,categorical,False,50,0.16,20
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,city,categorical,False,50,0.0,13
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,suburb,string,False,50,0.0,29
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,state,categorical,False,50,0.0,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,zipcode,string,False,50,0.02,29
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,smart_location,string,False,50,0.0,29
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,country_code,categorical,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,latitude,float,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,longitude,float,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,is_location_exact,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,property_type,categorical,False,50,0.0,7
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,room_type,categorical,False,50,0.0,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,accommodates,int,False,50,0.0,9
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,bathrooms,float,False,50,0.0,4
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,bedrooms,float,False,50,0.0,6
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,beds,float,False,50,0.0,6
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,bed_type,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,amenities,string,False,50,0.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,guests_included,int,False,50,0.0,5
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,extra_people,int,False,50,0.0,11
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,minimum_nights,int,False,50,0.0,9
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,maximum_nights,int,False,50,0.0,14
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,calendar_updated,categorical,False,50,0.0,26
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,has_availability,categorical,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,availability_30,int,False,50,0.0,23
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,availability_60,int,False,50,0.0,28
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,availability_90,int,False,50,0.0,29
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,availability_365,int,False,50,0.0,34
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,number_of_reviews,int,False,50,0.0,19
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,first_review,datetime,False,50,0.3,34
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,last_review,datetime,False,50,0.3,30
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_rating,float,False,50,0.3,16
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_accuracy,float,False,50,0.3,4
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_cleanliness,float,False,50,0.3,5
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_checkin,float,False,50,0.3,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_communication,float,False,50,0.3,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_location,float,False,50,0.3,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,review_scores_value,float,False,50,0.3,4
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,requires_license,categorical,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,license,categorical,False,50,1.0,0
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,instant_bookable,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,cancellation_policy,categorical,False,50,0.0,3
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,require_guest_profile_picture,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,require_guest_phone_verification,categorical,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,calculated_host_listings_count,int,False,50,0.0,17
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,reviews_per_month,float,False,50,0.3,31
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_jumio,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_government_id,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_kba,bool,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_zhima_selfie,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_facebook,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_work_email,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_google,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_sesame,bool,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_manual_online,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_manual_offline,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_offline_government_id,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_selfie,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_reviews,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_identity_manual,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_sesame_offline,bool,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_weibo,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_email,bool,False,50,0.0,2
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_sent_id,bool,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,host_verifications_phone,bool,False,50,0.0,1
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,price_label,int,True,50,0.0,10
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,experience,string,False,50,0.0,31
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,job_description,string,False,50,0.18,41
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,job_desig,string,False,50,0.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,job_type,categorical,False,50,0.76,2
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,key_skills,string,False,50,0.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,location,string,False,50,0.0,22
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,salary,string,True,50,0.0,6
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,n_tokens_content,float,False,50,0.0,49
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,n_unique_tokens,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,n_non_stop_words,float,False,50,0.0,49
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,n_non_stop_unique_tokens,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,num_hrefs,float,False,50,0.0,22
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,num_self_hrefs,int,False,50,0.0,14
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,num_imgs,int,False,50,0.0,13
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,num_videos,int,False,50,0.0,6
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,average_token_length,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,num_keywords,int,False,50,0.0,8
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,global_subjectivity,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,global_sentiment_polarity,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,global_rate_positive_words,float,False,50,0.0,49
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,global_rate_negative_words,float,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,rate_positive_words,float,False,50,0.0,47
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,rate_negative_words,float,False,50,0.0,47
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,article_title,string,False,50,0.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,News Category,string,True,50,0.0,6
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,artists,string,False,50,0.0,28
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,album_name,string,False,50,0.0,39
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,track_name,string,False,50,0.0,46
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,popularity,int,False,50,0.0,9
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,duration_ms,int,False,50,0.0,46
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,explicit,bool,False,50,0.0,2
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,danceability,float,False,50,0.0,43
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,energy,float,False,50,0.0,45
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,key,int,False,50,0.0,12
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,loudness,float,False,50,0.0,46
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,mode,int,False,50,0.0,2
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,speechiness,float,False,50,0.0,43
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,acousticness,float,False,50,0.0,46
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,instrumentalness,float,False,50,0.0,15
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,liveness,float,False,50,0.0,46
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,valence,float,False,50,0.0,43
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,tempo,float,False,50,0.0,45
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,time_signature,int,False,50,0.0,2
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,track_genre,string,True,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Source,categorical,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Start_Time,datetime,False,50,0.16,42
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,End_Time,datetime,False,50,0.16,42
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Start_Lat,float,False,50,0.0,50
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Start_Lng,float,False,50,0.0,50
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,End_Lat,float,False,50,0.28,36
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,End_Lng,float,False,50,0.28,36
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Distance(mi),float,False,50,0.0,39
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Description,string,False,50,0.0,50
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Street,string,False,50,0.0,49
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,City,string,False,50,0.0,45
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,County,string,False,50,0.0,43
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,State,categorical,False,50,0.0,17
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Zipcode,string,False,50,0.0,50
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Country,categorical,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Timezone,categorical,False,50,0.0,4
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Airport_Code,string,False,50,0.0,45
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Weather_Timestamp,datetime,False,50,0.02,49
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Temperature(F),float,False,50,0.02,39
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Wind_Chill(F),float,False,50,0.2,32
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Humidity(%),float,False,50,0.02,34
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Pressure(in),float,False,50,0.02,40
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Visibility(mi),float,False,50,0.02,6
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Wind_Direction,categorical,False,50,0.06,18
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Wind_Speed(mph),float,False,50,0.1,19
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Precipitation(in),float,False,50,0.16,7
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Weather_Condition,categorical,False,50,0.02,10
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Amenity,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Bump,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Crossing,bool,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Give_Way,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Junction,bool,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,No_Exit,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Railway,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Roundabout,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Station,bool,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Stop,bool,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Traffic_Calming,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Traffic_Signal,bool,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Turning_Loop,bool,False,50,0.0,1
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Sunrise_Sunset,categorical,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Civil_Twilight,categorical,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Nautical_Twilight,categorical,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Astronomical_Twilight,categorical,False,50,0.0,2
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,Severity,int,True,50,0.0,1
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,product_name,string,False,50,0.0,36
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,mrp,categorical,False,50,0.0,12
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,pdp_url,string,False,50,0.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,brand_name,categorical,False,50,0.0,1
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,product_category,categorical,False,50,0.0,21
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,retailer,categorical,False,50,0.0,1
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,description,string,False,50,0.0,47
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,rating,float,False,50,0.22,14
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,review_count,float,False,50,0.62,6
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,style_attributes,string,False,50,0.0,41
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,total_sizes,categorical,False,50,0.0,9
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,available_size,string,False,50,0.0,19
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,color,categorical,False,50,0.0,23
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,price,string,True,50,0.0,5
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,title,string,False,50,0.0,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,is_discounted,int,False,50,0.0,2
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,category,categorical,False,50,0.0,1
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,company_struct,string,False,50,0.0,13
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,company_free,string,False,50,0.64,5
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,weight,categorical,False,50,1.0,0
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,length,categorical,False,50,0.98,1
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,width,categorical,False,50,0.84,5
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,height,categorical,False,50,0.96,2
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,fabrics,categorical,False,50,0.58,3
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,colors,string,False,50,0.3,12
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,materials,categorical,False,50,0.96,2
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,price,float,True,50,0.0,14
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Title,string,False,50,0.0,48
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Author,string,False,50,0.0,46
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Edition,string,False,50,0.0,48
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Reviews,float,False,50,0.0,15
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Ratings,float,False,50,0.14,25
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Synopsis,string,False,50,0.0,48
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Genre,string,False,50,0.0,28
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,BookCategory,categorical,False,50,0.0,11
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,Price in USD,float,True,50,0.0,47
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,name,string,False,50,0.0,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,item_condition_id,int,False,50,0.0,3
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,category_name,string,False,50,0.0,46
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,brand_name,string,False,50,0.48,24
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,shipping,int,False,50,0.0,2
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,item_description,string,False,50,0.0,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,cat1,categorical,False,50,0.0,9
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,cat2,string,False,50,0.0,26
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,cat3,string,False,50,0.0,44
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,log_price,float,True,50,0.0,28
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Name,string,False,50,0.0,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Country,string,False,50,0.0,2
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Brand,string,False,50,0.0,18
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Categories,string,False,50,0.0,4
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Tasting Notes,string,False,50,0.8,10
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,ABV,float,False,50,0.14,12
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Base Ingredient,categorical,False,50,0.96,1
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Years Aged,float,False,50,1.0,0
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Rating,float,False,50,0.0,1
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Rate Count,int,False,50,0.0,3
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Volume,categorical,False,50,1.0,0
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Description,string,False,50,0.2,40
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,Price,float,True,50,0.0,41
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Company  (Maker if known),string,False,50,0.0,15
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Specific Bean Origin or Bar Name,string,False,50,0.0,42
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,REF,int,False,50,0.0,32
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Review Date,int,False,50,0.0,11
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Cocoa Percent,float,False,50,0.0,13
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Company Location,categorical,False,50,0.0,7
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Bean Type,categorical,False,50,0.0,6
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Broad Bean Origin,string,False,50,0.0,19
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,Rating,float,True,50,0.0,10
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,Brand,string,False,50,0.0,24
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,Variety,string,False,50,0.0,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,Style,categorical,False,50,0.0,4
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,Country,categorical,False,50,0.0,12
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,Stars,float,True,50,0.0,10
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,name,string,False,50,0.0,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,country,categorical,False,50,0.0,6
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,region,string,False,50,0.06,14
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,appellation,string,False,50,0.18,16
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,vineyard,string,False,50,0.52,8
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,vintage,float,False,50,0.16,8
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,volume (liters),float,False,50,0.06,3
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,alcohol (%),float,False,50,0.16,9
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,serving temperature (C),categorical,False,50,0.1,11
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,color,categorical,False,50,0.16,3
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,kind,categorical,False,50,0.86,1
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,taste,categorical,False,50,0.0,3
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,style,categorical,False,50,0.14,3
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,medals,categorical,False,50,0.9,4
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,wegan,bool,False,50,0.0,2
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,natural,bool,False,50,0.0,2
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,punctation,float,False,50,0.86,4
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,grapes,string,False,50,0.0,36
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,price (PLN),float,True,50,0.0,40
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Winery,string,False,50,0.0,24
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Year,categorical,False,50,0.0,6
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Wine,string,False,50,0.0,25
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,num_review,int,False,50,0.0,25
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,price,float,False,50,0.0,1
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Country,categorical,False,50,0.0,1
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Region,categorical,False,50,0.0,18
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,Rating,float,True,50,0.0,8
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,address,string,False,50,0.0,49
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,name,string,False,50,0.0,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,online_order,categorical,False,50,0.0,2
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,book_table,categorical,False,50,0.0,1
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,votes,int,False,50,0.0,33
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,phone,string,False,50,0.0,47
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,location,categorical,False,50,0.0,3
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,rest_type,categorical,False,50,0.0,10
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,dish_liked,string,False,50,0.74,13
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,cuisines,string,False,50,0.0,42
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,approx cost(for two people),categorical,False,50,0.0,14
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,reviews_list,string,False,50,0.0,48
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,menu_item,string,False,50,0.0,2
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,listed_in(type),categorical,False,50,0.0,1
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,listed_in(city),categorical,False,50,0.0,1
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,rate,float,True,50,0.0,15
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,name,string,False,50,0.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,summary,string,False,50,0.04,47
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,space,string,False,50,0.12,43
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,description,string,False,50,0.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,neighborhood_overview,string,False,50,0.3,35
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,notes,string,False,50,0.4,30
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,transit,string,False,50,0.14,41
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_name,string,False,50,0.0,39
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_since,datetime,False,50,0.0,40
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_location,string,False,50,0.0,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_about,string,False,50,0.36,27
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_response_time,categorical,False,50,0.06,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_response_rate,float,False,50,0.06,8
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_acceptance_rate,float,False,50,0.16,1
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_is_superhost,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_neighbourhood,string,False,50,0.16,9
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_listings_count,float,False,50,0.0,7
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_total_listings_count,float,False,50,0.0,7
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_verifications,string,False,50,0.0,20
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_has_profile_pic,categorical,False,50,0.0,1
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,host_identity_verified,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,street,string,False,50,0.0,42
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,neighbourhood,categorical,False,50,0.26,8
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,neighbourhood_cleansed,categorical,False,50,0.0,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,neighbourhood_group_cleansed,categorical,False,50,0.0,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,city,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,state,categorical,False,50,0.0,1
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,zipcode,categorical,False,50,0.02,8
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,smart_location,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,latitude,float,False,50,0.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,longitude,float,False,50,0.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,is_location_exact,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,property_type,categorical,False,50,0.0,9
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,room_type,categorical,False,50,0.0,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,accommodates,int,False,50,0.0,8
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,bathrooms,float,False,50,0.02,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,bedrooms,float,False,50,0.0,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,beds,float,False,50,0.02,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,bed_type,categorical,False,50,0.0,1
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,amenities,string,False,50,0.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,square_feet,float,False,50,0.98,1
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,guests_included,int,False,50,0.0,7
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,minimum_nights,int,False,50,0.0,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,maximum_nights,int,False,50,0.0,11
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,calendar_updated,categorical,False,50,0.0,18
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,availability_30,int,False,50,0.0,21
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,availability_60,int,False,50,0.0,26
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,availability_90,int,False,50,0.0,26
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,availability_365,int,False,50,0.0,34
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,number_of_reviews,int,False,50,0.0,34
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,first_review,datetime,False,50,0.2,38
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,last_review,datetime,False,50,0.2,31
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_rating,float,False,50,0.2,16
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_accuracy,float,False,50,0.2,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_cleanliness,float,False,50,0.2,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_checkin,float,False,50,0.2,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_communication,float,False,50,0.2,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_location,float,False,50,0.2,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,review_scores_value,float,False,50,0.2,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,instant_bookable,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,cancellation_policy,categorical,False,50,0.0,3
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,require_guest_profile_picture,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,require_guest_phone_verification,categorical,False,50,0.0,2
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,calculated_host_listings_count,int,False,50,0.0,5
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,reviews_per_month,float,False,50,0.2,39
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,price,float,True,50,0.0,30
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Address,string,False,50,0.0,50
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Summary,string,False,50,0.0,50
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Type,string,False,50,0.0,6
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Year_built,float,False,50,0.02,37
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Heating,string,False,50,0.2,15
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Cooling,string,False,50,0.44,8
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Parking,string,False,50,0.06,30
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Lot,float,False,50,0.34,33
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Bedrooms,string,False,50,0.08,13
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Bathrooms,float,False,50,0.08,6
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Full_bathrooms,float,False,50,0.18,5
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Total_interior_livable_area,float,False,50,0.1,43
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Total_spaces,float,False,50,0.04,4
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Garage_spaces,float,False,50,0.04,4
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Region,string,False,50,0.0,30
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Elementary_School,string,False,50,0.08,46
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Elementary_School_Score,float,False,50,0.08,8
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Elementary_School_Distance,float,False,50,0.08,19
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Middle_School,string,False,50,0.24,32
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Middle_School_Score,float,False,50,0.24,8
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Middle_School_Distance,float,False,50,0.24,24
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,High_School,string,False,50,0.08,44
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,High_School_Score,float,False,50,0.08,9
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,High_School_Distance,float,False,50,0.08,29
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Flooring,string,False,50,0.26,25
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Heating_features,string,False,50,0.24,14
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Cooling_features,string,False,50,0.46,5
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Appliances_included,string,False,50,0.28,32
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Laundry_features,string,False,50,0.34,26
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Parking_features,string,False,50,0.16,29
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Tax_assessed_value,float,False,50,0.06,47
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Annual_tax_amount,float,False,50,0.06,47
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Listed_On,datetime,False,50,0.0,46
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Listed_Price,float,False,50,0.0,48
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Last_Sold_On,datetime,False,50,0.36,31
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Last_Sold_Price,float,False,50,0.36,31
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,City,string,False,50,0.0,29
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Zip,int,False,50,0.0,48
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,State,categorical,False,50,0.0,1
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,Sold_Price,string,True,50,0.0,2
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,year,int,False,50,0.0,1
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,name,string,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,department,categorical,False,50,0.0,12
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,title,string,False,50,0.0,37
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,expenses,float,False,50,0.72,14
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,remuneration,float,True,50,0.0,49
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,full_name,string,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,gender,categorical,False,50,0.02,2
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,2016_gross_pay_received,float,False,50,0.04,48
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,2016_overtime_pay,float,False,50,0.3,35
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,department,categorical,False,50,0.0,18
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,department_name,categorical,False,50,0.0,18
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,division,string,False,50,0.0,43
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,assignment_category,categorical,False,50,0.0,2
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,employee_position_title,string,False,50,0.0,42
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,underfilled_job_title,categorical,False,50,0.9,5
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,date_first_hired,datetime,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,current_annual_salary,float,True,50,0.0,49
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Rank,int,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Title,string,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Type,categorical,False,50,0.0,3
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Issn,string,False,50,0.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,SJR,string,False,50,0.0,2
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,SJR Best Quartile,categorical,False,50,0.0,5
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Total Docs  (2024),int,False,50,0.0,38
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Total Docs  (3years),int,False,50,0.0,42
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Total Refs ,int,False,50,0.0,46
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Total Citations (3years),int,False,50,0.0,47
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Citable Docs  (3years),int,False,50,0.0,44
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Citations / Doc  (2years),string,False,50,0.0,39
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Ref  / Doc ,string,False,50,0.0,46
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,%Female,categorical,False,50,0.0,1
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Overton,int,False,50,0.0,2
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,SDG,int,False,50,0.0,28
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Country,string,False,50,0.0,25
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Region,categorical,False,50,0.0,7
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Publisher,string,False,50,0.0,47
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Coverage,string,False,50,0.0,39
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Categories,string,False,50,0.0,48
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,Areas,string,False,50,0.0,27
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,H index,int,True,50,0.0,31
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Name,string,False,50,0.0,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Alternative Name,string,False,50,0.0,18
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Number Votes,int,False,50,0.0,49
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Tags,string,False,50,0.0,49
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Content Warning,string,False,50,0.0,5
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Type,categorical,False,50,0.0,7
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Episodes,int,False,50,0.0,13
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Finished,bool,False,50,0.0,1
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Duration,float,False,50,0.34,13
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,StartYear,float,False,50,0.0,13
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,EndYear,float,False,50,0.0,12
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Season,string,False,50,0.0,8
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Studios,string,False,50,0.0,34
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Synopsis,string,False,50,0.0,36
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,Rating Score,float,True,50,0.0,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Title,string,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Description,string,False,50,0.0,44
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,ISBN,string,False,50,0.24,38
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,ISBN13,string,False,50,0.0,39
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,PageCount,int,False,50,0.0,38
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,FirstAuthor,string,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,SecondAuthor,string,False,50,0.0,10
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,ThirdAuthor,string,False,50,0.0,2
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,NumberofRatings,int,False,50,0.0,26
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,NumberofReviews,string,False,50,0.0,16
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Publisher,string,False,50,0.0,43
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,PublishDate,datetime,False,50,0.66,17
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Format,categorical,False,50,0.0,7
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Language,categorical,False,50,0.0,2
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,Rating,string,True,50,0.0,3
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Author,string,False,50,0.0,37
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Title,string,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Anthology,string,False,50,0.48,14
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,URL,string,False,50,0.0,45
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Source,categorical,False,50,0.0,9
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Pub Year,float,False,50,0.06,20
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Category,categorical,False,50,0.0,2
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Location,categorical,False,50,0.0,4
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,License,categorical,False,50,0.0,6
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,MPAA Max,categorical,False,50,0.0,2
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,MPAA  #Max,float,False,50,0.0,2
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,MPAA #Avg,float,False,50,0.0,3
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Excerpt,string,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Google WC,float,False,50,0.0,39
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Joon WC v1,float,False,50,0.0,37
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,British WC,float,False,50,0.0,3
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,British Words,string,False,50,0.94,2
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Sentence Count v1,float,False,50,0.0,17
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Sentence Count v2,float,False,50,0.0,17
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Paragraphs,float,False,50,0.0,8
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,BT Easiness,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,BT s e ,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Flesch-Reading-Ease,float,False,50,0.0,49
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Flesch-Kincaid-Grade-Level,float,False,50,0.0,49
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,Automated Readability Index,float,False,50,0.0,49
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,SMOG Readability,float,False,50,0.0,13
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,CAREC,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,CAREC_M,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,CARES,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,CML2RI,float,False,50,0.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,New Dale Chall Readability Formula,float,True,50,0.0,49
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Name,string,False,50,0.0,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Year,int,False,50,0.0,13
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Genre,string,False,50,0.0,46
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Main Cast,string,False,50,0.0,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Sinopsis,string,False,50,0.0,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Content Rating,categorical,False,50,0.0,4
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Tags,string,False,50,0.0,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Network,string,False,50,0.0,28
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Number of Episodes,float,False,50,0.0,15
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,Score,string,True,50,0.0,2
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,adult,bool,False,50,0.0,1
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,collection,string,False,50,0.82,9
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,budget,int,False,50,0.0,28
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,genres,string,False,50,0.0,36
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,original_language,categorical,False,50,0.0,2
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,original_title,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,overview,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,popularity,float,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,production_companies,string,False,50,0.0,47
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,production_countries,string,False,50,0.0,11
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,release_date,datetime,False,50,0.0,37
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,runtime,float,False,50,0.0,35
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,spoken_languages,string,False,50,0.0,15
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,status,categorical,False,50,0.0,1
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,tagline,string,False,50,0.16,42
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,title,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,video,bool,False,50,0.0,1
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,vote_average,float,False,50,0.0,29
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,vote_count,float,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,revenue,string,True,50,0.0,5
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Name,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Year,int,False,50,0.0,36
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Release Date,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Director,string,False,50,0.0,49
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Creator,string,False,50,0.0,49
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Actors,string,False,50,0.0,49
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Cast,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Language,string,False,50,0.0,8
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Country,string,False,50,0.0,11
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Duration,float,False,50,0.02,36
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,RatingCount,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,ReviewCount,string,False,50,0.02,49
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Genre,string,False,50,0.0,33
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Filming Locations,string,False,50,0.02,49
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,Description,string,False,50,0.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,RatingValue,float,True,50,0.0,22
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Name,string,False,50,0.0,49
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Platform,categorical,False,50,0.0,17
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Year,float,False,50,0.0,19
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Genre,categorical,False,50,0.0,11
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Publisher,string,False,50,0.0,32
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,Global_Sales,float,True,50,0.0,1
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,age,int,False,50,0.0,12
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,height_cm,int,False,50,0.0,25
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,weight_kg,int,False,50,0.0,22
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,nationality_name,string,False,50,0.0,31
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,overall,int,False,50,0.0,1
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,potential,int,False,50,0.0,14
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,attacking_crossing,int,False,50,0.0,30
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,attacking_finishing,int,False,50,0.0,37
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,attacking_heading_accuracy,int,False,50,0.0,29
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,attacking_short_passing,int,False,50,0.0,24
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,attacking_volleys,int,False,50,0.0,33
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,skill_dribbling,int,False,50,0.0,24
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,skill_curve,int,False,50,0.0,30
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,skill_fk_accuracy,int,False,50,0.0,32
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,skill_long_passing,int,False,50,0.0,29
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,skill_ball_control,int,False,50,0.0,17
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,movement_acceleration,int,False,50,0.0,28
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,movement_sprint_speed,int,False,50,0.0,27
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,movement_agility,int,False,50,0.0,33
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,movement_reactions,int,False,50,0.0,16
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,movement_balance,int,False,50,0.0,35
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,defending_standing_tackle,int,False,50,0.0,29
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,defending_sliding_tackle,int,False,50,0.0,30
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,goalkeeping_diving,int,False,50,0.0,14
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,goalkeeping_handling,int,False,50,0.0,15
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,goalkeeping_kicking,int,False,50,0.0,15
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,goalkeeping_positioning,int,False,50,0.0,14
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,goalkeeping_reflexes,int,False,50,0.0,14
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,Wage in Euros,float,True,50,0.0,18
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Make,categorical,False,50,0.0,9
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Model,string,False,50,0.0,23
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Version,string,False,50,0.0,43
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Make_Year,int,False,50,0.0,21
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,CC,int,False,50,0.0,11
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Assembly,categorical,False,50,0.0,2
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Mileage,int,False,50,0.0,43
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Registered City,string,False,50,0.0,11
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Transmission,categorical,False,50,0.0,2
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,Price,float,True,50,0.0,45
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Make,categorical,False,50,0.0,20
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Type,string,False,50,0.0,42
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Year,int,False,50,0.0,20
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Origin,categorical,False,50,0.0,3
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Color,categorical,False,50,0.0,9
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Options,categorical,False,50,0.0,3
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Engine_Size,float,False,50,0.0,19
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Fuel_Type,categorical,False,50,0.0,1
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Gear_Type,categorical,False,50,0.0,2
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Mileage,int,False,50,0.0,48
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Region,categorical,False,50,0.0,15
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Negotiable,bool,False,50,0.0,2
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,Price,int,True,50,0.0,28

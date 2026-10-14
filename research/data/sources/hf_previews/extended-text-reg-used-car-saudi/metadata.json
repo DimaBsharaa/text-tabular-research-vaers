@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-used-car-saudi",
+  "target": "Price",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 8035,
+  "num_features": 12,
+  "date_cols": []
+}

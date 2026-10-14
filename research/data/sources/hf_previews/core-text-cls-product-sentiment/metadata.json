@@ -1,0 +1,10 @@
+{
+  "dataset_id": "MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT",
+  "slug": "multabench-product-sentiment",
+  "target": "Sentiment",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 5091,
+  "num_features": 2,
+  "num_classes": 4
+}

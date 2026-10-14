@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-wine-vivino-spain",
+  "target": "Rating",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 8650,
+  "num_features": 7,
+  "date_cols": []
+}

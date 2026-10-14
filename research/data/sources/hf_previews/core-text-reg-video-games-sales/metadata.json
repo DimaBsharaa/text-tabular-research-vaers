@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_SOCIAL_VIDEO_GAMES_SALES",
+  "slug": "multabench-video-games-sales",
+  "target": "Global_Sales",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 16598,
+  "num_features": 5
+}

@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT",
+  "slug": "multabench-scimagojr-impact",
+  "target": "H index",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 31136,
+  "num_features": 22
+}

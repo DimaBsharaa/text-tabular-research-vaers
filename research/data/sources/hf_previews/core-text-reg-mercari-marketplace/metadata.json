@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE",
+  "slug": "multabench-mercari-marketplace",
+  "target": "log_price",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 100000,
+  "num_features": 9
+}

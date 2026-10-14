@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-ramen-ratings",
+  "target": "Stars",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 4105,
+  "num_features": 4,
+  "date_cols": []
+}

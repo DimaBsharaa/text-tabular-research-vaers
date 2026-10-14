@@ -1,0 +1,20 @@
+{
+  "candidates": 56,
+  "published_pass": 23,
+  "reproduced_pass": 23,
+  "published_reproduction_cell_disagreements": 2,
+  "historical_fold_rows": 5519,
+  "evaluated_model_dataset_pairs": 276,
+  "released_datasets": 40,
+  "preview_rows": 2000,
+  "preview_text_columns": 214,
+  "preview_truncated_cells": 0,
+  "profile_task_changed": [
+    "Consumer Complaints",
+    "American Eagle",
+    "California Prices",
+    "Goodreads Books",
+    "Korean Drama",
+    "Box Office"
+  ]
+}

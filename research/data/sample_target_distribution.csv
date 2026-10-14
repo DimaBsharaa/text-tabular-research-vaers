@@ -1,0 +1,187 @@
+dataset_id,dataset_name,kind,value,statistic,sample_n_rows
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,class count,Closed with explanation,35.0,50
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,class count,Closed with non-monetary relief,12.0,50
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,class count,Closed with monetary relief,2.0,50
+BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT,Consumer Complaints,class count,Closed,1.0,50
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,class count,0,48.0,50
+BIN_TEXT_PROFESSIONAL_FAKE_JOB_POSTING,Fake Job Postings,class count,1,2.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,class count,Failed,36.0,50
+BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING,Kickstarter,class count,Successful,14.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,class count,Drama,29.0,50
+BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION,IMDB Genre,class count,Not Drama,21.0,50
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,class count,False,49.0,50
+BIN_TEXT_SOCIAL_JIGSAW_TOXICITY,Jigsaw Toxicity,class count,True,1.0,50
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,class count,Regularly Assigned,32.0,50
+BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA,OSHA Injury,class count,Not Regularly Assigned,18.0,50
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,class count,Positive,26.0,50
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,class count,No Sentiment,18.0,50
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,class count,Negative,5.0,50
+MUL_TEXT_CONSUMER_PRODUCT_SENTIMENT,Product Sentiment,class count,Cannot Say,1.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,class count,5,24.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,class count,4,15.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,class count,3,6.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,class count,1,3.0,50
+MUL_TEXT_CONSUMER_WOMEN_ECOMMERCE_CLOTHING_REVIEW,Women's Clothing,class count,2,2.0,50
+MUL_TEXT_FOOD_MICHELIN_GUIDE_RESTAURANTS,Michelin Guide,class count,1 Star,50.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Cabernet Sauvignon,7.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Pinot Noir,6.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Bordeaux-style Red Blend,5.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Chardonnay,5.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Syrah,4.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Red Blend,4.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Merlot,2.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Champagne Blend,2.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Sauvignon Blanc,2.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Portuguese Red,2.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Gamay,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Pinot Gris,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Pinot Grigio,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Tempranillo,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Grüner Veltliner,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Bordeaux-style White Blend,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Rosé,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Sparkling Blend,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Riesling,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Gewürztraminer,1.0,50
+MUL_TEXT_FOOD_WINE_REVIEW,Wine Review,class count,Nebbiolo,1.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,5,9.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,9,9.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,8,5.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,1,5.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,3,5.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,0,4.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,6,4.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,7,3.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,2,3.0,50
+MUL_TEXT_HOUSES_MELBOURNE_AIRBNB,Airbnb Melbourne,class count,4,3.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,10-15,13.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,15-25,13.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,6-10,10.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,0-3,5.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,3-6,5.0,50
+MUL_TEXT_PROFESSIONAL_DATA_SCIENTIST_SALARY,Data Scientist Salary,class count,25-50,4.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,World,14.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,Entertainment,12.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,Tech,12.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,Business,6.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,Lifestyle,3.0,50
+MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY,News Channel,class count,Social Media,3.0,50
+MUL_TEXT_SOCIAL_SPOTIFY_GENRES,Spotify Genres,class count,party,50.0,50
+MUL_TEXT_TRANSPORTATION_US_ACCIDENTS_MARCH23,US Accidents,class count,2,50.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,class count,Quantile 60-80%,12.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,class count,Quantile 20-40%,11.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,class count,Quantile 40-60%,10.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,class count,Quantile 80-100%,9.0,50
+REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES,American Eagle,class count,Quantile 0-20%,8.0,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,regression quantile,0,29.99,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,regression quantile,0.25,32.99,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,regression quantile,0.5,34.99,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,regression quantile,0.75,43.24,50
+REG_TEXT_CONSUMER_BABIES_R_US_PRICES,Baby Products,regression quantile,1,299.99,50
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,regression quantile,0,1.57978359661681,50
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,regression quantile,0.25,2.400938287336851,50
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,regression quantile,0.5,2.5432866828102876,50
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,regression quantile,0.75,2.7821101363071277,50
+REG_TEXT_CONSUMER_BOOK_PRICE_PREDICTION,Book Price,regression quantile,1,3.238798562713917,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,regression quantile,0,1.3862943611198906,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,regression quantile,0.25,2.3978952727983707,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,regression quantile,0.5,2.772588722239781,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,regression quantile,0.75,3.295836866004329,50
+REG_TEXT_CONSUMER_MERCARI_ONLINE_MARKETPLACE,Mercari Marketplace,regression quantile,1,4.8283137373023015,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,regression quantile,0,0.0,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,regression quantile,0.25,46.1775,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,regression quantile,0.5,63.41,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,regression quantile,0.75,99.2325,50
+REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES,WikiLiq Spirits,regression quantile,1,179.0,50
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,regression quantile,0,1.5,50
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,regression quantile,0.25,2.75,50
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,regression quantile,0.5,3.0,50
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,regression quantile,0.75,3.5,50
+REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS,Chocolate Bars,regression quantile,1,4.0,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,regression quantile,0,2.0,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,regression quantile,0.25,3.5625,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,regression quantile,0.5,4.25,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,regression quantile,0.75,5.0,50
+REG_TEXT_FOOD_RAMEN_RATINGS_2022,Ramen Ratings,regression quantile,1,5.0,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,regression quantile,0,45.0,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,regression quantile,0.25,78.5,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,regression quantile,0.5,97.05,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,regression quantile,0.75,169.0,50
+REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES,Wine Poland,regression quantile,1,609.0,50
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,regression quantile,0,3.5,50
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,regression quantile,0.25,3.8,50
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,regression quantile,0.5,3.8,50
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,regression quantile,0.75,4.0,50
+REG_TEXT_FOOD_WINE_VIVINO_SPAIN,Wine Vivino Spain,regression quantile,1,4.4,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,regression quantile,0,2.4,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,regression quantile,0.25,3.3,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,regression quantile,0.5,3.4,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,regression quantile,0.75,3.7,50
+REG_TEXT_FOOD_ZOMATO_RESTAURANTS,Zomato Restaurants,regression quantile,1,4.2,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,regression quantile,0,25.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,regression quantile,0.25,55.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,regression quantile,0.5,82.5,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,regression quantile,0.75,150.0,50
+REG_TEXT_HOUSES_AIRBNB_SEATTLE,Airbnb Seattle,regression quantile,1,320.0,50
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,class count,Quantile 50-100%,28.0,50
+REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020,California Prices,class count,Quantile 0-50%,22.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,regression quantile,0,75189.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,regression quantile,0.25,91311.25,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,regression quantile,0.5,108989.5,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,regression quantile,0.75,127347.75,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER,Vancouver Salaries,regression quantile,1,204915.0,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,regression quantile,0,26208.35,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,regression quantile,0.25,60344.83,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,regression quantile,0.5,68084.8,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,regression quantile,0.75,87191.5975,50
+REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY,Montgomery Salaries,regression quantile,1,210143.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,regression quantile,0,5.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,regression quantile,0.25,10.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,regression quantile,0.5,20.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,regression quantile,0.75,30.0,50
+REG_TEXT_PROFESSIONAL_SCIMAGOJR_ACADEMIC_IMPACT,SciMagojr Impact,regression quantile,1,78.0,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,regression quantile,0,1.431,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,regression quantile,0.25,2.2805,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,regression quantile,0.5,2.8609999999999998,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,regression quantile,0.75,3.68775,50
+REG_TEXT_SOCIAL_ANIME_PLANET_RATING,Anime Planet,regression quantile,1,4.534,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,class count,Quantile 33-67%,23.0,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,class count,Quantile 67-100%,19.0,50
+REG_TEXT_SOCIAL_BOOKS_GOODREADS,Goodreads Books,class count,Quantile 0-33%,8.0,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,regression quantile,0,5.08,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,regression quantile,0.25,7.1475,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,regression quantile,0.5,8.465,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,regression quantile,0.75,10.4175,50
+REG_TEXT_SOCIAL_BOOK_READABILITY_CLEAR,Book Readability,regression quantile,1,12.36,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,class count,Quantile 60-70%,49.0,50
+REG_TEXT_SOCIAL_KOREAN_DRAMA,Korean Drama,class count,Quantile 70-80%,1.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,class count,Quantile 80-100%,15.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,class count,Quantile 40-60%,13.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,class count,Quantile 60-80%,11.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,class count,Quantile 0-20%,6.0,50
+REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE,Box Office,class count,Quantile 20-40%,5.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,regression quantile,0,2.0,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,regression quantile,0.25,5.9750000000000005,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,regression quantile,0.5,6.5,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,regression quantile,0.75,6.9,50
+REG_TEXT_SOCIAL_MOVIES_ROTTEN_TOMATOES,Rotten Tomatoes,regression quantile,1,7.7,50
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,regression quantile,0,0.07,50
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,regression quantile,0.25,0.07,50
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,regression quantile,0.5,0.07,50
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,regression quantile,0.75,0.07,50
+REG_TEXT_SOCIAL_VIDEO_GAMES_SALES,Video Games Sales,regression quantile,1,0.07,50
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,regression quantile,0,500.0,50
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,regression quantile,0.25,3000.0,50
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,regression quantile,0.5,4500.0,50
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,regression quantile,0.75,8000.0,50
+REG_TEXT_SPORTS_FIFA22_WAGES,FIFA22 Wages,regression quantile,1,21000.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,regression quantile,0,330000.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,regression quantile,0.25,892500.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,regression quantile,0.5,1455000.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,regression quantile,0.75,2725000.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN,Used Cars Pakistan,regression quantile,1,9500000.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,regression quantile,0,0.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,regression quantile,0.25,0.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,regression quantile,0.5,18750.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,regression quantile,0.75,52250.0,50
+REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA,Used Cars Saudi,regression quantile,1,190000.0,50

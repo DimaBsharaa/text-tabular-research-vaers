@@ -1,0 +1,10 @@
+{
+  "dataset_id": "BIN_TEXT_PROFESSIONAL_KICKSTARTER_FUNDING",
+  "slug": "multabench-kickstarter-funding",
+  "target": "Funding Status",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 86502,
+  "num_features": 9,
+  "num_classes": 2
+}

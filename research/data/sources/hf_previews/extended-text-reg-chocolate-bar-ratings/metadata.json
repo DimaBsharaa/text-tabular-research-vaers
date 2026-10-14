@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-chocolate-bar-ratings",
+  "target": "Rating",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 1795,
+  "num_features": 8,
+  "date_cols": []
+}

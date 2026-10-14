@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-fifa22-wages",
+  "target": "Wage in Euros",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 19178,
+  "num_features": 28,
+  "date_cols": []
+}

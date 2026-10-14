@@ -1,0 +1,10 @@
+{
+  "slug": "multabench-full-news-channel",
+  "target": "News Category",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 20284,
+  "num_features": 17,
+  "date_cols": [],
+  "num_classes": 6
+}

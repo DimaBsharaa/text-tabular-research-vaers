@@ -1,0 +1,12 @@
+{
+  "slug": "multabench-full-books-goodreads",
+  "target": "Rating",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 3967,
+  "num_features": 14,
+  "date_cols": [
+    "PublishDate"
+  ],
+  "num_classes": 3
+}

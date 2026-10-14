@@ -1,0 +1,1562 @@
+[
+  {
+    "released_id": "BIN_TEXT_FAKE_JOB_POSTING",
+    "hf_repo": "multabench/core-text-cls-fake-job-posting",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-fake-job-posting/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-fake-job-posting/metadata.json",
+        "bytes": 232,
+        "sha256": "4543d454ae6faf856d33137278ad58553663d193a34a35740de969f9c4e652d8"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-fake-job-posting",
+        "local_path": "data/sources/hf_previews/core-text-cls-fake-job-posting/repo.json",
+        "bytes": 1249,
+        "sha256": "8b7f7d148a4af017cb01e45af9838f54d0dc7f9c37dbf54b819e1a5eb811bea7"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-fake-job-posting",
+        "local_path": "data/sources/hf_previews/core-text-cls-fake-job-posting/size.json",
+        "bytes": 723,
+        "sha256": "8a1bf5d4dcbbfa21fe853559beb2942bd97610a1cf48da7c582988bfa2dad2c1"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-fake-job-posting/raw/807257c64fd403cf9a069025ffd3ac8c0859fe7f/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-fake-job-posting/README.md",
+        "bytes": 583,
+        "sha256": "c64f82d31ef185102403b3b7ae86a63f52f10877f0fa365d12f7981333112b42"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-fake-job-posting&config=default&split=train&offset=4127&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-fake-job-posting/rows.json",
+        "bytes": 68561,
+        "sha256": "5a54d6ffc5a45821dd104000a1f999bbdab19f8ee82ddbf59a78eb24c149b9b9",
+        "offset": 4127,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "BIN_TEXT_JIGSAW_TOXICITY",
+    "hf_repo": "multabench/core-text-cls-jigsaw-toxicity",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-jigsaw-toxicity/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-jigsaw-toxicity/metadata.json",
+        "bytes": 224,
+        "sha256": "982ef528956e01422c3e7a943422202c39579f673c01ba302a7171cfb8dc66af"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-jigsaw-toxicity",
+        "local_path": "data/sources/hf_previews/core-text-cls-jigsaw-toxicity/repo.json",
+        "bytes": 1398,
+        "sha256": "e4b1c0f8217574edf81f063e6472750d2196b23356ac3f008fa1b9d1b893613c"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-jigsaw-toxicity",
+        "local_path": "data/sources/hf_previews/core-text-cls-jigsaw-toxicity/size.json",
+        "bytes": 730,
+        "sha256": "0f402ca477415fc3154b77be0e03e4b8bf04935c018ab50c679473fc1f09bdc5"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-jigsaw-toxicity/raw/d4d447f359684c9e36b41fcd910adfef6267e3f6/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-jigsaw-toxicity/README.md",
+        "bytes": 1179,
+        "sha256": "f04e489649d84915f664e1d41b6d7567c8f47eae2710a582cb1bf384968343c5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-jigsaw-toxicity&config=default&split=train&offset=57025&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-jigsaw-toxicity/rows.json",
+        "bytes": 51241,
+        "sha256": "ae97cf2d5bbc4cd4d02ef2c2a4543b5e054c80ac2a224e26050d0957d196e4df",
+        "offset": 57025,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "BIN_TEXT_KICKSTARTER_FUNDING",
+    "hf_repo": "multabench/core-text-cls-kickstarter-funding",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-kickstarter-funding/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-kickstarter-funding/metadata.json",
+        "bytes": 242,
+        "sha256": "d4443dab3681016ab6d7a3d4c1b2a560aba9410016d7d8205bc56429a1b8f711"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-kickstarter-funding",
+        "local_path": "data/sources/hf_previews/core-text-cls-kickstarter-funding/repo.json",
+        "bytes": 1413,
+        "sha256": "0ff20ca521da2ba87e0a80453f0f34f900672065df9bc4c8ed588d958c6c7e69"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-kickstarter-funding",
+        "local_path": "data/sources/hf_previews/core-text-cls-kickstarter-funding/size.json",
+        "bytes": 739,
+        "sha256": "c9cfca58eea1996f7ba61fce47d07f0651da047527830e25d50ef5af799a0b58"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-kickstarter-funding/raw/3e12dcea7b0bd1dcc59e21dc499aa3f021b42c6f/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-kickstarter-funding/README.md",
+        "bytes": 666,
+        "sha256": "43b329d35d067aeaee1b624a59809603d054dc83f8fc3eab39c1211a0cbb1db1"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-kickstarter-funding&config=default&split=train&offset=69647&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-kickstarter-funding/rows.json",
+        "bytes": 23919,
+        "sha256": "1e49c640ad5f02c701eb73293c3e43e6d8b66be669519b47cea833bd4a892d0d",
+        "offset": 69647,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_DATA_SCIENTIST_SALARY",
+    "hf_repo": "multabench/core-text-cls-data-scientist-salary",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-data-scientist-salary/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-data-scientist-salary/metadata.json",
+        "bytes": 238,
+        "sha256": "639a089e694ff5943a5ea7305db21ec08aac7266c29a0e9ec28c4b9ae2525c47"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-data-scientist-salary",
+        "local_path": "data/sources/hf_previews/core-text-cls-data-scientist-salary/repo.json",
+        "bytes": 1263,
+        "sha256": "4769629a4c8830ec8f78355c1246c5845ae53ef74fdd8434717037140a5082de"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-data-scientist-salary",
+        "local_path": "data/sources/hf_previews/core-text-cls-data-scientist-salary/size.json",
+        "bytes": 735,
+        "sha256": "1475f551e4f65d8f536768e42b226461a6b9b2586240a2787f3c4453585faf1e"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-data-scientist-salary/raw/b2e460080ed55edaa9f5c495189530e61db06882/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-data-scientist-salary/README.md",
+        "bytes": 592,
+        "sha256": "88acf8ee5fb9312b426b6e913a224aa13c5b3c5bb3b9203c49ebf488979418be"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-data-scientist-salary&config=default&split=train&offset=8200&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-data-scientist-salary/rows.json",
+        "bytes": 19227,
+        "sha256": "91623eddddfaeac1c43a88fd3a936815b8f13c0b2a6d08afceb8339e5f789891",
+        "offset": 8200,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_MICHELIN_RESTAURANTS",
+    "hf_repo": "multabench/core-text-cls-michelin-restaurants",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-michelin-restaurants/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-michelin-restaurants/metadata.json",
+        "bytes": 234,
+        "sha256": "0ff22a192e4652525e38eacb0bc4b2971da01caf23dfb69945fab8634c83c55f"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-michelin-restaurants",
+        "local_path": "data/sources/hf_previews/core-text-cls-michelin-restaurants/repo.json",
+        "bytes": 1419,
+        "sha256": "2fad955074c7e439841e652bce12517b5cdc75a7f53ef2a841efbec793fd36cb"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-michelin-restaurants",
+        "local_path": "data/sources/hf_previews/core-text-cls-michelin-restaurants/size.json",
+        "bytes": 737,
+        "sha256": "cfa9fda2f46de3d95b94f5006f7a09b121b64630bb2da8c667795b792568dc5d"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-michelin-restaurants/raw/32b1239c56a8a16b66e10aadca8063fb9543d5be/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-michelin-restaurants/README.md",
+        "bytes": 717,
+        "sha256": "dcdbe57d3317011b54bd264951d08f522c77ed7bbb278dc1ef9827e84fe30e6a"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-michelin-restaurants&config=default&split=train&offset=1152&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-michelin-restaurants/rows.json",
+        "bytes": 53811,
+        "sha256": "8f5aa4f9bb78e80010518b095eb5e458f662012d125b76ca6622835648cc0c19",
+        "offset": 1152,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_PRODUCT_SENTIMENT",
+    "hf_repo": "multabench/core-text-cls-product-sentiment",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-product-sentiment/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-product-sentiment/metadata.json",
+        "bytes": 228,
+        "sha256": "db78538f386c3eed11df6c9110fbd8de30c9f7c72311ff85ee6811fd75bfde13"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-product-sentiment",
+        "local_path": "data/sources/hf_previews/core-text-cls-product-sentiment/repo.json",
+        "bytes": 1160,
+        "sha256": "8ccafad24b020f30b2ee34a77b884956e5b16bf9c8529f50380ba98ae0896923"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-product-sentiment",
+        "local_path": "data/sources/hf_previews/core-text-cls-product-sentiment/size.json",
+        "bytes": 712,
+        "sha256": "0b36b1cdc8bc35f7ad4263491e23abdefa9fa8cbbabcf4bdbda3f37623743f43"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-product-sentiment/raw/9b1e434c88d4cab8d5c8c860bd14fd25971c0082/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-product-sentiment/README.md",
+        "bytes": 496,
+        "sha256": "e5fe44c1af22b07240ca39d7d40fd1f1f4cee41232ff9155ba9005fd8485b6b5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-product-sentiment&config=default&split=train&offset=2431&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-product-sentiment/rows.json",
+        "bytes": 11200,
+        "sha256": "498aa8cc319447fb428ed4bfffd9b648a6b85e763cec38cb5bfccd918c324193",
+        "offset": 2431,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_SPOTIFY_GENRES",
+    "hf_repo": "multabench/core-text-cls-spotify-genres",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-spotify-genres/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-spotify-genres/metadata.json",
+        "bytes": 227,
+        "sha256": "49211f8a65cbec1c9f66d233592852830c403ff0b877d4a03fe7514abee7056b"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-spotify-genres",
+        "local_path": "data/sources/hf_previews/core-text-cls-spotify-genres/repo.json",
+        "bytes": 1400,
+        "sha256": "55099316695d964d51afd15301709775c4d51be994d22f89d854ba9cfe9c2804"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-spotify-genres",
+        "local_path": "data/sources/hf_previews/core-text-cls-spotify-genres/size.json",
+        "bytes": 719,
+        "sha256": "a278b85fe942bd71481aa2a34c4270b79db1d0f4c15331f24f7f30249dca6002"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-spotify-genres/raw/26f27a493d6506537270da26972427000793515f/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-spotify-genres/README.md",
+        "bytes": 850,
+        "sha256": "c6e15e6709e5a1bcb66ad6fd78d95a163e1f28ef79f7edb71b73b80c24a152a5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-spotify-genres&config=default&split=train&offset=78806&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-spotify-genres/rows.json",
+        "bytes": 23263,
+        "sha256": "b797ae57ff917c3e60d8c82fd7a67d05f07d1509c25dc9f796a8460155d5399c",
+        "offset": 78806,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_US_ACCIDENTS",
+    "hf_repo": "multabench/core-text-cls-us-accidents",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-us-accidents/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-us-accidents/metadata.json",
+        "bytes": 234,
+        "sha256": "948dca7188c1c21927ce67f1f46b087dac84309a1483f1d8173015c81339a672"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-us-accidents",
+        "local_path": "data/sources/hf_previews/core-text-cls-us-accidents/repo.json",
+        "bytes": 1397,
+        "sha256": "18287fad0f783b23cf2f3b091b49cc6c544e1aee175d5fd26a8c1b3bfc9e6944"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-us-accidents",
+        "local_path": "data/sources/hf_previews/core-text-cls-us-accidents/size.json",
+        "bytes": 721,
+        "sha256": "4a8c024d3693209648bdee5ee7dbfd4b77d68f05f72eaf1eb43018eddb0b1e68"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-us-accidents/raw/ab2962660214bcc4c8995b54122dbd285cc68fec/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-us-accidents/README.md",
+        "bytes": 1526,
+        "sha256": "5ced2eba74ed9868248c0d9b1817906d51ba1f50e15fe64a17716d96c632186f"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-us-accidents&config=default&split=train&offset=58907&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-us-accidents/rows.json",
+        "bytes": 57416,
+        "sha256": "0ce98ee57a450234697b2c50161743a38af66e7390540a88964ffc92ee37b015",
+        "offset": 58907,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_WINE_REVIEW",
+    "hf_repo": "multabench/core-text-cls-wine-review",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-wine-review/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-wine-review/metadata.json",
+        "bytes": 212,
+        "sha256": "6e3d2eb8f0f28a3f8d53a7f91c69ff0ea9e2ce7e79c57c70866b4e8ffc4094b3"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-wine-review",
+        "local_path": "data/sources/hf_previews/core-text-cls-wine-review/repo.json",
+        "bytes": 1195,
+        "sha256": "c74659bbb687f73be2aa004b86a65b86e50c0bb0b817e8b8aa8e61aff42a6e06"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-wine-review",
+        "local_path": "data/sources/hf_previews/core-text-cls-wine-review/size.json",
+        "bytes": 713,
+        "sha256": "f1e589426495eb4c640eea0e6bf7f5db315faadf146f636bc3fd5ad92e0596ce"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-wine-review/raw/4761eaa53261d4921c624e3d3e8c266221310b0c/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-wine-review/README.md",
+        "bytes": 533,
+        "sha256": "5aca71861ef02088ce45e9bd2f5373d8f98b242fdfabbba3f9da11a04249dca7"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-wine-review&config=default&split=train&offset=37308&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-wine-review/rows.json",
+        "bytes": 20530,
+        "sha256": "b71501e636a5a64f64c62863e4828c12ebaba18778b71e4f6bb0d5faea8df602",
+        "offset": 37308,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_WOMEN_CLOTHING_REVIEW",
+    "hf_repo": "multabench/core-text-cls-women-clothing-review",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-women-clothing-review/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-cls-women-clothing-review/metadata.json",
+        "bytes": 245,
+        "sha256": "b1c67237bd9757abf3bf197d7a395d0ca347069c22751458860ca5a079e433a3"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-cls-women-clothing-review",
+        "local_path": "data/sources/hf_previews/core-text-cls-women-clothing-review/repo.json",
+        "bytes": 1420,
+        "sha256": "442c767c09d3daf9f38916ead14a8cdb19729c52a97df1177e5a62267adf20fa"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-cls-women-clothing-review",
+        "local_path": "data/sources/hf_previews/core-text-cls-women-clothing-review/size.json",
+        "bytes": 737,
+        "sha256": "a6a74f2d5a53bfe2be665281b29ed87d0c4b7c1890233a12950cb20a274b4019"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-cls-women-clothing-review/raw/741f67402d71334c7366fa0c8cb827641b5a0bcd/README.md",
+        "local_path": "data/sources/hf_previews/core-text-cls-women-clothing-review/README.md",
+        "bytes": 696,
+        "sha256": "653def11567c4a08293d7eb9670f0744f0cb6a5e20b5bdfd1e6e181c4304f823"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-cls-women-clothing-review&config=default&split=train&offset=3114&length=50",
+        "local_path": "data/sources/hf_previews/core-text-cls-women-clothing-review/rows.json",
+        "bytes": 32060,
+        "sha256": "a890e99a4ef71bb9a8839caaca0844091ab33d67ccc2c480e7ff9174e48f4495",
+        "offset": 3114,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_BABIES_PRICES",
+    "hf_repo": "multabench/core-text-reg-babies-prices",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-babies-prices/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-babies-prices/metadata.json",
+        "bytes": 202,
+        "sha256": "4ddcf12a65a22f96ca0dbf92e2e93215b6dc26d626d3592a3dae11b048d0c178"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-babies-prices",
+        "local_path": "data/sources/hf_previews/core-text-reg-babies-prices/repo.json",
+        "bytes": 1396,
+        "sha256": "cfa85aa14686410ebb92f7867984044990350525b8e078718c3e85c3d4f24b5e"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-babies-prices",
+        "local_path": "data/sources/hf_previews/core-text-reg-babies-prices/size.json",
+        "bytes": 702,
+        "sha256": "3604d962735a2904b827415c351590722838f790f776a97419339db321c5fb5a"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-babies-prices/raw/34b235cd0f2f33d2d7f69dcf73c6478a7a7b8970/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-babies-prices/README.md",
+        "bytes": 757,
+        "sha256": "1b584c33cd609e593d2a1e1abefeee21974fa78a4e97b75b99e5223928fb8c0d"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-babies-prices&config=default&split=train&offset=4325&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-babies-prices/rows.json",
+        "bytes": 17534,
+        "sha256": "570df12efbafa46bc88f4c8d506a56ebcc977dc58befa7b50f3924d760c3912d",
+        "offset": 4325,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_BOOK_PRICE",
+    "hf_repo": "multabench/core-text-reg-book-price",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-book-price/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-price/metadata.json",
+        "bytes": 208,
+        "sha256": "488b36e92fbd6ed64c667e466a5db3b3d12a041b5efec8e7ba7f4a512fcfc1b4"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-book-price",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-price/repo.json",
+        "bytes": 1261,
+        "sha256": "0d86274ab1be18d035614e720394cb223e02303e84881a4164ccf3cc6e55ec64"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-book-price",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-price/size.json",
+        "bytes": 699,
+        "sha256": "a43fc760bb29275d601f84c1b49755e127da079003723b2a0b7005b61598723d"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-book-price/raw/fa35d1151ccdfe72e9b2849e60d065d4019769de/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-price/README.md",
+        "bytes": 603,
+        "sha256": "ad64091b843bc0a5362dd40e3495276dd22d1ab9c0e11a62adf287be32e2eeaf"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-book-price&config=default&split=train&offset=3431&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-price/rows.json",
+        "bytes": 72955,
+        "sha256": "41904f739aeca65310f961648674097ee0f739270853c0ef3281ea150a398107",
+        "offset": 3431,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_BOOK_READABILITY",
+    "hf_repo": "multabench/core-text-reg-book-readability",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-book-readability/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-readability/metadata.json",
+        "bytes": 236,
+        "sha256": "d50da294b2fcc52603777c26fa08f2780227b520b9a6c07f2715421d0499e999"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-book-readability",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-readability/repo.json",
+        "bytes": 1407,
+        "sha256": "9ae3837ae8990d99c45fd8a3c1db74f8d8c22353f5d72a7ec2788c541eededdc"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-book-readability",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-readability/size.json",
+        "bytes": 719,
+        "sha256": "2eccf4b3095eb21110d5d190947d2a5b1d105345f027cb82d35641515304a685"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-book-readability/raw/248f118c15a469460c6714b9e7b6632668ccdae8/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-readability/README.md",
+        "bytes": 1234,
+        "sha256": "5b2acf5b38ff24e28395713f3a66acc006c537245d460a53d800bc3c6e4a8562"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-book-readability&config=default&split=train&offset=4602&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-book-readability/rows.json",
+        "bytes": 92562,
+        "sha256": "12704c6c15948548dd9141c3bcb5fd0a22d3afa15faae90a6e62bfc5837eb369",
+        "offset": 4602,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_MERCARI_MARKETPLACE",
+    "hf_repo": "multabench/core-text-reg-mercari-marketplace",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-mercari-marketplace/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-mercari-marketplace/metadata.json",
+        "bytes": 221,
+        "sha256": "5623f451a7c04e05dd452646220a5110b69351343136e53700b480f91897769e"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-mercari-marketplace",
+        "local_path": "data/sources/hf_previews/core-text-reg-mercari-marketplace/repo.json",
+        "bytes": 1412,
+        "sha256": "d478a4938828b56567b0465f733c244fce31c6ad99bdb913da3cbb4c0c25b6c5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-mercari-marketplace",
+        "local_path": "data/sources/hf_previews/core-text-reg-mercari-marketplace/size.json",
+        "bytes": 742,
+        "sha256": "efe62e434673f15da4daf04e752894ee4963f0656e7f2cf49a074c527e0084e9"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-mercari-marketplace/raw/1f9516373c57c81f2fe3e22c8df251c5971e5ad9/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-mercari-marketplace/README.md",
+        "bytes": 650,
+        "sha256": "7d55dd9ff9dc9c65c6781fe071a9752fe72253c1015b1605736accb4ab16680c"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-mercari-marketplace&config=default&split=train&offset=96822&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-mercari-marketplace/rows.json",
+        "bytes": 22854,
+        "sha256": "384d2ca525309239f4856a8fca14e9b3cf628db6704970a8c83af57933f3ec42",
+        "offset": 96822,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_MONTGOMERY_SALARIES",
+    "hf_repo": "multabench/core-text-reg-montgomery-salaries",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-montgomery-salaries/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-montgomery-salaries/metadata.json",
+        "bytes": 236,
+        "sha256": "1aed1b3817933b5151da7e3574ab2c971409d7099c32045dbcd39c0d486181ab"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-montgomery-salaries",
+        "local_path": "data/sources/hf_previews/core-text-reg-montgomery-salaries/repo.json",
+        "bytes": 1405,
+        "sha256": "e71be7bd41327a86e239c03270f1ebbf95a6ec64131374f84ddab6b3e6171d10"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-montgomery-salaries",
+        "local_path": "data/sources/hf_previews/core-text-reg-montgomery-salaries/size.json",
+        "bytes": 720,
+        "sha256": "d3ca12ab44db31b724c770d94ab0da76ccde21950304fee1a990ea4a2c576f36"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-montgomery-salaries/raw/fd4a89258195fb2320d2994438275ed0c065ab9a/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-montgomery-salaries/README.md",
+        "bytes": 813,
+        "sha256": "7cfe22ea4651d2d9f2324b0e6e5b37bdc17f82a429edc867d60cbaaf72bc42fc"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-montgomery-salaries&config=default&split=train&offset=4249&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-montgomery-salaries/rows.json",
+        "bytes": 24016,
+        "sha256": "56e9177e79bb316d85e8b8dde5ed094cb1de662c7de4e3165cb6a6a66576f2ef",
+        "offset": 4249,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_SCIMAGOJR_IMPACT",
+    "hf_repo": "multabench/core-text-reg-scimagojr-impact",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-scimagojr-impact/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-scimagojr-impact/metadata.json",
+        "bytes": 219,
+        "sha256": "98843b793f836439871839b6a1b64c99d7962f89987212863e9659e33d3ab8d6"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-scimagojr-impact",
+        "local_path": "data/sources/hf_previews/core-text-reg-scimagojr-impact/repo.json",
+        "bytes": 1413,
+        "sha256": "97b77a17ddd550c0979e5bc3b0ded8e06445100cd60aadc2f0b0f328c4e129d6"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-scimagojr-impact",
+        "local_path": "data/sources/hf_previews/core-text-reg-scimagojr-impact/size.json",
+        "bytes": 722,
+        "sha256": "1e0a0f4f55e46cb7951225e4c978cdf4aa8dbbab15083c7d650821f162da66b0"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-scimagojr-impact/raw/90fd3d28876282800fd783a9e03ae653eb9053f7/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-scimagojr-impact/README.md",
+        "bytes": 967,
+        "sha256": "2d8d64678dadbab1253cb6104ebfd733d8b868f27ec186e491b9f81aa06c13fd"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-scimagojr-impact&config=default&split=train&offset=18080&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-scimagojr-impact/rows.json",
+        "bytes": 35331,
+        "sha256": "f0137c1e638b049cb1fbf82360fdd3bf81d7d8d7bfadc4fa256b40dfaa6b8d7d",
+        "offset": 18080,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_ROTTEN_TOMATOES",
+    "hf_repo": "multabench/core-text-reg-rotten-tomatoes",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-rotten-tomatoes/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-rotten-tomatoes/metadata.json",
+        "bytes": 212,
+        "sha256": "8d492af42684543b85e5bd8187f371dbddddadaae3b50806266df2da529bd9a6"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-rotten-tomatoes",
+        "local_path": "data/sources/hf_previews/core-text-reg-rotten-tomatoes/repo.json",
+        "bytes": 1407,
+        "sha256": "8177844a9a9141d88be735da97618de836536b7d1f0076fd0e346aec24e0e05c"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-rotten-tomatoes",
+        "local_path": "data/sources/hf_previews/core-text-reg-rotten-tomatoes/size.json",
+        "bytes": 716,
+        "sha256": "30656edee04150c475518513b2752dc842ee81d2b5dae99c6c238d4402dfa4f7"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-rotten-tomatoes/raw/47299d4a6cb2fbf6509cb7df86853b9d58992c94/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-rotten-tomatoes/README.md",
+        "bytes": 803,
+        "sha256": "81ef2f58c0c274fe591f44ee8232c19b71d8ee5d79109ae687140303789563fb"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-rotten-tomatoes&config=default&split=train&offset=3372&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-rotten-tomatoes/rows.json",
+        "bytes": 43026,
+        "sha256": "8f2b8a5c0a19b0d59eecccbff755d8c2d77218ccd8bee683520360a2a2055774",
+        "offset": 3372,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_VANCOUVER_SALARIES",
+    "hf_repo": "multabench/core-text-reg-vancouver-salaries",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-vancouver-salaries/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-vancouver-salaries/metadata.json",
+        "bytes": 231,
+        "sha256": "12e800985163992519a89cb11ddb8f479a0c1622ec4bac4c22c0095da9ca6342"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-vancouver-salaries",
+        "local_path": "data/sources/hf_previews/core-text-reg-vancouver-salaries/repo.json",
+        "bytes": 1386,
+        "sha256": "891d8677641285183d92a48cb8f90b8e5bbfa679aa3420d548626c068b8a1354"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-vancouver-salaries",
+        "local_path": "data/sources/hf_previews/core-text-reg-vancouver-salaries/size.json",
+        "bytes": 718,
+        "sha256": "d7bdb5b0d44fd270c0fb8175cd023318ef824b538972a69ee9990d53b61be13e"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-vancouver-salaries/raw/e098824625d8bf2b94fc6c7e2f31f2e6d76438b7/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-vancouver-salaries/README.md",
+        "bytes": 630,
+        "sha256": "db5d87697bb31c3df741bce49a1c163be96a0021a2a5ca254e7561deefb919a0"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-vancouver-salaries&config=default&split=train&offset=11269&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-vancouver-salaries/rows.json",
+        "bytes": 9733,
+        "sha256": "6ad2694ad4334a4f82ce172d8471b90293022406b22518b913c28b8409be673a",
+        "offset": 11269,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_VIDEO_GAMES_SALES",
+    "hf_repo": "multabench/core-text-reg-video-games-sales",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-video-games-sales/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-video-games-sales/metadata.json",
+        "bytes": 210,
+        "sha256": "f364bad35542e994be2731225edb21c45233d37c800d132775f8ca41dc40f744"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-video-games-sales",
+        "local_path": "data/sources/hf_previews/core-text-reg-video-games-sales/repo.json",
+        "bytes": 1229,
+        "sha256": "9badb54718c752cbd2378c3349d3a18bb858e4484747ce3d62b21671223e1349"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-video-games-sales",
+        "local_path": "data/sources/hf_previews/core-text-reg-video-games-sales/size.json",
+        "bytes": 715,
+        "sha256": "971d5e53403f53e01b7a4be6828c4d0594d8fa73385aeba1ca2f049300bda627"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-video-games-sales/raw/0ee84e7aa7ca24fdb7bdfaee79755e103ca06f91/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-video-games-sales/README.md",
+        "bytes": 562,
+        "sha256": "ab4691d11a34c501d4d99cd34a0031b710d76d9988032058f01dcc2e4ac14ac5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-video-games-sales&config=default&split=train&offset=11863&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-video-games-sales/rows.json",
+        "bytes": 9571,
+        "sha256": "5cb2a297cbaf8e108a38aae5fdf6a61f06ab9de089b0b39b156ce3bf0fef0a1a",
+        "offset": 11863,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_ZOMATO_RESTAURANTS",
+    "hf_repo": "multabench/core-text-reg-zomato-restaurants",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-zomato-restaurants/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/core-text-reg-zomato-restaurants/metadata.json",
+        "bytes": 203,
+        "sha256": "1a8c71c2a2f393503364760d665c9c3c038a24c3bc33f6c48aca6516c8fd0a64"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/core-text-reg-zomato-restaurants",
+        "local_path": "data/sources/hf_previews/core-text-reg-zomato-restaurants/repo.json",
+        "bytes": 1415,
+        "sha256": "6b337b0527f07aaf5af96fd1a44050eea2b29e1c9faced674d969dd3b5ea3437"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fcore-text-reg-zomato-restaurants",
+        "local_path": "data/sources/hf_previews/core-text-reg-zomato-restaurants/size.json",
+        "bytes": 744,
+        "sha256": "b617e495f6cb45fc4489acfdecb666e35f22042546a030b2809f563532c50b1d"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/core-text-reg-zomato-restaurants/raw/ab24706051bb62f4d17de091126969417ccbbc19/README.md",
+        "local_path": "data/sources/hf_previews/core-text-reg-zomato-restaurants/README.md",
+        "bytes": 857,
+        "sha256": "9aef6e00315c65d8b2632714557b1a971b03aea4c2fdc93c19e21137520f9910"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fcore-text-reg-zomato-restaurants&config=default&split=train&offset=12766&length=50",
+        "local_path": "data/sources/hf_previews/core-text-reg-zomato-restaurants/rows.json",
+        "bytes": 396250,
+        "sha256": "51d5d37bea1ed41f0ed144d2d790f1372c0a80a61bfd598d0172625984b2829c",
+        "offset": 12766,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_CONSUMER_COMPLAINT",
+    "hf_repo": "multabench/extended-text-cls-consumer-complaint",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-consumer-complaint/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-consumer-complaint/metadata.json",
+        "bytes": 271,
+        "sha256": "d85933ab86b380e2689cbdbca903f7f6ede5247cb8fdf2c72226f96c57a0a12c"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-consumer-complaint",
+        "local_path": "data/sources/hf_previews/extended-text-cls-consumer-complaint/repo.json",
+        "bytes": 1409,
+        "sha256": "0b8dc0b91f2193aa10ea4a6724a0f5efc5a217c2b07c618d62d307b3dff3aad3"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-consumer-complaint",
+        "local_path": "data/sources/hf_previews/extended-text-cls-consumer-complaint/size.json",
+        "bytes": 751,
+        "sha256": "f4824cadea8a5b0ca28253ee3886dbe735434f63a71a6acd2a35cb0c355fabb2"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-consumer-complaint/raw/ea468389e15624d83c2e1060ca09bc0437c530f5/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-consumer-complaint/README.md",
+        "bytes": 978,
+        "sha256": "a97a0d199b6c634559da2721157bff6376f06d2a0ad3c685f8844af33639af4a"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-consumer-complaint&config=default&split=train&offset=22096&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-consumer-complaint/rows.json",
+        "bytes": 47760,
+        "sha256": "ead587dc2a3a607feaecc8da7cf5632497f0a5e8c66fe751100afbcde834d5c2",
+        "offset": 22096,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_BOX_OFFICE",
+    "hf_repo": "multabench/extended-text-cls-box-office",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-box-office/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-box-office/metadata.json",
+        "bytes": 170,
+        "sha256": "7c5ae3e6d7ec71993beb1ebf1529085e581ac207100f3fb8ed33a2dc3a8dd7df"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-box-office",
+        "local_path": "data/sources/hf_previews/extended-text-cls-box-office/repo.json",
+        "bytes": 1400,
+        "sha256": "9937d69052da51a5d106084969b15ee3a935cfb899152e5cb545161169c5e035"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-box-office",
+        "local_path": "data/sources/hf_previews/extended-text-cls-box-office/size.json",
+        "bytes": 713,
+        "sha256": "ca1e152125357bbe246c41a72a90e791b4f5e2240d1c1cc56705d5e0e23c978b"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-box-office/raw/4a3d8e0a38d62bdc3c75b50309550dd92ada8bf0/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-box-office/README.md",
+        "bytes": 899,
+        "sha256": "3dc756707a8df0f63e9278ffe6df7cec08937ec7a0bac3c60b0472415cec4e51"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-box-office&config=default&split=train&offset=735&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-box-office/rows.json",
+        "bytes": 48020,
+        "sha256": "4cc389dbd4d23e96cf0c7afac9cf9dea3b499152c516cd761de023b7d717bfd9",
+        "offset": 735,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "BIN_TEXT_OSHA_INJURY",
+    "hf_repo": "multabench/extended-text-cls-osha-injury",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-osha-injury/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-osha-injury/metadata.json",
+        "bytes": 216,
+        "sha256": "f114640f7836272b2aa08b3c739664e99dd68dcd5bd4b2c12db14816b356b973"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-osha-injury",
+        "local_path": "data/sources/hf_previews/extended-text-cls-osha-injury/repo.json",
+        "bytes": 1390,
+        "sha256": "ed41ac9862748ae65ba7ae309a5d0fe2a058865311ea320004c195600ed42265"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-osha-injury",
+        "local_path": "data/sources/hf_previews/extended-text-cls-osha-injury/size.json",
+        "bytes": 716,
+        "sha256": "b0812bdba36d91b463421da8674cdbf372c9e65898eca90da04333a440cd4f7d"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-osha-injury/raw/51a09dca34e369b3230a05b41e3c874a9908426f/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-osha-injury/README.md",
+        "bytes": 950,
+        "sha256": "7a0e5132e8d952e2a90f1cd5f12ebf6fb3436c8b75ea38b6d7597144bb42c450"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-osha-injury&config=default&split=train&offset=1689&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-osha-injury/rows.json",
+        "bytes": 53546,
+        "sha256": "c1ae6f063a912c28a5249c383fbfff9463497423652df1ce795ea9832a08ec90",
+        "offset": 1689,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_NEWS_CHANNEL",
+    "hf_repo": "multabench/extended-text-cls-news-channel",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-news-channel/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-news-channel/metadata.json",
+        "bytes": 198,
+        "sha256": "a40025c73a7a153be667c8c7de377b3aa3a8548b260e01294a5aa17ecb17fa73"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-news-channel",
+        "local_path": "data/sources/hf_previews/extended-text-cls-news-channel/repo.json",
+        "bytes": 1400,
+        "sha256": "ee8cf7a6af8cca430f475c5aa1919f915b5d5636a05459d2322901f8089c2a91"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-news-channel",
+        "local_path": "data/sources/hf_previews/extended-text-cls-news-channel/size.json",
+        "bytes": 722,
+        "sha256": "d6609c0de606fbf2b3945837f52db167592283b28b51ef924ffe53f294e1043e"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-news-channel/raw/7333dbffe2ce71a17699c81700646bd7b124676a/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-news-channel/README.md",
+        "bytes": 944,
+        "sha256": "bb59ba01343ba32856d143aba51f7005d4aa14950d0c1cdb8d63eabfd7b9f845"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-news-channel&config=default&split=train&offset=150&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-news-channel/rows.json",
+        "bytes": 33645,
+        "sha256": "613ca2c50558545f543f1a8016e2f531a7db8371cb7943218f7bcf8b255b00b6",
+        "offset": 150,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "BIN_TEXT_IMDB_GENRE",
+    "hf_repo": "multabench/extended-text-cls-imdb-genre",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-imdb-genre/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-imdb-genre/metadata.json",
+        "bytes": 167,
+        "sha256": "846bb660f6978f381c8ff34be727bb330bfbda65758ca7a0ed481f08a570808b"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-imdb-genre",
+        "local_path": "data/sources/hf_previews/extended-text-cls-imdb-genre/repo.json",
+        "bytes": 1408,
+        "sha256": "a36f7612cdfddc2cd689dd9e417a0e19165f0c7957170475c41ba27db3f08e66"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-imdb-genre",
+        "local_path": "data/sources/hf_previews/extended-text-cls-imdb-genre/size.json",
+        "bytes": 702,
+        "sha256": "0a3d56db1a59e51b8af9846e7392364f069a5212d43485c216826ad1f4cb1ec7"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-imdb-genre/raw/caabf318d4f72d4749eadc49db1e27ea8e8e8aa7/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-imdb-genre/README.md",
+        "bytes": 649,
+        "sha256": "91fd32ffbb4d69f59223caf147aaf8bf046e14ed693ceabc51bcc39661cebd52"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-imdb-genre&config=default&split=train&offset=659&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-imdb-genre/rows.json",
+        "bytes": 25191,
+        "sha256": "38cc69baad2a78b9fc5ed5dcdcf1fbc069b14a29c47faecd9caff34d76332307",
+        "offset": 659,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_MELBOURNE_AIRBNB",
+    "hf_repo": "multabench/extended-text-cls-melbourne-airbnb",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-melbourne-airbnb/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-melbourne-airbnb/metadata.json",
+        "bytes": 260,
+        "sha256": "0b98f0e86052b559d8f0b6020c533647c5f0eca34de32a242c6b61d84781011f"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-melbourne-airbnb",
+        "local_path": "data/sources/hf_previews/extended-text-cls-melbourne-airbnb/repo.json",
+        "bytes": 1425,
+        "sha256": "beb37c44c34c67dccab289915bb4e5465deef91c7c869f38fc45695f13bd6f22"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-melbourne-airbnb",
+        "local_path": "data/sources/hf_previews/extended-text-cls-melbourne-airbnb/size.json",
+        "bytes": 742,
+        "sha256": "ba9d853684bd487b41657210072508f0a8a6f9fc8d11fa82e7af0d27135b9ec7"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-melbourne-airbnb/raw/aa33324db30bdd97facbd0d55ba8d22532790caf/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-melbourne-airbnb/README.md",
+        "bytes": 3181,
+        "sha256": "b6a48caffa46be512b1f8fe9c4ce569a1a1ff707d87ab0c75f9178255544d646"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-melbourne-airbnb&config=default&split=train&offset=13730&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-melbourne-airbnb/rows.json",
+        "bytes": 313574,
+        "sha256": "b6d4bb16a127a3d3bc37edf928438eec297c9e17f83a3ec00662231db4b480ef",
+        "offset": 13730,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "BIN_TEXT_CALIFORNIA_PRICES",
+    "hf_repo": "multabench/extended-text-cls-california-prices",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-california-prices/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-california-prices/metadata.json",
+        "bytes": 239,
+        "sha256": "6e5a9336c4efda4a2307af716a207adbb552cad4bd89d57dd2c8eeed2de31535"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-california-prices",
+        "local_path": "data/sources/hf_previews/extended-text-cls-california-prices/repo.json",
+        "bytes": 1414,
+        "sha256": "5af50a21c3c35ec11ecfab48c17b0ef13e38476de5e8971c341a05f55bf92462"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-california-prices",
+        "local_path": "data/sources/hf_previews/extended-text-cls-california-prices/size.json",
+        "bytes": 745,
+        "sha256": "358281d5d0922112b591d5e053add98a8c3fc03e9fef110ace5d14359a292ba7"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-california-prices/raw/841f025918774c54cb917ee04e60e3430e1df7d2/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-california-prices/README.md",
+        "bytes": 1473,
+        "sha256": "862cddb48064534c6bf40c0cbd5dd72856dd705dd0ef1c3c3400b38329891bf1"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-california-prices&config=default&split=train&offset=17416&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-california-prices/rows.json",
+        "bytes": 104837,
+        "sha256": "5894028e7038577cb2fa7d720f33989926d1668a90d6da8bae6dfc3f0d56d07f",
+        "offset": 17416,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_BOOKS_GOODREADS",
+    "hf_repo": "multabench/extended-text-cls-books-goodreads",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-books-goodreads/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-books-goodreads/metadata.json",
+        "bytes": 214,
+        "sha256": "f3979475d74883f75d93a04dd68c9767e905d14fb0827cdfdee04a418736deb6"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-books-goodreads",
+        "local_path": "data/sources/hf_previews/extended-text-cls-books-goodreads/repo.json",
+        "bytes": 1398,
+        "sha256": "ff05691fa96c1ef42cb620044721153f35ce3c9e7005e2ed5dd9b2133adb3320"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-books-goodreads",
+        "local_path": "data/sources/hf_previews/extended-text-cls-books-goodreads/size.json",
+        "bytes": 728,
+        "sha256": "83dcafbf3a28eec460281b478b401d8758e3a8da492c5ff14edc998ef2ef02f6"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-books-goodreads/raw/cc037a7e8d2105dc291e7d0ad292dc7f9f5a2bdb/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-books-goodreads/README.md",
+        "bytes": 793,
+        "sha256": "012a56d7391836b1bca152742f2d1db798fd80503b8a3885032a4e1f86ba16f5"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-books-goodreads&config=default&split=train&offset=1515&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-books-goodreads/rows.json",
+        "bytes": 61506,
+        "sha256": "0f7a9b78ec8fc279fcf9f8535d4d8be359100df302fdf0a21a1af71852e6252e",
+        "offset": 1515,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_AMERICAN_EAGLE_PRICES",
+    "hf_repo": "multabench/extended-text-cls-american-eagle-prices",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-american-eagle-prices/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-american-eagle-prices/metadata.json",
+        "bytes": 199,
+        "sha256": "9d43e3e43a34d678cd56c4fd37265f0b1ed72d401344a837110815114dc84e54"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-american-eagle-prices",
+        "local_path": "data/sources/hf_previews/extended-text-cls-american-eagle-prices/repo.json",
+        "bytes": 1421,
+        "sha256": "1e231c9441e522a7d55231f75ca203b0210e951fc7ebd4aab9e905c41c192c74"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-american-eagle-prices",
+        "local_path": "data/sources/hf_previews/extended-text-cls-american-eagle-prices/size.json",
+        "bytes": 741,
+        "sha256": "2ea12151f37f04b69492c5bb5176f610e11793397fc89963c4784e727edadb25"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-american-eagle-prices/raw/304313cb0a5254947db4fac6917c3dd8b7bcef4e/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-american-eagle-prices/README.md",
+        "bytes": 782,
+        "sha256": "46ec333670c5974741d6b77c03e303d17bee889dc0a37a046413883ff5745881"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-american-eagle-prices&config=default&split=train&offset=4683&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-american-eagle-prices/rows.json",
+        "bytes": 58965,
+        "sha256": "a10402c61dd76bb1b7fa1bd37f1575d62e99e82dbc8f6eea061ec1d365d955cf",
+        "offset": 4683,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "MUL_TEXT_KOREAN_DRAMA",
+    "hf_repo": "multabench/extended-text-cls-korean-drama",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-korean-drama/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-cls-korean-drama/metadata.json",
+        "bytes": 189,
+        "sha256": "eb808012b2debb17656ce6c9610a58d47f055773a4bce397612c4a88dbedd252"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-cls-korean-drama",
+        "local_path": "data/sources/hf_previews/extended-text-cls-korean-drama/repo.json",
+        "bytes": 1409,
+        "sha256": "8dac3b5d17822d9c3f1319a5b353c3dcecd9cf3277c1996298b5cf037242779d"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-cls-korean-drama",
+        "local_path": "data/sources/hf_previews/extended-text-cls-korean-drama/size.json",
+        "bytes": 714,
+        "sha256": "2a245006500d2d39cd39d5ed00235684b45dcafd48f8e6dd471891e427ba169b"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-cls-korean-drama/raw/b1434dad4be3182b383881d13bb8559f5dd7fb5a/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-cls-korean-drama/README.md",
+        "bytes": 642,
+        "sha256": "8ed1cf18f36fe82c3000182669734b90fe1b921b5523ba35890afced538613aa"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-cls-korean-drama&config=default&split=train&offset=492&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-cls-korean-drama/rows.json",
+        "bytes": 75753,
+        "sha256": "54c3cbb52b88957c871be3113f306bd58ff02443fabd7a1cb2e3f549bbd62e19",
+        "offset": 492,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_WIKILIQ_PRICES",
+    "hf_repo": "multabench/extended-text-reg-wikiliq-prices",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wikiliq-prices/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wikiliq-prices/metadata.json",
+        "bytes": 172,
+        "sha256": "c9f9ba9d24dbbca9267e0d19b5b9e625c061b9f2695cbcb121087f7446c60276"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-wikiliq-prices",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wikiliq-prices/repo.json",
+        "bytes": 1418,
+        "sha256": "77afe0b98eb09ba84a7e1285bf08a88cc33d5cede4f60d4297c096a752535ebe"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-wikiliq-prices",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wikiliq-prices/size.json",
+        "bytes": 728,
+        "sha256": "a675265a0b06864a468b310dd23cb4d3dc44f4382cf4c57a6718b78152992723"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wikiliq-prices/raw/1200f99316f68f965e0773bd232752bc8901e6e2/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wikiliq-prices/README.md",
+        "bytes": 704,
+        "sha256": "14d4acd7e5396048b73e5ba92e86a81db5718d4aa01f18a25bf1b54334c14f66"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-wikiliq-prices&config=default&split=train&offset=8519&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wikiliq-prices/rows.json",
+        "bytes": 28854,
+        "sha256": "5c4157a170cba15b186ee1e7bb972c46015c839de59e99a5b959b0444ceabeea",
+        "offset": 8519,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_CHOCOLATE_BAR_RATINGS",
+    "hf_repo": "multabench/extended-text-reg-chocolate-bar-ratings",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-chocolate-bar-ratings/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-chocolate-bar-ratings/metadata.json",
+        "bytes": 178,
+        "sha256": "8fbb896e56059aae00945ec58921fe499067aa3724bc6cea88332a44cc291323"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-chocolate-bar-ratings",
+        "local_path": "data/sources/hf_previews/extended-text-reg-chocolate-bar-ratings/repo.json",
+        "bytes": 1409,
+        "sha256": "63ca5ef08295f70438ec74f71ac76f08f8fc3306427d9646bd6ae738efe4d4b6"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-chocolate-bar-ratings",
+        "local_path": "data/sources/hf_previews/extended-text-reg-chocolate-bar-ratings/size.json",
+        "bytes": 728,
+        "sha256": "21cf9a312c7084292dd6bf935b935081d8c494413fa0fd2e5ff7ca8ac0ccba6e"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-chocolate-bar-ratings/raw/a8d54ad44fbaf9b6194a64fe447804ccbe0c9f3c/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-chocolate-bar-ratings/README.md",
+        "bytes": 695,
+        "sha256": "44650890027ee84a9159fa4a1168f152357283edda04fb2f30554cb024fe763d"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-chocolate-bar-ratings&config=default&split=train&offset=977&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-chocolate-bar-ratings/rows.json",
+        "bytes": 14911,
+        "sha256": "caadf0cadbfd66cd0ef0c7bb19c6541c035ce0d386d8c42791c03204c06d0e14",
+        "offset": 977,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_RAMEN_RATINGS",
+    "hf_repo": "multabench/extended-text-reg-ramen-ratings",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-ramen-ratings/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-ramen-ratings/metadata.json",
+        "bytes": 169,
+        "sha256": "1b927b668ebc888237b93ddf8a950b7fd0743eb235744065c33818c465d7fc20"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-ramen-ratings",
+        "local_path": "data/sources/hf_previews/extended-text-reg-ramen-ratings/repo.json",
+        "bytes": 1195,
+        "sha256": "739537f66f392cb9d230bdd248a5cc345858d65b32e84344b4286031ea45989e"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-ramen-ratings",
+        "local_path": "data/sources/hf_previews/extended-text-reg-ramen-ratings/size.json",
+        "bytes": 707,
+        "sha256": "b1cfaa7dbaa87437baffccdd7052933d7d811b8bfaed6ef0e759cda5e2e42af6"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-ramen-ratings/raw/717db0bd79758e7b4299dd5a8436f4f30792cb74/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-ramen-ratings/README.md",
+        "bytes": 532,
+        "sha256": "5f0b1c1398deebfd52c82198eb12fa0e89440c57a6bb1a19cb6d5129a69bd914"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-ramen-ratings&config=default&split=train&offset=1623&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-ramen-ratings/rows.json",
+        "bytes": 8491,
+        "sha256": "410db92f14059fef1950b800eba1f54df76ea9ff2790ae84f1a5fbf488960380",
+        "offset": 1623,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_WINE_POLISH_MARKET",
+    "hf_repo": "multabench/extended-text-reg-wine-polish-market",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wine-polish-market/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-polish-market/metadata.json",
+        "bytes": 181,
+        "sha256": "f2476cf9889e71256d6dc3bdd67f7c67398f2973a921c027fca6aa22fd99feb5"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-wine-polish-market",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-polish-market/repo.json",
+        "bytes": 1409,
+        "sha256": "3da13c342316913ef3c73eed036637cd304f02ab12c6d93e092f4fd2e042bf63"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-wine-polish-market",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-polish-market/size.json",
+        "bytes": 729,
+        "sha256": "59f8581d1ce2cb9cdf5758e8d8f947ae860253a9b7cc7b3a9aea8f6b471748f7"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wine-polish-market/raw/9ed8650c8534b37463fcd84c446618b517437841/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-polish-market/README.md",
+        "bytes": 887,
+        "sha256": "759be8a97f60013f331d7ae18fd8f3fceaf0e964276d3776971010c0b1ddea4b"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-wine-polish-market&config=default&split=train&offset=144&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-polish-market/rows.json",
+        "bytes": 24299,
+        "sha256": "928f2e2c61504af1ab092a75ef7344b12647946ed88aaa9d3cba9004c33e5457",
+        "offset": 144,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_WINE_VIVINO_SPAIN",
+    "hf_repo": "multabench/extended-text-reg-wine-vivino-spain",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wine-vivino-spain/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-vivino-spain/metadata.json",
+        "bytes": 174,
+        "sha256": "18fc50d60b6180b373c4dc036127a3210f70c59a40edea7dc7bda28c772e835c"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-wine-vivino-spain",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-vivino-spain/repo.json",
+        "bytes": 1269,
+        "sha256": "7ce54c7b9e27aed7816d30881ee4151294254005c78e41d2ae32cc9c9358eb8a"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-wine-vivino-spain",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-vivino-spain/size.json",
+        "bytes": 719,
+        "sha256": "92cdca817e82209c6de8d5352cf72ffa3b615fc72f1f4d7150e9bb79d07b6f52"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-wine-vivino-spain/raw/698bc2ed3de3e863c5cf19e3fa31f87a3a547895/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-vivino-spain/README.md",
+        "bytes": 602,
+        "sha256": "935121a2c4c4342949b02c771c39dea104bf7ee201a3b8a9d20dc90197d0c6d8"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-wine-vivino-spain&config=default&split=train&offset=4965&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-wine-vivino-spain/rows.json",
+        "bytes": 10886,
+        "sha256": "2a21af6470988795686aa16bef68c10ee0bb03a992372efdd08afdfb19bdfc20",
+        "offset": 4965,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_AIRBNB_SEATTLE",
+    "hf_repo": "multabench/extended-text-reg-airbnb-seattle",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-airbnb-seattle/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-airbnb-seattle/metadata.json",
+        "bytes": 230,
+        "sha256": "14acda2c23c832474693e07551e08ac16a7abe7255c1a7c98cf112e3ff81752a"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-airbnb-seattle",
+        "local_path": "data/sources/hf_previews/extended-text-reg-airbnb-seattle/repo.json",
+        "bytes": 1419,
+        "sha256": "3b04886a0fe20ad8a8c488609b76479ec0dc00a6a809f4afc6b90d0b32a471d9"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-airbnb-seattle",
+        "local_path": "data/sources/hf_previews/extended-text-reg-airbnb-seattle/size.json",
+        "bytes": 728,
+        "sha256": "d189df4468fec81b186228cad45d0664e819efa9777269f2a4b2abc287ee1cd8"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-airbnb-seattle/raw/d4018eb0fc5787284696e8d9a607960fcb307c96/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-airbnb-seattle/README.md",
+        "bytes": 2363,
+        "sha256": "85fc51aace87f62a9d127c6a71e0f6a41f9d6ece4f3b9ddc567b61481fd50e15"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-airbnb-seattle&config=default&split=train&offset=1916&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-airbnb-seattle/rows.json",
+        "bytes": 231455,
+        "sha256": "af13d09a29285c48be598e9bb803aff5cd3ac666db2de98180faa19d9b96b6f0",
+        "offset": 1916,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_ANIME_PLANET",
+    "hf_repo": "multabench/extended-text-reg-anime-planet",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-anime-planet/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-anime-planet/metadata.json",
+        "bytes": 177,
+        "sha256": "442965d95463d1516d17b32af85a1f27893cff631270fdc82c81f09f0e5bc282"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-anime-planet",
+        "local_path": "data/sources/hf_previews/extended-text-reg-anime-planet/repo.json",
+        "bytes": 1404,
+        "sha256": "7be59ce1a9d2a139a7fef14b2a2daac477073ba9951447ef9600cc3ba0835643"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-anime-planet",
+        "local_path": "data/sources/hf_previews/extended-text-reg-anime-planet/size.json",
+        "bytes": 722,
+        "sha256": "7d256c5b82d81fdfcf04ff11f3c1ecb24f511d94e7d7284e8f3c08f46ad0b72b"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-anime-planet/raw/627046c7160a0cd184c5f4e08ceeff12afbcbe3f/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-anime-planet/README.md",
+        "bytes": 777,
+        "sha256": "4569deeca3e238f847f2af8809e0ca1e93c529fe926cefd0079ea16cc64099b6"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-anime-planet&config=default&split=train&offset=10075&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-anime-planet/rows.json",
+        "bytes": 35200,
+        "sha256": "436b537cf0594650ac29db90c886b2b296d7006232cd33c4b1f413d33c667b7c",
+        "offset": 10075,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_USED_CAR_PAKISTAN",
+    "hf_repo": "multabench/extended-text-reg-used-car-pakistan",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-used-car-pakistan/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-pakistan/metadata.json",
+        "bytes": 174,
+        "sha256": "9b77664e54629d67b3fd08c6fbccd5efa5323f0b443d5876f4829d5278256522"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-used-car-pakistan",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-pakistan/repo.json",
+        "bytes": 1417,
+        "sha256": "a188880dd0a2b2d6d9310bf6293fe028c13d23da0952ff2e427962ac5e628f11"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-used-car-pakistan",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-pakistan/size.json",
+        "bytes": 729,
+        "sha256": "c103ad96b81914ed485a7c42e677aec1acaa4622e5e4291aea8ce9540ae5e69a"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-used-car-pakistan/raw/d277765fead3b219bbd62ada4bb6a6b996f96db4/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-pakistan/README.md",
+        "bytes": 661,
+        "sha256": "b1afaac294065f3bd54dcf72d51426bd75417895b70636653c1e9d0de77abe80"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-used-car-pakistan&config=default&split=train&offset=36332&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-pakistan/rows.json",
+        "bytes": 12710,
+        "sha256": "85eed75e7414cc5772da8dd4f5b564a43a81600a519174fd74471fc2df9b0b78",
+        "offset": 36332,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_USED_CAR_SAUDI",
+    "hf_repo": "multabench/extended-text-reg-used-car-saudi",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-used-car-saudi/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-saudi/metadata.json",
+        "bytes": 171,
+        "sha256": "cf79647bd3f17fe3b07599aa23f7d128effe0c8d1ae5d5d1ecf8481ec454dd71"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-used-car-saudi",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-saudi/repo.json",
+        "bytes": 1411,
+        "sha256": "2fb06fab70447fde3425b2ac02a766ef3ac44a958d1b51bd86abc9306caaf2ce"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-used-car-saudi",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-saudi/size.json",
+        "bytes": 709,
+        "sha256": "f01101e66517a71a0b512701ff08bff3b5ac12d9839d0a169800a17fb23d5710"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-used-car-saudi/raw/9a3813954d5c639d6ff03c3a45ab252d5ed00d9a/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-saudi/README.md",
+        "bytes": 727,
+        "sha256": "09823d96b09b93131dba76c2ace551951a1f684941c405f2b96b978eed08383c"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-used-car-saudi&config=default&split=train&offset=4853&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-used-car-saudi/rows.json",
+        "bytes": 14487,
+        "sha256": "694c08d5100b90ccccf54b2450f13eed4455c7ad16dca312ee5bafa7e42caabe",
+        "offset": 4853,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  },
+  {
+    "released_id": "REG_TEXT_FIFA22_WAGES",
+    "hf_repo": "multabench/extended-text-reg-fifa22-wages",
+    "files": [
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-fifa22-wages/raw/main/metadata.json",
+        "local_path": "data/sources/hf_previews/extended-text-reg-fifa22-wages/metadata.json",
+        "bytes": 178,
+        "sha256": "086a99a5f3c0d313c5eb22f1759f5473f9fdb886ec340a4a5ee3b65981c3b16e"
+      },
+      {
+        "url": "https://huggingface.co/api/datasets/multabench/extended-text-reg-fifa22-wages",
+        "local_path": "data/sources/hf_previews/extended-text-reg-fifa22-wages/repo.json",
+        "bytes": 1407,
+        "sha256": "a343160db227c7e60452c9f7fdbe6f08a6bee7b1b98fe71c68f69748732bd930"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/size?dataset=multabench%2Fextended-text-reg-fifa22-wages",
+        "local_path": "data/sources/hf_previews/extended-text-reg-fifa22-wages/size.json",
+        "bytes": 714,
+        "sha256": "2972369c127eb18f8e2f231c29d54625b366276e1a52464c2fa163bdbddcf57d"
+      },
+      {
+        "url": "https://huggingface.co/datasets/multabench/extended-text-reg-fifa22-wages/raw/c10a81cd7aba153c207c36586dbcf5704768f432/README.md",
+        "local_path": "data/sources/hf_previews/extended-text-reg-fifa22-wages/README.md",
+        "bytes": 1225,
+        "sha256": "c9352f2f7f6624c2ba779161fb8c561914679966863fbe0bc4fb4007ed3aa016"
+      },
+      {
+        "url": "https://datasets-server.huggingface.co/rows?dataset=multabench%2Fextended-text-reg-fifa22-wages&config=default&split=train&offset=7143&length=50",
+        "local_path": "data/sources/hf_previews/extended-text-reg-fifa22-wages/rows.json",
+        "bytes": 38607,
+        "sha256": "55dfa1f6e9a46f223f5c98ac4097a587c3d890f67020f2e48991ceebdf9df4e4",
+        "offset": 7143,
+        "requested_rows": 50,
+        "sampling": "seeded contiguous block; not representative random rows"
+      }
+    ]
+  }
+]

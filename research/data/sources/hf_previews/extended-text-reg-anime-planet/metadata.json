@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-anime-planet",
+  "target": "Rating Score",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 14391,
+  "num_features": 14,
+  "date_cols": []
+}

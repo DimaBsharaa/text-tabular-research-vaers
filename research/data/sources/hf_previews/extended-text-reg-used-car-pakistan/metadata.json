@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-used-car-pakistan",
+  "target": "Price",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 72655,
+  "num_features": 9,
+  "date_cols": []
+}

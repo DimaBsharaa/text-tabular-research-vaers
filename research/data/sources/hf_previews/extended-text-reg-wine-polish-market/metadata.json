@@ -1,0 +1,9 @@
+{
+  "slug": "multabench-full-wine-polish-market",
+  "target": "price (PLN)",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 2247,
+  "num_features": 18,
+  "date_cols": []
+}

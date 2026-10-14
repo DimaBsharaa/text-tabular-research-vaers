@@ -1,0 +1,701 @@
+{
+  "paper_version_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/README.md",
+      "local_path": "data/sources/paper_version/README.md",
+      "bytes": 2032,
+      "sha256": "f08652420a9a9dbb43b891f9a3b11f596d83d4e43a470dad060f02a7d9e53b49"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/datasets/all_datasets.py",
+      "local_path": "data/sources/paper_version/multabench/datasets/all_datasets.py",
+      "bytes": 12105,
+      "sha256": "53eb0532ded23ad9829bf904e6f47aeb7da5a28e3f5dbd751900f451060ecb8d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/datasets/curation.py",
+      "local_path": "data/sources/paper_version/multabench/datasets/curation.py",
+      "bytes": 9930,
+      "sha256": "cc7ab90b12e4c75036e998ddabe3ec96ff1ab5171c682855d069658945e15daf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/datasets/curation_mapping.py",
+      "local_path": "data/sources/paper_version/multabench/datasets/curation_mapping.py",
+      "bytes": 913,
+      "sha256": "1e88e45b7ccc6d327fc3637beb03bfa024e67342d2455e235f5336127600a746"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/datasets/curation_objects.py",
+      "local_path": "data/sources/paper_version/multabench/datasets/curation_objects.py",
+      "bytes": 2365,
+      "sha256": "877841cb64c8812c1f0e9b39eb49de0d019018774df6de675317c763cd288c81"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/utils/curation.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/utils/curation.py",
+      "bytes": 8593,
+      "sha256": "273d21e2af8cfb648c4009af6db6118eef4489e49ea6ef96407fb59905414d3b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/scripts/do_dataset_summary.py",
+      "local_path": "data/sources/paper_version/multabench/scripts/do_dataset_summary.py",
+      "bytes": 7850,
+      "sha256": "ea4adaaa8370bd59280cba65596e46710a61701ebecdecb19aad64d3da4ad32c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/analysis/text_full_verification.py",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/analysis/text_full_verification.py",
+      "bytes": 5298,
+      "sha256": "d92e7734a1389c0eebf8638fea5e76a22ef478d40aad422ac8b4e8f1b568ba4e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/analysis/pool_names.py",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/analysis/pool_names.py",
+      "bytes": 5744,
+      "sha256": "014e5ea9b28ee02fd1f87ddc79e34bbb8fbe13c99d6a98b918ad1fbfac733bda"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/analysis/pass_matrix.py",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/analysis/pass_matrix.py",
+      "bytes": 7376,
+      "sha256": "149fdaaa023952d532297ec4d6361d758fcf85731ea69cea4250656d5084ff4f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/analysis/committee_pool.py",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/analysis/committee_pool.py",
+      "bytes": 7077,
+      "sha256": "2f9b8e1e43c3ae66482647f4a5895b1e8eaef5958283b4306a085da7d3d5f205"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/analysis_curation_sensitivity/pool_scores_long.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/analysis_curation_sensitivity/pool_scores_long.csv",
+      "bytes": 834285,
+      "sha256": "25f2fe9623d82914d985d0b7708f432cb4d3b626a51f6d92d487bc58c1c246bb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/analysis_curation_sensitivity/pass_matrix.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/analysis_curation_sensitivity/pass_matrix.csv",
+      "bytes": 5363,
+      "sha256": "f779f37c8cf604d1cd641a1c69b5baaf78583151882b9c0522e4c5d2065918c0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/tabstar_corpus/text_50_datasets.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/tabstar_corpus/text_50_datasets.csv",
+      "bytes": 1067083,
+      "sha256": "bc572dc9e6a36feb9377b5304212aa174ebee9b436b4538afe7118e6b311c4d1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/tabstar_corpus/texttabench_datasets.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/tabstar_corpus/texttabench_datasets.csv",
+      "bytes": 141447,
+      "sha256": "ec8315d549ecd9779e2ea695924faa1dbb380d978a92616389f23444674a3e5c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_CALIFORNIA_PRICES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_CALIFORNIA_PRICES.py",
+      "bytes": 12983,
+      "sha256": "17590ed3ff70bf20c9c1398b6d911482cb7676e3e4c8dba09d678eaa3211a660"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_FAKE_JOB_POSTING.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_FAKE_JOB_POSTING.py",
+      "bytes": 11358,
+      "sha256": "4f4ea303a13101f1636ec0e4d634b05cce4eb21df5be08564a72807e89ec6d9c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_IMDB_GENRE.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_IMDB_GENRE.py",
+      "bytes": 4974,
+      "sha256": "d7b9297018e360c84bfe5cd2ce963c77441165552271b352f949b084d99eb169"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_JIGSAW_TOXICITY.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_JIGSAW_TOXICITY.py",
+      "bytes": 5774,
+      "sha256": "7be766860c48c3bd76cad1c582223b6e192bed124cfc24f8bb76f4dd3bbdc6cf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_KICKSTARTER_FUNDING.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_KICKSTARTER_FUNDING.py",
+      "bytes": 3977,
+      "sha256": "38c8eca726c2e8b5b858776f30c1ae1d31e55c1f791ff86dfd9a7f9c2256e204"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/BIN_TEXT_OSHA_INJURY.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/BIN_TEXT_OSHA_INJURY.py",
+      "bytes": 8478,
+      "sha256": "bb8850750da2cd820fb80e92ce107a5372acf2a46ae5b376b981f74d8d8145b7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_AMERICAN_EAGLE_PRICES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_AMERICAN_EAGLE_PRICES.py",
+      "bytes": 11014,
+      "sha256": "6423d16140a4ce5c988c9c079c7910312c3e522aa6cbb3ee503f49e0358177aa"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_BOOKS_GOODREADS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_BOOKS_GOODREADS.py",
+      "bytes": 8640,
+      "sha256": "905292d85e54abb6fd9f63c6e99d7eff26ba12b6e078d47ea225023b2aae190f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_BOX_OFFICE.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_BOX_OFFICE.py",
+      "bytes": 1457,
+      "sha256": "07d929d7ba1530301344481d10cac93457e0cd26c3d41d32e0040cfa20a49a1c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_CONSUMER_COMPLAINT.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_CONSUMER_COMPLAINT.py",
+      "bytes": 13129,
+      "sha256": "b3c1f301cd7fe5cabf51c4f66de496ab2e9c9088688e90ed7f3fe94881269ffd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_DATA_SCIENTIST_SALARY.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_DATA_SCIENTIST_SALARY.py",
+      "bytes": 3714,
+      "sha256": "f2f08a060bc9c1505cbbf852253ed141759791b33f8657640e3ff72192d8402b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_KOREAN_DRAMA.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_KOREAN_DRAMA.py",
+      "bytes": 9818,
+      "sha256": "f09ade1e48deb61f9c577bda97b6ac691f905d0d1ae24c590080238cedc2d72e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_MELBOURNE_AIRBNB.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_MELBOURNE_AIRBNB.py",
+      "bytes": 68634,
+      "sha256": "0210d9e3a3263466f59fa065dae71f886f76e9124c62414d89a233b7d19def1a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_MICHELIN_RESTAURANTS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_MICHELIN_RESTAURANTS.py",
+      "bytes": 14208,
+      "sha256": "0d9840f024df73b782a88ce15403993948d1813c5f0cd163063a0c43f4361cad"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_NEWS_CHANNEL.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_NEWS_CHANNEL.py",
+      "bytes": 3741,
+      "sha256": "6f4d1d2f96ea92d7bc9ffadd46f0d562062792723cfa64de6bd691ad1bc039d3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_PRODUCT_SENTIMENT.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_PRODUCT_SENTIMENT.py",
+      "bytes": 2311,
+      "sha256": "58a11fb4310a802327b1ee1eaa2cc33f13e298590e66010d73eaf815f7eeda5b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_SPOTIFY_GENRES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_SPOTIFY_GENRES.py",
+      "bytes": 3512,
+      "sha256": "306ab07542822b9eab7d33f2cf988ca9cbf72b50b49822511be6f50b8a7455d5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_US_ACCIDENTS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_US_ACCIDENTS.py",
+      "bytes": 6571,
+      "sha256": "7b1f3b742c2cc7fdd2ecf9be3ffe0702226856f0b24ef3ff167f419f1ed57c26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_WINE_REVIEW.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_WINE_REVIEW.py",
+      "bytes": 4258,
+      "sha256": "a9e19d561f4643478e71cfa1df04197b5cb44eacc48fa6b705fbab5bd673823a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/MUL_TEXT_WOMEN_CLOTHING_REVIEW.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/MUL_TEXT_WOMEN_CLOTHING_REVIEW.py",
+      "bytes": 5194,
+      "sha256": "5281b21ff2c1d88844da70a0e7ef44be7911632040fd10c11c5523b3bd024fcd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_AIRBNB_SEATTLE.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_AIRBNB_SEATTLE.py",
+      "bytes": 49199,
+      "sha256": "7b42c12d44809089120c64e3fc583bd1c3fc7c245b41d0878b9f5a180b0a5561"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_ANIME_PLANET.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_ANIME_PLANET.py",
+      "bytes": 7861,
+      "sha256": "140e58b4a05d678ebd63640fad3d9f809531bc1d2c10dfbf4a4d475e00e31419"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_BABIES_PRICES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_BABIES_PRICES.py",
+      "bytes": 3456,
+      "sha256": "a3db72d7a6e6dac6fa0a02d3e598067b2613125d14e1760fbdcad578aa789dcb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_BOOK_PRICE.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_BOOK_PRICE.py",
+      "bytes": 10215,
+      "sha256": "543deeceae5c864e973bdd303eabd73108077e968c42f082a1790668aac49f32"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_BOOK_READABILITY.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_BOOK_READABILITY.py",
+      "bytes": 14820,
+      "sha256": "7ae6fea73a805656e2f7e9fc81bc2d30ddd2db6140956b4c9d55afac096107da"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_CHOCOLATE_BAR_RATINGS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_CHOCOLATE_BAR_RATINGS.py",
+      "bytes": 2658,
+      "sha256": "4e094a7e01e668e04414d1f8a0ae60282d9a6dc0625f99cb945176b8f97146c0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_FIFA22_WAGES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_FIFA22_WAGES.py",
+      "bytes": 4261,
+      "sha256": "37936bd06881ea30d495ace91a99e3f9f9138b2903a9d24917889baf27cc1e3c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_MERCARI_MARKETPLACE.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_MERCARI_MARKETPLACE.py",
+      "bytes": 2731,
+      "sha256": "6f2de95d7a001ee100be696d8bcef1e42ebcc9247def93d6efae2ec5c7aac5cb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_MONTGOMERY_SALARIES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_MONTGOMERY_SALARIES.py",
+      "bytes": 3548,
+      "sha256": "78989f07cde35f207b8dd97262e4f5d62cbe8605cd933e254cd76bde97d00c31"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_RAMEN_RATINGS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_RAMEN_RATINGS.py",
+      "bytes": 2015,
+      "sha256": "a168ba82a94122d775a1e23f25a785ba1495ea6cc44426c130b8da6fdc8196b7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_ROTTEN_TOMATOES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_ROTTEN_TOMATOES.py",
+      "bytes": 7750,
+      "sha256": "e7c8f0d11423198800145b9cf4ab324674734c66bd0b82bd72f86cd5cb4e225b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_SCIMAGOJR_IMPACT.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_SCIMAGOJR_IMPACT.py",
+      "bytes": 4229,
+      "sha256": "b66d2b6c0f3634f7f72d14cff39a236fc34faba8f79792f9284511f1f81d6d31"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_USED_CAR_PAKISTAN.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_USED_CAR_PAKISTAN.py",
+      "bytes": 2529,
+      "sha256": "923afc46ef8dd0745dc72b218d5c7a6722bf6f94d216bf5ac5f368b2bd384267"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_USED_CAR_SAUDI.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_USED_CAR_SAUDI.py",
+      "bytes": 2596,
+      "sha256": "471caeb2eb75425698605ad251720b05c75df440afe324ceaf0f44bb1cbdb58c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_VANCOUVER_SALARIES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_VANCOUVER_SALARIES.py",
+      "bytes": 2112,
+      "sha256": "378d0c5595ff36b3b381577bdd4dd1b24387afc4093b6abf0221cbac5ecd6e85"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_VIDEO_GAMES_SALES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_VIDEO_GAMES_SALES.py",
+      "bytes": 1970,
+      "sha256": "b52bccabb815ab99ad67758e30293ccda625d065d7642ba3e7f75d92e5f76108"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_WIKILIQ_PRICES.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_WIKILIQ_PRICES.py",
+      "bytes": 7434,
+      "sha256": "e29b367ab3517ce4da9800ff96c18520e7b18d5c6106c39a5e30d4e87f5cfc6c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_WINE_POLISH_MARKET.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_WINE_POLISH_MARKET.py",
+      "bytes": 4186,
+      "sha256": "8983de2a16c3e154890032d072492b242c71901622a118e01de2fad51f68190d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_WINE_VIVINO_SPAIN.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_WINE_VIVINO_SPAIN.py",
+      "bytes": 2383,
+      "sha256": "539dd8c1e24c06b254e181dab5925cd86055480b3d5a002870040a2b2749ab47"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/benchmark/datasets/REG_TEXT_ZOMATO_RESTAURANTS.py",
+      "local_path": "data/sources/paper_version/multabench/benchmark/datasets/REG_TEXT_ZOMATO_RESTAURANTS.py",
+      "bytes": 29251,
+      "sha256": "f7ab2b4ffb6e1f78ff3b611209b7a6696a2682821926b61797105d42d59e8eea"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/analysis_curation_sensitivity/text_full_uploaded_joint_signal.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/analysis_curation_sensitivity/text_full_uploaded_joint_signal.csv",
+      "bytes": 6981,
+      "sha256": "b23fa35fe856b68e13b580648f5526c17c05f63c5fd314f7d9c94e9696b2bfb7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/datasets_summary.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/datasets_summary.csv",
+      "bytes": 1644,
+      "sha256": "928ab76f66d13878a4c96614a2acede82521c53b6a7bc0a399b5ef8c7f390031"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/datasets_summary_extra.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/datasets_summary_extra.csv",
+      "bytes": 1630,
+      "sha256": "70c8b83e7eb3beecef5e3e32ce18a86d651b4a438028375fb0cb7aebbc144e05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/BIN_TEXT_FAKE_JOB_POSTING.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/BIN_TEXT_FAKE_JOB_POSTING.csv",
+      "bytes": 17796,
+      "sha256": "cc7d822a15f7aeafa14adc2fa8ebf9fdd5c861ffd219bf94360f1d98e2a9d867"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/BIN_TEXT_JIGSAW_TOXICITY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/BIN_TEXT_JIGSAW_TOXICITY.csv",
+      "bytes": 17574,
+      "sha256": "010854ac42ee00010341fb65739b5e2bc01d6e76c46b8b161590eb870c8a960c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/BIN_TEXT_KICKSTARTER_FUNDING.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/BIN_TEXT_KICKSTARTER_FUNDING.csv",
+      "bytes": 18351,
+      "sha256": "b6039b153c8e14b1f35bfcde720d2a87df81d626a2bc16c29ba0d5075cfc88c6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_DATA_SCIENTIST_SALARY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_DATA_SCIENTIST_SALARY.csv",
+      "bytes": 18809,
+      "sha256": "ddb8a89a85c8453c3035c115d1d43176fe37c884650770ab1dbefc720289ea14"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_MICHELIN_RESTAURANTS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_MICHELIN_RESTAURANTS.csv",
+      "bytes": 18574,
+      "sha256": "b2dffaaf0780728ae92b603394d520afb2bf052e6f8c99499cecdea701b0b78d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_PRODUCT_SENTIMENT.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_PRODUCT_SENTIMENT.csv",
+      "bytes": 17894,
+      "sha256": "26bc2fd41ff76a9a2fb753a6b6e098173976803607124e6a337f9485fdc49dce"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_SPOTIFY_GENRES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_SPOTIFY_GENRES.csv",
+      "bytes": 10248,
+      "sha256": "15e5fba12580f2edb5813b66dd29b2523589c5e1a44f4b9030f8f94a5eb33e91"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_US_ACCIDENTS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_US_ACCIDENTS.csv",
+      "bytes": 16975,
+      "sha256": "50b3ffa5b517207e4184e2acf8be078a181dad82f56c6654ea4e453fa6f57b1a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_WINE_REVIEW.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_WINE_REVIEW.csv",
+      "bytes": 9862,
+      "sha256": "d4f5e191fdb2f4e4f8992d5ddd42c889a94a79ef150c4064ac64c41599984622"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/MUL_TEXT_WOMEN_CLOTHING_REVIEW.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/MUL_TEXT_WOMEN_CLOTHING_REVIEW.csv",
+      "bytes": 18770,
+      "sha256": "ee99071331319868a0cd6688eb2deb4def80f9d475a28dd3fae91a4685fac1cf"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_BABIES_PRICES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_BABIES_PRICES.csv",
+      "bytes": 17182,
+      "sha256": "67dfe553a491467918ccad9da4f17a83c23e8e6a0c1c1dbaa6739b85ea85cab1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_BOOK_PRICE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_BOOK_PRICE.csv",
+      "bytes": 16613,
+      "sha256": "196505aebd6fc13896f5fe2600ee34f09a2b7416fa45981f542835bf26e3d267"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_BOOK_READABILITY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_BOOK_READABILITY.csv",
+      "bytes": 16742,
+      "sha256": "c571addcff341858dbcf274b9bd19cde203bb10ab8b1136f66c82392fb4f0a83"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_MERCARI_MARKETPLACE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_MERCARI_MARKETPLACE.csv",
+      "bytes": 18433,
+      "sha256": "03b6899ceaa15a70a90d1fe8403537f7025cb1c7dabed3edac2ebbeac44ef9dc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_MONTGOMERY_SALARIES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_MONTGOMERY_SALARIES.csv",
+      "bytes": 18371,
+      "sha256": "11e5e4f83fc785b7745aeef6643e55de9b11c1c8a78349c49ad70b87afd82222"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_ROTTEN_TOMATOES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_ROTTEN_TOMATOES.csv",
+      "bytes": 16557,
+      "sha256": "8cb454ae461b7996965ff2bbf5e0d8f99af7984ab550c0db472006ccf5c5e031"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_SCIMAGOJR_IMPACT.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_SCIMAGOJR_IMPACT.csv",
+      "bytes": 16740,
+      "sha256": "77e8e0fd7ddd0074bd06b6f96adc4a275a220ba6b278f38e38b090b2629a6340"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_VANCOUVER_SALARIES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_VANCOUVER_SALARIES.csv",
+      "bytes": 18191,
+      "sha256": "0794a516385203260abfbc10c3abd23b95a6134be9f0d04be72fed920d0d65c1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_VIDEO_GAMES_SALES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_VIDEO_GAMES_SALES.csv",
+      "bytes": 17004,
+      "sha256": "513a2829bd557d52656d9d1f2d8018e0f0854458d41a2a3e16d6f25a44119607"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text/REG_TEXT_ZOMATO_RESTAURANTS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text/REG_TEXT_ZOMATO_RESTAURANTS.csv",
+      "bytes": 18173,
+      "sha256": "5e0dad452c09f312c222cd7b737dbbbef4ffc937f4a596214a5041a626883722"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/BIN_TEXT_FINANCIAL_CONSUMER_COMPLAINT.csv",
+      "bytes": 18008,
+      "sha256": "92a32e6f07ba8fa336ebb0ef916c3599e050e8c5f090147a57624477db81839e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/BIN_TEXT_SOCIAL_IMDB_GENRE_PREDICTION.csv",
+      "bytes": 17979,
+      "sha256": "4668359db4947513a0f4c8ba84aa9f96809d9c28ed96aff3cc02c7a11ec17a7b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/BIN_TEXT_TRANSPORTATION_OSHA_ACCIDENT_INJURY_DATA.csv",
+      "bytes": 20410,
+      "sha256": "306a7d1423dcbe02002503653a116c28bf4376f296f871ed3d8f1ba033fea83e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/MUL_TEXT_FOOD_YELP_REVIEWS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/MUL_TEXT_FOOD_YELP_REVIEWS.csv",
+      "bytes": 15815,
+      "sha256": "7c1a4d938cc60c8f4cfecaae793161787c71dc41ad4e745c627fde3cfd5738f6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/MUL_TEXT_HOUSES_MELBOURNE_AIRBNB.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/MUL_TEXT_HOUSES_MELBOURNE_AIRBNB.csv",
+      "bytes": 17013,
+      "sha256": "3f78e48e2b7bcaccd739e3ad2cf71a108eeb93f01084ce720d881457cf6b65a9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_GOOGLE_QA_TYPE_REASON.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_GOOGLE_QA_TYPE_REASON.csv",
+      "bytes": 18009,
+      "sha256": "90b1bd155822955475ee4fb12af5cd6f4c8072b20fdddeefb6e6415fbe36f88c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_HEARTHSTONE_CARD_GAME_WARCRAFT.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_HEARTHSTONE_CARD_GAME_WARCRAFT.csv",
+      "bytes": 19814,
+      "sha256": "73c6c458a29d1abba01646cdbd10c68416388625b8c7f7e2aaa7031c131c1f0b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/MUL_TEXT_SOCIAL_NEWS_CHANNEL_CATEGORY.csv",
+      "bytes": 18009,
+      "sha256": "e5e45847b0aac7aa40566af403e1b467711e783c0f198fb7a9acfaff2d7355f3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_AMERICAN_EAGLE_PRICES.csv",
+      "bytes": 18402,
+      "sha256": "f93ee1abfd61e65f50260fffc48be47eb4cfdc556285f8ce866071493bacc7ea"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_BIKE_PRICE_BIKEWALE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_BIKE_PRICE_BIKEWALE.csv",
+      "bytes": 18031,
+      "sha256": "d3c1d2b4daa6c6fed527e0eb5b6e6a7cae26542ac848bb1fc733246fbfba3157"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_CAR_PRICE_CARDEKHO.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_CAR_PRICE_CARDEKHO.csv",
+      "bytes": 17822,
+      "sha256": "8f4b41744afb9fc456df822f69e39d57f0dfeb9b2383bb61955e59b4b286129a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_JC_PENNEY_PRODUCT_PRICE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_JC_PENNEY_PRODUCT_PRICE.csv",
+      "bytes": 18824,
+      "sha256": "5831d67b537443c77c2041c60ac05cc748ee74de642179015d38224bce935e68"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_LAPTOP_INDIAN_PRICES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_CONSUMER_LAPTOP_INDIAN_PRICES.csv",
+      "bytes": 18211,
+      "sha256": "3f4a457ecd543899e59f21a2e863dae54a11b89bfc135e1e8ebcb0488b9595eb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_ALCOHOL_WIKILIQ_PRICES.csv",
+      "bytes": 17875,
+      "sha256": "95f8eb89a3f7040f22cedd05d39536deec059061764cc5bb302a138f1a0f5859"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_BEER_RATINGS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_BEER_RATINGS.csv",
+      "bytes": 15801,
+      "sha256": "0bf5734895a1422707a83ffd1c6313dc706fb13d55b8b5d6936cc401cddde63c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_CHOCOLATE_BAR_RATINGS.csv",
+      "bytes": 17655,
+      "sha256": "4a40df92b5620d81e85137bcc77d5ff4de4cb6a1c19f04864b37494eaca87fab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_COFFEE_REVIEW.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_COFFEE_REVIEW.csv",
+      "bytes": 16013,
+      "sha256": "5e2d7f3e5435b2f071425376315517afee3949d81af42314b72e4db7fedef7f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_RAMEN_RATINGS_2022.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_RAMEN_RATINGS_2022.csv",
+      "bytes": 17067,
+      "sha256": "f19db652799b0a2afa8e73befc52c354071abdd6377500e043a150a3c180ef45"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_WINE_POLISH_MARKET_PRICES.csv",
+      "bytes": 18435,
+      "sha256": "4efd74ee466da778e03ca04f56842932d73407650197a1ecf8b6c64b9f98a03f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_WINE_VIVINO_SPAIN.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_FOOD_WINE_VIVINO_SPAIN.csv",
+      "bytes": 16814,
+      "sha256": "90281f9712fceee907c8845da0ec71df78a0bf60c9dc7f4b3b16bb11430f1394"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_AIRBNB_SEATTLE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_AIRBNB_SEATTLE.csv",
+      "bytes": 16609,
+      "sha256": "70a953a72ffdcb16745ca5ee1465326559beaa056f02b80aba7eaba65d9491b5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_CALIFORNIA_PRICES_2020.csv",
+      "bytes": 18207,
+      "sha256": "941cd798ff1325252614457d646d0ab6c059b81d124cd403289a8e9436d30c5f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_SAN_FRANCISCO_PERMITS_APPLICATIONS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_HOUSES_SAN_FRANCISCO_PERMITS_APPLICATIONS.csv",
+      "bytes": 20622,
+      "sha256": "70d39621d5767e2e95a4074b3e7763fa59b17de01448f35f05f1cd2aa9f34e9a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_PROFESSIONAL_COMPANY_EMPLOYEES_SIZE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_PROFESSIONAL_COMPANY_EMPLOYEES_SIZE.csv",
+      "bytes": 19618,
+      "sha256": "1ddd5dbd91b88ff3511fbdb159060f8777278784343b1ecf2130a911db7e96f2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_PROFESSIONAL_ML_DS_AI_JOBS_SALARIES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_PROFESSIONAL_ML_DS_AI_JOBS_SALARIES.csv",
+      "bytes": 19474,
+      "sha256": "c5faefc06e786904b79f6524725b49007239a23fc0fe2a8c0497c4ac5d83ee8c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_ANIME_PLANET_RATING.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_ANIME_PLANET_RATING.csv",
+      "bytes": 17610,
+      "sha256": "287c0080cec1f6241a5d0c2defd4a2c3c98e5af228102df3836a74b10e7f9791"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_BOOKS_GOODREADS.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_BOOKS_GOODREADS.csv",
+      "bytes": 16824,
+      "sha256": "af2a859b2d2152f250187e93ff13a32b4cf79396ed530aff160b4a0c43d456f7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_FILMTV_MOVIE_RATING_ITALY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_FILMTV_MOVIE_RATING_ITALY.csv",
+      "bytes": 18811,
+      "sha256": "13e0eb0bc4e5a60aa2f710889bc80e264d662c02b5602e1761cdf5e5ed4bf2df"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_KOREAN_DRAMA.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_KOREAN_DRAMA.csv",
+      "bytes": 16235,
+      "sha256": "b548e2caccfa627b95b0933648a1dc2e17e8125632784d25c0f3e6a4377e48bb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_MOVIES_DATASET_REVENUE.csv",
+      "bytes": 18218,
+      "sha256": "95fd2b4cffabf290e8294f7d26238c7bf37962fda6d12659b357d2fa461b0039"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_MUSEUMS_US_REVENUES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SOCIAL_MUSEUMS_US_REVENUES.csv",
+      "bytes": 17627,
+      "sha256": "0b3546a445d4958e7d468504734500fd96adc814bcb05c4a4c34436516bb0728"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SPORTS_FIFA22_WAGES.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SPORTS_FIFA22_WAGES.csv",
+      "bytes": 16213,
+      "sha256": "26c654d2633a9e7b1043c4d70c677e3aabffcf81b92bfa06094da7183d514ae6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_SPORTS_NBA_DRAFT_VALUE_OVER_REPLACEMENT.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_SPORTS_NBA_DRAFT_VALUE_OVER_REPLACEMENT.csv",
+      "bytes": 20206,
+      "sha256": "bd4115e4b85071bf2539b53d96519dec7d251e17b2f9a0a3803d084326c3533c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_MERCEDES_BENZ_ITALY.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_MERCEDES_BENZ_ITALY.csv",
+      "bytes": 21026,
+      "sha256": "9be94b0516012edabd7e6ec175119977d94ca8b81773c7932a038b10c0c64246"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_PAKISTAN.csv",
+      "bytes": 18806,
+      "sha256": "ed774bc815a032bf337524330e1d6b152f03d19271a5c3c01fa5a01830b332f7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/3bb95079a6146ed35d45187e98bcad5b063273a1/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA.csv",
+      "local_path": "data/sources/paper_version/multabench/leaderboard/results/text_source/REG_TEXT_TRANSPORTATION_USED_CAR_SAUDI_ARABIA.csv",
+      "bytes": 19605,
+      "sha256": "ce76467b6b2412e92cf93bc9f750d17fc905f401723cc4b410292e912816acb1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/alanarazi7/MulTaBench/master/multabench/datasets/all_datasets.py",
+      "local_path": "data/sources/master_all_datasets.py",
+      "bytes": 17337,
+      "sha256": "029df421453a5d726ac0ab4360a209e32ef3bd75280e28fff85b87748e1e3b76"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.10616v1",
+      "local_path": "data/sources/paper_v1.html",
+      "bytes": 717522,
+      "sha256": "e95d3b348fb60ab3f6f2b62e3a90d4b98cde529f48734c95dfc41fd039e68ef7"
+    }
+  ]
+}

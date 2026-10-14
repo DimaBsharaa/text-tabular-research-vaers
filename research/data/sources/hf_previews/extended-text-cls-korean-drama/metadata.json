@@ -1,0 +1,10 @@
+{
+  "slug": "multabench-full-korean-drama",
+  "target": "Score",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 1647,
+  "num_features": 9,
+  "date_cols": [],
+  "num_classes": 10
+}

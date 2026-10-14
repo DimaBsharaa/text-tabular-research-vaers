@@ -1,0 +1,10 @@
+{
+  "slug": "multabench-full-american-eagle-prices",
+  "target": "price",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 22662,
+  "num_features": 13,
+  "date_cols": [],
+  "num_classes": 5
+}

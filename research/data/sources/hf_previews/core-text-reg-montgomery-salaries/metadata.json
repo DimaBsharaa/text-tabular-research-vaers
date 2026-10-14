@@ -1,0 +1,9 @@
+{
+  "dataset_id": "REG_TEXT_PROFESSIONAL_EMPLOYEE_SALARY_MONTGOMERY",
+  "slug": "multabench-montgomery-salaries",
+  "target": "current_annual_salary",
+  "image_col": null,
+  "task_type": "reg",
+  "num_rows": 9228,
+  "num_features": 11
+}

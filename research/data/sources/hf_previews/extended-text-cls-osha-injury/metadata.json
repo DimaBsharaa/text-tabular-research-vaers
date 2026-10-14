@@ -1,0 +1,12 @@
+{
+  "slug": "multabench-full-osha-injury",
+  "target": "Task Assigned",
+  "image_col": null,
+  "task_type": "cls",
+  "num_rows": 4847,
+  "num_features": 16,
+  "date_cols": [
+    "Event Date"
+  ],
+  "num_classes": 2
+}

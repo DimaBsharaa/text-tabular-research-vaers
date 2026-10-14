@@ -2,11 +2,14 @@
 import json
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
+import types
 import unittest
 
 import pandas as pd
 
-from evaluation.colab_runner import load_csv, selected_columns
+from evaluation.colab_runner import load_csv, selected_columns, verify_reference, verify_import_origins, OFFICIAL_REPOSITORY
 from evaluation.results import CONDITIONS, summarize
 from research.scripts.prepare_tennis_smoke import build
 
@@ -103,6 +106,55 @@ class ResultTests(unittest.TestCase):
         raw.loc[0, "experiment_id"] = "different settings"
         with self.assertRaisesRegex(ValueError, "Mixed"):
             summarize(raw, [0], "full", "candidate_dataset")
+
+
+class ReferenceProofTests(unittest.TestCase):
+    """A tiny local fixture tests proof checks, not the official GPU environment."""
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.ref = Path(self.tmp.name) / "reference"
+        self.ref.mkdir()
+        self.run_git("init", "--quiet")
+        self.run_git("remote", "add", "origin", OFFICIAL_REPOSITORY + ".git")
+        (self.ref / "sample.py").write_text("VALUE = 1\n")
+        self.run_git("add", "sample.py")
+        self.run_git("-c", "user.name=Proof fixture", "-c", "user.email=fixture@example.invalid", "commit", "--quiet", "-m", "fixture")
+        self.commit = self.run_git("rev-parse", "HEAD").strip()
+
+    def run_git(self, *args):
+        return subprocess.check_output(["git", "-C", str(self.ref), *args], text=True)
+
+    def test_byte_proof_and_hidden_modification(self):
+        proof = verify_reference(self.ref, self.commit)
+        self.assertEqual([r["path"] for r in proof], ["sample.py"])
+        self.assertTrue(proof[0]["matches_commit"])
+        self.run_git("update-index", "--assume-unchanged", "sample.py")
+        (self.ref / "sample.py").write_text("VALUE = 2\n")
+        self.assertFalse(self.run_git("status", "--porcelain").strip())
+        with self.assertRaisesRegex(ValueError, "bytes differ"):
+            verify_reference(self.ref, self.commit)
+
+    def test_wrong_origin_or_commit_rejected(self):
+        with self.assertRaisesRegex(ValueError, "pinned"):
+            verify_reference(self.ref, "0" * 40)
+        self.run_git("remote", "set-url", "origin", "https://example.invalid/unofficial.git")
+        with self.assertRaisesRegex(ValueError, "official"):
+            verify_reference(self.ref, self.commit)
+
+    def test_imported_source_location_checked(self):
+        proof = verify_reference(self.ref, self.commit)
+        name = "multabench._provenance_test_fixture"
+        self.assertNotIn(name, sys.modules)
+        module = types.ModuleType(name)
+        module.__file__ = str(self.ref / "sample.py")
+        sys.modules[name] = module
+        self.addCleanup(sys.modules.pop, name, None)
+        self.assertEqual(verify_import_origins(self.ref, proof)[0]["loaded_from"], str(Path(module.__file__).resolve()))
+        module.__file__ = str(Path(self.tmp.name) / "outside.py")
+        Path(module.__file__).write_text("VALUE = 1\n")
+        with self.assertRaisesRegex(ValueError, "outside"):
+            verify_import_origins(self.ref, proof)
 
 
 if __name__ == "__main__":

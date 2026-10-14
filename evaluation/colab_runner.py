@@ -8,6 +8,7 @@ import argparse
 from enum import Enum
 import hashlib
 import importlib
+import inspect
 import json
 import math
 import os
@@ -17,6 +18,7 @@ import sys
 import traceback
 
 PAPER_COMMIT = "3bb95079a6146ed35d45187e98bcad5b063273a1"
+OFFICIAL_REPOSITORY = "https://github.com/alanarazi7/MulTaBench"
 MODELS = {"light": ("multabench.baselines.lgbm", "LightGBM"),
           "cat": ("multabench.baselines.catboost", "CatBoost"),
           "tabm": ("multabench.baselines.tabm", "TabM"),
@@ -33,12 +35,54 @@ def git(ref, *args):
     return subprocess.check_output(["git", "-C", str(ref), *args], text=True).strip()
 
 
-def verify_reference(ref):
-    if git(ref, "rev-parse", "HEAD") != PAPER_COMMIT:
+def verify_reference(ref, expected_commit=PAPER_COMMIT):
+    ref = Path(ref).resolve()
+    if git(ref, "remote", "get-url", "origin").rstrip("/").removesuffix(".git") != OFFICIAL_REPOSITORY:
+        raise ValueError("Reference origin must be the official alanarazi7/MulTaBench repository")
+    if git(ref, "rev-parse", "HEAD") != expected_commit:
         raise ValueError("Reference checkout differs from pinned paper-version commit")
     # Check tracked source plus unexpected untracked files. No writes into checkout.
     if git(ref, "status", "--porcelain", "--untracked-files=all"):
         raise ValueError("Reference checkout must be clean; keep outputs outside it")
+    # Compare actual bytes to every Git blob, even if a local Git index flag hides changes.
+    tree = subprocess.check_output(["git", "-C", str(ref), "ls-tree", "-rz", expected_commit])
+    proof = []
+    for entry in tree.split(b"\0"):
+        if not entry:
+            continue
+        header, raw_name = entry.split(b"\t", 1)
+        _, kind, expected_blob = header.decode().split()
+        name = os.fsdecode(raw_name)
+        path = ref / name
+        if kind != "blob":
+            raise ValueError(f"Unsupported reference entry: {name} ({kind})")
+        content = os.fsencode(os.readlink(path)) if path.is_symlink() else path.read_bytes()
+        actual_blob = hashlib.sha1(b"blob " + str(len(content)).encode() + b"\0" + content).hexdigest()
+        if actual_blob != expected_blob:
+            raise ValueError(f"Reference bytes differ from pinned commit: {name}")
+        proof.append({"path": name, "git_blob": expected_blob,
+                      "sha256": hashlib.sha256(content).hexdigest(), "matches_commit": True})
+    return proof
+
+
+def verify_import_origins(ref, file_proof):
+    """Check the modules actually imported by this worker, not just a spare checkout."""
+    ref = Path(ref).resolve()
+    by_path = {r["path"]: r for r in file_proof}
+    imported = []
+    for name, module in list(sys.modules.items()):
+        if name != "multabench" and not name.startswith("multabench."):
+            continue
+        if not getattr(module, "__file__", None):
+            continue  # Namespace packages contain no source to execute.
+        path = Path(inspect.getsourcefile(module) or module.__file__).resolve()
+        if not path.is_relative_to(ref) or path.relative_to(ref).as_posix() not in by_path:
+            raise ValueError(f"Imported {name} from outside the verified reference: {path}")
+        row = by_path[path.relative_to(ref).as_posix()]
+        if sha(path) != row["sha256"]:
+            raise ValueError(f"Imported module changed after verification: {path}")
+        imported.append({"module": name, "loaded_from": str(path), "sha256": row["sha256"], "matches_commit": True})
+    return sorted(imported, key=lambda r: r["module"])
 
 
 def load_csv(csv, schema_path):
@@ -130,7 +174,7 @@ def execute(args):
     ref, out = Path(args.reference).resolve(), Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=True)
     # Never import from the small source snapshots already stored in research/data.
-    verify_reference(ref)
+    file_proof = verify_reference(ref)
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(ref))
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -152,8 +196,12 @@ def execute(args):
     if args.check:
         for name in MODELS:
             import_model(name)  # Import only; never initialize models or download weights.
+        imported = verify_import_origins(ref, file_proof)
+        write_json(out / "reference_proof.json", {"repository": OFFICIAL_REPOSITORY,
+                   "commit": PAPER_COMMIT, "tracked_files": file_proof, "imported_modules": imported})
         print(json.dumps({"check": "PASS", "gpu": torch.cuda.get_device_name(0),
                           "rows": len(df), "split_counts": {k: len(v) for k, v in splits.items()},
+                          "verified_tracked_files": len(file_proof), "verified_imported_modules": len(imported),
                           "reference_commit": PAPER_COMMIT, "note": "No model fit or checkpoint access verified"}, indent=2))
         verify_reference(ref)
         return
@@ -189,6 +237,8 @@ def execute(args):
             return
     write_json(folder / "config.json", config)
     write_json(folder / "splits.json", splits)
+    write_json(folder / "reference_proof.json", {"repository": OFFICIAL_REPOSITORY, "commit": PAPER_COMMIT,
+               "tracked_files": file_proof, "imported_modules": verify_import_origins(ref, file_proof)})
     (folder / "pip_freeze.txt").write_text(freeze)
     # Scratch stays in our ignored tree; persistent result files may live in Drive.
     # This also lets the official cwd-based `git` field resolve our commit correctly.
@@ -213,6 +263,8 @@ def execute(args):
         if not math.isfinite(float(summary["test_score"])) or not 0 <= float(summary["test_score"]) <= 1:
             raise ValueError("Official evaluator did not return a finite binary AUROC in [0, 1]")
         verify_reference(ref)
+        write_json(folder / "reference_proof.json", {"repository": OFFICIAL_REPOSITORY, "commit": PAPER_COMMIT,
+                   "tracked_files": file_proof, "imported_modules": verify_import_origins(ref, file_proof)})
         record.update(status="ok", official_summary=summary)
     except Exception as exc:
         record.update(status="error", error_type=type(exc).__name__, error=str(exc), traceback=traceback.format_exc())

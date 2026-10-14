@@ -49,6 +49,12 @@ md("""
     The complete official checkout is created only in this Colab VM at `/content/MulTaBench-reference`.
     It is outside our project repository and pinned to the audited `paper_version` commit.
     The small historical source files under `research/data/sources` are reading material; they are not the executable benchmark.
+
+    Official repository: [alanarazi7/MulTaBench](https://github.com/alanarazi7/MulTaBench).
+    Exact version: [paper-version commit 3bb9507](https://github.com/alanarazi7/MulTaBench/tree/3bb95079a6146ed35d45187e98bcad5b063273a1).
+    The official README recommends `paper_version` or `official-paper-version` for reproducing the paper;
+    current `master` is a changing leaderboard and also has newer `sweep.py` / `collect_results.py` tools.
+    Those newer tools are not the interface of our pinned paper version.
 """)
 code("""
     from pathlib import Path
@@ -82,6 +88,53 @@ code("""
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     print("Our commit:", subprocess.check_output(["git", "-C", str(PROJECT), "rev-parse", "HEAD"], text=True).strip())
     print("Official reference:", PAPER_COMMIT)
+""")
+md("""
+    ### 1a. What “unchanged official code” means — and the evidence
+
+    **This notebook is ours, not a 1:1 copy of an official notebook.** Its CSV loader, scheduling and dashboard are ours.
+    The evaluator, learner wrappers, embedding/fine-tuning code, PCA and metrics are imported from their unchanged checkout.
+    Smoke parameters are deliberately different: one learner, one holdout and two TAR epochs (batch 32).
+    Official TAR defaults are up to 50 epochs (batch 256). Therefore this smoke test is not a full paper reproduction.
+
+    | Official file/folder | What they provide |
+    | --- | --- |
+    | `benchmark.py` | CLI for one registered dataset/model/condition/fold; paper-version W&B logging. |
+    | `multabench/baselines/benchmarks/evaluate.py` | Samples, splits, constructs the learner, fits and scores it. This is the function our CSV adapter calls. |
+    | `multabench/baselines/{lgbm,catboost,tabm,tabpfnv2}.py` | The five required learner wrappers; both TabPFN versions are in `tabpfnv2.py`. |
+    | `multabench/baselines/abstract_model.py` | Shared training/validation and preprocessing flow. |
+    | `multabench/baselines/preprocessing/` | Numerical/categorical handling, text encoders and per-column PCA. |
+    | `multabench/e5/`, `multabench/finetune/` | E5 encoding, target-aware LoRA adaptation and default training arguments. |
+    | `multabench/baselines/training/metrics.py` | AUROC and regression metrics. |
+    | `multabench/datasets/`, `multabench/benchmark/` | Dataset registry, downloading, curation recipes and historical benchmark artifacts. |
+    | `multabench/dino/` | Image encoders for image-tabular tasks, not our text-only modality experiment. |
+    | `requirements.txt`, `init.sh`, `.env.example`, `README.md` | Dependency pins, setup, credentials template and documentation. |
+
+    The next cell needs only Python and Git: it verifies the official remote, exact commit and **every tracked file's bytes**
+    against the Git objects at that commit, then displays hashes and direct links for the relevant source files.
+    It stops on a mismatch. Later the worker also prints where the actually imported modules came from and saves that evidence.
+    TabSTAR split helpers are an external pinned dependency (`tabstar==1.1.15`), not source files in this checkout.
+    Source identity does not prove package compatibility, checkpoint access, or identical scores; those need runtime validation.
+""")
+code("""
+    from evaluation.colab_runner import verify_reference
+    import pandas as pd
+    from IPython.display import display
+
+    reference_files = verify_reference(REFERENCE)
+    IMPORTANT_FILES = ["benchmark.py", "multabench/baselines/benchmarks/evaluate.py",
+        "multabench/baselines/abstract_model.py", "multabench/baselines/lgbm.py",
+        "multabench/baselines/catboost.py", "multabench/baselines/tabm.py",
+        "multabench/baselines/tabpfnv2.py", "multabench/baselines/preprocessing/text_embeddings.py",
+        "multabench/e5/e5_finetune.py", "multabench/finetune/train_args.py",
+        "multabench/baselines/training/metrics.py", "requirements.txt"]
+    source_table = pd.DataFrame(reference_files)
+    source_table = source_table[source_table.path.isin(IMPORTANT_FILES)].copy()
+    source_table["official_url"] = source_table.path.map(lambda p: f"https://github.com/alanarazi7/MulTaBench/blob/{PAPER_COMMIT}/{p}")
+    assert len(source_table) == len(IMPORTANT_FILES)
+    display(source_table[["path", "matches_commit", "sha256", "official_url"]])
+    print(f"PASS: all {len(reference_files)} tracked files match the pinned official Git blobs.")
+    print("This output verifies source identity, not completed training or full experimental equivalence.")
 """)
 md("""
     ## 2. Inspect the prepared CSV
@@ -200,6 +253,15 @@ code("""
               "--output", str(OUTPUT), "--mode", MODE, "--train-examples", "10000"]
     print(f"{MODE}: {len(MODELS) * len(FOLDS) * 4} runs; results: {OUTPUT}")
     command(COMMON + ["--model", "light", "--condition", "joint_tar", "--check"])
+    source_proof = json.loads((OUTPUT / "reference_proof.json").read_text())
+    loaded = pd.DataFrame(source_proof["imported_modules"])
+    key_modules = ["multabench.baselines.benchmarks.evaluate", "multabench.baselines.abstract_model",
+                   "multabench.baselines.lgbm", "multabench.baselines.catboost", "multabench.baselines.tabm",
+                   "multabench.baselines.tabpfnv2", "multabench.baselines.preprocessing.text_embeddings",
+                   "multabench.e5.e5_finetune", "multabench.baselines.training.metrics"]
+    display(loaded[loaded.module.isin(key_modules)][["module", "loaded_from", "matches_commit"]])
+    assert set(key_modules) <= set(loaded.module)
+    print("The actually imported evaluator and model modules came from the verified official checkout.")
 """)
 md("""
     ## 5. Run their evaluator and save each result
@@ -281,6 +343,7 @@ md("""
 
     `results.csv` contains one record per condition/fold; `summary.csv` contains learner means, deviations and gains.
     Every job retains its exact config, split row IDs, official returned metrics, dependency versions and failure information.
+    `reference_proof.json` retains official source hashes and the paths of the modules actually imported by the worker.
     Console logs are also saved. No model scores are present in the committed notebook until you execute it.
     The reference is checked again for changes. Download this ZIP and use File → Save a copy in Drive to retain notebook outputs.
 """)

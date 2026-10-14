@@ -132,7 +132,7 @@ md("""
     Source identity does not prove package compatibility, checkpoint access, or identical scores; those need runtime validation.
 """)
 code("""
-    from evaluation.colab_runner import verify_reference
+    from evaluation.colab_runner import verify_reference, worker_environment
     import pandas as pd
     from IPython.display import display
 
@@ -267,7 +267,9 @@ code("""
               "--reference", str(REFERENCE), "--csv", str(CSV), "--schema", str(SCHEMA),
               "--output", str(OUTPUT), "--mode", MODE, "--train-examples", "10000"]
     print(f"{MODE}: {len(MODELS) * len(FOLDS) * 4} runs; results: {OUTPUT}")
-    command(COMMON + ["--model", "light", "--condition", "joint_tar", "--check"], log_path=OUTPUT / "preflight.log")
+    WORKER_ENV = worker_environment()  # A copy; notebook inline plotting is unchanged.
+    command(COMMON + ["--model", "light", "--condition", "joint_tar", "--check"],
+            log_path=OUTPUT / "preflight.log", env=WORKER_ENV)
     source_proof = json.loads((OUTPUT / "reference_proof.json").read_text())
     loaded = pd.DataFrame(source_proof["imported_modules"])
     key_modules = ["multabench.baselines.benchmarks.evaluate", "multabench.baselines.abstract_model",
@@ -283,6 +285,8 @@ md("""
     The same output is saved to `preflight.log` in the displayed Drive results folder; `preflight_error.json` also records Python errors.
     Training has not started. Fix the reported cause and rerun this cell. The final automatic shutdown runs only if execution reaches it;
     when Run all stops at an earlier error, use Runtime → Disconnect and delete runtime when you are done debugging.
+    Workers use `MPLBACKEND=Agg` because the separate Python environment does not provide Colab's inline plotting backend.
+    This environment setting does not change the official benchmark source or notebook charts.
 """)
 md("""
     ## 5. Run their evaluator and save each result
@@ -303,7 +307,7 @@ code("""
                 log_path = OUTPUT / f"{model}_{condition}_{fold}.log"
                 with log_path.open("a") as log:
                     process = subprocess.Popen(COMMON + ["--model", model, "--fold", str(fold), "--condition", condition],
-                                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+                                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1, env=WORKER_ENV)
                     for line in process.stdout:
                         print(line, end="", flush=True)
                         log.write(line); log.flush()

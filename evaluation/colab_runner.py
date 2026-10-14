@@ -27,6 +27,14 @@ MODELS = {"light": ("multabench.baselines.lgbm", "LightGBM"),
 CONDITIONS = ("structured_only", "text_only", "joint_frozen", "joint_tar")
 
 
+def worker_environment(environ=None):
+    """Keep notebook-only plotting backends out of the isolated benchmark process."""
+    env = dict(os.environ if environ is None else environ)
+    env.update(MPLBACKEND="Agg", CUDA_VISIBLE_DEVICES="0", WANDB_MODE="disabled",
+               TOKENIZERS_PARALLELISM="false")
+    return env
+
+
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -177,9 +185,9 @@ def execute(args):
     file_proof = verify_reference(ref)
     sys.dont_write_bytecode = True
     sys.path.insert(0, str(ref))
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-    os.environ["WANDB_MODE"] = "disabled"
-    os.environ["TOKENIZERS_PARALLELISM"] = "false"
+    # Set BEFORE torch/skrub/Matplotlib or any official imports. Also protects
+    # older notebook copies whose subprocess calls inherit Colab's inline backend.
+    os.environ.update(worker_environment())
     import torch
     from multabench.finetune.train_args import E5TrainArgs
     from multabench.baselines.benchmarks.evaluate import evaluate_on_loaded_dataset

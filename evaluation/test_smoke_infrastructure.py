@@ -3,6 +3,7 @@ import json
 import ast
 import contextlib
 import io
+import os
 from pathlib import Path
 import tempfile
 import subprocess
@@ -13,7 +14,7 @@ from unittest.mock import patch
 
 import pandas as pd
 
-from evaluation.colab_runner import load_csv, selected_columns, verify_reference, verify_import_origins, OFFICIAL_REPOSITORY
+from evaluation.colab_runner import load_csv, selected_columns, verify_reference, verify_import_origins, worker_environment, OFFICIAL_REPOSITORY
 from evaluation.results import CONDITIONS, summarize
 from evaluation.colab_session import run_logged_command
 from research.scripts.prepare_tennis_smoke import build
@@ -114,6 +115,27 @@ class ResultTests(unittest.TestCase):
 
 
 class CommandDiagnosticsTests(unittest.TestCase):
+    def test_worker_env_does_not_mutate_notebook_environment(self):
+        original = {"MPLBACKEND": "module://matplotlib_inline.backend_inline", "HF_TOKEN": "fixture-token", "PATH": "fixture-path"}
+        child = worker_environment(original)
+        self.assertEqual(child["MPLBACKEND"], "Agg")
+        self.assertEqual(child["HF_TOKEN"], original["HF_TOKEN"])
+        self.assertEqual(original["MPLBACKEND"], "module://matplotlib_inline.backend_inline")
+
+    def test_worker_imports_pyplot_with_inherited_unavailable_backend(self):
+        # Real Matplotlib import/rendering; no official learner or model imports.
+        program = ("from evaluation.colab_runner import worker_environment; "
+                   "import os; os.environ.update(worker_environment()); "
+                   "import matplotlib; from matplotlib import pyplot as plt; "
+                   "assert matplotlib.get_backend().lower() == 'agg'; "
+                   "fig = plt.figure(); plt.close(fig); print('Agg import and figure passed')")
+        env = {**os.environ, "MPLBACKEND": "module://unavailable_colab_inline_fixture.backend_inline",
+               "MPLCONFIGDIR": "/tmp/text-tabular-matplotlib"}
+        result = subprocess.run([sys.executable, "-c", program], cwd=ROOT, env=env,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout)
+        self.assertIn("Agg import and figure passed", result.stdout)
+
     def test_bootstrap_git_error_is_in_exception_before_helper_import(self):
         nb = json.loads((ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb").read_text())
         cell = next(c for c in nb["cells"] if c["cell_type"] == "code" and "def command(" in c["source"])

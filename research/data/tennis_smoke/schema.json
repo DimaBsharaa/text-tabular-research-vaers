@@ -1,0 +1,67 @@
+{
+  "dataset_id": "BIN_TEXT_TENNIS_SMOKE",
+  "purpose": "smoke_fixture",
+  "task": "binary",
+  "target": "player_a_wins",
+  "structured_columns": [
+    "surface",
+    "court",
+    "tournament_level",
+    "round",
+    "best_of",
+    "a_rank",
+    "b_rank",
+    "a_prior_matches",
+    "b_prior_matches",
+    "a_prior_winrate",
+    "b_prior_winrate",
+    "a_surface_winrate",
+    "b_surface_winrate"
+  ],
+  "text_columns": [
+    "player_a_text",
+    "player_b_text"
+  ],
+  "audit_columns": [
+    "match_id",
+    "match_date",
+    "player_a",
+    "player_b",
+    "a_history_last_date",
+    "b_history_last_date"
+  ],
+  "numeric_columns": [
+    "best_of",
+    "a_rank",
+    "b_rank",
+    "a_prior_matches",
+    "b_prior_matches",
+    "a_prior_winrate",
+    "b_prior_winrate",
+    "a_surface_winrate",
+    "b_surface_winrate"
+  ],
+  "text_kind": "templated_past_results_not_expert_analysis",
+  "orientation_seed": "tennis-smoke-v1",
+  "csv_sha256": "cdaab468a9162480f12601d97a82cf2ee96fb33202b12c0250ddcd928e9435d2",
+  "raw_sha256": "78af06668fa50e1d34d922c452a1d1859fdfd251bd0fe216e15aa5b6c7974551",
+  "rows": 488,
+  "date_min": "2000-01-03",
+  "date_max": "2000-02-21",
+  "source": "https://www.kaggle.com/datasets/dissfya/atp-tennis-2000-2023daily-pull",
+  "source_version": 1219,
+  "source_file": "atp_tennis.csv",
+  "source_range": "bytes 0-65535/9165924",
+  "source_license_declared": "CC0: Public Domain",
+  "audit_date": "2026-10-14",
+  "sampling": "All complete CSV rows from previously inspected 64 KiB file prefix; final truncated line removed.",
+  "limitations": [
+    "Nonrepresentative early-2000 prefix; no final dataset choice.",
+    "Historical features use only earlier dates within this prefix, not complete careers.",
+    "Reported match dates and historical ranking availability have not been independently audited.",
+    "Names are abbreviated source identifiers; not a globally verified player ID crosswalk.",
+    "Current score, current winner, and odds are excluded from predictors; same-day histories excluded.",
+    "Text restates past result numbers; cannot establish complementary expert language or project passage.",
+    "Official random holdouts are not a temporal forecasting evaluation."
+  ]
+}

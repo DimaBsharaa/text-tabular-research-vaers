@@ -2,7 +2,9 @@
 
 Start with [the executed notebook](notebooks/01_multabench_dataset_analysis.ipynb) or [the standalone HTML](notebooks/01_multabench_dataset_analysis.html). Outputs are already saved: 22 executed Python cells, 13 charts, and the research tables. Every chart is followed immediately by an insight explaining the evidence, limits, and implications for dataset selection. The notebook uses ordinary Python and can be run in Jupyter. It also has an existing-dataset selector for inspecting per-column text distributions and targets.
 
-Scope: Standard Track 2; exploratory research to inform a new dataset choice. No new dataset selected or constructed; no new model runs. Both course PDFs remain in the parent NLP folder. The shared conversation was recovered after a direct retry; its recent decisions, the supplied context, and PDFs were read. Sports ideas remain inspiration, not a dataset selection.
+Scope: Standard Track 2; exploratory research to inform a new dataset choice. No final dataset selected; no new model runs. Both course PDFs remain in the parent NLP folder. The shared conversation was recovered after a direct retry; its recent decisions, the supplied context, and PDFs were read. Sports ideas remain inspiration, not a dataset selection.
+
+Next runtime step: [02_tennis_official_benchmark_colab.ipynb](notebooks/02_tennis_official_benchmark_colab.ipynb), using an A100 Colab runtime. Its CSV-preview outputs are saved; installation/training cells await execution in Colab. A [small Kaggle tennis fixture](data/tennis_smoke/README.md) now exists solely to test the unchanged official evaluator. Its generated prior-results text is not expert analysis or a final dataset choice. See [the runner and output guide](../evaluation/README.md).
 
 ## Read next
 

@@ -70,8 +70,16 @@ code("""
     ENV = Path("/content/multabench-env")
 
     def command(args, **kwargs):
-        print(" ".join(map(str, args)), flush=True)
-        subprocess.run(list(map(str, args)), check=True, **kwargs)
+        # This bootstrap runs before our logging helper can be imported.
+        # Capture explicitly: inherited child stderr may be hidden by Colab.
+        args = list(map(str, args))
+        print(" ".join(args), flush=True)
+        result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                text=True, **kwargs)
+        print(result.stdout, end="", flush=True)
+        if result.returncode:
+            raise RuntimeError(f"Command failed (exit {result.returncode}). Full error above:\\n{result.stdout}")
+        return result
 
     if not PROJECT.exists():
         command(["git", "clone", "--depth", "1", "https://github.com/DimaBsharaa/text-tabular-research-2.git", PROJECT])

@@ -1,5 +1,6 @@
 """Offline checks for leakage boundaries and honest result aggregation (no fits)."""
 import json
+import ast
 import contextlib
 import io
 from pathlib import Path
@@ -113,6 +114,17 @@ class ResultTests(unittest.TestCase):
 
 
 class CommandDiagnosticsTests(unittest.TestCase):
+    def test_bootstrap_git_error_is_in_exception_before_helper_import(self):
+        nb = json.loads((ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb").read_text())
+        cell = next(c for c in nb["cells"] if c["cell_type"] == "code" and "def command(" in c["source"])
+        function = next(n for n in ast.parse(cell["source"]).body if isinstance(n, ast.FunctionDef) and n.name == "command")
+        scope = {"subprocess": subprocess}
+        exec(compile(ast.Module(body=[function], type_ignores=[]), "bootstrap", "exec"), scope)
+        with contextlib.redirect_stdout(io.StringIO()) as visible:
+            with self.assertRaisesRegex(RuntimeError, "git diagnostic fixture"):
+                scope["command"]([sys.executable, "-c", "import sys; print('git diagnostic fixture', file=sys.stderr); sys.exit(128)"])
+        self.assertIn("git diagnostic fixture", visible.getvalue())
+
     def test_child_stderr_is_visible_and_saved_on_failure(self):
         with tempfile.TemporaryDirectory() as folder:
             log = Path(folder) / "preflight.log"

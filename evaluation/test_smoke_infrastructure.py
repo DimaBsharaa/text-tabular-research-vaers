@@ -1,16 +1,20 @@
 """Offline checks for leakage boundaries and honest result aggregation (no fits)."""
 import json
+import contextlib
+import io
 from pathlib import Path
 import tempfile
 import subprocess
 import sys
 import types
 import unittest
+from unittest.mock import patch
 
 import pandas as pd
 
 from evaluation.colab_runner import load_csv, selected_columns, verify_reference, verify_import_origins, OFFICIAL_REPOSITORY
 from evaluation.results import CONDITIONS, summarize
+from evaluation.colab_session import run_logged_command
 from research.scripts.prepare_tennis_smoke import build
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +110,49 @@ class ResultTests(unittest.TestCase):
         raw.loc[0, "experiment_id"] = "different settings"
         with self.assertRaisesRegex(ValueError, "Mixed"):
             summarize(raw, [0], "full", "candidate_dataset")
+
+
+class CommandDiagnosticsTests(unittest.TestCase):
+    def test_child_stderr_is_visible_and_saved_on_failure(self):
+        with tempfile.TemporaryDirectory() as folder:
+            log = Path(folder) / "preflight.log"
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                with self.assertRaises(subprocess.CalledProcessError) as error:
+                    run_logged_command([sys.executable, "-c", "import sys; print('underlying import failure', file=sys.stderr); sys.exit(1)"], log_path=log)
+            self.assertIn("underlying import failure", output.getvalue())
+            self.assertIn("underlying import failure", log.read_text())
+            self.assertIn("underlying import failure", error.exception.output)
+
+    def test_success_streams_and_returns(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            result = run_logged_command([sys.executable, "-c", "print('preflight passed')"])
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("preflight passed", result.stdout)
+
+
+class RuntimeShutdownTests(unittest.TestCase):
+    def run_final_cell(self, saved):
+        nb = json.loads((ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb").read_text())
+        source = nb["cells"][-1]["source"]
+        calls = []
+        colab = types.ModuleType("google.colab")
+        colab.drive = types.SimpleNamespace(flush_and_unmount=lambda: calls.append("flush"))
+        colab.runtime = types.SimpleNamespace(unassign=lambda: calls.append("unassign"))
+        with patch.dict(sys.modules, {"google": types.ModuleType("google"), "google.colab": colab}):
+            with contextlib.redirect_stdout(io.StringIO()):
+                if not saved:
+                    with self.assertRaisesRegex(RuntimeError, "not confirmed saved"):
+                        exec(source, {"AUTO_STOP_RUNTIME": True, "SAVE_TO_DRIVE": True, "EXPORT_SAVED": False})
+                else:
+                    exec(source, {"AUTO_STOP_RUNTIME": True, "SAVE_TO_DRIVE": True, "EXPORT_SAVED": True})
+        return calls
+
+    def test_flush_before_runtime_unassign(self):
+        self.assertEqual(self.run_final_cell(saved=True), ["flush", "unassign"])
+
+    def test_no_shutdown_without_saved_export(self):
+        self.assertEqual(self.run_final_cell(saved=False), [])
 
 
 class ReferenceProofTests(unittest.TestCase):

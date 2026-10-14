@@ -39,6 +39,9 @@ code("""
     # diagnostic: all five learners / one fold / official 50-epoch TAR maximum.
     # full: all five learners / five folds; rejects the supplied smoke fixture.
     SAVE_TO_DRIVE = True  # Preserves completed results across Colab runtime resets.
+    AUTO_STOP_RUNTIME = True  # Final cell disconnects/deletes the VM after Drive export.
+    if AUTO_STOP_RUNTIME and not SAVE_TO_DRIVE:
+        raise ValueError("Automatic shutdown requires Drive saving. Otherwise set AUTO_STOP_RUNTIME=False.")
     PAPER_COMMIT = "3bb95079a6146ed35d45187e98bcad5b063273a1"
     DATA_REL = "research/data/tennis_smoke/tennis_smoke.csv"
     SCHEMA_REL = "research/data/tennis_smoke/schema.json"
@@ -72,6 +75,8 @@ code("""
 
     if not PROJECT.exists():
         command(["git", "clone", "--depth", "1", "https://github.com/DimaBsharaa/text-tabular-research-2.git", PROJECT])
+    else:
+        command(["git", "-C", PROJECT, "pull", "--ff-only"])  # Refresh our adapter; never alter the official checkout.
     if not REFERENCE.exists():
         command(["git", "clone", "--depth", "1", "--branch", "paper_version", "https://github.com/alanarazi7/MulTaBench.git", REFERENCE])
     head = subprocess.check_output(["git", "-C", str(REFERENCE), "rev-parse", "HEAD"], text=True).strip()
@@ -81,6 +86,8 @@ code("""
         command(["git", "-C", REFERENCE, "fetch", "--depth", "1", "origin", PAPER_COMMIT])
         command(["git", "-C", REFERENCE, "checkout", "--detach", PAPER_COMMIT])
     sys.path.insert(0, str(PROJECT))  # Dashboard helpers only; models run in the isolated environment.
+    from evaluation.colab_session import run_logged_command
+    command = run_logged_command  # Explicitly stream child stdout AND stderr into cell output.
     CSV = PROJECT / DATA_REL
     SCHEMA = PROJECT / SCHEMA_REL
     assert CSV.exists() and SCHEMA.exists(), "Project checkout is missing prepared data. Use a fresh runtime."
@@ -248,11 +255,11 @@ code("""
     OUTPUT = output_base / plan_id
     OUTPUT.mkdir(parents=True, exist_ok=True)
     (OUTPUT / "plan.json").write_text(json.dumps(plan, indent=2))
-    COMMON = [str(BENCH_PY), str(PROJECT / "evaluation/colab_runner.py"),
+    COMMON = [str(BENCH_PY), "-u", str(PROJECT / "evaluation/colab_runner.py"),
               "--reference", str(REFERENCE), "--csv", str(CSV), "--schema", str(SCHEMA),
               "--output", str(OUTPUT), "--mode", MODE, "--train-examples", "10000"]
     print(f"{MODE}: {len(MODELS) * len(FOLDS) * 4} runs; results: {OUTPUT}")
-    command(COMMON + ["--model", "light", "--condition", "joint_tar", "--check"])
+    command(COMMON + ["--model", "light", "--condition", "joint_tar", "--check"], log_path=OUTPUT / "preflight.log")
     source_proof = json.loads((OUTPUT / "reference_proof.json").read_text())
     loaded = pd.DataFrame(source_proof["imported_modules"])
     key_modules = ["multabench.baselines.benchmarks.evaluate", "multabench.baselines.abstract_model",
@@ -262,6 +269,12 @@ code("""
     display(loaded[loaded.module.isin(key_modules)][["module", "loaded_from", "matches_commit"]])
     assert set(key_modules) <= set(loaded.module)
     print("The actually imported evaluator and model modules came from the verified official checkout.")
+""")
+md("""
+    **If preflight fails:** read the worker traceback printed above the final `CalledProcessError`.
+    The same output is saved to `preflight.log` in the displayed Drive results folder; `preflight_error.json` also records Python errors.
+    Training has not started. Fix the reported cause and rerun this cell. The final automatic shutdown runs only if execution reaches it;
+    when Run all stops at an earlier error, use Runtime → Disconnect and delete runtime when you are done debugging.
 """)
 md("""
     ## 5. Run their evaluator and save each result
@@ -351,14 +364,44 @@ code("""
     from zipfile import ZipFile, ZIP_DEFLATED
     assert subprocess.check_output(["git", "-C", str(REFERENCE), "rev-parse", "HEAD"], text=True).strip() == PAPER_COMMIT
     assert not subprocess.check_output(["git", "-C", str(REFERENCE), "status", "--porcelain", "--untracked-files=all"], text=True).strip()
+    EXPORT_SAVED = False
     archive = Path("/content") / f"tennis_{MODE}_{plan_id}_results.zip"
     with ZipFile(archive, "w", ZIP_DEFLATED) as zipped:
         for artifact in OUTPUT.rglob("*"):
-            if artifact.is_file():
+            if artifact.is_file() and artifact.suffix != ".zip":
                 zipped.write(artifact, artifact.relative_to(OUTPUT))
+    if SAVE_TO_DRIVE:
+        import shutil
+        saved_archive = OUTPUT / archive.name
+        shutil.copy2(archive, saved_archive)
+        assert saved_archive.stat().st_size == archive.stat().st_size
+        EXPORT_SAVED = True
+        print("Results archive saved to Drive:", saved_archive)
     print("Official reference is unchanged. Saved results:", OUTPUT)
     from google.colab import files
-    files.download(str(archive))
+    if AUTO_STOP_RUNTIME:
+        print("Download the ZIP from Drive after shutdown. Local browser download is skipped so it cannot be interrupted.")
+    else:
+        files.download(str(archive))
+""")
+md("""
+    ## 8. Stop the Colab machine
+
+    With `AUTO_STOP_RUNTIME=True` (default), this final cell flushes saved Drive files and asks Colab to disconnect and delete this VM.
+    A disconnected session is expected. Results remain in Drive; local `/content` files, packages and variables are temporary.
+    Set `AUTO_STOP_RUNTIME=False` to keep the session for debugging. An earlier cell failure prevents Run all from reaching this cell.
+    Uses Google's [`runtime.unassign()`](https://github.com/googlecolab/colabtools/blob/main/google/colab/runtime.py).
+""")
+code("""
+    if AUTO_STOP_RUNTIME:
+        if not SAVE_TO_DRIVE or not EXPORT_SAVED:
+            raise RuntimeError("Results are not confirmed saved to Drive; runtime left connected.")
+        from google.colab import drive, runtime
+        drive.flush_and_unmount()  # If saving fails, stop here and keep the VM for recovery.
+        print("Results saved. Disconnecting and deleting this Colab runtime now.", flush=True)
+        runtime.unassign()
+    else:
+        print("Automatic shutdown disabled. Disconnect and delete the runtime manually when finished.")
 """)
 
 notebook = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},

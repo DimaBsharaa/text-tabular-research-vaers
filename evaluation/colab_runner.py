@@ -284,7 +284,22 @@ def main():
     parser.add_argument("--train-examples", type=int, default=10000)
     parser.add_argument("--mode", choices=["smoke", "diagnostic", "full"], default="smoke")
     parser.add_argument("--check", action="store_true")
-    execute(parser.parse_args())
+    args = parser.parse_args()
+    try:
+        execute(args)
+    except Exception as exc:
+        failure = {"status": "error", "stage": "preflight" if args.check else "worker",
+                   "error_type": type(exc).__name__, "error": str(exc), "traceback": traceback.format_exc()}
+        print(failure["traceback"], file=sys.stdout, flush=True)
+        try:
+            out = Path(args.output).resolve()
+            out.mkdir(parents=True, exist_ok=True)
+            name = "preflight_error.json" if args.check else f"{args.model}_{args.condition}_{args.fold}_worker_error.json"
+            write_json(out / name, failure)
+            print(f"Error details saved to {out / name}", flush=True)
+        except Exception as save_exc:
+            print(f"Could not save error details: {save_exc}", flush=True)
+        raise SystemExit(1) from None
 
 
 if __name__ == "__main__":

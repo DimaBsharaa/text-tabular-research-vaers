@@ -1,6 +1,7 @@
 """Create a standard Jupyter notebook with visible, editable offline analysis cells."""
 from pathlib import Path
 import json
+import re
 import textwrap
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -388,12 +389,131 @@ No new dataset, domain, or prediction target has been selected. No new benchmark
 Limitations: source-benchmark membership incomplete; original source downloads untested; 16 candidate profiles missing; six task changes; current HF typed conversions differ from historical CSVs; preview ordering and small sample bias; no global missingness, duplication, balance, or text-length statistics; two published/reproduced model-flag discrepancies; one known missing fold; selection bias; correlated fold splits; no causal or statistical-significance claims. Dataset names and outcomes are historical, not newly generated results. The recent decisions in the shared ChatGPT conversation were read after a direct retry, alongside the supplied context and both local PDFs. Prior conversation suggestions are not treated as verified dataset availability.
 """)
 
+GRAPH_INSIGHTS = {
+    "01_coverage": """
+### Insight — release membership is not the curation outcome
+
+**What we see:** the core contains 20 historical successes. The extended collection contains 2 successes and 18 failures; the unreleased group contains 1 success and 15 failures. Therefore, comparing core with extended is not the same as comparing all passing with all failing candidates.
+
+**For our decision:** use the historical outcome flags when studying passage. A dataset's release location is an availability clue, not evidence that its original task passed or failed. Profile coverage is selected, so later structure comparisons cannot explain the full pool.
+""",
+    "02_pass_counts": """
+### Insight — passing is demanding, and success has different strengths
+
+**What we see:** 23/56 candidates meet the three-learner quorum, while 33 do not. Only 11 pass all five learners. A few favorable learners are insufficient for the assignment.
+
+**For our decision:** favor an idea with a clear reason for both modalities to contribute, rather than assuming that any table with a text column will pass. Later, check consistency across learners and aim for a meaningful margin instead of relying on one favorable result.
+""",
+    "03_published_matrix": """
+### Insight — one learner's result does not represent the dataset
+
+**What we see:** some datasets have unanimous success, while others depend on a particular combination of learners. Gray cells are unavailable evaluations, not measured failures. Wine Review and Spotify Genres reach the quorum through the three non-TabPFN learners despite the two unavailable evaluations.
+
+**For our decision:** inspect learner-level evidence and the feasibility of the chosen target's class count. Do not select an idea because one preferred learner succeeds, or quietly reduce the required quorum when a model cannot run. This grid shows agreement, not the magnitude or statistical reliability of gains.
+""",
+    "04_failure_types": """
+### Insight — TAR gain is the most common isolated bottleneck
+
+**What we see:** among the 165 learner pairs belonging to rejected datasets, 79 fail only TAR gain, 32 fail only joint signal, and 23 fail both. The other 31 pairs pass both, but their datasets do not reach the three-learner quorum.
+
+**For our decision:** it is not enough to explain why text and numbers should combine well. We also need a plausible reason that adapting text representations to the target will help. Task-specific terminology, negation, or contextual assessments are hypotheses worth checking—not evidence of guaranteed TAR gain. These are pair counts, not 79 failed datasets.
+""",
+    "05_joint_tar_gains": """
+### Insight — fusion gains and adaptation gains are separate requirements
+
+**What we see:** the scatter contains learners with positive joint gain but insufficient TAR gain, and learners with TAR gain but insufficient frozen joint gain. Only points satisfying both margins count toward acceptance. A positive value on just one axis is not enough.
+
+**For our decision:** ask two separate questions: what does each modality add beyond the other, and what target-specific information might a frozen encoder miss? If development results fail, identify the relevant condition before changing the data. Classification and regression panels use different metrics; their raw gain sizes should not be ranked together.
+""",
+    "06_threshold_quorum": """
+### Insight — boundary passes can be fragile
+
+**What we see:** with a quorum of three, acceptance is 23/56 at the implementation's 0.001 margin, 19 at 0.002, 15 at 0.005, and 9 at 0.01. The paper's strict >0.001 wording and the reproduction code's >=0.001 comparison yield different counts after rounding.
+
+**For our decision:** seek improvements that remain useful across folds and learners, not merely a tiny threshold crossing. Freeze the evaluation rule before final testing. This sensitivity analysis reuses historical means; it is neither a statistical significance test nor a new experiment.
+""",
+    "07_domain_task": """
+### Insight — subject matter alone is a weak selection rule
+
+**What we see:** broad domains contain both successes and failures, and their sample counts differ substantially. Original task types also have different observed passage fractions. These groups reflect a curated historical candidate pool, not a representative sample of all possible tasks.
+
+**For our decision:** choose a concrete prediction problem and its information sources, rather than choosing 'products,' 'reviews,' or 'sports' from a pass-rate chart. Neither domain nor classification versus regression establishes why a candidate passes. Small groups and confounding prevent causal explanations.
+""",
+    "08_structure_outcomes": """
+### Insight — more usable rows looks promising; fewer columns is not a rule
+
+**What we see:** in this restricted subset of 21 passing and 13 failing profiles, median row counts are 18,843 versus 8,035. Median structured feature counts are 6 versus 7, and median text-column counts are 3 in both groups. The distributions overlap.
+
+**For our decision:** check how many complete examples remain after joining structured records, text, and targets. More usable data may help, but this analysis establishes no minimum required size. Do not delete columns or demand a small schema just to resemble passing datasets. Release coverage, task differences, and other confounders limit these associations.
+""",
+    "09_core_extended": """
+### Insight — collection differences are descriptive, not failure explanations
+
+**What we see:** the released core and extended groups differ in their row and feature-count distributions. However, extended includes historical successes, and six extended releases change the original task.
+
+**For our decision:** use this chart to understand the released collections' practical sizes and schemas. Do not interpret it as proving that large feature counts cause failure or that the core schema is an optimal recipe. The compatible pass/fail subset in the previous chart addresses a different question.
+""",
+    "10_text_lengths": """
+### Insight — inspect the actual text columns, not just average length
+
+**What we see:** passing compatible profiles have a longer richest text column at the median (121 versus 42.9 characters in the preview), but there is substantial overlap. Pooling short names with a narrative can obscure that narrative's length, which is why both summaries are shown.
+
+**For our decision:** inspect whether the text supplies relevant evidence that structured features lack. Longer text may simply contain irrelevant material; short titles or job descriptions can still be useful. These measurements come from contiguous 50-row current-release previews, not representative full-dataset samples, so this is an association to investigate rather than a selection threshold.
+""",
+    "11_text_form_passage": """
+### Insight — neither long text nor 'free-form' appearance guarantees success
+
+**What we see:** text columns vary from mostly short strings to longer narratives, and passing-learner counts do not separate cleanly by the richest column's length. Length does not directly measure semantic usefulness or whether text behaves like a categorical identifier.
+
+**For our decision:** read examples and explain what a generic encoder might miss about the target. Do not exclude an idea just because its text is short, or approve it just because its text is long. The short/long proxies and the following bins are descriptive choices, not validated acceptance rules.
+""",
+    "12_selected_dataset": """
+### Insight — check within-dataset heterogeneity and the target definition
+
+**What to inspect:** the left panel compares individual text columns, so one rich narrative need not make every text feature rich. The right panel shows the observed target values for this small preview. The initial saved example is Book Price; changing the selector changes the plots and tables.
+
+**For our decision:** inspect individual fields and target preprocessing before interpreting a dataset-level average. Ask whether each field is available at prediction time and whether the target's units or transformations are documented. Fifty rows cannot establish full class balance, rare-event coverage, or the population target distribution. This illustrative existing dataset is not a selected new project.
+""",
+    "13_analog_gains": """
+### Insight — similar subjects can fail for different reasons
+
+**What we see:** Vancouver Salaries has positive median joint and TAR gains, while AI Job Salaries has positive median joint gain but negative median TAR gain. BikeWale Bikes shows the opposite pattern: positive median TAR gain but negative median joint gain. Ramen Ratings and Anime Planet combine modalities better at the median while their TAR gains are negative. These medians are descriptive and do not replace the learner-by-learner quorum rule.
+
+**For our decision:** transfer the reasoning about complementary information and task-sensitive language, not the domain label. Sports remains open: FIFA22 Wages has 2 published passing learners and NBA Draft Value has 0. Neither is a direct test of pre-outcome scouting reports or tennis previews. Before selecting such an idea, verify matched row coverage, dated text, target leakage, and implementation effort. These are analog groups with different targets and metrics, not matched causal comparisons.
+""",
+}
+
+def with_graph_insights(original_cells):
+    """Split trailing table code so each interpretation directly follows its chart output."""
+    annotated = []
+    seen = []
+    for cell in original_cells:
+        if cell['cell_type'] != 'code':
+            annotated.append(cell)
+            continue
+        source = cell['source']
+        position = 0
+        for match in re.finditer(r"^showplot\('([^']+)'\)\n?", source, re.M):
+            name = match.group(1)
+            chunk = source[position:match.end()].strip()
+            annotated.append({**cell, 'source':chunk+'\n', 'outputs':[], 'execution_count':None})
+            annotated.append({'cell_type':'markdown', 'metadata':{'research_insight_for':name},
+                              'source':textwrap.dedent(GRAPH_INSIGHTS[name]).strip()+'\n'})
+            seen.append(name)
+            position = match.end()
+        remainder = source[position:].strip()
+        if remainder:
+            annotated.append({**cell, 'source':remainder+'\n', 'outputs':[], 'execution_count':None})
+    assert len(seen) == 13 and set(seen) == set(GRAPH_INSIGHTS)
+    return annotated
+
 def main():
     path = ROOT / "notebooks/01_multabench_dataset_analysis.ipynb"
     path.parent.mkdir(parents=True, exist_ok=True)
-    notebook = {"nbformat":4,"nbformat_minor":5,"metadata":{"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"},"language_info":{"name":"python","version":"3.14"}},"cells":cells}
-    for index, cell in enumerate(cells):cell['id']=f'cell-{index:03d}'
+    annotated = with_graph_insights(cells)
+    notebook = {"nbformat":4,"nbformat_minor":5,"metadata":{"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"},"language_info":{"name":"python","version":"3.14"}},"cells":annotated}
+    for index, cell in enumerate(annotated):cell['id']=f'cell-{index:03d}'
     path.write_text(json.dumps(notebook,indent=1,ensure_ascii=False))
-    print(f"Created {path.name}: {len(cells)} cells.")
+    print(f"Created {path.name}: {len(annotated)} cells, including 13 interpretations directly after graphs.")
 
 if __name__ == "__main__":main()

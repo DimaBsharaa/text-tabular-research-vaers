@@ -1,6 +1,6 @@
 # MulTaBench dataset-selection research
 
-Start with [the executed notebook](notebooks/01_multabench_dataset_analysis.ipynb) or [the standalone HTML](notebooks/01_multabench_dataset_analysis.html). Outputs are already saved: 18 executed Python cells, 13 charts, and the research tables. The notebook uses ordinary Python and can be run in Jupyter. It also has an existing-dataset selector for inspecting per-column text distributions and targets.
+Start with [the executed notebook](notebooks/01_multabench_dataset_analysis.ipynb) or [the standalone HTML](notebooks/01_multabench_dataset_analysis.html). Outputs are already saved: 22 executed Python cells, 13 charts, and the research tables. Every chart is followed immediately by an insight explaining the evidence, limits, and implications for dataset selection. The notebook uses ordinary Python and can be run in Jupyter. It also has an existing-dataset selector for inspecting per-column text distributions and targets.
 
 Scope: Standard Track 2; exploratory research to inform a new dataset choice. No new dataset selected or constructed; no new model runs. Both course PDFs remain in the parent NLP folder. The shared conversation was recovered after a direct retry; its recent decisions, the supplied context, and PDFs were read. Sports ideas remain inspiration, not a dataset selection.
 
@@ -37,4 +37,4 @@ The optional `fetch_sources.py` and `fetch_previews.py` scripts require network 
 - Preview properties cover seeded contiguous 50-row blocks, not full populations. No global class-balance, missingness, or duplicate claims.
 - Leakage flags require manual review. No new feature-selection decisions or benchmark experiments use these labels.
 - Original source URLs and partial benchmark memberships are verified registry references, not proof of working original downloads.
-- All changes are local; no push was performed.
+- Research artifacts are versioned in this independent repository. GitHub synchronization follows the user's authorization.

@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-VARIANTS = ("v1", "v2")
+VARIANTS = ("v1", "v2", "v3")  # v3: the four background fields merged into one column.
 OUTCOME_FLAGS = ["DIED", "L_THREAT", "HOSPITAL", "X_STAY", "DISABLE", "BIRTH_DEFECT"]
 TEXT_SOURCES = {"history": "HISTORY", "current_illness": "CUR_ILL", "other_meds": "OTHER_MEDS", "allergies": "ALLERGIES"}
 EMPTY_TEXT = "none reported"
@@ -132,6 +132,16 @@ def symptom_text(symptoms: pd.DataFrame) -> tuple[pd.Series, dict[str, list[str]
     return joined, removed
 
 
+BACKGROUND_LABELS = {"history": "history", "current_illness": "current illness", "other_meds": "medications",
+                     "allergies": "allergies"}
+
+
+def merge_background(row) -> str:
+    """'history: ...; medications: ...' using only the fields that say something; EMPTY_TEXT if none do."""
+    parts = [f"{label}: {row[col]}" for col, label in BACKGROUND_LABELS.items() if row[col] != EMPTY_TEXT]
+    return "; ".join(parts) if parts else EMPTY_TEXT
+
+
 def mask_narrative(text) -> str:
     text = clean_text(text)
     if text == EMPTY_TEXT:
@@ -201,6 +211,12 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     for col, src in TEXT_SOURCES.items():
         out[col] = data[src].map(clean_text) if src in data.columns else EMPTY_TEXT
     text_cols = ["symptoms", *TEXT_SOURCES]
+    if variant == "v3":
+        # One richer cell per patient instead of four mostly-empty ones (57-86% "none reported" in v1),
+        # so target-aware fine-tuning sees real background text instead of the same filler phrase.
+        out["patient_background"] = out.apply(merge_background, axis=1)
+        out = out.drop(columns=list(TEXT_SOURCES))
+        text_cols = ["symptoms", "patient_background"]
     if variant == "v2":
         out["narrative_masked"] = data.SYMPTOM_TEXT.map(mask_narrative)
         text_cols.append("narrative_masked")

@@ -173,6 +173,20 @@ class BuildVaersTest(unittest.TestCase):
         self.assertTrue(out.narrative_masked.str.contains("resolved with rest").any())
         self.assertEqual(bv.mask_narrative("Pt died. Fever began day 2."), "Fever began day 2.")
 
+    def test_v3_merges_background_into_one_column(self):
+        out, meta = bv.build([self.zip], "v3", n_rows=100000)
+        self.assertEqual(meta["text_columns"], ["symptoms", "patient_background"])
+        self.assertFalse(set(bv.TEXT_SOURCES) & set(out.columns))
+        v1 = self.out.set_index("report_id")
+        v3 = out.set_index("report_id")
+        common = v1.index.intersection(v3.index)
+        pd.testing.assert_series_equal(v1.loc[common, "serious"], v3.loc[common, "serious"])
+        row = pd.Series({"history": "Asthma", "current_illness": bv.EMPTY_TEXT, "other_meds": "metformin",
+                         "allergies": bv.EMPTY_TEXT})
+        self.assertEqual(bv.merge_background(row), "history: Asthma; medications: metformin")
+        self.assertEqual(bv.merge_background(row.map(lambda _: bv.EMPTY_TEXT)), bv.EMPTY_TEXT)
+        self.assertLess((v3.patient_background == bv.EMPTY_TEXT).mean(), (v1.history == bv.EMPTY_TEXT).mean() + 1e-9)
+
     def test_schema_loads_with_evaluation_adapter(self):
         out_dir = self.tmp / "v1"
         csv = bv.write(self.out, self.meta, out_dir, "v1")

@@ -37,8 +37,8 @@ code("""
     RAW_DIR = "/content/drive/MyDrive/text-tabular-research-2/vaers_raw"
     OUT_BASE = "/content/drive/MyDrive/text-tabular-research-2/candidates"
     ROWS = 60000      # Final rows per variant (the benchmark samples ≤10k train + ≤2k test per fold from these).
-    VARIANTS = ["v1"]  # v1: no narrative (primary). "v2" (+ masked narrative) was dropped after the first screen:
-    # its narrative carries reporter-template artifacts and gave no joint gain.
+    VARIANTS = ["v3"]  # v1 is already built and screened. v3 = symptoms + ONE merged "patient_background" column.
+    # ("v2", + masked narrative, was dropped after the first screen: reporter-template artifacts, no joint gain.)
 
     from google.colab import drive
     drive.mount("/content/drive")

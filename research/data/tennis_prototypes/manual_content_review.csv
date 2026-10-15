@@ -1,0 +1,37 @@
+interview_id,specific_context_0_to_2,topics,review_note
+854,2,condition,Ankle pain and retirement decision; concrete self-reported physical limitation.
+718,2,serve_return;conditions,Serving and crucial points alongside heat and rain delays.
+885,2,tactics;fatigue,High-bouncing opponent shots and physical deterioration across sets.
+1195,2,surface;off_topic,Unexpectedly slow grass and changed court conditions; also football discussion.
+1749,2,serve_return,Opponent serve dominance and limited opportunities to break.
+1499,2,tactics;conditions;metadata_conflict,Discusses a loss although source labels a win; quarantine the link rather than repair by guessing.
+1380,2,condition;preparation,Back pain; poor preparation; heavy legs and rest plans.
+1617,1,surface;context_dependence,Grass movement adjustment but many answers require the missing question context.
+2411,1,mentality;venue,Large-court experience and pressure; breakpoint discussion and non-tennis material.
+2209,1,motivation;rest,Explains incentives in a dead-rubber match and intended end-season rest.
+1891,1,condition;mentality,Match-point loss and minor nail problem; much general opponent praise.
+1987,0,retirement;off_topic,Career-retirement plans and travel rather than current performance mechanisms.
+2852,1,tactics,Describes missed chances and opponent raising level; limited mechanistic detail.
+2826,1,mentality;conditions,Practice-to-match consistency and focus; court lighting discussion.
+2557,2,condition,Shoulder pain affecting forehand and serve with planned imaging; self-report not a medical finding.
+2824,2,serve_return;adaptation,Return opportunities and adaptation to a new practice environment; some short answers depend on questions.
+3161,1,fatigue;confidence,Recent match workload and tiredness; broadly stated confidence.
+3270,1,tactics;conditions;off_topic,Opponent rhythm changes and wind plus unrelated music discussion.
+3406,2,adaptation;fatigue,Indoor-to-outdoor transition and compressed preparation impairing focus in long points.
+3303,2,serve_return;opponent_condition,Serving and nerves; tentative speculation about an opponent injury should not be promoted to fact.
+4104,1,mentality;errors,Debut nerves and errors plus future scheduling; modest tactical detail.
+4212,2,serve_return;conditions,Serve and return adjustments alongside cold-night conditions.
+4272,0,generic,Generic bad-day account and opponent praise without a specific actionable mechanism.
+4036,2,tactics,Serve and backhand quality with deliberate stroke-rhythm changes.
+5019,2,condition;withdrawal,Back-problem withdrawal and rehabilitation plans; not necessarily an interview after a played match.
+4683,2,surface;opponent_profile,Grass suitability and upcoming opponent taking the ball early and volleying; foot-fault dispute also present.
+5052,2,tactics;fatigue,Overaggression and backhand errors plus compressed singles/doubles schedule.
+4799,0,off_topic,Refuses comment on a controversy; lacks a useful player-performance description.
+5605,2,condition,Reports recovery from ankle injury; also schedule and training-base context.
+5893,0,generic,Mostly general confidence and health claims with broad intent to improve serve.
+5733,2,fatigue;recovery,Late finish and limited recovery before semifinal; serve below normal readiness.
+5618,2,serve_return;conditions,Serving and movement improvements in wind; distinguishes possible next opponents.
+76,2,condition,Wrist pain specifically limiting backhand with treatment and recovery expectations.
+656,2,condition;preparation,Knee concern and restricted grass practice followed by timing and serving adjustments.
+95,0,generic;opponent_praise,Mostly consistency and confidence statements plus forecasts about other players.
+295,2,tactics,Return-and-rally response to an aggressive opponent and concentration strategy.

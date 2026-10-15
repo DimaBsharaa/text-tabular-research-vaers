@@ -1,0 +1,4 @@
+partition,rows,first_day,last_day
+train,2162,2007-01-19,2012-10-12
+development,716,2012-10-13,2014-06-18
+reserved_test,749,2014-06-19,2015-11-22

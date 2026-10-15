@@ -1,0 +1,90 @@
+[
+  {
+    "variant": "A",
+    "rows": 4052,
+    "unique_matches": 4052,
+    "players": 288,
+    "structured_columns": 16,
+    "text_columns": 2,
+    "date_min": "2007-01-19",
+    "date_max": "2015-11-22",
+    "a_win_fraction": 0.49555774925962487,
+    "text_unique": {
+      "player_a_text": 2616,
+      "player_b_text": 2637
+    },
+    "text_detector_on_full_population": {
+      "player_a_text": true,
+      "player_b_text": true
+    },
+    "median_words": {
+      "player_a_text": 300.0,
+      "player_b_text": 300.0
+    },
+    "missing_text_percent": {
+      "player_a_text": 0.0,
+      "player_b_text": 0.0
+    },
+    "duplicate_text_fraction": {
+      "player_a_text": 0.3543928923988154,
+      "player_b_text": 0.34921026653504444
+    }
+  },
+  {
+    "variant": "B",
+    "rows": 415,
+    "unique_matches": 415,
+    "players": 64,
+    "structured_columns": 16,
+    "text_columns": 2,
+    "date_min": "2015-06-12",
+    "date_max": "2015-11-22",
+    "a_win_fraction": 0.491566265060241,
+    "text_unique": {
+      "player_a_text": 110,
+      "player_b_text": 106
+    },
+    "text_detector_on_full_population": {
+      "player_a_text": true,
+      "player_b_text": true
+    },
+    "median_words": {
+      "player_a_text": 47.0,
+      "player_b_text": 47.0
+    },
+    "missing_text_percent": {
+      "player_a_text": 0.0,
+      "player_b_text": 0.0
+    },
+    "duplicate_text_fraction": {
+      "player_a_text": 0.7349397590361446,
+      "player_b_text": 0.744578313253012
+    }
+  },
+  {
+    "variant": "C",
+    "rows": 44359,
+    "unique_matches": 44359,
+    "players": 1556,
+    "structured_columns": 10,
+    "text_columns": 1,
+    "date_min": "2006-12-31",
+    "date_max": "2015-11-22",
+    "a_win_fraction": 0.5003268784237697,
+    "text_unique": {
+      "context_text": 342
+    },
+    "text_detector_on_full_population": {
+      "context_text": true
+    },
+    "median_words": {
+      "context_text": 23.0
+    },
+    "missing_text_percent": {
+      "context_text": 0.0
+    },
+    "duplicate_text_fraction": {
+      "context_text": 0.9922901778669492
+    }
+  }
+]

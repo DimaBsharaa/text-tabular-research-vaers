@@ -1,0 +1,44 @@
+{
+  "study": "Cornell A v1",
+  "selected_policy": "topical_answers",
+  "rule_version": "cornell-extractive-v1",
+  "lag_days": 3,
+  "source_publication_time_verified": false,
+  "availability_interpretation": "Assume online availability within a three-calendar-day buffer; local dates and upload times unresolved. Not proof of publication.",
+  "history_inclusion": [
+    "Completed",
+    "Retired"
+  ],
+  "walkovers_count_as_played": false,
+  "cutoffs": {
+    "development_start": "2012-10-13",
+    "reserved_test_start": "2014-06-19"
+  },
+  "token_limit_including_prefix_and_special_tokens": 512,
+  "tokenizer_revision": "ffb93f3bd4047442299a41ebb6fa998a38507c52",
+  "text_policies": [
+    "legacy300",
+    "token_head",
+    "head_tail",
+    "topical_answers",
+    "topical_qa"
+  ],
+  "selector_source_sha256": "7e7cbe225d7773da9b71ed0a9d9a1ab889bbab68ace5ba0616297ae6935b609a",
+  "temporal_source_sha256": "234d84a48b8d81a3f6e5d18bb7b7dce8658d4f81b7e26e0eb56af858aa5dad40",
+  "diagnostic": {
+    "learner": "CPU LogisticRegression",
+    "text": "TF-IDF, NOT E5",
+    "C": 1,
+    "solver": "liblinear",
+    "max_iter": 500,
+    "seed": 42,
+    "development_only": true,
+    "reserved_test_scoring": false,
+    "policy_selected_before_scores": true,
+    "official_curation_claim": false
+  },
+  "no_outreach": true,
+  "no_push": true,
+  "official_code_changes": false,
+  "config_sha256": "a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334"
+}

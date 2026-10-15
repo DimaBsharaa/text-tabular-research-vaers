@@ -1,0 +1,6 @@
+split,training_match_id,training_match_date,text_side,training_interview_id,referenced_test_match_id,referenced_test_match_date
+random_80_20_seed42_diagnostic,86172c7dd63f63de785666eb,2015-08-25,a,531,25ba9e2444c24089537aad25,2015-07-08
+random_80_20_seed42_diagnostic,972168f160a03b8ae8064c04,2012-10-05,b,4477,2eb17024d4689048421e49b8,2012-09-01
+random_80_20_seed42_diagnostic,13fb90ff7916efc58138cdcd,2011-10-11,b,3715,570f60caed8e9a0af4d01749,2011-09-05
+random_80_20_seed42_diagnostic,e83ede95274c49652ac2b85f,2010-10-08,a,2933,d8b531d551255e3973b57efd,2010-08-30
+random_80_20_seed42_diagnostic,cc4f9ce146b86c5b57e2d6d6,2010-08-13,b,2753,448c013e2b5a538a40f13959,2010-08-12

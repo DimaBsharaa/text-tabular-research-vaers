@@ -1,0 +1,88 @@
+{
+  "rows": 4052,
+  "structured_columns": 16,
+  "text_columns": 2,
+  "target": "target",
+  "csv_columns_including_audit_id_and_target": 20,
+  "unique_interviews": 4171,
+  "training_unique_interviews": 2496,
+  "median_full_interview_words": 753.0,
+  "median_word_chunks_of_300": 3.0,
+  "documents_over_300_words": 3701,
+  "cutoffs": {
+    "development_start": "2012-10-13",
+    "reserved_test_start": "2014-06-19"
+  },
+  "split_rows": [
+    {
+      "split": "train",
+      "rows": 2430,
+      "first_day": "2007-01-19",
+      "last_day": "2012-10-12",
+      "a_wins": 1220,
+      "b_wins": 1210,
+      "current_targets_referenced_by_earlier_partitions": 0
+    },
+    {
+      "split": "development",
+      "rows": 809,
+      "first_day": "2012-10-13",
+      "last_day": "2014-06-18",
+      "a_wins": 374,
+      "b_wins": 435,
+      "current_targets_referenced_by_earlier_partitions": 0
+    },
+    {
+      "split": "reserved_test",
+      "rows": 813,
+      "first_day": "2014-06-19",
+      "last_day": "2015-11-22",
+      "a_wins": 414,
+      "b_wins": 399,
+      "current_targets_referenced_by_earlier_partitions": 0
+    }
+  ],
+  "text_detection_on_training_partition": {
+    "player_a_text": true,
+    "player_b_text": true
+  },
+  "clipping_summary": [
+    {
+      "topic": "condition",
+      "scope": "training_partition_interviews_only",
+      "documents_with_cue_in_full": 1296,
+      "documents_with_cue_in_first300": 755,
+      "documents_with_cue_only_after_first300": 541,
+      "fraction_of_full_cue_documents_lost": 0.4174382716049383
+    },
+    {
+      "topic": "tactics",
+      "scope": "training_partition_interviews_only",
+      "documents_with_cue_in_full": 1584,
+      "documents_with_cue_in_first300": 1076,
+      "documents_with_cue_only_after_first300": 508,
+      "fraction_of_full_cue_documents_lost": 0.3207070707070707
+    },
+    {
+      "topic": "surface",
+      "scope": "training_partition_interviews_only",
+      "documents_with_cue_in_full": 1032,
+      "documents_with_cue_in_first300": 546,
+      "documents_with_cue_only_after_first300": 486,
+      "fraction_of_full_cue_documents_lost": 0.47093023255813954
+    }
+  ],
+  "publication_verification_complete": false,
+  "model_fits": 0,
+  "official_model_code_modified": false,
+  "outreach_sent": false,
+  "feature_csv_sha256": "ab2d841c4f48bca2e3682b6020ae9175897e69353941294131cf17ca8692909d",
+  "files_private": [
+    "features.csv",
+    "audit.csv",
+    "splits.csv",
+    "schema.json",
+    "examples_private.csv",
+    "candidate_workbench.ipynb"
+  ]
+}

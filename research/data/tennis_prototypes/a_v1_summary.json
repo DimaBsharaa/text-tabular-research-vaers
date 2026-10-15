@@ -1,0 +1,28 @@
+{
+  "original_rows": 4052,
+  "v1_rows": 3627,
+  "lag_days_assumed": 3,
+  "split_counts": {
+    "train": 2162,
+    "reserved_test": 749,
+    "development": 716
+  },
+  "unique_source_interviews": 3324,
+  "history_lineage_rows": 7254,
+  "selected_policy": "topical_answers",
+  "policy_selected_before_diagnostics": true,
+  "actual_classifier_fits": 11,
+  "E5_models_loaded": 0,
+  "TAR_runs": 0,
+  "reserved_test_model_scores_computed": 0,
+  "publication_verified_rows": 0,
+  "conditional_calendar_rule_passed": true,
+  "dates_block_research_automatically": false,
+  "config_sha256": "a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334",
+  "private_directory": "/Users/dimabshara/Desktop/NLP/tennis-research-cache/derived/candidate_A_v1",
+  "superseded_debug_attempts": {
+    "aborted_classifier_fits": 2,
+    "development_scores_computed": 0,
+    "reason": "Preprocessor-fingerprint JSON serialization failed before prediction in two audit attempts; a head/tail overlap control was corrected before score interpretation. Superseded outputs are not research results."
+  }
+}

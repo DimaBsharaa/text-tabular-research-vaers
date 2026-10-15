@@ -1,0 +1,405 @@
+{
+  "inputs": [
+    {
+      "filename": "variant_A.csv",
+      "bytes": 13348609,
+      "sha256": "1fea411b7fb5eb8a4cf88840ad7f1e9efd3767762c8ee2d1d1ed667ef72535d0"
+    },
+    {
+      "filename": "structured_source_rows.csv",
+      "bytes": 14473289,
+      "sha256": "4e826881fe359b7e361c8f96ee9e2b1b70a8c52455f5e0eecd3c2139c390cd3c"
+    },
+    {
+      "filename": "transcripts_matchinfo.json",
+      "bytes": 44166603,
+      "sha256": "b507a4fc9fa6470f20ddc54b2bcdaf1b0d63578c2c35e603241b4448555c3043"
+    }
+  ],
+  "repo_outputs": [
+    {
+      "path": "research/data/tennis_prototypes/a_v1_all_text_policies.csv",
+      "bytes": 838,
+      "sha256": "56202215b7e70a726a902b18f67ac78a0158755f69b413e2df547ab38b97658b"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_automated_test_results.json",
+      "bytes": 5418,
+      "sha256": "989ad159508a0a2bf0cf61ceb460171807028d7d6e8e75ba0fdb6a4ca909ca43"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_context_blocks_development_scores.csv",
+      "bytes": 406,
+      "sha256": "b6bca9a6e0467452a90ec01406fb28d21d0df042fc098c5c94f1d3beb4418ae7"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_context_blocks_fit_audit.json",
+      "bytes": 196406,
+      "sha256": "f1dbfa7dd7dad71cf4cf4aaff6ed1a6c044690dd168f43645075dff2474e6357"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_context_blocks_metrics.csv",
+      "bytes": 488133,
+      "sha256": "2c0ec2c872a50819520598e7590731f97b09a20d8e496db4b77c49eed2a11f51"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_context_blocks_policy.json",
+      "bytes": 620,
+      "sha256": "c4a1f3915a928bfe05ebd361893046ae7c6a3f43999401058001e95766646926"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_date_sensitivity.csv",
+      "bytes": 386,
+      "sha256": "6875952e9023a4ed95d0188a680282779c5667d56ecc3ceb7b1c56f99ded9ace"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_head_tail_joint_tfidf_predictions.csv",
+      "bytes": 33149,
+      "sha256": "92893c2b2f95c2089e4690a1595f6b569db0541a7b9847c6f7339d7ce88da48f"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_head_tail_text_tfidf_predictions.csv",
+      "bytes": 33041,
+      "sha256": "c4444f2185a649a3e41c34bb0ec25b44a7083a3c09f22c892306dd4c4a1f550b"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_legacy300_joint_tfidf_predictions.csv",
+      "bytes": 33129,
+      "sha256": "4608af8190cfef75efdbb5aefbc8a2b7e0d651088681d2a68c2b795cf8b9c5ab"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_legacy300_structured_predictions.csv",
+      "bytes": 33129,
+      "sha256": "a7e3e655935d12af2e61a0853ea2147f7f817ca4cccdd22135022865ffd1fa48"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_legacy300_text_tfidf_predictions.csv",
+      "bytes": 33054,
+      "sha256": "bf923f83c7f4657f39410dd1fb3642202c7906a0c72f155953286f1354634968"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_qa_blocks_joint_tfidf_predictions.csv",
+      "bytes": 33156,
+      "sha256": "414ceaf78773aa57fb816aaa496d25f666b515246714313e03b0d138d57443e6"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_qa_blocks_text_tfidf_predictions.csv",
+      "bytes": 33068,
+      "sha256": "0af6c3385cf0f6e42035c7f0ef82330909878c46e46a39f2a7eb4a76c43f2bbb"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_token_head_joint_tfidf_predictions.csv",
+      "bytes": 33142,
+      "sha256": "73af330947635d0cc0541f7d9a69004dabc3f96fd006cadc0601b248ab0a18f0"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_token_head_text_tfidf_predictions.csv",
+      "bytes": 33063,
+      "sha256": "9cbc6414fadcaf89d26779717a2190548ac2997c1763a6a3d959a2bc98d74d8e"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_topical_answers_joint_tfidf_predictions.csv",
+      "bytes": 33131,
+      "sha256": "5a3dde7cc8586fe960434bea64009a5cb4bfed8ca9d486044d29659f6e442c3f"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_topical_answers_text_tfidf_predictions.csv",
+      "bytes": 33054,
+      "sha256": "953b2cfcd8c47d551cdefec8e7ece2aed2363525fe2434c7093ce3cc589e447e"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_topical_qa_joint_tfidf_predictions.csv",
+      "bytes": 33138,
+      "sha256": "abb43571563d6c686567261f4fca7ee5fe680dc0677d9b04c6d4258ae5a43d48"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_dev_topical_qa_text_tfidf_predictions.csv",
+      "bytes": 33067,
+      "sha256": "494b8d3733966070241f2b74a54893c1e132960505a0a8164ee2ef2e2ac8a6c9"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_development_comparison.csv",
+      "bytes": 649,
+      "sha256": "aaf78682ac9bf66a4144580c04c3d48a80dc38a8a6263a5fa8d400efc48aceda"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_development_scores.csv",
+      "bytes": 2186,
+      "sha256": "9c8d8a2528fae5c2402e994c61ca429957e74ba815002ece851e6b7b289026c3"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_environment.json",
+      "bytes": 386,
+      "sha256": "39f38507fe6d37e11ad56b64d1be4bfcccef1e567586ffcc209ef1635a988130"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_excluded_targets.csv",
+      "bytes": 29607,
+      "sha256": "35bb01373d84d135ff3e99f05e02105ac3ec5f6b3a6b67cf2f650f509367a920"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_history_definition_changes.csv",
+      "bytes": 196,
+      "sha256": "907d1d14ce6cddf09a19750089509d8da809919206edd7180982ac74e135ad3d"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_history_examples.csv",
+      "bytes": 1278,
+      "sha256": "784bb70b729a0adabd38b5cace0376910239a4ee224560e41c3ed96523c07623"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_identical_distinct_documents.csv",
+      "bytes": 70,
+      "sha256": "11b0b16a7b779dd331ad7b8f03cdf325c230d2abd9b27b631645c6b9e12e5f73"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_leakage_checks.csv",
+      "bytes": 9488,
+      "sha256": "0c836e8dfa8106f4782b19729235943295a6d76d5cdcdb4b6ea9c6dc5b9fe8a7"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_leakage_checks.json",
+      "bytes": 16464,
+      "sha256": "3fae5485a7d6ca74b04b200cc7ca40ecf7ab3183c4db099168f635aaedd4e1b7"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_leakage_summary.json",
+      "bytes": 961,
+      "sha256": "a652145adce5d06d2945f7890de5e9a73641131de6be97a2c25762885b64f2af"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_mutation_results.json",
+      "bytes": 317,
+      "sha256": "c4fa7e065ffbde64769ae373644ed617739a0bff45b3a1e8a02a9bb5c6f3288b"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_near_duplicate_screen.csv",
+      "bytes": 113,
+      "sha256": "6089710f58d2d01bac730bf6cf2972a8f2de6a75d44f2634fa9656f725cf6723"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_next_match_counts.csv",
+      "bytes": 213,
+      "sha256": "87935d34aa091418c362222b961adafa926121e516aec844ec75a1399f0d079d"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_next_match_links.csv",
+      "bytes": 923832,
+      "sha256": "e2fe679493a66c854db871a2e46db11f19dbfa909101a9aa4e9c4f37ca6f6983"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_policy.json",
+      "bytes": 1454,
+      "sha256": "3a0119a06e9da7a9e30768eeb00f126edcc7da6ed4b3f1422c17b3742ff11f8a"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_preprocessing_fit_audit.json",
+      "bytes": 1097257,
+      "sha256": "eef4cf6b62929ef960b96472532ff17703fc739bb091db380bc283a0f8051e58"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_rank_snapshot_variations.csv",
+      "bytes": 55,
+      "sha256": "2136c25544ed4991b531d2722a87baba09ef5a8be72b3520e1edf2ef87514254"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_reused_interview_rows.csv",
+      "bytes": 11699,
+      "sha256": "898a6b40a6a513a8bdb13684f9b97407b9db5108f59a207b64a51dcea5fd42ee"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_review_summary.json",
+      "bytes": 446,
+      "sha256": "c306edc093184c992c53d8edcfc81270fcb3f498343d01f7cf4d3040d2f02add"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_secondary_diagnostics.json",
+      "bytes": 667,
+      "sha256": "727a3a42e612535b94f4d49578f4f9b018a8d77774e94e7d3b009bd980c38659"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_split_summary.csv",
+      "bytes": 145,
+      "sha256": "967d29d52767a4fcd79dbe315b6e167a100783de90a10c12826a3c98afb24e32"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_summary.json",
+      "bytes": 1084,
+      "sha256": "2c9a3148d7e6d08dd5995a2bd9542edca22f2ce3bd57296eb1cabc8dbf114ad5"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_target_reference_text_flags.csv",
+      "bytes": 95,
+      "sha256": "fcad2b24c6849bc0e92b2de79bd49e91abedccf53322777c0259a8dbdff8b956"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_text_policy_metrics.csv",
+      "bytes": 3725672,
+      "sha256": "7ba9cb5538b38312d042b4cdbd4649afb94910e1e51b3aa2b0a74f00d91233da"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_text_policy_summary.csv",
+      "bytes": 717,
+      "sha256": "0f8e0c91341356242498b4543255b9286627c6d2b68a50f6434fd7be94a045ad"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_tokenizer_manifest.json",
+      "bytes": 1302,
+      "sha256": "edeb2cf1e01737a7d4ab84f77708392df9e6defea7eb3ce718b1dfced06359bd"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_tournament_name_crosswalk.csv",
+      "bytes": 4124,
+      "sha256": "6dc904ffa5f836f7659e53dea247e27b2a5a05c6492d0b7db2cce33fc384955b"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_training_document_label_ambiguity.csv",
+      "bytes": 42363,
+      "sha256": "d1acde037f736b69f89af824e202202e46b29bfcd4ea0fec836cb1a3dca949d0"
+    },
+    {
+      "path": "research/data/tennis_prototypes/a_v1_training_review_notes.csv",
+      "bytes": 792,
+      "sha256": "7aab1efaf5f6b42d885a90c9c469d97d42726c8c59c3b21ab41321c9b2a03359"
+    }
+  ],
+  "private_outputs": [
+    {
+      "filename": "README.md",
+      "bytes": 1580,
+      "sha256": "c06e3fd78845d8a82458d0ad4ecd2bcc6a7c53afa64b96003215602221092092"
+    },
+    {
+      "filename": "audit.csv",
+      "bytes": 1515842,
+      "sha256": "6d3a479a972ba7361d68cd4da8d9a0eb9e7a9b67953dc7f00ef507b22a4533c3"
+    },
+    {
+      "filename": "before_after_examples_private.csv",
+      "bytes": 1208,
+      "sha256": "81348dbb5d51dbdf9a5106516e98de8a2d7b13adcc8bdd1c53df62861603bb83"
+    },
+    {
+      "filename": "context_blocks_frozen_before_diagnostics.json",
+      "bytes": 620,
+      "sha256": "c4a1f3915a928bfe05ebd361893046ae7c6a3f43999401058001e95766646926"
+    },
+    {
+      "filename": "features_head_tail.csv",
+      "bytes": 13485707,
+      "sha256": "dcff3b0276b5c1c973ef581fcbdf9978a3e46585aee2c8e2b47bca426f977c02"
+    },
+    {
+      "filename": "features_legacy300.csv",
+      "bytes": 10979576,
+      "sha256": "ac3dbfb194bfa574b817bbda6657dd5b0f8e6441f1be1bfeb3e2e4a2ac423720"
+    },
+    {
+      "filename": "features_qa_blocks.csv",
+      "bytes": 11847640,
+      "sha256": "3c67aa6c475487fe35207fb5160a1bcfb295f2b9386d00bdd92d815c1ee74f22"
+    },
+    {
+      "filename": "features_token_head.csv",
+      "bytes": 13831898,
+      "sha256": "1c2db2f36f554b2abd29ecfa09bd2698d79c3c192454e0e3491abd12542c22f8"
+    },
+    {
+      "filename": "features_topical_answers.csv",
+      "bytes": 5874504,
+      "sha256": "baadb3bb094366cd44c3854749d7ee658f27706349059aa35049060a854cbf5a"
+    },
+    {
+      "filename": "features_topical_qa.csv",
+      "bytes": 11191168,
+      "sha256": "70be57ee288e2dfe9a31e66db79bf6a705468b45f209e9f31c96ad9895910ada"
+    },
+    {
+      "filename": "history_lineage.jsonl.gz",
+      "bytes": 24607485,
+      "sha256": "8489680dba7ac0f68955d38a091c2e1501bf403a68ff5fc7eba7ee55a392517f"
+    },
+    {
+      "filename": "metadata.csv",
+      "bytes": 1889135,
+      "sha256": "524a049662b15f46e852e162f1299e805f51d4a5819391b6e46c9a18b0026e0e"
+    },
+    {
+      "filename": "passages_private.jsonl.gz",
+      "bytes": 8205918,
+      "sha256": "86180cc6e97a46e4f3fb26a20caaaf50e642b3d5c59b098a119d22ab254c5b05"
+    },
+    {
+      "filename": "policy_frozen_before_diagnostics.json",
+      "bytes": 1454,
+      "sha256": "3a0119a06e9da7a9e30768eeb00f126edcc7da6ed4b3f1422c17b3742ff11f8a"
+    },
+    {
+      "filename": "qa_blocks_private.jsonl.gz",
+      "bytes": 3171760,
+      "sha256": "34d04896d31ef7389eedd7a50a4a03ee29ef86a8062ff8510e454ed22a5e4992"
+    },
+    {
+      "filename": "schema.json",
+      "bytes": 1398,
+      "sha256": "54d8c9178b5994cbe56fe5de5edf515bd5f5247742516dbe84cb1b8d7b5f50ef"
+    },
+    {
+      "filename": "schema_qa_blocks.json",
+      "bytes": 1392,
+      "sha256": "8681fbb284f1806c00a0585fbd04e6468bbece4cc9462ebb52d03a3412e75910"
+    },
+    {
+      "filename": "splits.csv",
+      "bytes": 162648,
+      "sha256": "c458e6f0cf502634bcaf54f4128da8e46a5907edf6f7b97d9f0f8ebfa0a0033d"
+    }
+  ],
+  "implementation_and_reports": [
+    {
+      "path": "research/scripts/tennis/a_leakage.py",
+      "sha256": "ff555d5f729e2975f7df6cee8dc05a5f6bd06e0496d066052d78abb3f1ed8e72"
+    },
+    {
+      "path": "research/scripts/tennis/a_study.py",
+      "sha256": "809ad335964afcbc6fec450047f90331aabcad521ac9f7ba0051f0c3d09ad141"
+    },
+    {
+      "path": "research/scripts/tennis/a_review_outputs.py",
+      "sha256": "d56108628f7db287ba474dc66c7dd3a1fc12b1c9444b2dc8efaa72e539abd4e2"
+    },
+    {
+      "path": "research/scripts/tennis/a_context_blocks.py",
+      "sha256": "b8a49752dcb7d993c4957656b8c3f16b45b7496a7daeae85f594c0c4298bde04"
+    },
+    {
+      "path": "research/scripts/tennis/a_temporal.py",
+      "sha256": "234d84a48b8d81a3f6e5d18bb7b7dce8658d4f81b7e26e0eb56af858aa5dad40"
+    },
+    {
+      "path": "research/scripts/tennis/a_additional_checks.py",
+      "sha256": "b19a664732a8a38e85b1288bbfa721b6f2d62c863a93f054f9a82f7355cfe76d"
+    },
+    {
+      "path": "research/scripts/tennis/a_text.py",
+      "sha256": "7e7cbe225d7773da9b71ed0a9d9a1ab889bbab68ace5ba0616297ae6935b609a"
+    },
+    {
+      "path": "evaluation/tennis_temporal_pilot.py",
+      "sha256": "9bb46ec6c0cca0db906b8d589031c879ce1896732bf3dd7c848740895296af62"
+    },
+    {
+      "path": "research/notebooks/05_tennis_interview_validation.ipynb",
+      "sha256": "f97dd545004afae840e04a6bcdc01d75ac234bcd9391018f284d2b1ff820b110"
+    },
+    {
+      "path": "research/reports/tennis_a_text_preprocessing.md",
+      "sha256": "725fc685a42068d9a947ad0a268db613364222e8caebe31d74bbfdeead9d8fea"
+    },
+    {
+      "path": "research/reports/tennis_a_leakage_validation.md",
+      "sha256": "4b68493de2323110219fcfb2b8a168b22effe5a3e6be50423b9170d84382420f"
+    }
+  ],
+  "notes": "Full transcripts and selected passage CSVs are private. Hashes support reproducibility, not proof of first publication."
+}

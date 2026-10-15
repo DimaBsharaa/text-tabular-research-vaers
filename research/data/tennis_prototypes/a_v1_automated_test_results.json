@@ -1,0 +1,141 @@
+{
+  "tests": 33,
+  "successful": true,
+  "runtime_seconds": 0.5503498750040308,
+  "results": [
+    {
+      "test": "research.scripts.tennis.test_research.HelperTests.test_deterministic_name_aliases",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.HelperTests.test_future_and_same_day_outcomes_cannot_change_predictors",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.HelperTests.test_repetition_does_not_become_text_by_column_name",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_chronological_comparison_uses_identical_matches",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_feature_partition_and_no_outcome_role_inputs",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_interviews_are_previous_events_and_day_strict",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_orientation_rank_assignment_and_label",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_review_sample_and_manual_labels_agree",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_research.PreparedDataTests.test_tactical_snapshot_and_source_dates_precede_target",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_ambiguous_latest_interview_is_not_chosen",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_clipping_distinguishes_late_cues_from_absent_cues",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_earlier_cutoff_does_not_extend_freshness_window",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_measured_chronological_split_has_no_reverse_reference",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_partition_dates_remain_together_and_ignore_targets",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_publisher_encoding_repair_preserves_words",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_same_day_and_future_documents_are_excluded",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_same_day_negative_control_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_interview_followup.FollowupTests.test_source_reference_and_document_reuse_are_different",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.DateRuleTests.test_delay_falls_back_to_older_source",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.DateRuleTests.test_next_record_does_not_skip_retirement_to_find_favorable_completed_target",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.DateRuleTests.test_same_day_and_future_sources_never_qualify",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.DateRuleTests.test_withdrawal_is_not_silently_called_a_played_match",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_changed_source_answer_fails_provenance",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_every_method_preserves_budget_on_long_interview",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_exact_budget_includes_format_and_special_tokens",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_invented_output_fails_provenance",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_negation_and_short_answer_context_survive",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_short_head_tail_does_not_repeat_the_middle",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PassageTests.test_whole_block_keeps_qualified_negative_answer_together",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PreparedStudyTests.test_documented_assumption_passes_without_false_publication_claim",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PreparedStudyTests.test_reserved_test_was_not_scored",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PreparedStudyTests.test_tampered_sidecar_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "research.scripts.tennis.test_a_validation.PreparedStudyTests.test_three_way_cutoffs_do_not_depend_on_outcomes",
+      "status": "PASS"
+    }
+  ],
+  "failures": 0,
+  "errors": 0
+}

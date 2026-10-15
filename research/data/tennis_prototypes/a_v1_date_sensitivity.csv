@@ -1,0 +1,5 @@
+lag_days,original_target_pool,retained_rows,excluded_rows,rows_using_older_eligible_interview,publication_verified_rows,rule_is_assumption,rows_both_sources_are_immediate_previous_match,rows_any_source_is_immediate_previous_match
+1,4052,4037,15,46,0,True,836.0,1894.0
+2,4052,3857,195,661,0,True,439.0,1187.0
+3,4052,3627,425,1219,0,True,70.0,385.0
+7,4052,3360,692,1335,0,True,17.0,191.0

@@ -1,0 +1,25 @@
+{
+  "checks": 45,
+  "by_status": {
+    "PASS": 36,
+    "ASSUMPTION": 6,
+    "FAIL": 2,
+    "NOT_RUN": 1
+  },
+  "v1_actual_failures": [],
+  "retained_legacy_or_negative_control_failures": [
+    "SPLIT03",
+    "PREP04"
+  ],
+  "history_errors": {},
+  "reuse": {
+    "shared_interview_ids_between_partitions": 42,
+    "rows_using_shared_interviews": 155,
+    "all_shared_source_dates_before_use": true,
+    "identical_full_answers_across_distinct_interview_ids": 0,
+    "near_duplicate_pairs_at_0_95": 0,
+    "distinct_later_documents_screened": 1313,
+    "similarity_scope": "fit-free hashed word unigram/bigram nearest training document; same IDs excluded; not exhaustive semantic similarity"
+  },
+  "conditional_conclusion": "No detected violations of the implemented calendar/as-of, target isolation, chronological partition and train-only-fit rules. Publication/ranking/source/pretraining assumptions remain; this is not a universal leakage-free guarantee."
+}

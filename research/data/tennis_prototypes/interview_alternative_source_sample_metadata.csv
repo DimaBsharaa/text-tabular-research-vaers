@@ -1,0 +1,13 @@
+gender,margin_days_before_week_anchor,tourney_id,tourney_name,match_num,first_round,completed,cutoff_scenario,side_1_interview_id,side_2_interview_id,both_recent_interviews,publication_verified,cutoff_verified
+M,7,2015-580,Australian Open,12,True,True,2015-01-12,5755.0,5742.0,True,False,False
+M,7,2015-403,Miami Masters,5,True,True,2015-03-18,55.0,135.0,True,False,False
+M,7,2015-717,Houston,2,True,True,2015-03-30,135.0,117.0,True,False,False
+M,7,2015-410,Monte Carlo Masters,9,True,True,2015-04-05,333.0,135.0,True,False,False
+M,7,2015-410,Monte Carlo Masters,21,True,True,2015-04-05,125.0,345.0,True,False,False
+M,7,2015-7290,Estoril,10,True,True,2015-04-20,280.0,380.0,True,False,False
+M,7,2015-7163,Istanbul,8,True,True,2015-04-20,295.0,381.0,True,False,False
+M,7,2015-416,Rome Masters,4,True,True,2015-05-03,95.0,123.0,True,False,False
+M,7,2015-416,Rome Masters,15,True,True,2015-05-03,373.0,106.0,True,False,False
+M,7,2015-416,Rome Masters,16,True,True,2015-05-03,382.0,294.0,True,False,False
+M,7,2015-520,Roland Garros,9,True,True,2015-05-17,106.0,371.0,True,False,False
+M,7,2015-520,Roland Garros,20,True,True,2015-05-17,412.0,295.0,True,False,False

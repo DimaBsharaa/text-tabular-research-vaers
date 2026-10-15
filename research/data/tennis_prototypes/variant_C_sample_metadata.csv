@@ -1,0 +1,51 @@
+match_id,match_date,gender,tournament,surface,court,round,best_of,level,player_a_key,player_b_key,player_a,player_b,comment,source_file,source_row,target
+075f9dd713632ad2f63c40b3,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,benesovai,bremonds,Benesova I.,Bremond S.,Completed,wta_2007.xls,35,0
+102cd3008ab9d92e12487638,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,castanoc,goldss,Castano C.,Golds S.,Completed,wta_2007.xls,33,1
+2d729201e11f2e79e31c2d6d,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,camerinme,vesninae,Camerin M.E.,Vesnina E.,Completed,wta_2007.xls,37,0
+865a826063682d7a917d7901,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,bammers,hingism,Bammer S.,Hingis M.,Completed,wta_2007.xls,36,0
+88fa37864820a4d2a3bf7f81,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,sugiyamaa,fergusons,Sugiyama A.,Ferguson S.,Completed,wta_2007.xls,38,0
+f53e9fd0295e7ef03ee92d54,2006-12-31,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,sequeram,ivanovae,Sequera M.,Ivanova E.,Completed,wta_2007.xls,34,1
+088f115e662f1d3ccc6cd350,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,vliegenk,soderlingr,Vliegen K.,Soderling R.,Completed,atp_2007.xls,66,0
+09d4ee1c400e62aa6b371b69,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,garcialopezg,staracep,Garcia-Lopez G.,Starace P.,Completed,atp_2007.xls,71,1
+0cda624961c9816a6d10eb95,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,suntt,bakerl,Sun T.T.,Baker L.,Completed,wta_2007.xls,2,1
+11e4a63bb5eba443db3ddad1,2007-01-01,M,Next Generation Adelaide International,Hard,Outdoor,Round Robin,3,International,serraf,johanssonj,Serra F.,Johansson J.,Completed,atp_2007.xls,3,1
+1b3af22fc66b9d02be1fe105,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,vincir,ivanovica,Vinci R.,Ivanovic A.,Completed,wta_2007.xls,44,0
+1cdcd386b0cac13abea7b694,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,pinc,perrys,Pin C.,Perry S.,Completed,wta_2007.xls,7,1
+1f026cc0c5b139d9a794ec9e,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,pennettaf,kirilenkom,Pennetta F.,Kirilenko M.,Completed,wta_2007.xls,46,0
+299000297cd5bc02c17599a3,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,youzhnym,braccialid,Youzhny M.,Bracciali D.,Completed,atp_2007.xls,67,1
+29f52bb765b6219aca6b82e0,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,tum,erakovicm,Tu M.,Erakovic M.,Completed,wta_2007.xls,9,0
+3c03fe4218a63042f79fe3a3,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,greuls,kimk,Greul S.,Kim K.,Completed,atp_2007.xls,35,0
+4c8686a2169497a61c31c476,2007-01-01,M,Next Generation Adelaide International,Hard,Outdoor,Round Robin,3,International,guccionec,beckerb,Guccione C.,Becker B.,Completed,atp_2007.xls,5,1
+547aa28f2d9d1b397251d8a2,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,fedaky,poutchkovao,Fedak Y.,Poutchkova O.,Completed,wta_2007.xls,42,0
+6002fbe089f53f3806d7330c,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,kanepik,razzanov,Kanepi K.,Razzano V.,Completed,wta_2007.xls,10,0
+6cec96d23760b0a20adcd055,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,kingv,srebotnikk,King V.,Srebotnik K.,Completed,wta_2007.xls,41,0
+70c5f9198dd4bb511a583691,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,johanssonm,lainee,Johansson M.,Laine E.,Completed,wta_2007.xls,11,0
+7100f7a5a8cbfb179ac27dab,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,nakamuraa,craybasj,Nakamura A.,Craybas J.,Completed,wta_2007.xls,5,0
+844a9d85bf5009cdcff90abd,2007-01-01,M,Next Generation Adelaide International,Hard,Outdoor,Round Robin,3,International,hrbatyd,luczakp,Hrbaty D.,Luczak P.,Completed,atp_2007.xls,2,0
+8cddb7f770df48f2c84f980d,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,myskinaa,dulkog,Myskina A.,Dulko G.,Completed,wta_2007.xls,3,0
+9147be88e86bf9e06adffda3,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,mahutn,fallaa,Mahut N.,Falla A.,Completed,atp_2007.xls,33,1
+960274a01e90e5833354d30d,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,murraya,volandrif,Murray A.,Volandri F.,Completed,atp_2007.xls,69,1
+975d3fc279603197e3c55dae,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,khalfans,ramirezhidalgor,Khalfan S.,Ramirez-Hidalgo R.,Completed,atp_2007.xls,68,0
+9aea1eab49ac6487ed8de3cc,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,benneteauj,gabashvilit,Benneteau J.,Gabashvili T.,Completed,atp_2007.xls,36,1
+9f9e1e21eba2227afdf277fa,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,monfilsg,seppia,Monfils G.,Seppi A.,Completed,atp_2007.xls,70,1
+a45345389906660a884a4326,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,udomchoked,malissex,Udomchoke D.,Malisse X.,Completed,atp_2007.xls,38,0
+a9be52fb361a6ca93d1f3d1b,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,peers,shaughnessym,Peer S.,Shaughnessy M.,Completed,wta_2007.xls,39,1
+ab7808ba2fb1101a1c5155d8,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,lin,zahlavovas,Li N.,Zahlavova S.,Completed,wta_2007.xls,40,1
+adcce8123662ac9caee6daa4,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,kostanicj,daniilidoue,Kostanic J.,Daniilidou E.,Completed,wta_2007.xls,8,0
+b38d291b7fc1f320c2dea174,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,loite,birnerovae,Loit E.,Birnerova E.,Completed,wta_2007.xls,4,1
+b5a5dd43b0c4e8a3a171fc7a,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,amritrajp,karlovici,Amritraj P.,Karlovic I.,Completed,atp_2007.xls,37,0
+d24976d97f8423230b70a063,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,kohlschreiberp,baghdatism,Kohlschreiber P.,Baghdatis M.,Completed,atp_2007.xls,64,0
+d36ffa36254837f2a202fc7b,2007-01-01,M,Chennai Open,Hard,Outdoor,1st Round,3,International,luyh,galvanis,Lu Y.H.,Galvani S.,Completed,atp_2007.xls,34,0
+d6e0e9e7992fcbe322ddd3a0,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,groenefeldal,garbint,Groenefeld A.L.,Garbin T.,Completed,wta_2007.xls,43,0
+e05ace0286024be635d20711,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,prattn,bovinae,Pratt N.,Bovina E.,Completed,wta_2007.xls,45,1
+e0fef8c7de31d4ad6f59095d,2007-01-01,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,rochusc,martina,Rochus C.,Martin A.,Completed,atp_2007.xls,65,1
+e268a71f54dd6c42bd4175c3,2007-01-01,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,1st Round,3,Tier 3,stosurs,pengs,Stosur S.,Peng S.,Completed,wta_2007.xls,47,1
+f164ab70e65ff7d500aa6806,2007-01-01,M,Next Generation Adelaide International,Hard,Outdoor,Round Robin,3,International,hajekj,jonesa,Hajek J.,Jones A.,Completed,atp_2007.xls,4,0
+f627b903ddcff14e1da66d88,2007-01-01,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,moritaa,bartolim,Morita A.,Bartoli M.,Completed,wta_2007.xls,6,0
+01fd3e0fea41220157ead3f4,2007-01-02,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,hantuchovad,cibulkovad,Hantuchova D.,Cibulkova D.,Completed,wta_2007.xls,14,1
+0969be02176f9cd2d70d147f,2007-01-02,M,Qatar Exxon Mobil Open,Hard,Outdoor,1st Round,3,International,melzerj,luzzif,Melzer J.,Luzzi F.,Completed,atp_2007.xls,74,0
+0b0fdac48943a46addd08bf1,2007-01-02,F,Mondial Australian Women's Hardcourts,Hard,Outdoor,2nd Round,3,Tier 3,castanoc,lin,Castano C.,Li N.,Completed,wta_2007.xls,49,1
+2015ad64af5dbfb23854291c,2007-01-02,M,Chennai Open,Hard,Outdoor,1st Round,3,International,giraldos,andreevi,Giraldo S.,Andreev I.,Completed,atp_2007.xls,46,0
+2b563d3f00be687e520dbe32,2007-01-02,M,Next Generation Adelaide International,Hard,Outdoor,Round Robin,3,International,hrbatyd,goldsteinp,Hrbaty D.,Goldstein P.,Completed,atp_2007.xls,8,0
+2c6f8130c0370090ea360356,2007-01-02,F,ASB Classic,Hard,Outdoor,1st Round,3,Tier 4,jankovicj,schruffj,Jankovic J.,Schruff J.,Completed,wta_2007.xls,17,1
+2dbd029696a742813898e10e,2007-01-02,M,Chennai Open,Hard,Outdoor,1st Round,3,International,bolellis,srichaphanp,Bolelli S.,Srichaphan P.,Completed,atp_2007.xls,48,0

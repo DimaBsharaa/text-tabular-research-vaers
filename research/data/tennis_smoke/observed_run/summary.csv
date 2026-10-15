@@ -1,0 +1,6 @@
+learner,structured_only,structured_only_sd,text_only,text_only_sd,joint_frozen,joint_frozen_sd,joint_tar,joint_tar_sd,joint_signal_gain,tar_gain,status,assignment_pass,paper_pass,legacy_pass
+light,0.6698717948717948,,0.42788461538461536,,0.4871794871794872,,0.44871794871794873,,-0.1826923076923076,-0.03846153846153849,complete,,,
+cat,,,,,,,,,,,not run,,,
+tabm,,,,,,,,,,,not run,,,
+tabpfnv2,,,,,,,,,,,not run,,,
+tabpfnv2p5,,,,,,,,,,,not run,,,

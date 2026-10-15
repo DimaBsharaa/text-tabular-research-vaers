@@ -1,0 +1,28 @@
+{
+  "source": "User-supplied Colab export; no rerun performed for publication",
+  "archive_filename": "tennis_smoke_50c63223f59697c5_results.zip",
+  "archive_sha256": "98b1bdb76fef321a0d07bc2bf72a417551582f2fdf95adad074d09986554b5e9",
+  "plan_id": "50c63223f59697c5",
+  "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+  "research_commit_at_execution": "afa5a71d6d8a489af844c2b258db75d6cfdadd01",
+  "successful_conditions": [
+    "joint_frozen",
+    "joint_tar",
+    "structured_only",
+    "text_only"
+  ],
+  "verified_reference_files": 470,
+  "train_rows": 438,
+  "test_rows": 50,
+  "purpose": "smoke_fixture",
+  "qualification_claimed": false,
+  "retained_members": [
+    "summary.csv",
+    "results.csv",
+    "reference_proof.json",
+    "3ed97f484e8330c1eebcaf86/result.json",
+    "53277f2533413634bb2e6f01/result.json",
+    "83da440ebb271726980b5407/result.json",
+    "fb628d3e0c678eca1b5f5218/result.json"
+  ]
+}

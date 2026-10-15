@@ -1,0 +1,30 @@
+{
+  "source_match_rows": 48780,
+  "dated_unique_target_matches": 48780,
+  "join_status_counts": {
+    "matched": 6366,
+    "unmatched": 95,
+    "outcome_conflict_excluded": 5,
+    "manual_transcript_conflict_excluded": 1
+  },
+  "joined_original_interview_fraction": 0.9843822483377146,
+  "unique_interview_source_matches": 5031,
+  "a_interview_sides_coverage": {
+    "0_sides": 26932,
+    "1_sides": 14967,
+    "2_sides": 4255
+  },
+  "b": {
+    "snapshot_commit": "dc55cebd77fffc5f418540c47f9febda500fc342",
+    "snapshot_committed_at": "2015-06-11T16:38:31Z",
+    "charted_matches_in_snapshot": 458,
+    "exclusion_sides": {
+      "b_insufficient_history": 509,
+      "a_insufficient_history": 497
+    }
+  },
+  "common_ABC_rows": 104,
+  "common_AB_rows": 104,
+  "a_strict_publication_verified_rows": 0,
+  "a_provisional_date_safe_rows": 4052
+}

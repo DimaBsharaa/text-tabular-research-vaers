@@ -1,0 +1,4 @@
+topic,scope,documents_with_cue_in_full,documents_with_cue_in_first300,documents_with_cue_only_after_first300,fraction_of_full_cue_documents_lost
+condition,training_partition_interviews_only,1296,755,541,0.4174382716049383
+tactics,training_partition_interviews_only,1584,1076,508,0.3207070707070707
+surface,training_partition_interviews_only,1032,546,486,0.47093023255813954

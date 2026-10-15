@@ -1,0 +1,29 @@
+[
+  {
+    "interview_id": "0",
+    "publisher_url": "https://www.asapsports.com/show_interview.php?id=110501",
+    "player": "Andy Murray",
+    "date": "2015-06-21",
+    "first_answer_prefix_matches_publisher": false,
+    "historical_publish_timestamp_verified": false,
+    "note": "Same-day semifinal is a deliberate negative control"
+  },
+  {
+    "interview_id": "0",
+    "publisher_url": "https://www.asapsports.com/show_interview.php?id=110504",
+    "player": "Andy Murray",
+    "date": "2015-06-21",
+    "first_answer_prefix_matches_publisher": true,
+    "historical_publish_timestamp_verified": false,
+    "note": "Dated publisher-content corroboration; not a historical publication audit"
+  },
+  {
+    "interview_id": "497",
+    "publisher_url": "https://www.asapsports.com/show_interview.php?id=112348",
+    "player": "Andy Murray",
+    "date": "2015-08-22",
+    "first_answer_prefix_matches_publisher": true,
+    "historical_publish_timestamp_verified": false,
+    "note": "Dated publisher-content corroboration; not a historical publication audit"
+  }
+]

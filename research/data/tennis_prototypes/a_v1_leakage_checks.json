@@ -1,0 +1,452 @@
+[
+  {
+    "check_id": "DATA01",
+    "scenario": "original",
+    "status": "PASS",
+    "scope": "original unique target matches",
+    "tested": 4052,
+    "violations": 0,
+    "evidence": "variant_A.csv / immutable source hash",
+    "why_it_matters": "A duplicated sporting match must not appear under another row ID"
+  },
+  {
+    "check_id": "TIME00",
+    "scenario": "original",
+    "status": "PASS",
+    "scope": "all original A source dates strictly before targets and different source matches",
+    "tested": 8104,
+    "violations": 0,
+    "evidence": "original variant_A.csv dates and match IDs",
+    "why_it_matters": "Audit the full original pool, including rows later removed by the conservative policy"
+  },
+  {
+    "check_id": "DATA02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "all raw match identities recomputed from unordered players/date/event/round",
+    "tested": 48780,
+    "violations": 0,
+    "evidence": "a_leakage.canonical_id + structured_source_rows.csv",
+    "why_it_matters": "Winner/loser ordering must not determine the match ID"
+  },
+  {
+    "check_id": "TARGET01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "outcome-independent A/B assignment in the entire original pool",
+    "tested": 4052,
+    "violations": 0,
+    "evidence": "canonical_id + fixed orientation seed",
+    "why_it_matters": "Renaming Winner as Player A would reveal the label"
+  },
+  {
+    "check_id": "TARGET02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "original target equals oriented player's actual outcome",
+    "tested": 4052,
+    "violations": 0,
+    "evidence": "raw source Winner/Loser mapped after independent orientation",
+    "why_it_matters": "Outcome mapping must remain consistent after swapping sides"
+  },
+  {
+    "check_id": "RANK01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "original rank values attached to the correct player",
+    "tested": 8104,
+    "violations": 0,
+    "evidence": "WRank/LRank raw mapping; tennis-data-notes.txt",
+    "why_it_matters": "A correct number attached to the wrong side corrupts predictors"
+  },
+  {
+    "check_id": "RANK02",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "independent ranking publication timestamps",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "Source dictionary states entry rankings at tournament start; weekly releases not independently reconstructed",
+    "why_it_matters": "Source contract supports pre-match use but is not an independent timestamp audit"
+  },
+  {
+    "check_id": "RANK03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "entry rank constant per player/tournament/year-source",
+    "tested": 49745,
+    "violations": 0,
+    "evidence": "a_v1_rank_snapshot_variations.csv; 97,560 source player-side rank observations",
+    "why_it_matters": "Within-event rank updates could contradict the documented tournament-start snapshot"
+  },
+  {
+    "check_id": "TARGET03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "predictor whitelist and audit/target exclusion",
+    "tested": 18,
+    "violations": 0,
+    "evidence": "candidate_A_v1/schema.json",
+    "why_it_matters": "IDs, source labels, current score, completion and winner/loser columns must stay outside X"
+  },
+  {
+    "check_id": "JOIN01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "only accepted interview links used",
+    "tested": 3324,
+    "violations": 0,
+    "evidence": "cornell_match_join_audit.csv",
+    "why_it_matters": "Known match-label conflicts and uncertain joins are excluded"
+  },
+  {
+    "check_id": "TIME01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "three-day calendar rule, max age, linked source date and played source event",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "audit.csv; a_v1_date_sensitivity.csv",
+    "why_it_matters": "A future or same-day interview cannot be used as historical input"
+  },
+  {
+    "check_id": "TIME02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "interview source match differs from its target",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "source/target match IDs in audit.csv",
+    "why_it_matters": "An interview after the target match may state its winner"
+  },
+  {
+    "check_id": "JOIN02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "interview player and gender match the target side",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "accepted deterministic source links and audit.csv",
+    "why_it_matters": "An old interview about a different player is invalid input"
+  },
+  {
+    "check_id": "JOIN03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "same-player/day accepted-source ambiguity",
+    "tested": 6366,
+    "violations": 0,
+    "evidence": "accepted source groups before selection",
+    "why_it_matters": "Two interviews on one date must not be chosen by arbitrary row order"
+  },
+  {
+    "check_id": "TIME03",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "historical upload times and timezone alignment",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "publication_verified=False; three-calendar-day policy is assumed",
+    "why_it_matters": "A delay buffer is a defensible scenario, never proof of publication"
+  },
+  {
+    "check_id": "HISTORY01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "every feature contributor independently replayed from raw played matches",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "private history_lineage.jsonl.gz; a_v1_history_examples.csv",
+    "why_it_matters": "Whole-day update order and complete source membership prevent current/future outcomes entering history"
+  },
+  {
+    "check_id": "HISTORY02",
+    "scenario": "original",
+    "status": "PASS",
+    "scope": "original numerical features independently reproduced",
+    "tested": 4052,
+    "violations": 0,
+    "evidence": "old replay includes original walkover/disqualification convention",
+    "why_it_matters": "Validate the legacy values before attributing changes to a fix"
+  },
+  {
+    "check_id": "HISTORY03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "history convention fixed to played Completed/Retired events",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "a_v1_policy.json + full contributor audit",
+    "why_it_matters": "Walkovers do not represent match play or physical rest resets"
+  },
+  {
+    "check_id": "MUTATE01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "counterfactual injection",
+    "tested": 100,
+    "violations": 0,
+    "evidence": "a_v1_mutation_results.json",
+    "why_it_matters": "Changing future results must leave earlier predictors unchanged"
+  },
+  {
+    "check_id": "MUTATE02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "counterfactual injection",
+    "tested": 1,
+    "violations": 0,
+    "evidence": "a_v1_mutation_results.json",
+    "why_it_matters": "Changing a target-day outcome must not change target-day features"
+  },
+  {
+    "check_id": "MUTATE03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "counterfactual injection",
+    "tested": 1,
+    "violations": 0,
+    "evidence": "a_v1_mutation_results.json",
+    "why_it_matters": "Adding a future interview must not change the selected historical document"
+  },
+  {
+    "check_id": "SPLIT01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "whole-day chronological train/development/reserved-test partitions",
+    "tested": 3627,
+    "violations": 0,
+    "evidence": "candidate_A_v1/splits.csv",
+    "why_it_matters": "The same target/day cannot occur on both sides of a chronological boundary"
+  },
+  {
+    "check_id": "SPLIT02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "training interviews cannot refer to later held-out target matches",
+    "tested": 2162,
+    "violations": 0,
+    "evidence": "audit.csv source IDs versus later target IDs",
+    "why_it_matters": "Later training narratives may expose an earlier held-out target's outcome under random splitting"
+  },
+  {
+    "check_id": "SPLIT03",
+    "scenario": "legacy_random_diagnostic",
+    "status": "FAIL",
+    "scope": "legacy random 80/20 forecast interpretation",
+    "tested": 811,
+    "violations": 242,
+    "evidence": "interview_split_reference_examples.csv",
+    "why_it_matters": "A random score is not a strict future-prediction result"
+  },
+  {
+    "check_id": "REUSE01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "legitimate interview reuse across chronological partitions",
+    "tested": 42,
+    "violations": 0,
+    "evidence": "a_v1_reused_interview_rows.csv",
+    "why_it_matters": "Repeated historical documents are not automatically leakage; their dates and label-independent processing matter"
+  },
+  {
+    "check_id": "REUSE02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "exact distinct-document duplicates and lexical near-duplicate screen",
+    "tested": 1313,
+    "violations": 0,
+    "evidence": "a_v1_identical_distinct_documents.csv; a_v1_near_duplicate_screen.csv",
+    "why_it_matters": "Similarity flags require source/date review, not automatic deletion"
+  },
+  {
+    "check_id": "PREP01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "actual imputer/scaler/categories/TF-IDF/classifier fit IDs",
+    "tested": 11,
+    "violations": 0,
+    "evidence": "a_v1_preprocessing_fit_audit.json",
+    "why_it_matters": "Only training rows may fit statistical transformations and model parameters"
+  },
+  {
+    "check_id": "PREP02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "evaluation-only sentinel/outlier injection leaves fitted state unchanged",
+    "tested": 11,
+    "violations": 0,
+    "evidence": "before/after preprocessing and parameter fingerprints",
+    "why_it_matters": "Evaluation-time transform must not refit on validation/test data"
+  },
+  {
+    "check_id": "PREP03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "proper vocabulary control",
+    "tested": 1,
+    "violations": 0,
+    "evidence": "a_v1_mutation_results.json",
+    "why_it_matters": "A held-out-only word must be absent from a training-only vocabulary"
+  },
+  {
+    "check_id": "PREP04",
+    "scenario": "negative_control",
+    "status": "FAIL",
+    "scope": "deliberately leaky vocabulary negative control",
+    "tested": 1,
+    "violations": 1,
+    "evidence": "a_v1_mutation_results.json",
+    "why_it_matters": "The audit must detect a deliberately combined train/evaluation vocabulary fit"
+  },
+  {
+    "check_id": "PREP05",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "no reserved-test model scores or policy selection",
+    "tested": 11,
+    "violations": 0,
+    "evidence": "a_v1_development_scores.csv; pre-score frozen policy/config hash",
+    "why_it_matters": "Repeated test-driven iteration would invalidate the final estimate"
+  },
+  {
+    "check_id": "TEXT01",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "all five policies and both formatted column names fit the E5/TAR limit",
+    "tested": 16620,
+    "violations": 0,
+    "evidence": "a_v1_text_policy_metrics.csv + exact tokenizer revision",
+    "why_it_matters": "Words do not equal tokens; prefixes and special tokens consume budget"
+  },
+  {
+    "check_id": "TEXT02",
+    "scenario": "original_text_control",
+    "status": "PASS",
+    "scope": "uncapped legacy first-300-word control",
+    "tested": 3324,
+    "violations": 0,
+    "evidence": "legacy_was_over_token_limit in metrics",
+    "why_it_matters": "Silent encoder truncation can discard selected content"
+  },
+  {
+    "check_id": "TEXT03",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "selected text re-extracted from original answer spans with source hashes",
+    "tested": 3324,
+    "violations": 0,
+    "evidence": "private passages_private.jsonl.gz + a_text.verify_selected",
+    "why_it_matters": "Passages must contain traceable source words; no invented summary facts"
+  },
+  {
+    "check_id": "TEXT04",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "same interview receives one target-independent passage",
+    "tested": 3324,
+    "violations": 0,
+    "evidence": "selector accepts Q&A/policy only; cached per interview, not per label",
+    "why_it_matters": "A document must not be selected differently depending on its future label"
+  },
+  {
+    "check_id": "TARGET04",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "all six text variants keep identical audited structured fields and targets",
+    "tested": 6,
+    "violations": 0,
+    "evidence": "features_*.csv joined by match_id to independently replayed metadata.csv",
+    "why_it_matters": "A text ablation must not change labels, ranks, row population or structured information"
+  },
+  {
+    "check_id": "TEXT05",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "every exported input cell matches its actual as-of-selected interview",
+    "tested": 7254,
+    "violations": 0,
+    "evidence": "features_topical_answers.csv joined to audit.csv and source-span hashes",
+    "why_it_matters": "Falling back to an older source must also replace the text; changing only its ID would corrupt provenance"
+  },
+  {
+    "check_id": "TEXT06",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "whole-answer-block extension source replay, actual CSV mapping and token limit",
+    "tested": 10578,
+    "violations": 0,
+    "evidence": "qa_blocks_private.jsonl.gz; features_qa_blocks.csv; separately frozen contextual policy",
+    "why_it_matters": "A qualitative fix must be audited separately rather than relabeled as the original experiment"
+  },
+  {
+    "check_id": "PREP06",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "whole-block extension training-only preprocessing and reserved-test exclusion",
+    "tested": 2,
+    "violations": 0,
+    "evidence": "a_v1_context_blocks_fit_audit.json",
+    "why_it_matters": "The later training-review extension must preserve the same evaluation boundary"
+  },
+  {
+    "check_id": "SCOPE01",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "predicting all scheduled matches or claiming completion known beforehand",
+    "tested": 3627,
+    "violations": 0,
+    "evidence": "target pool is retrospectively conditioned on Comment=Completed",
+    "why_it_matters": "Completion filtering is outcome-time population selection, not a pre-match predictor"
+  },
+  {
+    "check_id": "SCOPE02",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "source identity/date and ranking-source contract",
+    "tested": 6366,
+    "violations": 0,
+    "evidence": "nine publisher corroborations; corpus match links are not independent gold labels",
+    "why_it_matters": "Calendar and metadata checks cannot prove every publisher/source label correct"
+  },
+  {
+    "check_id": "SCOPE03",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "historical deployment / pretrained-model contamination",
+    "tested": 3627,
+    "violations": 0,
+    "evidence": "modern E5 predates neither 2007\u20132015 events nor every possible web transcript",
+    "why_it_matters": "Chronological rows do not prove a pretrained language model never saw historical outcomes"
+  },
+  {
+    "check_id": "SCOPE04",
+    "scenario": "v1",
+    "status": "ASSUMPTION",
+    "scope": "pairing/round/surface/format known at prediction cutoff",
+    "tested": 3627,
+    "violations": 0,
+    "evidence": "Actual completed matchup/context; historical draw and schedule publication times not independently reconstructed",
+    "why_it_matters": "The task is conditional on the announced pairing/context, not predicting who reaches a future round"
+  },
+  {
+    "check_id": "OFFICIAL01",
+    "scenario": "v1",
+    "status": "NOT_RUN",
+    "scope": "strict chronological inner validation under official random split code",
+    "tested": 0,
+    "violations": 0,
+    "evidence": "pinned TabularModel.fit and encoder split_to_val source; official implementation unchanged",
+    "why_it_matters": "An outer chronological diagnostic does not make their inner random validation chronological"
+  },
+  {
+    "check_id": "OFFICIAL02",
+    "scenario": "v1",
+    "status": "PASS",
+    "scope": "all snapshotted official/reference and working infrastructure bytes",
+    "tested": 149,
+    "violations": 0,
+    "evidence": "leakage_audit_reference_before.json",
+    "why_it_matters": "Audit/preprocessing changes must not alter the benchmark or notebook 02"
+  }
+]

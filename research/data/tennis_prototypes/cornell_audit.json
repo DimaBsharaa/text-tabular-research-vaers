@@ -1,0 +1,91 @@
+{
+  "archives": [
+    {
+      "archive": "tennis-corpus.zip",
+      "compressed_bytes": 71215068,
+      "uncompressed_bytes": 663118167,
+      "sha256": "2541a905689bff1d89abd614ba91913a7d0d43a212443c3a42dcfb6c614ac8cd",
+      "files": [
+        "tennis-corpus/",
+        "tennis-corpus/conversations.json",
+        "tennis-corpus/corpus.json",
+        "tennis-corpus/users.json",
+        "tennis-corpus/index.json",
+        "tennis-corpus/utterances.jsonl",
+        "tennis-corpus/info.parsed.jsonl"
+      ]
+    },
+    {
+      "archive": "tennis_data.zip",
+      "compressed_bytes": 15944110,
+      "uncompressed_bytes": 56461767,
+      "sha256": "0e1c147dd5b4e15185399a1eef6b772370022c94c9a258b3a2dee5d9301aa638",
+      "files": [
+        "questions_matchinfo.json",
+        "__MACOSX/",
+        "__MACOSX/._questions_matchinfo.json",
+        "README.txt",
+        "text_commentaries.json",
+        "__MACOSX/._text_commentaries.json",
+        "transcripts_matchinfo.json",
+        "__MACOSX/._transcripts_matchinfo.json"
+      ]
+    }
+  ],
+  "speakers_including_reporter": 359,
+  "players": 358,
+  "utterances": 163948,
+  "qa_conversations": 81974,
+  "interviews": 6467,
+  "unique_source_match_id_values": 6467,
+  "source_match_id_is_interview_key": true,
+  "all_interview_keys_in_original": true,
+  "gender_interviews": {
+    "M": 3633,
+    "F": 2834
+  },
+  "gender_players": {
+    "F": 167,
+    "M": 191
+  },
+  "source_result_counts": {
+    "1": 4398,
+    "0": 2069
+  },
+  "date_min": "2007-01-15",
+  "date_max": "2015-10-18",
+  "missing_dates": 0,
+  "original_vs_utterance_date_mismatches": 0,
+  "answer_reconstruction_mismatches": 0,
+  "reply_link_mismatches": 0,
+  "non_two_utterance_conversations": 0,
+  "missing_opponent": 940,
+  "missing_rank": 1,
+  "duplicate_full_answer_interviews": 0,
+  "answers": 81974,
+  "empty_answers": 0,
+  "answers_at_most_5_words": 7810,
+  "exact_boilerplate_answers": 1749,
+  "duplicate_answer_occurrences_beyond_first": 3239,
+  "duplicate_long_answer_sections_beyond_first": 0,
+  "answer_words_quantiles": {
+    "0.0": 15.0,
+    "0.1": 281.0,
+    "0.25": 473.0,
+    "0.5": 769.0,
+    "0.75": 1131.5,
+    "0.9": 1484.4000000000005,
+    "1.0": 3512.0
+  },
+  "keyword_flags_NOT_human_labels": {
+    "tactics": 0.6564094634297201,
+    "serve_return": 0.7222823565795577,
+    "condition": 0.5011597340343281,
+    "mentality": 0.7788773774547704,
+    "surface": 0.4360599969073759
+  },
+  "manual_review_n": 36,
+  "manual_review_sampling": "purposive 70–350 answer words; one per year/gender/result stratum; not representative prevalence",
+  "publication_timestamp_available": false,
+  "explicit_redistribution_license_found_in_archives": false
+}

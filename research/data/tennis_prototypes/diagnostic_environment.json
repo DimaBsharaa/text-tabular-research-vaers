@@ -1,0 +1,17 @@
+{
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "psutil": "7.2.2",
+    "ipython": "9.17.1"
+  },
+  "xlrd_reader": "2.0.2 pure-Python wheel in external cache; no install",
+  "convokit_software_installed": false,
+  "local_torch_or_E5_installed": false
+}

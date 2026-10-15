@@ -1,0 +1,12 @@
+policy,condition,auroc,train_rows,development_rows,reserved_test_rows_scored,runtime_seconds,official_result,learner,config_sha256
+legacy300,text_tfidf,0.5800834618666959,2162,716,0,0.877193708991399,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+legacy300,joint_tfidf,0.7627600353890841,2162,716,0,0.9867353749868926,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+legacy300,structured,0.7683580874235652,2162,716,0,0.012739500001771376,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+token_head,text_tfidf,0.6044721780728608,2162,716,0,1.0696966249961406,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+token_head,joint_tfidf,0.7659544482982705,2162,716,0,1.1793927079997957,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+head_tail,text_tfidf,0.5991638154443601,2162,716,0,1.0346579999895766,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+head_tail,joint_tfidf,0.7640205757772679,2162,716,0,1.209383582987357,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+topical_answers,text_tfidf,0.5571745104640511,2162,716,0,0.4625944999861531,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+topical_answers,joint_tfidf,0.7614760066706858,2162,716,0,0.5394639580044895,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+topical_qa,text_tfidf,0.5792300525355653,2162,716,0,0.792312083998695,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334
+topical_qa,joint_tfidf,0.7593933747249908,2162,716,0,0.9050832499924581,False,CPU LogisticRegression + TF-IDF; NOT E5/TAR,a3db0892d77447d25e75d7fb3bbbb98b0fb80a4860bb80bfecc858b958b96334

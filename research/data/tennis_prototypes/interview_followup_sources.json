@@ -1,0 +1,347 @@
+{
+  "retrieved_on": "2026-10-15",
+  "mirror_revision": "8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993",
+  "sources": [
+    {
+      "name": "publisher_about",
+      "url": "https://www.asapsports.com/about.php",
+      "filename": "publisher_about.html",
+      "bytes": 13788,
+      "sha256": "0c4c40e1e38672365ce0b3bca5c3f59d54370d39b4b3ae10e9b10f2319b3e4af",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "publisher_product",
+      "url": "https://www.asapsports.com/about-fast-scripts.php",
+      "filename": "publisher_product.html",
+      "bytes": 15066,
+      "sha256": "391837fc0e6b8ad87f2ee00e73e2a1f7f2ac650239d91e55a997b0d1bb6fb63f",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "publisher_contact",
+      "url": "https://www.asapsports.com/contact.php",
+      "filename": "publisher_contact.html",
+      "bytes": 15681,
+      "sha256": "8a24721face6421a1afa4924605b8723dc8375e9265e9d4a5874f7cb3f479f16",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "publisher_sitemap",
+      "url": "https://www.asapsports.com/sitemap.php",
+      "filename": "publisher_sitemap.html",
+      "bytes": 13550,
+      "sha256": "30bfa9efea1656ec38cddeb6fd96366832619094b952c5c91d9cd9901baf50dc",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "players_s",
+      "url": "https://www.asapsports.com/show_player.php?category=7&letter=s",
+      "filename": "players_s.html",
+      "bytes": 73714,
+      "sha256": "19f9492b596cfe6e16fc7b8212c7befcf07229426c435f8c063533979c819344",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "players_y",
+      "url": "https://www.asapsports.com/show_player.php?category=7&letter=y",
+      "filename": "players_y.html",
+      "bytes": 17717,
+      "sha256": "70ccc666443613db755e3584bfd6ad07dc65f3bd73ef91ef00e55070a3cb4cd4",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:50 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "players_w",
+      "url": "https://www.asapsports.com/show_player.php?category=7&letter=w",
+      "filename": "players_w.html",
+      "bytes": 29053,
+      "sha256": "c93eb2cf1ca76c772d27a7e65de6758b42d854808c6a55ee921b19a038cd0c44",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_wozniacki",
+      "url": "https://www.asapsports.com/show_player.php?id=12623",
+      "filename": "player_wozniacki.html",
+      "bytes": 130122,
+      "sha256": "ea09b6852759fa8cb3d0c6fa612c1515321bb5be02ad5f3b9dc921d8684dbebd",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_nishikori",
+      "url": "https://www.asapsports.com/show_player.php?id=17997",
+      "filename": "player_nishikori.html",
+      "bytes": 99631,
+      "sha256": "22e4cd5aeca9ec3110319899970ae3b96b116ff3dd8caa05954648d3f37af5f6",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "tennis_data_home",
+      "url": "https://www.tennis-data.co.uk/",
+      "filename": "tennis_data_home.html",
+      "bytes": 68773,
+      "sha256": "69e4ab0d5bfd57349838cbb066fd8471533874ee1bf534437b5d11199809dff6",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "tennis_data_notes",
+      "url": "https://www.tennis-data.co.uk/notes.txt",
+      "filename": "tennis_data_notes.html",
+      "bytes": 3624,
+      "sha256": "13e57641a7bd67304ad9b98141aa6f413dff748676a703f5beff0078e8a27f29",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:09:49 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_schiavone",
+      "url": "https://www.asapsports.com/show_player.php?id=12175",
+      "filename": "player_schiavone.html",
+      "bytes": 27862,
+      "sha256": "236264ad21e43716e6d03a4cbffd09e7c6e22d0399610f3ec5d1961c75747c6e",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_youzhny",
+      "url": "https://www.asapsports.com/show_player.php?id=12642",
+      "filename": "player_youzhny.html",
+      "bytes": 20149,
+      "sha256": "7fc5eff2b20c8d35aa05af03fd142a21f4f4ded91daadcbb542a13c870d15249",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_wozniak",
+      "url": "https://www.asapsports.com/show_player.php?id=12626",
+      "filename": "player_wozniak.html",
+      "bytes": 16138,
+      "sha256": "01218bef90f562ae942eeae757a53a68851eedd9b93f4def9316572eb595a195",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "player_serena",
+      "url": "https://www.asapsports.com/show_player.php?id=11584",
+      "filename": "player_serena.html",
+      "bytes": 246326,
+      "sha256": "7d08f7024ada9accac540249408a5b8488121738be20772d14c023bcf62342eb",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_atp_repo",
+      "url": "https://api.github.com/repos/JeffSackmann/tennis_atp",
+      "filename": "sackmann_atp_repo.html",
+      "bytes": 132,
+      "sha256": "a298fd3d1a255b0eb21a952212460852e05ba9721d3445fb42d7ad054d88f94a",
+      "http_status": 404,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_wta_repo",
+      "url": "https://api.github.com/repos/JeffSackmann/tennis_wta",
+      "filename": "sackmann_wta_repo.html",
+      "bytes": 132,
+      "sha256": "a298fd3d1a255b0eb21a952212460852e05ba9721d3445fb42d7ad054d88f94a",
+      "http_status": 404,
+      "response_date_header": "Thu, 15 Oct 2026 12:10:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_45075",
+      "url": "https://www.asapsports.com/show_interview.php?id=45075",
+      "filename": "asap_45075.html",
+      "bytes": 13944,
+      "sha256": "386212c5261d6876dec5ec10ba4d0ea0637a87549e5e89a94af2517314b5bb68",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_61198",
+      "url": "https://www.asapsports.com/show_interview.php?id=61198",
+      "filename": "asap_61198.html",
+      "bytes": 13883,
+      "sha256": "06e8b0be5bca30bb236c03f71aa94dfb194a716b550c43f61830f5b376ebea9e",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_69159",
+      "url": "https://www.asapsports.com/show_interview.php?id=69159",
+      "filename": "asap_69159.html",
+      "bytes": 13969,
+      "sha256": "507d922745895f6c21c1599b817a6947618a38c941dda335b6a91d1ff6b4e075",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_104385",
+      "url": "https://www.asapsports.com/show_interview.php?id=104385",
+      "filename": "asap_104385.html",
+      "bytes": 14150,
+      "sha256": "dfffd837999852669efe00d019e1ced1f700772ecf5726e2ee7fd222e5edbcff",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:17 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_105578",
+      "url": "https://www.asapsports.com/show_interview.php?id=105578",
+      "filename": "asap_105578.html",
+      "bytes": 14465,
+      "sha256": "5e3f41b4de9dd8b82682c0fc3657888402bbe5a3a058bae93f67c1abd9099127",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_51230",
+      "url": "https://www.asapsports.com/show_interview.php?id=51230",
+      "filename": "asap_51230.html",
+      "bytes": 13674,
+      "sha256": "63d57a109a09ea28b881a20f1f7fbc4443d45ee96fc575839e38e446a6c03e7d",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_86673",
+      "url": "https://www.asapsports.com/show_interview.php?id=86673",
+      "filename": "asap_86673.html",
+      "bytes": 15108,
+      "sha256": "cc697df3a058d067dfb69c0a2b32e7761d4b93f79d881626ad0ad73b747acf47",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_hf_repo",
+      "url": "https://huggingface.co/api/datasets/Aneeshers/tennis-sackmann-archive",
+      "filename": "sackmann_hf_repo.html",
+      "bytes": 25747,
+      "sha256": "b32cc5917109b1ab22fdbe03e6e9c29e3b582af465ddc601e88a18fd2c3199f0",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:11:16 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_license",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/LICENSE",
+      "filename": "sackmann_license.html",
+      "bytes": 913,
+      "sha256": "d128251e9a3725f694c97a6761df96610481f92a6a69ab936174acb0c4be0589",
+      "http_status": 200,
+      "response_date_header": "Mon, 05 Oct 2026 21:20:43 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_atp_readme",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/atp/UPSTREAM_README.md",
+      "filename": "sackmann_atp_readme.html",
+      "bytes": 4673,
+      "sha256": "80fd5a50ba020fd306890d31142187bb737627ba468d3e36faabe92d48ab5083",
+      "http_status": 200,
+      "response_date_header": "Tue, 13 Oct 2026 13:25:27 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_wta_readme",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/wta/UPSTREAM_README.md",
+      "filename": "sackmann_wta_readme.html",
+      "bytes": 3607,
+      "sha256": "f34402380f3c84f7c7d9f6156225603ef917bb2b2d6d18676a234fb5323b13c9",
+      "http_status": 200,
+      "response_date_header": "Tue, 13 Oct 2026 13:25:28 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_dictionary",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/atp/matches_data_dictionary.txt",
+      "filename": "sackmann_dictionary.html",
+      "bytes": 3758,
+      "sha256": "b4b525ad8163f9ee2ffde3ab7108924ec1385ef7d2fddf828c1fc096fcaafee4",
+      "http_status": 200,
+      "response_date_header": "Tue, 13 Oct 2026 18:30:44 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_atp_2015",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/atp/atp_matches_2015.csv",
+      "filename": "sackmann_atp_2015.csv",
+      "bytes": 594438,
+      "sha256": "20c1f723df86b367f3ec205bbda3d8a7163fa6d4e46dcfda15095e24965bc5ed",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:12:32 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "sackmann_wta_2015",
+      "url": "https://huggingface.co/datasets/Aneeshers/tennis-sackmann-archive/resolve/8ac86f7c62889b5d5c4cfec4c6403edcb8c5d993/wta/wta_matches_2015.csv",
+      "filename": "sackmann_wta_2015.csv",
+      "bytes": 550360,
+      "sha256": "9332d0d470c378c8d439553ed7d81379eb3596d04babf39bee7021edae316130",
+      "http_status": 200,
+      "response_date_header": "Wed, 14 Oct 2026 09:53:40 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_110504",
+      "url": "https://www.asapsports.com/show_interview.php?id=110504",
+      "filename": "asap_110504.html",
+      "bytes": 26062,
+      "sha256": "9397ad4d76a2824220bdf869674d471d3a2c123b8e22fd59b048d26178276391",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:13:36 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_112348",
+      "url": "https://www.asapsports.com/show_interview.php?id=112348",
+      "filename": "asap_112348.html",
+      "bytes": 19671,
+      "sha256": "58457dcaee9aad1f3027f807b089d498a90e8400966f7dc2f5606efbc6e1bcea",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:13:36 GMT",
+      "response_date_is_not_historical_publication": true
+    },
+    {
+      "name": "asap_110501",
+      "url": "https://www.asapsports.com/show_interview.php?id=110501",
+      "filename": "asap_110501.html",
+      "bytes": 12095,
+      "sha256": "cfcc5f8459cde361ed891dd59ede001c4c0b0d8c491a9a48dadfba5f5bb25802",
+      "http_status": 200,
+      "response_date_header": "Thu, 15 Oct 2026 12:13:36 GMT",
+      "response_date_is_not_historical_publication": true
+    }
+  ],
+  "note": "Raw pages and 2015 files kept in external cache; no transcript text in this manifest."
+}

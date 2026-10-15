@@ -1,0 +1,13 @@
+{
+  "python": "3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "tokenizers_isolated_vendor_version": "0.23.3",
+  "torch_models_loaded": false
+}

@@ -1,0 +1,11 @@
+{
+  "policy": "qa_blocks",
+  "rule": "fixed topical whole-answer blocks; question retained for answers under 80 words",
+  "reason": "Training-only qualitative review found pronoun/opponent ambiguity and figurative injury cues in sentence extraction",
+  "selector_source_sha256": "b8a49752dcb7d993c4957656b8c3f16b45b7496a7daeae85f594c0c4298bde04",
+  "uses_target_labels_for_selection": false,
+  "reserved_test_scored": false,
+  "original_five_policy_freeze_unchanged": true,
+  "default_selected_policy_unchanged": "topical_answers",
+  "config_sha256": "94bd8e82ad115a8bd65f7a180e1f39dbe18dd2cd56e5662e2f5fca93d8e2a8ac"
+}

@@ -1,0 +1,28 @@
+{
+  "a_text_age_days": {
+    "a": {
+      "median": 19.0,
+      "p90": 66.0,
+      "max": 90,
+      "max_doc_reuse": 9
+    },
+    "b": {
+      "median": 19.0,
+      "p90": 65.0,
+      "max": 90,
+      "max_doc_reuse": 9
+    }
+  },
+  "corpus_top10_player_interview_share": 0.3462192670480903,
+  "corpus_grandslam_interview_share": 0.436214628111953,
+  "corpus_source_winner_interview_share": 0.6800680377300139,
+  "source_word_count_over_512_fraction": 0.7162517396010515,
+  "a_gender_counts": {
+    "M": 2232,
+    "F": 1820
+  },
+  "b_eligible_completed_male_matches_after_snapshot": 1185,
+  "playercentric_source_documents_with_next_match": 5913,
+  "playercentric_unique_target_matches": 5067,
+  "playercentric_publication_verified": 0
+}

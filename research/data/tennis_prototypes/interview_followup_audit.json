@@ -1,0 +1,95 @@
+{
+  "audited_on": "2026-10-15",
+  "provisional_A_rows": 4052,
+  "publisher_checks_including_negative_control": 10,
+  "unique_cornell_interviews_checked": 9,
+  "publisher_content_corroborations": 9,
+  "publisher_publication_meta_tags_found": 0,
+  "strict_publication_verified_A_rows": 0,
+  "raw_text_redistribution_cleared": false,
+  "tennis_data_training_restriction_observed": true,
+  "sackmann_upstream_github_http_status": {
+    "atp": 404,
+    "wta": 404
+  },
+  "sackmann_archive_license_notice": "CC BY-NC-SA 4.0; preserved upstream README and archive LICENSE",
+  "sackmann_probe_scope": "2015 ATP and WTA only; coverage scenarios, no forecasting CSV or fitted model",
+  "chronological_cutoff_day": "2014-06-19",
+  "lag_sensitivity": [
+    {
+      "minimum_calendar_gap_days": 1,
+      "candidate_rows": 4052,
+      "publication_verified_rows": 0,
+      "assumption_only": true
+    },
+    {
+      "minimum_calendar_gap_days": 2,
+      "candidate_rows": 3245,
+      "publication_verified_rows": 0,
+      "assumption_only": true
+    },
+    {
+      "minimum_calendar_gap_days": 3,
+      "candidate_rows": 2444,
+      "publication_verified_rows": 0,
+      "assumption_only": true
+    },
+    {
+      "minimum_calendar_gap_days": 7,
+      "candidate_rows": 2056,
+      "publication_verified_rows": 0,
+      "assumption_only": true
+    },
+    {
+      "minimum_calendar_gap_days": 14,
+      "candidate_rows": 1756,
+      "publication_verified_rows": 0,
+      "assumption_only": true
+    }
+  ],
+  "split_risks": [
+    {
+      "split": "chronological_80_20",
+      "train_rows": 3239,
+      "test_rows": 813,
+      "train_max_day": "2014-06-18",
+      "test_min_day": "2014-06-19",
+      "train_test_target_overlap": 0,
+      "shared_interview_documents": 24,
+      "test_rows_with_training_interview": 64,
+      "test_fraction_with_training_interview": 0.07872078720787208,
+      "shared_players": 102,
+      "heldout_targets_referenced_in_training_source_matches": 0,
+      "training_rows_referencing_a_heldout_target": 0
+    },
+    {
+      "split": "random_80_20_seed42_diagnostic",
+      "train_rows": 3241,
+      "test_rows": 811,
+      "train_max_day": "2015-11-22",
+      "test_min_day": "2007-01-20",
+      "train_test_target_overlap": 0,
+      "shared_interview_documents": 796,
+      "test_rows_with_training_interview": 666,
+      "test_fraction_with_training_interview": 0.8212083847102343,
+      "shared_players": 215,
+      "heldout_targets_referenced_in_training_source_matches": 242,
+      "training_rows_referencing_a_heldout_target": 538
+    }
+  ],
+  "source_target_disjoint_coverage_control": {
+    "rule": "Retain rows only when neither source sporting-match ID belongs to the original 4,052 target IDs; fixed before any model fitting.",
+    "remaining_rows": 1265,
+    "removed_rows": 2787,
+    "limitations": "Coverage control only. Rank/form dependencies, repeated documents, publication and rights still need resolution. No replacement dataset saved or fitted."
+  },
+  "new_download_body_bytes": 2131975,
+  "archive_probe": {
+    "interview_id": 0,
+    "publisher_id": 110504,
+    "exact_www_url_cdx_to_2016": [],
+    "availability_api_http_status": 429,
+    "interpretation": "No usable pre-target capture recovered in this one-URL probe. This is not evidence of absence."
+  },
+  "decision": "Do not promote A to training or public text release yet. Resolve source terms and historical availability; retain conservative alternative as coverage probe."
+}

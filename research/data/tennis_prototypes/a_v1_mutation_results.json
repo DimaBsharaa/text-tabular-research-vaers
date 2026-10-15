@@ -1,0 +1,9 @@
+{
+  "future_outcome_invariance": true,
+  "own_and_same_day_outcome_invariance": true,
+  "future_interview_invariance": true,
+  "train_only_vocabulary_rejects_validation_sentinel": true,
+  "deliberately_leaky_vocabulary_contains_sentinel": true,
+  "real_rows_in_future_mutation": 100,
+  "mutation_day": "2012-06-01"
+}

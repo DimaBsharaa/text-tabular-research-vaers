@@ -1,0 +1,219 @@
+[
+  {
+    "url": "https://zissou.infosci.cornell.edu/convokit/datasets/tennis-corpus/tennis-corpus.zip",
+    "cache_path": "cornell/tennis-corpus.zip",
+    "bytes": 71215068,
+    "sha256": "2541a905689bff1d89abd614ba91913a7d0d43a212443c3a42dcfb6c614ac8cd"
+  },
+  {
+    "url": "https://www.cs.cornell.edu/~liye/tennis_data.zip",
+    "cache_path": "cornell/tennis_data.zip",
+    "bytes": 15944110,
+    "sha256": "0e1c147dd5b4e15185399a1eef6b772370022c94c9a258b3a2dee5d9301aa638"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/alldata.php",
+    "cache_path": "sources/tennis-data-index.html",
+    "bytes": 72206,
+    "sha256": "8ca9937031495874a2a8b2fd11f924a21ac99adee468f247d3749fb90e429219"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2007/2007.xls",
+    "cache_path": "sources/atp_2007.xls",
+    "bytes": 1107968,
+    "sha256": "77e2b8504a6f0376a76a1a1e55e55ec53b008e400beebba8fdc2e655eaff8449"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2007w/2007.xls",
+    "cache_path": "sources/wta_2007.xls",
+    "bytes": 970752,
+    "sha256": "276b61366afe8016eb5b5822e0f83efe33b8449743ffc07781f0be48e2b8aa1a"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2008/2008.xls",
+    "cache_path": "sources/atp_2008.xls",
+    "bytes": 1092608,
+    "sha256": "d374f8563fd417a1e3b57eeb6cc4f83042cd62bb63323a528ae5a3483fc0113c"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2008w/2008.xls",
+    "cache_path": "sources/wta_2008.xls",
+    "bytes": 952832,
+    "sha256": "eb745d440250d321f02353c135b91bc1fcb39d2c30757d116f60fd0f6a8902d9"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2009/2009.xls",
+    "cache_path": "sources/atp_2009.xls",
+    "bytes": 1078272,
+    "sha256": "94028838328000f8c0b9c4ff2e8821a18e7a5d3653e7b5d0d870c81222bdc06d"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2009w/2009.xls",
+    "cache_path": "sources/wta_2009.xls",
+    "bytes": 947712,
+    "sha256": "20c2b846a5d20f4c297d5ea058503b12c8f8bfd9994ec298bdb64615e0f3234f"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2010/2010.xls",
+    "cache_path": "sources/atp_2010.xls",
+    "bytes": 1099264,
+    "sha256": "c90c5bfe3b801a351240110212c48dc71c46a2a83bb64f07fd9e1372730ce638"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2010w/2010.xls",
+    "cache_path": "sources/wta_2010.xls",
+    "bytes": 988160,
+    "sha256": "9eb750c4e8d17ea0255a9b9144f8e77460bd0926fdae992f5f47a650d8259039"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2011/2011.xls",
+    "cache_path": "sources/atp_2011.xls",
+    "bytes": 1093632,
+    "sha256": "56d5a35f05f1c74afe576bfb2f34710971d92229e56bf91e44164c36bbc16ef1"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2011w/2011.xls",
+    "cache_path": "sources/wta_2011.xls",
+    "bytes": 996352,
+    "sha256": "bfa3c9803c8e2b4bc512f9d1a3938d0aed4a3079e0acc404f7f737359a4190f8"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2012/2012.xls",
+    "cache_path": "sources/atp_2012.xls",
+    "bytes": 1065984,
+    "sha256": "c54d1b4d816479d0b4ecb37468dbf710140053a76b0494237c42773092687234"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2012w/2012.xls",
+    "cache_path": "sources/wta_2012.xls",
+    "bytes": 969216,
+    "sha256": "204e823154e57723ea8b7c00dd837e6eb319485373d59f82e41439abf8f87111"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2013/2013.xlsx",
+    "cache_path": "sources/atp_2013.xlsx",
+    "bytes": 504086,
+    "sha256": "95b8af095a5ae0d64be2cbc838684a094ac542f5cb151da545ebf166ed21a80c"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2013w/2013.xlsx",
+    "cache_path": "sources/wta_2013.xlsx",
+    "bytes": 515133,
+    "sha256": "94b8c1033b45ebe01b25e6faf2f86a052c4c991ae1950d7100e1bb29d97ab492"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2014/2014.xlsx",
+    "cache_path": "sources/atp_2014.xlsx",
+    "bytes": 573801,
+    "sha256": "ebc5749b3b537cc6dafde5d416a330752dc64a1b2f3f4f9698699763a3ce7d9f"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2014w/2014.xlsx",
+    "cache_path": "sources/wta_2014.xlsx",
+    "bytes": 540026,
+    "sha256": "0e1ae9ad8d781825ca79df0be18ebf861383b9f2b3630e4bcc0166a8adc9f047"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2015/2015.xlsx",
+    "cache_path": "sources/atp_2015.xlsx",
+    "bytes": 526784,
+    "sha256": "74d1ffa15ad8b13aea0ffd6eba17fa5dc05b2b57263515d20e7ee39be0354485"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2015w/2015.xlsx",
+    "cache_path": "sources/wta_2015.xlsx",
+    "bytes": 496722,
+    "sha256": "f2625eb24820743514a635f2daf57945d40d0108c5aafd244345df8368197648"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/hrjk-85HytOjkhth76j_ygh4jf7/2016/2016.xlsx",
+    "cache_path": "sources/atp_2016.xlsx",
+    "bytes": 546990,
+    "sha256": "e55547add1d8c8cad17d1eb7be5a24de7757f33dd90fe4f91ca7d4ee8a3e4b08"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/dc55cebd77fffc5f418540c47f9febda500fc342/charting-m-stats-ServeDirection.csv",
+    "cache_path": "sources/mcp_2015june_charting-m-stats-ServeDirection.csv",
+    "bytes": 243331,
+    "sha256": "78f36b83321b0562c947d60e63b11e4afe971b771772538eaf4c98c97d412671"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/dc55cebd77fffc5f418540c47f9febda500fc342/charting-m-stats-Overview.csv",
+    "cache_path": "sources/mcp_2015june_charting-m-stats-Overview.csv",
+    "bytes": 327194,
+    "sha256": "a2c20bdb24ea24c39f2be22b8f3601a91e9e41ad9f1b2e7ff71c12b24b830e15"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/dc55cebd77fffc5f418540c47f9febda500fc342/charting-m-matches.csv",
+    "cache_path": "sources/mcp_2015june_charting-m-matches.csv",
+    "bytes": 70047,
+    "sha256": "b0f0116c16c83cf61ca9cbcf15814ca86a976f5edce6fb7a8787bebdaa9c3a10"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/dc55cebd77fffc5f418540c47f9febda500fc342/README.md",
+    "cache_path": "sources/mcp_2015june_README.md",
+    "bytes": 3069,
+    "sha256": "b214d18f1c849b3d7acb5bd73e4df5d13d4b9d8757d8655b9d9e4dd5a217a025"
+  },
+  {
+    "url": "https://files.pythonhosted.org/packages/1a/62/c8d562e7766786ba6587d09c5a8ba9f718ed3fa8af7f4553e8f91c36f302/xlrd-2.0.2-py2.py3-none-any.whl",
+    "cache_path": "sources/xlrd-2.0.2.whl",
+    "bytes": 96555,
+    "sha256": "ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/dc55cebd77fffc5f418540c47f9febda500fc342/charting-m-points.csv",
+    "cache_path": "sources/mcp_points_prefix.csv",
+    "bytes": 65536,
+    "sha256": "baa11dff3c053ac762962604fb274c638d9ba74b1a7c3febdb141ee9847373e4",
+    "range": "bytes=0-65535"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/notes.txt",
+    "cache_path": "sources/tennis-data-notes.txt",
+    "bytes": 3624,
+    "sha256": "13e57641a7bd67304ad9b98141aa6f413dff748676a703f5beff0078e8a27f29"
+  },
+  {
+    "url": "https://www.tennis-data.co.uk/disclaimer.php",
+    "cache_path": "sources/tennis-data-disclaimer.html",
+    "bytes": 64275,
+    "sha256": "c1f13e83ee5fd9f75da38996b41b041bd73d4c7bc8679b328fb6f905f94902ea"
+  },
+  {
+    "url": "https://api.github.com/repos/JeffSackmann/tennis_MatchChartingProject/commits?path=charting-m-stats-ServeDirection.csv&until=2015-07-01T00:00:00Z&per_page=1",
+    "cache_path": "sources/mcp_before2015july.json",
+    "bytes": 4135,
+    "sha256": "f3c97f9cf2929553eadfa403eacc34285179057b523a0973de7952d73af1cc1e"
+  },
+  {
+    "url": "https://www.asapsports.com/show_player.php?id=15247",
+    "cache_path": "sources/asap_murray_index.html",
+    "bytes": 246924,
+    "sha256": "da4178b67951d9334dec6ed1ccd9311808c097f7955905b565bbf298c0730199"
+  },
+  {
+    "url": "https://www.asapsports.com/show_interview.php?id=110501",
+    "cache_path": "sources/asap_murray_20150621.html",
+    "bytes": 12095,
+    "sha256": "3a759512a39b56a747142cf5bcac3863a3e347014373f7f6fc5bcd83b8cfec45"
+  },
+  {
+    "url": "https://www.asapsports.com/show_interview.php?id=110503",
+    "cache_path": "sources/asap_110503.html",
+    "bytes": 14572,
+    "sha256": "537fc550a0cab25516a22fda80f1f3793f071e5d48cc9b7ce8874e9dc55db74d"
+  },
+  {
+    "url": "https://www.asapsports.com/show_interview.php?id=110504",
+    "cache_path": "sources/asap_110504.html",
+    "bytes": 26062,
+    "sha256": "9fb0a78ec2a0f4fa04a6ae4924564222ead2a377247b574fe89facf51baa5c1c"
+  },
+  {
+    "url": "https://www.asapsports.com/show_interview.php?id=112348",
+    "cache_path": "sources/asap_murray_20150822.html",
+    "bytes": 19670,
+    "sha256": "a352870dc858428d4bfaf0821931c3a211fc79bd54ffbe20c155457f081a3c5f"
+  }
+]

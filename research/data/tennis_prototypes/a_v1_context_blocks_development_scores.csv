@@ -1,0 +1,3 @@
+policy,condition,auroc,train_rows,development_rows,reserved_test_rows_scored,runtime_seconds,official_result,config_sha256
+qa_blocks,text_tfidf,0.5810699717357093,2162,716,0,0.8761290419788565,False,94bd8e82ad115a8bd65f7a180e1f39dbe18dd2cd56e5662e2f5fca93d8e2a8ac
+qa_blocks,joint_tfidf,0.7585712831674796,2162,716,0,1.0479335419950075,False,94bd8e82ad115a8bd65f7a180e1f39dbe18dd2cd56e5662e2f5fca93d8e2a8ac

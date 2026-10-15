@@ -1,0 +1,13 @@
+{
+  "original_rows": 4052,
+  "v1_rows": 3627,
+  "excluded_rows": 425,
+  "both_sources_immediate_previous_match": 70,
+  "at_least_one_source_immediate_previous_match": 385,
+  "median_interview_age_a_days": 28.0,
+  "median_interview_age_b_days": 28.0,
+  "completed_local_diagnostic_fits": 13,
+  "superseded_debug_fits_before_scoring": 2,
+  "reserved_test_model_scores": 0,
+  "tokenizer_model_revision": "ffb93f3bd4047442299a41ebb6fa998a38507c52"
+}

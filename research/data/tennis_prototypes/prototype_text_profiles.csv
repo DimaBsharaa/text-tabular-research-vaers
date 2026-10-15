@@ -1,0 +1,6 @@
+variant,column,rows,unique_texts,words_min,words_p10,words_median,words_p90,words_max
+A,player_a_text,4052,2616,71,252.0,300.0,300.0,300
+A,player_b_text,4052,2637,71,248.0,300.0,300.0,300
+B,player_a_text,415,110,47,47.0,47.0,47.0,47
+B,player_b_text,415,106,47,47.0,47.0,47.0,47
+C,context_text,44359,342,22,22.0,23.0,24.0,24

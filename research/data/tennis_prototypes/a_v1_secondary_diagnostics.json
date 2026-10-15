@@ -1,0 +1,11 @@
+{
+  "source_tournament_names_with_multiple_target_name_mappings": 0,
+  "crosswalk_rows": 82,
+  "name_difference_is_not_automatic_error": true,
+  "target_pair_plus_score_text_flags": 0,
+  "any_flag_uses_same_source_target_match": false,
+  "text_screen_scope": "Exact >=4-character surnames and simple set-score patterns in selected answers; not exhaustive semantic outcome detection",
+  "training_interview_side_groups": 2653,
+  "training_interview_side_groups_with_both_labels": 579,
+  "interpretation": "Mixed future labels for a reused interview/side are legitimate opponent-dependent supervision, not automatic leakage; they may weaken per-column TAR training."
+}

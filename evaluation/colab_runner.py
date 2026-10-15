@@ -108,8 +108,11 @@ def load_csv(csv, schema_path):
         raise ValueError("Manifest must partition all fields without overlap or undeclared columns")
     if df[target].isna().any() or set(df[target].unique()) != {0, 1}:
         raise ValueError("Expected both binary outcome classes and no missing targets")
-    if not df.match_id.is_unique or df.match_id.isna().any():
-        raise ValueError("Stable unique match_id is required")
+    id_col = schema.get("id_column", "match_id")  # Tennis fixtures use match_id; other candidates declare theirs.
+    if id_col not in audit:
+        raise ValueError(f"id_column {id_col!r} must be an audit column, never a predictor")
+    if not df[id_col].is_unique or df[id_col].isna().any():
+        raise ValueError(f"Stable unique {id_col} is required")
     for col in schema["numeric_columns"]:
         df[col] = pd.to_numeric(df[col], errors="raise")
     for col in structured + text:
@@ -119,7 +122,7 @@ def load_csv(csv, schema_path):
             raise ValueError(f"All-missing predictor: {col}")
     if any(df[c].isna().any() or df[c].astype(str).str.strip().eq("").any() for c in text):
         raise ValueError("This first adapter requires nonempty text on every retained row")
-    df.index = df["match_id"].astype(str)
+    df.index = df[id_col].astype(str)
     return df, schema
 
 

@@ -45,6 +45,12 @@ code("""
     PAPER_COMMIT = "3bb95079a6146ed35d45187e98bcad5b063273a1"
     DATA_REL = "research/data/tennis_smoke/tennis_smoke.csv"
     SCHEMA_REL = "research/data/tennis_smoke/schema.json"
+    # Optional: evaluate a candidate built elsewhere (e.g. notebook 06 writes VAERS to Drive).
+    # Example: CSV_PATH = "/content/drive/MyDrive/text-tabular-research-2/candidates/vaers_v1/vaers_v1.csv"
+    CSV_PATH = None
+    SCHEMA_PATH = None  # The schema.json written next to CSV_PATH.
+    # Optional learner subset for a cheap screen, e.g. ["light", "cat"] with MODE = "diagnostic".
+    MODELS_OVERRIDE = None
 """)
 md("""
     ## 1. Get our files and the separate, unchanged reference
@@ -96,9 +102,14 @@ code("""
     sys.path.insert(0, str(PROJECT))  # Dashboard helpers only; models run in the isolated environment.
     from evaluation.colab_session import run_logged_command
     command = run_logged_command  # Explicitly stream child stdout AND stderr into cell output.
-    CSV = PROJECT / DATA_REL
-    SCHEMA = PROJECT / SCHEMA_REL
-    assert CSV.exists() and SCHEMA.exists(), "Project checkout is missing prepared data. Use a fresh runtime."
+    if (CSV_PATH is None) != (SCHEMA_PATH is None):
+        raise ValueError("Set both CSV_PATH and SCHEMA_PATH, or neither")
+    if CSV_PATH and str(CSV_PATH).startswith("/content/drive"):
+        from google.colab import drive
+        drive.mount("/content/drive")
+    CSV = Path(CSV_PATH) if CSV_PATH else PROJECT / DATA_REL
+    SCHEMA = Path(SCHEMA_PATH) if SCHEMA_PATH else PROJECT / SCHEMA_REL
+    assert CSV.exists() and SCHEMA.exists(), f"Missing data: {CSV} / {SCHEMA}"
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     print("Our commit:", subprocess.check_output(["git", "-C", str(PROJECT), "rev-parse", "HEAD"], text=True).strip())
@@ -169,18 +180,28 @@ code("""
     schema = json.loads(SCHEMA.read_text())
     df = pd.read_csv(CSV)
     assert hashlib.sha256(CSV.read_bytes()).hexdigest() == schema["csv_sha256"]
-    display(pd.DataFrame({"value": {"Rows": len(df), "Player A win fraction": df.player_a_wins.mean(),
-        "Earliest date": df.match_date.min(), "Latest date": df.match_date.max(),
-        "Structured features": len(schema["structured_columns"]), "Text fields": len(schema["text_columns"]),
-        "A distinct texts": df.player_a_text.nunique(), "B distinct texts": df.player_b_text.nunique()}}))
-    display(df[["match_date", "player_a", "player_b", "a_rank", "b_rank", "player_a_wins"]].head(8))
-    print("Example temporary text:\\n", df.loc[df.a_prior_matches > 0, "player_a_text"].iloc[0])
-    fig, axes = plt.subplots(1, 2, figsize=(10, 3))
-    df.player_a_wins.value_counts().reindex([0, 1]).plot.bar(ax=axes[0], color=["#547b9d", "#36a28a"], rot=0)
-    axes[0].set(xlabel="Player A wins", ylabel="Matches", title="Outcome-independent A/B labels")
-    df.surface.value_counts().plot.bar(ax=axes[1], rot=0, color="#547b9d")
-    axes[1].set(ylabel="Matches", title="Surfaces in this bounded prefix")
-    plt.tight_layout(); plt.show()
+    TENNIS_FIXTURE = schema["target"] == "player_a_wins"
+    if not TENNIS_FIXTURE:  # Generic candidate preview (e.g. VAERS); the tennis-specific cells below are skipped.
+        tgt = schema["target"]
+        display(pd.DataFrame({"value": {"Rows": len(df), f"{tgt} = 1 fraction": round(df[tgt].mean(), 4),
+            "Structured features": len(schema["structured_columns"]), "Text fields": len(schema["text_columns"])}}))
+        display(pd.DataFrame({c: {"distinct": df[c].nunique(), "mean chars": round(df[c].astype(str).str.len().mean(), 1)}
+                              for c in schema["text_columns"]}).T)
+        display(df[schema["structured_columns"] + schema["text_columns"] + [tgt]].head(5))
+        print("Audit columns excluded from X:", schema["audit_columns"])
+    if TENNIS_FIXTURE:
+        display(pd.DataFrame({"value": {"Rows": len(df), "Player A win fraction": df.player_a_wins.mean(),
+            "Earliest date": df.match_date.min(), "Latest date": df.match_date.max(),
+            "Structured features": len(schema["structured_columns"]), "Text fields": len(schema["text_columns"]),
+            "A distinct texts": df.player_a_text.nunique(), "B distinct texts": df.player_b_text.nunique()}}))
+        display(df[["match_date", "player_a", "player_b", "a_rank", "b_rank", "player_a_wins"]].head(8))
+        print("Example temporary text:\\n", df.loc[df.a_prior_matches > 0, "player_a_text"].iloc[0])
+        fig, axes = plt.subplots(1, 2, figsize=(10, 3))
+        df.player_a_wins.value_counts().reindex([0, 1]).plot.bar(ax=axes[0], color=["#547b9d", "#36a28a"], rot=0)
+        axes[0].set(xlabel="Player A wins", ylabel="Matches", title="Outcome-independent A/B labels")
+        df.surface.value_counts().plot.bar(ax=axes[1], rot=0, color="#547b9d")
+        axes[1].set(ylabel="Matches", title="Surfaces in this bounded prefix")
+        plt.tight_layout(); plt.show()
 """, local=True)
 md("""
     **Insight:** The label count is a useful check against accidentally making A the winner on every row.
@@ -188,18 +209,19 @@ md("""
     They do not estimate modern ATP coverage or text availability. The temporary prose deliberately restates historical results.
 """)
 code("""
-    check_rows = []
-    for side in ["a", "b"]:
-        last = df[f"{side}_history_last_date"].fillna("")
-        assert ((last == "") | (last < df.match_date)).all()
-        check_rows.append({"side": side.upper(), "rows_without_earlier_history": int((df[f"{side}_prior_matches"] == 0).sum()),
-                           "history_timing_violations": int(((last != "") & (last >= df.match_date)).sum())})
-    display(pd.DataFrame(check_rows))
-    print("Audit columns excluded from X:", schema["audit_columns"])
-    print("Structured X:", schema["structured_columns"])
-    print("Text X:", schema["text_columns"])
-    df[["a_prior_matches", "b_prior_matches"]].plot.hist(bins=12, alpha=.6, figsize=(7, 3))
-    plt.xlabel("Earlier matches in this small prefix"); plt.ylabel("Rows"); plt.title("History depth is limited"); plt.show()
+    if TENNIS_FIXTURE:  # Tennis-fixture timing checks only.
+        check_rows = []
+        for side in ["a", "b"]:
+            last = df[f"{side}_history_last_date"].fillna("")
+            assert ((last == "") | (last < df.match_date)).all()
+            check_rows.append({"side": side.upper(), "rows_without_earlier_history": int((df[f"{side}_prior_matches"] == 0).sum()),
+                               "history_timing_violations": int(((last != "") & (last >= df.match_date)).sum())})
+        display(pd.DataFrame(check_rows))
+        print("Audit columns excluded from X:", schema["audit_columns"])
+        print("Structured X:", schema["structured_columns"])
+        print("Text X:", schema["text_columns"])
+        df[["a_prior_matches", "b_prior_matches"]].plot.hist(bins=12, alpha=.6, figsize=(7, 3))
+        plt.xlabel("Earlier matches in this small prefix"); plt.ylabel("Rows"); plt.title("History depth is limited"); plt.show()
 """, local=True)
 md("""
     **Insight:** Empty early histories are expected because the source prefix starts in January 2000.
@@ -240,6 +262,11 @@ code("""
     if MODE == "full" and schema.get("purpose") != "candidate_dataset":
         raise ValueError("This CSV is a smoke fixture. Choose a real curated candidate before full evaluation.")
     MODELS = ["light"] if MODE == "smoke" else ["light", "cat", "tabm", "tabpfnv2", "tabpfnv2p5"]
+    if MODELS_OVERRIDE:
+        if MODE == "full":
+            raise ValueError("Full evaluation must run all five learners")
+        assert set(MODELS_OVERRIDE) <= {"light", "cat", "tabm", "tabpfnv2", "tabpfnv2p5"}, MODELS_OVERRIDE
+        MODELS = list(MODELS_OVERRIDE)
     FOLDS = [0] if MODE != "full" else [0, 1, 2, 3, 4]
     CONDITIONS = ["structured_only", "text_only", "joint_frozen", "joint_tar"]
     try:

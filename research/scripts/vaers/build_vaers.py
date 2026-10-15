@@ -60,7 +60,9 @@ CARE_FINDING = re.compile(r"abnormal|increased|decreased|positive|negative|prolo
 ADMIN_TERM = re.compile(r"^no adverse event$|product|administ|vaccination error|medication error|underdose|overdose|"
                         r"off label|unapproved|dose omission|interchange of vaccine|exposure (?:via|during)|"
                         r"circumstance or information|accidental exposure", re.I)
-ADMIN_TERM_KEEP = {"productive cough", "shoulder injury related to vaccine administration"}
+ADMIN_TERM_KEEP = {"productive cough", "shoulder injury related to vaccine administration",
+                   "administration related reaction"}
+ADMIN_TERM_KEEP_PREFIX = "administration site"  # Local reactions (pain, swelling, ...) are real reactions, keep them.
 NARRATIVE_OUTCOME = re.compile(r"hospital|admit|admission|discharg|\bicu\b|intensive care|\ber\b|emergency|\bed\b|"
                                r"urgent care|died|death|dead|deceased|passed away|expired|autopsy|fatal|intubat|"
                                r"ventilat|life.?threat|resuscitat|\bcpr\b|disab|inpatient|ambulance|\bems\b|911|"
@@ -120,7 +122,8 @@ def symptom_text(symptoms: pd.DataFrame) -> tuple[pd.Series, dict[str, list[str]
     lower = long.term.str.lower()
     is_outcome = long.term.str.contains(OUTCOME_TERM) & ~lower.isin(OUTCOME_TERM_KEEP)
     is_care = long.term.str.contains(CARE_TERM) & ~long.term.str.contains(CARE_FINDING) & ~is_outcome
-    is_admin = long.term.str.contains(ADMIN_TERM) & ~lower.isin(ADMIN_TERM_KEEP) & ~is_outcome & ~is_care
+    is_admin = (long.term.str.contains(ADMIN_TERM) & ~lower.isin(ADMIN_TERM_KEEP)
+                & ~lower.str.startswith(ADMIN_TERM_KEEP_PREFIX) & ~is_outcome & ~is_care)
     removed = {"outcome": sorted(long.loc[is_outcome, "term"].unique()),
                "care_process": sorted(long.loc[is_care, "term"].unique()),
                "administration": sorted(long.loc[is_admin, "term"].unique())}

@@ -116,14 +116,16 @@ class BuildVaersTest(unittest.TestCase):
         self.assertEqual(removed["outcome"], ["Sudden death"])
 
     def test_care_and_administration_terms_removed_findings_kept(self):
-        s = pd.DataFrame({"VAERS_ID": ["1", "1", "1", "1", "2", "2", "3", "3"],
+        s = pd.DataFrame({"VAERS_ID": ["1", "1", "1", "1", "2", "2", "3", "3", "4"],
                           "SYMPTOM1": ["Blood test", "Troponin increased", "Computerised tomogram", "Anticoagulant therapy",
                                        "No adverse event", "Expired product administered",
-                                       "Productive cough", "Electrocardiogram ST segment elevation"]})
+                                       "Productive cough", "Electrocardiogram ST segment elevation",
+                                       "Administration site pain"]})
         joined, removed = bv.symptom_text(s)
         self.assertEqual(joined.get("1"), "Troponin increased")
         self.assertNotIn("2", joined.index)  # pure administration report -> no reaction term -> dropped later
         self.assertEqual(joined.get("3"), "Electrocardiogram ST segment elevation; Productive cough")
+        self.assertEqual(joined.get("4"), "Administration site pain")  # a real local reaction, not a process term
         self.assertEqual(removed["care_process"], ["Anticoagulant therapy", "Blood test", "Computerised tomogram"])
         self.assertEqual(removed["administration"], ["Expired product administered", "No adverse event"])
 

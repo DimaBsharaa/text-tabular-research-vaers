@@ -48,6 +48,19 @@ OUTCOME_TERM = re.compile(r"death|died|autopsy|post ?mortem|hospital|intensive c
                           r"life threatening", re.I)
 OUTCOME_TERM_KEEP = {"hyperventilation", "hypoventilation", "fear of death", "near death experience",
                      "death of relative", "hypertensive emergency"}
+# Care-process terms: tests, scans and treatments say how intensively the patient was handled (a proxy for
+# hospital care), not what the reaction was. Removed unless they carry a finding (abnormal, increased, ...).
+CARE_TERM = re.compile(r"\btests?\b|laboratory|imaging|tomogram|\bscan\b|x-ray|ultrasound|echocardiogram|"
+                       r"electrocardiogram|biopsy|angiogram|monitoring|investigation|examination|culture|\bcount\b|"
+                       r"analysis|puncture|catheterisation|endoscopy|therapy|treatment", re.I)
+CARE_FINDING = re.compile(r"abnormal|increased|decreased|positive|negative|prolonged|elevat|depress|inversion|"
+                          r"\blow\b|\bhigh\b|present|absent|non-responder|noncompliance|refusal", re.I)
+# Vaccination-process terms (errors, storage, schedule, "No adverse event"): these reports describe how a vaccine
+# was given, not a reaction. They are removed from the text; reports left with no reaction term are dropped.
+ADMIN_TERM = re.compile(r"^no adverse event$|product|administ|vaccination error|medication error|underdose|overdose|"
+                        r"off label|unapproved|dose omission|interchange of vaccine|exposure (?:via|during)|"
+                        r"circumstance or information|accidental exposure", re.I)
+ADMIN_TERM_KEEP = {"productive cough", "shoulder injury related to vaccine administration"}
 NARRATIVE_OUTCOME = re.compile(r"hospital|admit|admission|discharg|\bicu\b|intensive care|\ber\b|emergency|\bed\b|"
                                r"urgent care|died|death|dead|deceased|passed away|expired|autopsy|fatal|intubat|"
                                r"ventilat|life.?threat|resuscitat|\bcpr\b|disab|inpatient|ambulance|\bems\b|911|"
@@ -98,14 +111,20 @@ def clean_text(value) -> str:
     return EMPTY_TEXT if not text or NULL_LIKE.match(text) else text
 
 
-def symptom_text(symptoms: pd.DataFrame) -> tuple[pd.Series, list[str]]:
+def symptom_text(symptoms: pd.DataFrame) -> tuple[pd.Series, dict[str, list[str]]]:
+    """Join each report's reaction terms; return removed terms per category (outcome / care_process / administration)."""
     cols = [c for c in symptoms.columns if re.fullmatch(r"SYMPTOM\d+", c)]
     long = symptoms.melt(id_vars="VAERS_ID", value_vars=cols, value_name="term").dropna(subset=["term"])
     long["term"] = long.term.str.strip()
     long = long[long.term != ""]
-    is_outcome = long.term.str.contains(OUTCOME_TERM) & ~long.term.str.lower().isin(OUTCOME_TERM_KEEP)
-    removed = sorted(long.loc[is_outcome, "term"].unique())
-    kept = long[~is_outcome].drop_duplicates(["VAERS_ID", "term"])
+    lower = long.term.str.lower()
+    is_outcome = long.term.str.contains(OUTCOME_TERM) & ~lower.isin(OUTCOME_TERM_KEEP)
+    is_care = long.term.str.contains(CARE_TERM) & ~long.term.str.contains(CARE_FINDING) & ~is_outcome
+    is_admin = long.term.str.contains(ADMIN_TERM) & ~lower.isin(ADMIN_TERM_KEEP) & ~is_outcome & ~is_care
+    removed = {"outcome": sorted(long.loc[is_outcome, "term"].unique()),
+               "care_process": sorted(long.loc[is_care, "term"].unique()),
+               "administration": sorted(long.loc[is_admin, "term"].unique())}
+    kept = long[~(is_outcome | is_care | is_admin)].drop_duplicates(["VAERS_ID", "term"])
     joined = kept.sort_values("term").groupby("VAERS_ID").term.agg("; ".join)
     return joined, removed
 
@@ -156,7 +175,7 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     data = data[~dup]
     counts["after_secondary_dedup"] = len(data)
 
-    symptoms, removed_terms = symptom_text(sym)
+    symptoms, removed_terms = symptom_text(sym)  # dict: outcome / care_process / administration
     out = pd.DataFrame(index=data.index)
     out["report_id"] = data.index.astype(str)
     flags = [c for c in OUTCOME_FLAGS if c in data.columns]  # BIRTH_DEFECT exists only on the VAERS 2 form.
@@ -193,7 +212,7 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     out = out.sort_values("report_id", key=lambda s: pd.to_numeric(s, errors="coerce")).reset_index(drop=True)
     counts["final_rows"] = len(out)
     out = out[STRUCTURED + text_cols + ["serious", "report_id"]]
-    meta = {"counts": counts, "removed_outcome_terms": removed_terms, "sources": t["sources"], "text_columns": text_cols}
+    meta = {"counts": counts, "removed_terms": removed_terms, "sources": t["sources"], "text_columns": text_cols}
     return out, meta
 
 
@@ -203,6 +222,7 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
     out.to_csv(csv, index=False)
     schema = {
         "dataset_id": f"BIN_TEXT_VAERS_SERIOUS_{variant.upper()}",
+        "build_version": 2,  # 2 = care-process and administration terms removed (after the first screen).
         "purpose": "candidate_dataset",
         "task": "binary",
         "target": "serious",
@@ -219,7 +239,9 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
         "excluded_fields": ["SYMPTOM_TEXT (v1)", "LAB_DATA", "ER_VISIT", "ER_ED_VISIT", "OFC_VISIT", "HOSPDAYS", "RECOVD",
                             "DATEDIED", "RECVDATE/VAX_DATE/ONSET_DATE (raw dates)", "SPLTTYPE", "FORM_VERS", "VAX_LOT",
                             "VAX_NAME", "PRIOR_VAX", "TODAYS_DATE", "RPT_DATE", "V_FUNDBY"],
-        "removed_outcome_terms": meta["removed_outcome_terms"],
+        "removed_terms": meta["removed_terms"],
+        "scope": "Reports with at least one reaction term left after removing outcome, care-process and "
+                 "vaccination-process terms (pure administration-error reports are out of scope).",
         "sources": meta["sources"],
         "source_url": "https://vaers.hhs.gov/data/datasets.html",
         "source_terms": "U.S. government public data (CDC/FDA). Reports are unverified and do not establish causality.",
@@ -240,7 +262,7 @@ def main():
     out, meta = build(args.inputs, args.variant, args.rows, args.seed)
     csv = write(out, meta, args.out_dir, args.variant)
     print(json.dumps({"csv": str(csv), **meta["counts"], "positive_rate": round(float(out.serious.mean()), 4),
-                      "removed_outcome_terms": len(meta["removed_outcome_terms"])}, indent=2))
+                      "removed_terms": {k: len(v) for k, v in meta["removed_terms"].items()}}, indent=2))
 
 
 if __name__ == "__main__":

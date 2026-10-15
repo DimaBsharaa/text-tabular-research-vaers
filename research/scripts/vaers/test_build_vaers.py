@@ -106,14 +106,26 @@ class BuildVaersTest(unittest.TestCase):
     def test_outcome_terms_removed_from_symptoms(self):
         for t in ["Death", "Hospitalisation", "Intensive care"]:
             self.assertFalse(self.out.symptoms.str.contains(t, regex=False).any(), t)
-        self.assertIn("Death", self.meta["removed_outcome_terms"])
+        self.assertIn("Death", self.meta["removed_terms"]["outcome"])
         self.assertTrue(self.out.symptoms.str.contains("Myocarditis|Pyrexia").any())
 
     def test_keep_list_terms_are_not_removed(self):
         s = pd.DataFrame({"VAERS_ID": ["1", "2"], "SYMPTOM1": ["Hyperventilation", "Sudden death"]})
         joined, removed = bv.symptom_text(s)
         self.assertEqual(joined.get("1"), "Hyperventilation")
-        self.assertEqual(removed, ["Sudden death"])
+        self.assertEqual(removed["outcome"], ["Sudden death"])
+
+    def test_care_and_administration_terms_removed_findings_kept(self):
+        s = pd.DataFrame({"VAERS_ID": ["1", "1", "1", "1", "2", "2", "3", "3"],
+                          "SYMPTOM1": ["Blood test", "Troponin increased", "Computerised tomogram", "Anticoagulant therapy",
+                                       "No adverse event", "Expired product administered",
+                                       "Productive cough", "Electrocardiogram ST segment elevation"]})
+        joined, removed = bv.symptom_text(s)
+        self.assertEqual(joined.get("1"), "Troponin increased")
+        self.assertNotIn("2", joined.index)  # pure administration report -> no reaction term -> dropped later
+        self.assertEqual(joined.get("3"), "Electrocardiogram ST segment elevation; Productive cough")
+        self.assertEqual(removed["care_process"], ["Anticoagulant therapy", "Blood test", "Computerised tomogram"])
+        self.assertEqual(removed["administration"], ["Expired product administered", "No adverse event"])
 
     def test_manufacturer_reports_and_secondary_duplicates_dropped(self):
         ids = set(self.out.report_id)
@@ -166,7 +178,7 @@ class BuildVaersTest(unittest.TestCase):
         self.assertEqual(len(df), len(self.out))
         self.assertEqual(schema["id_column"], "report_id")
         self.assertEqual(set(schema["structured_columns"] + schema["text_columns"]) & set(schema["audit_columns"]), set())
-        self.assertTrue(json.loads((out_dir / "schema.json").read_text())["removed_outcome_terms"])
+        self.assertTrue(json.loads((out_dir / "schema.json").read_text())["removed_terms"]["outcome"])
 
     def test_sampling_is_deterministic_and_capped(self):
         a, _ = bv.build([self.zip], "v1", n_rows=500, seed=7)

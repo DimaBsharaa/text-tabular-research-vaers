@@ -37,7 +37,8 @@ code("""
     RAW_DIR = "/content/drive/MyDrive/text-tabular-research-2/vaers_raw"
     OUT_BASE = "/content/drive/MyDrive/text-tabular-research-2/candidates"
     ROWS = 60000      # Final rows per variant (the benchmark samples ≤10k train + ≤2k test per fold from these).
-    VARIANTS = ["v1", "v2"]  # v1: no narrative (primary). v2: + narrative with outcome sentences removed (riskier).
+    VARIANTS = ["v1"]  # v1: no narrative (primary). "v2" (+ masked narrative) was dropped after the first screen:
+    # its narrative carries reporter-template artifacts and gave no joint gain.
 
     from google.colab import drive
     drive.mount("/content/drive")
@@ -69,7 +70,8 @@ code("""
         csv = bv.write(out, meta, Path(OUT_BASE) / f"vaers_{v}", v)
         built[v] = csv
         print(v, json.dumps(meta["counts"]), "positive rate", round(out.serious.mean(), 4))
-    print("Removed outcome terms (first 40):", meta["removed_outcome_terms"][:40])
+    for kind, terms in meta["removed_terms"].items():
+        print(f"Removed {kind} terms ({len(terms)}), first 25:", terms[:25])
 """)
 md("""
     ## 2. Profile vs passing datasets and the cheap CPU screen

@@ -1,0 +1,6221 @@
+{
+  "archives": [
+    {
+      "name": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "sha256": "52653e5bf47c153be84277241ad9bed77a039110fe07b6730c2231b0425e4f7d",
+      "runs": 12,
+      "dataset_or_schema_present": false
+    },
+    {
+      "name": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "sha256": "a057a51c1199ada2d88d089a25677ce12a5c78068bcd0677d6b08f6d23804c08",
+      "runs": 24,
+      "dataset_or_schema_present": false
+    }
+  ],
+  "checks": [
+    {
+      "scope": "global",
+      "check": "independent_tree_pin",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "multabench/baselines/abstract_model.py",
+      "check": "downloaded_source_matches_pinned_git_blob",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "multabench/baselines/benchmarks/evaluate.py",
+      "check": "downloaded_source_matches_pinned_git_blob",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "multabench/baselines/preprocessing/text_embeddings.py",
+      "check": "downloaded_source_matches_pinned_git_blob",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "multabench/e5/e5_finetune.py",
+      "check": "downloaded_source_matches_pinned_git_blob",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "unique_zip_member_names",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "zip_crc_integrity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "no_process_errors",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "four_conditions_requested",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "plan_hash_matches_archive_name",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "csv_has_unique_run_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2p5/0/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2/0/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2/0/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2/0/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabm/0/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabm/0/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabm/0/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabm/0/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2/0/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2p5/0/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "tabpfnv2p5/0/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "complete_unique_requested_jobs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "check": "csv_and_json_run_sets_match",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "unique_zip_member_names",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "zip_crc_integrity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "no_process_errors",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "four_conditions_requested",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "plan_hash_matches_archive_name",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "csv_has_unique_run_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/0/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/0/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/1/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/2/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/1/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/0/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/1/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/1/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/2/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/2/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/1/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/2/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/1/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/2/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/0/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/0/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/0/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/0/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/2/text_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/1/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/2/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/0/structured_only",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "no_tar_configuration_or_training_log",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "cat/2/joint_frozen",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "completed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "configuration_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "run_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "experiment_id_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "matches_plan",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "environment_bytes_hash",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "predictor_whitelist_and_no_target_or_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_text_detection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "dataset_and_score_identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "exported_score_matches_json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "unique_partition_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_outer_train_test_disjoint",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_learner_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "summary_split_sizes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "same_outer_rows_across_conditions_and_learners",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "same_learner_partition_across_conditions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "tuning_switches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "logged_feature_count",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "unique_encoder_ids",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_encoder_partition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_encoder_excludes_test_and_learner_validation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "logged_passages_match_encoder_rows_times_five",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "official_tar_schedule",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "reference_inventory_matches_independent_tree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "recorded_import_locations_and_hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "selected_source_hashes_verified_independently",
+      "status": "PASS",
+      "detail": "4 downloaded pinned files"
+    },
+    {
+      "scope": "light/1/joint_tar",
+      "check": "requirements_hash_matches_reference_record",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "complete_unique_requested_jobs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "check": "csv_and_json_run_sets_match",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "no_duplicate_logical_jobs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_csv_sha256",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_schema_sha256",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_benchmark_commit",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_research_commit",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_experiment_id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "same_adapter_sha256",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "recorded_reference_hashes_agree_across_jobs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "scope": "global",
+      "check": "adapter_bytes_match_recorded_project_commit",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "runs": [
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "11509034a73794ef2ef271a6",
+      "model": "tabpfnv2p5",
+      "fold": 0,
+      "condition": "joint_tar",
+      "score": 0.891241976937561,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0,
+        "encoder_train": 8997,
+        "encoder_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "32aec666f87ceb3b6b0b3b43",
+      "model": "tabpfnv2p5",
+      "fold": 0,
+      "condition": "joint_frozen",
+      "score": 0.8810404898363089,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "5e5e80b483786a4d76f3efa3",
+      "model": "tabpfnv2",
+      "fold": 0,
+      "condition": "structured_only",
+      "score": 0.8168250663148202,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "7d46d5278fbb0ca0a3082394",
+      "model": "tabpfnv2",
+      "fold": 0,
+      "condition": "text_only",
+      "score": 0.8326633131296473,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "86de7b63ac7f48fbb5002e10",
+      "model": "tabpfnv2",
+      "fold": 0,
+      "condition": "joint_frozen",
+      "score": 0.8705709946535823,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "96f7aef7b1f8448d6ea8e975",
+      "model": "tabm",
+      "fold": 0,
+      "condition": "text_only",
+      "score": 0.8634756524965984,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "99b84c2e5448468435c31930",
+      "model": "tabm",
+      "fold": 0,
+      "condition": "structured_only",
+      "score": 0.8071097733613711,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "a0c043b2b4a1fcab396fa0c4",
+      "model": "tabm",
+      "fold": 0,
+      "condition": "joint_tar",
+      "score": 0.8839147047100702,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "acb4406535732ca8276abbdc",
+      "model": "tabm",
+      "fold": 0,
+      "condition": "joint_frozen",
+      "score": 0.8733215134897402,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "ba10d3449bb5440a4a5ecc7e",
+      "model": "tabpfnv2",
+      "fold": 0,
+      "condition": "joint_tar",
+      "score": 0.8884089940763342,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0,
+        "encoder_train": 8997,
+        "encoder_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "e032dc3648783461c260a687",
+      "model": "tabpfnv2p5",
+      "fold": 0,
+      "condition": "structured_only",
+      "score": 0.821412127709287,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_721a59225d840c64_results.zip",
+      "run_id": "e05a47c9a50056c8f40359c6",
+      "model": "tabpfnv2p5",
+      "fold": 0,
+      "condition": "text_only",
+      "score": 0.8535095314668976,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 9998,
+        "learner_validation": 0
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "01ec117a464c1b5407ef51eb",
+      "model": "light",
+      "fold": 0,
+      "condition": "joint_frozen",
+      "score": 0.8686588600722934,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "0643d67355e5778b4d1358da",
+      "model": "cat",
+      "fold": 0,
+      "condition": "text_only",
+      "score": 0.8350324358498606,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "0a159cd5d9fe2086401589d6",
+      "model": "cat",
+      "fold": 1,
+      "condition": "joint_tar",
+      "score": 0.8492420181695735,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "10de8f8f350d0f92dbb062e6",
+      "model": "light",
+      "fold": 2,
+      "condition": "joint_tar",
+      "score": 0.8418614879258923,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "2882f4a10e619e24599de0b8",
+      "model": "light",
+      "fold": 1,
+      "condition": "text_only",
+      "score": 0.812652043046221,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "37e340c16e7d88ec54ad05aa",
+      "model": "cat",
+      "fold": 0,
+      "condition": "joint_frozen",
+      "score": 0.8723731772014458,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "39495622facbd1e17be358f5",
+      "model": "light",
+      "fold": 1,
+      "condition": "structured_only",
+      "score": 0.7696745419810608,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "52d52c4e9da5e0a671378f15",
+      "model": "light",
+      "fold": 1,
+      "condition": "joint_frozen",
+      "score": 0.843785648510837,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "64aae2a3ad80643fa54dc4bf",
+      "model": "light",
+      "fold": 2,
+      "condition": "structured_only",
+      "score": 0.7628368999024177,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "7062d6cb1fc4661a66567c0d",
+      "model": "light",
+      "fold": 2,
+      "condition": "text_only",
+      "score": 0.7920566527852224,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "70b884ff4e4f5afd1b282150",
+      "model": "cat",
+      "fold": 1,
+      "condition": "text_only",
+      "score": 0.8201116013139268,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "9c5fef59a83db7967e21d721",
+      "model": "cat",
+      "fold": 2,
+      "condition": "structured_only",
+      "score": 0.7906410203548703,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "9e03742318554b869f5e111d",
+      "model": "cat",
+      "fold": 1,
+      "condition": "structured_only",
+      "score": 0.7984063827155404,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "a86a7353bb1c777723f1f97f",
+      "model": "light",
+      "fold": 2,
+      "condition": "joint_frozen",
+      "score": 0.8292891601039047,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "cd5e3ce59333f4979f180913",
+      "model": "cat",
+      "fold": 0,
+      "condition": "structured_only",
+      "score": 0.8135763273272034,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "cf8c156a09ee09fadd644f75",
+      "model": "light",
+      "fold": 0,
+      "condition": "joint_tar",
+      "score": 0.8706792286864855,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "d0a434eb52195920b6e6d55d",
+      "model": "light",
+      "fold": 0,
+      "condition": "text_only",
+      "score": 0.8282806937973309,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "d41582898a5afa51a721f094",
+      "model": "cat",
+      "fold": 0,
+      "condition": "joint_tar",
+      "score": 0.8843476408416828,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "d55d00409a6364b60b305c12",
+      "model": "cat",
+      "fold": 2,
+      "condition": "text_only",
+      "score": 0.7924827169147459,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "dde472de4e32f6c64094b5c8",
+      "model": "cat",
+      "fold": 1,
+      "condition": "joint_frozen",
+      "score": 0.8510768427273602,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "f355093218c0b2712e39ac98",
+      "model": "cat",
+      "fold": 2,
+      "condition": "joint_tar",
+      "score": 0.8564266963537156,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "f3cc418025082acfe03c76ae",
+      "model": "light",
+      "fold": 0,
+      "condition": "structured_only",
+      "score": 0.7894109319809234,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "f7b9cfc3493a857eb66606ad",
+      "model": "cat",
+      "fold": 2,
+      "condition": "joint_frozen",
+      "score": 0.8377485946755728,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001
+      }
+    },
+    {
+      "archive": "tennis_diagnostic_a12d3b1c04dbbdd7_results.zip",
+      "run_id": "fdd464771b20fb62cff26c04",
+      "model": "light",
+      "fold": 1,
+      "condition": "joint_tar",
+      "score": 0.8384357948844816,
+      "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+      "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+      "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+      "research_commit": "f8dbdd4ff417a16c81f2c91671be3102f54c49d6",
+      "experiment_id": "70a3929166a53d860112794c",
+      "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+      "counts": {
+        "outer_train": 9998,
+        "outer_test": 2000,
+        "learner_fit": 8997,
+        "learner_validation": 1001,
+        "encoder_train": 8096,
+        "encoder_validation": 901
+      }
+    }
+  ],
+  "gains": [
+    {
+      "model": "cat",
+      "folds": 3,
+      "structured_only": 0.8008745767992047,
+      "text_only": 0.8158755846928445,
+      "joint_frozen": 0.8537328715347929,
+      "joint_tar": 0.8633387851216573,
+      "joint_signal": 0.037857286841948445,
+      "tar_gain": 0.009605913586864356
+    },
+    {
+      "model": "light",
+      "folds": 3,
+      "structured_only": 0.7739741246214673,
+      "text_only": 0.8109964632095914,
+      "joint_frozen": 0.8472445562290117,
+      "joint_tar": 0.8503255038322864,
+      "joint_signal": 0.036248093019420335,
+      "tar_gain": 0.0030809476032747085
+    },
+    {
+      "model": "tabm",
+      "folds": 1,
+      "structured_only": 0.8071097733613711,
+      "text_only": 0.8634756524965984,
+      "joint_frozen": 0.8733215134897402,
+      "joint_tar": 0.8839147047100702,
+      "joint_signal": 0.009845860993141775,
+      "tar_gain": 0.010593191220329978
+    },
+    {
+      "model": "tabpfnv2",
+      "folds": 1,
+      "structured_only": 0.8168250663148202,
+      "text_only": 0.8326633131296473,
+      "joint_frozen": 0.8705709946535823,
+      "joint_tar": 0.8884089940763342,
+      "joint_signal": 0.03790768152393509,
+      "tar_gain": 0.017837999422751882
+    },
+    {
+      "model": "tabpfnv2p5",
+      "folds": 1,
+      "structured_only": 0.821412127709287,
+      "text_only": 0.8535095314668976,
+      "joint_frozen": 0.8810404898363089,
+      "joint_tar": 0.891241976937561,
+      "joint_signal": 0.02753095836941133,
+      "tar_gain": 0.010201487101252127
+    }
+  ],
+  "cross_fold_test_overlap": [
+    {
+      "folds": [
+        0,
+        1
+      ],
+      "shared_test_report_ids": 65
+    },
+    {
+      "folds": [
+        0,
+        2
+      ],
+      "shared_test_report_ids": 71
+    },
+    {
+      "folds": [
+        1,
+        2
+      ],
+      "shared_test_report_ids": 84
+    }
+  ],
+  "limitations": [
+    "Recorded split IDs are adapter reconstructions, not independent runtime tensor traces.",
+    "No dataset CSV, schema.json or construction audit in either archive.",
+    "Cannot assess outcome-bearing text, repeated events, source/label accuracy or cohort bias.",
+    "Proof records and logs corroborate execution; they are not external execution attestations.",
+    "This is the older pinned diagnostic protocol, not the required final registered run."
+  ],
+  "checker_negative_controls": [
+    {
+      "mutation": "encoder_test_overlap",
+      "expected_check": "recorded_encoder_excludes_test_and_learner_validation",
+      "detected": true
+    },
+    {
+      "mutation": "target_predictor",
+      "expected_check": "predictor_whitelist_and_no_target_or_id",
+      "detected": true
+    },
+    {
+      "mutation": "csv_score_mismatch",
+      "expected_check": "exported_score_matches_json",
+      "detected": true
+    }
+  ]
+}

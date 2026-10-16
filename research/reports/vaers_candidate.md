@@ -211,3 +211,25 @@ So some excerpts are pasted hospital diagnosis lists. They reveal the hospital c
 - Notebook 06 prints three serious-row examples for each of the strongest onset words, so we can read where each word comes from.
 - Clinical event words such as "stroke" or "seizure" in a first-hand account are kept. They describe the reaction itself, as the coded symptoms do.
 - Expected cost: more empty excerpts among serious reports. `narrative_onset_empty_share_by_label` and the missing-flag AUROC (build 4: 0.556) are watched for this.
+
+## Update: build 5 results and build 6
+
+**Build 5 (CPU screen, notebook 06 at f7878a6):**
+
+- Chart words left in the excerpt: 0.
+- Care words left: 3. Cause: removing a date left a double space ("went 12/3 to" became "went  to"), which the single-space care pattern missed until the final clean-up joined it back. Fixed in build 6, with a test.
+- Strongest onset words in v7: stroke, hypoxia, my, hypotension, acute, neuropathy, paralysis, seizure, within. These are event descriptions; the ICD wording (unspecified, init) is gone.
+- **New issue: the empty excerpt carries the label.** 28.9% of serious reports had an empty excerpt, against 11.8% of non-serious ones; the missing-flag AUROC rose to 0.588. An excerpt is empty when the narrative *starts* with care, chart or outcome text, which is typical of hospital-written serious reports.
+
+| Variant | Structured | Text | Joint | Joint − best single |
+|---|---|---|---|---|
+| v1 | 0.818 | 0.902 | 0.912 | +0.010 |
+| v6 | 0.818 | 0.914 | 0.919 | +0.004 |
+| v7 | 0.818 | 0.844 | 0.875 | +0.031 |
+
+**Build 6:**
+
+- **Population:** reports whose narrative opens with an account of the reaction (non-empty excerpt). This applies to every variant, so v1, v6 and v7 keep identical report IDs and the empty-excerpt signal no longer exists. It is a cohort definition and is stated in the paper. It lowers the share of serious reports, because hospital-written reports are more often excluded.
+- Whitespace is collapsed after dates and codes are removed (the care-word fix above).
+- The notebook's audit printing moved into `research/scripts/vaers/audit_report.py`, so an older notebook copy still prints the current checks after `git pull`.
+- **GPU screen priority:** v7 (largest joint gain, most free text), then v1. v6 adds little over v1 in the proxy and goes last.

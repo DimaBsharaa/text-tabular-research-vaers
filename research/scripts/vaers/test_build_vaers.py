@@ -257,6 +257,24 @@ class BuildVaersTest(unittest.TestCase):
         self.assertEqual(bv.onset_narrative("My arm hurt within an hour. I felt dizzy."),
                          "My arm hurt within an hour. I felt dizzy.")
 
+    def test_build6_reports_without_onset_excerpt_are_excluded_everywhere(self):
+        # Gaps left by removed dates must not hide care phrases ("Went 12/3 to" -> "Went to").
+        out = bv.onset_narrative("Rash appeared. Went 12/3 to urgent place.")
+        self.assertEqual(out, "Rash appeared.")
+        data, vax, sym = self.raw
+        data = data.copy()
+        gone = data.VAERS_ID.iloc[3]
+        data.loc[data.VAERS_ID == gone, "SYMPTOM_TEXT"] = "Patient was hospitalized on arrival. Rash."
+        z = self.tmp / "noexcerpt.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data), ("VAERSVAX", vax), ("VAERSSYMPTOMS", sym)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        for variant in ("v1", "v6", "v7"):
+            built, meta = bv.build([z], variant, n_rows=100000)
+            self.assertNotIn(gone, set(built.report_id), variant)
+            self.assertGreaterEqual(meta["counts"]["with_symptom_terms"] - meta["counts"]["with_onset_excerpt"], 1)
+        self.assertTrue((built.narrative_onset != bv.EMPTY_TEXT).all())
+
     def test_v7_has_no_coded_symptoms(self):
         out, meta = bv.build([self.zip], "v7", n_rows=100000)
         self.assertEqual(meta["text_columns"], [*bv.TEXT_SOURCES, "narrative_onset"])

@@ -35,8 +35,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BUILD_VERSION = 5  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
+BUILD_VERSION = 6  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
                    # 5 = onset excerpt also cut at chart/diagnosis-list language; joined excerpt re-checked.
+                   # 6 = population limited to reports with a non-empty onset excerpt (all variants).
 # 3 = background/narrative outcome masking, symptom-aware dedup, duplicate-input guard.
 # Reports of the infection the vaccine targets (breakthrough COVID etc.) or of vaccine failure are not reactions to
 # the vaccine, and serious breakthrough cases were reported preferentially (hospitalised/fatal cases were the ones
@@ -237,7 +238,9 @@ def onset_narrative(text) -> str:
     if text == EMPTY_TEXT:
         return text
     text = NARRATIVE_HEADER.sub("", text)
-    text = DATE_OR_CODE.sub(" ", IDENTIFIER.sub(" ", text))
+    # Collapse the gaps left by removed dates/codes, or "went 12/3 to" becomes "went   to" and slips past the
+    # care pattern (which uses single spaces) until the final clean-up joins it back together.
+    text = re.sub(r"\s+", " ", DATE_OR_CODE.sub(" ", IDENTIFIER.sub(" ", text)))
     kept = []
     for sentence in re.split(r"(?<=[.!?;])\s+|\n+", text):
         if not sentence.strip():
@@ -369,13 +372,15 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
         out["patient_background"] = out.apply(merge_background, axis=1)
         out = out.drop(columns=list(TEXT_SOURCES))
         text_cols = ["symptoms", "patient_background"]
+    # The onset excerpt is computed for EVERY variant, because it also defines the population (below).
+    onset = data.SYMPTOM_TEXT.map(onset_narrative)
+    sev = data[[c for c in OUTCOME_FLAGS if c in data.columns]].fillna("").eq("Y").any(axis=1)
+    empty = onset == EMPTY_TEXT
+    counts["narrative_onset_empty"] = int(empty.sum())
+    counts["narrative_onset_empty_share_by_label"] = {"serious": round(float(empty[sev].mean()), 4),
+                                                      "not_serious": round(float(empty[~sev].mean()), 4)}
     if variant in ("v6", "v7"):
-        out["narrative_onset"] = data.SYMPTOM_TEXT.map(onset_narrative)
-        counts["narrative_onset_empty"] = int((out.narrative_onset == EMPTY_TEXT).sum())
-        sev = data[[c for c in OUTCOME_FLAGS if c in data.columns]].fillna("").eq("Y").any(axis=1)
-        empty = out.narrative_onset == EMPTY_TEXT
-        counts["narrative_onset_empty_share_by_label"] = {"serious": round(float(empty[sev].mean()), 4),
-                                                          "not_serious": round(float(empty[~sev].mean()), 4)}
+        out["narrative_onset"] = onset
         text_cols = (["symptoms"] if variant == "v6" else []) + [*TEXT_SOURCES, "narrative_onset"]
     if variant in ("v4", "v5"):
         raw = data.SYMPTOM_TEXT.map(clean_text)
@@ -388,6 +393,11 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     # coded terms are not given to the model), so all variants describe the same population.
     out = out[out.symptoms != EMPTY_TEXT]
     counts["with_symptom_terms"] = len(out)
+    # Build 6: keep only reports whose narrative OPENS with an account of the reaction (non-empty excerpt), in every
+    # variant. In build 5 an empty excerpt meant "the report starts with care, chart or outcome text", which is far
+    # more common in serious reports (29% vs 12%), so emptiness itself carried the label (missing-flag AUROC 0.588).
+    out = out[onset.reindex(out.index) != EMPTY_TEXT]
+    counts["with_onset_excerpt"] = len(out)
     # Population is defined WITHOUT reference to the variant, so every variant has the same report IDs:
     # exact duplicates are judged on all source fields, and the sample is a fixed hash of the report ID.
     source_fields = data.reindex(out.index)[[c for c in ["AGE_YRS", "SEX", "STATE", "NUMDAYS", "VAX_TYPE", "VAX_MANU",

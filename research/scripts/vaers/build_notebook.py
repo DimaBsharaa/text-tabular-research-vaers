@@ -84,37 +84,9 @@ md("""
     and that variant must not be used.
 """)
 code("""
-    from research.scripts.vaers import proxy_screen as ps
+    from research.scripts.vaers import audit_report
     for v, csv in built.items():
-        schema = json.loads((csv.parent / "schema.json").read_text())
-        df = pd.read_csv(csv)
-        print(f"===== {v}")
-        display(ps.profile(df, schema))
-        res = ps.run(csv, csv.parent / "schema.json")
-        display(pd.Series({k: res[k] for k in res if k != "top_positive_ngrams"}))
-        print("Top positive n-grams (leakage audit):"); print("\\n".join(res["top_positive_ngrams"]))
-        display(df.sample(5, random_state=1)[schema["text_columns"] + ["serious"]])
-        print("Column audit, each column ALONE (a high score is a reason to investigate, not proof of leakage):")
-        display(ps.column_audit(csv, csv.parent / "schema.json"))
-        if "narrative_onset" in df:
-            print("Empty onset excerpt share by label:", json.loads((csv.parent / "schema.json").read_text())
-                  ["counts"].get("narrative_onset_empty_share_by_label"))
-            import re as _re
-            onset_terms = [t.split("__", 1)[1].rsplit(" (", 1)[0] for t in res["top_positive_ngrams"]
-                           if t.startswith("txt_narrative_onset__")][:8]
-            print("Where the strongest onset words come from (3 serious examples each):")
-            for term in onset_terms:
-                hits = df[(df.serious == 1) & df.narrative_onset.str.contains(rf"\b{_re.escape(term)}\b", case=False)]
-                print(f"  -- '{term}' ({len(hits)} serious rows)")
-                for txt in hits.narrative_onset.head(3):
-                    print(f"     {txt[:200]}")
-            print("Real onset-narrative examples (serious / not serious):")
-            for lab in (1, 0):
-                for txt in df[df.serious == lab].narrative_onset.sample(4, random_state=2):
-                    print(f"  [{lab}] {txt[:220]}")
-        for c in ["admin_by", "vax_type", "report_year", "state"]:
-            print(f"serious rate by {c}:")
-            display(df.groupby(c).serious.agg(["mean", "size"]).sort_values("size", ascending=False).head(8).round(3))
+        audit_report.report(csv, show=display)
 """)
 md("""
     ## 3. Next: the official fold-0 screen on A100

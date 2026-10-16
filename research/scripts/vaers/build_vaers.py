@@ -58,7 +58,7 @@ MAX_ONSET_DAYS = 42  # Usual risk window for adverse events following immunisati
 # v7: NO coded symptoms (they are coded from the whole report, including the hospital course). Text = the patient's
 # background (pre-existing by nature) + the opening narrative only: "from the patient's background and their first
 # description of the reaction, did it turn out serious?"
-VARIANTS = ("v1", "v3", "v4", "v5", "v6", "v7")
+VARIANTS = ("v1", "v3", "v4", "v5", "v6", "v7", "v8", "v9")
 OUTCOME_FLAGS = ["DIED", "L_THREAT", "HOSPITAL", "X_STAY", "DISABLE", "BIRTH_DEFECT"]
 TEXT_SOURCES = {"history": "HISTORY", "current_illness": "CUR_ILL", "other_meds": "OTHER_MEDS", "allergies": "ALLERGIES"}
 EMPTY_TEXT = "none reported"
@@ -223,6 +223,7 @@ CARE_SENTENCE = re.compile(r"\btreat|\btx\b|\bgiven (?:iv|o2|oxygen|fluids|epi|e
 DATE_OR_CODE = re.compile(r"\b\d{1,2}[/-]\d{1,2}(?:[/-]\d{2,4})?\b|\b(?:19|20)\d{2}\b|\b[A-Z]\d{2}\.\d{1,4}\b|"
                           r"\b(?:pmhx?|hx|y/?o)\b", re.I)
 MAX_ONSET_SENTENCES = 3
+ENRICHED_POSITIVE_SHARE = 0.25  # v9 only: share of serious reports after case enrichment.
 # Chart and diagnosis-list language (ICD-10 descriptors, EHR markers, clinical shorthand). Build 4's n-gram audit
 # showed "unspecified" and "init" (as in "..., unspecified, init encntr") among the strongest serious-class words:
 # hospital staff paste discharge diagnoses into the narrative, which reveals the hospital course without naming it.
@@ -444,6 +445,15 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     if variant in ("v6", "v7"):
         out["narrative_onset"] = onset
         text_cols = (["symptoms"] if variant == "v6" else []) + [*TEXT_SOURCES, "narrative_onset"]
+    if variant in ("v8", "v9"):
+        # v7 with the four background fields merged into one cell. TAR fine-tunes one encoder on (column, cell)
+        # pairs from every text column; in v7 four of the five columns are mostly "none reported" (52-84%), so
+        # about 80% of its fine-tuning examples were background cells and only 20% the reaction description.
+        # Same rows, same information, two text columns instead of five.
+        out["patient_background"] = out.apply(merge_background, axis=1)
+        out = out.drop(columns=list(TEXT_SOURCES))
+        out["narrative_onset"] = onset
+        text_cols = ["patient_background", "narrative_onset"]
     if variant in ("v4", "v5"):
         raw = data.SYMPTOM_TEXT.map(clean_text)
         out["narrative"] = data.SYMPTOM_TEXT.map(mask_narrative)
@@ -479,8 +489,20 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
                                             if c in data.columns]].fillna("")
     out = out[~source_fields.duplicated()]
     counts["after_exact_duplicate_rows"] = len(out)
-    if len(out) > n_rows:  # Deterministic, variant-independent sample: smallest hash(seed, report_id).
-        key = out.report_id.map(lambda r: hashlib.sha256(f"{seed}:{r}".encode()).hexdigest())
+    key = out.report_id.map(lambda r: hashlib.sha256(f"{seed}:{r}".encode()).hexdigest())
+    if variant == "v9":
+        # Case-enriched sample: every serious report, plus non-serious reports (smallest hash first) so that serious
+        # reports are ENRICHED_POSITIVE_SHARE of the rows. Label-dependent by design and documented as such: it fixes
+        # the class ratio of the benchmark population, not any feature. With 7.9% serious, the benchmark's 10k
+        # training cap held ~700 serious reports and its 2k test set ~157 (AUROC standard error ~0.02 per fold).
+        pos = out.index[out.serious == 1]
+        n_neg = int(round(len(pos) * (1 - ENRICHED_POSITIVE_SHARE) / ENRICHED_POSITIVE_SHARE))
+        neg = key[out.serious == 0].sort_values().index[:n_neg]
+        counts["enrichment"] = {"positive_share_target": ENRICHED_POSITIVE_SHARE, "serious_kept": int(len(pos)),
+                                "non_serious_kept": int(len(neg)),
+                                "non_serious_available": int((out.serious == 0).sum())}
+        out = out.loc[pos.union(neg)]
+    elif len(out) > n_rows:  # Deterministic, variant-independent sample: smallest hash(seed, report_id).
         out = out.loc[key.sort_values().index[:n_rows]]
     out = out.sort_values("report_id", key=lambda s: pd.to_numeric(s, errors="coerce")).reset_index(drop=True)
     counts["final_rows"] = len(out)
@@ -529,6 +551,11 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str, provenance
                       "This disproportionately excludes serious reports (see counts.narrative_onset_empty_share_by_label "
                       "and counts.cohort_filter); results apply to this selected cohort.",
         "narrative_onset_policy": ONSET_POLICY,
+        "sampling": ("Case-enriched: every serious report in the cohort plus a deterministic hash-ordered sample of "
+                     f"non-serious reports, so that {ENRICHED_POSITIVE_SHARE:.0%} of rows are serious. The class ratio "
+                     "is a design choice of the benchmark population, not the reporting rate."
+                     if "enrichment" in meta["counts"] else
+                     "Deterministic hash-ordered sample of the cohort (natural class ratio)."),
         "provenance": provenance or {},
         "scope": "Reports with at least one reaction term left after removing outcome, care-process and "
                  "vaccination-process terms (pure administration-error reports are out of scope).",

@@ -37,7 +37,8 @@ code("""
     RAW_DIR = "/content/drive/MyDrive/text-tabular-research-2/vaers_raw"
     OUT_BASE = "/content/drive/MyDrive/text-tabular-research-2/candidates"
     ROWS = 60000      # Final rows per variant (the benchmark samples ≤10k train + ≤2k test per fold from these).
-    VARIANTS = ["v1", "v6", "v7"]  # v6 = v1 + the OPENING of the reporter's narrative (cut before any care/treatment/test/outcome).
+    VARIANTS = ["v8", "v9"]  # v8 = v7 with the four background fields merged into one cell; v9 = v8, case-enriched to 25% serious.
+    # Earlier: v1 (coded symptoms + background), v6 (v1 + reaction excerpt), v7 (background + reaction excerpt).
     # v4/v5 (full masked narrative) were rejected: hospital-chart text (remdesivir, IV, O2, ICD codes) leaks seriousness.
 
     from google.colab import drive

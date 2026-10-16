@@ -307,3 +307,44 @@ Lay wording such as "I sat down" or "my pulse was racing" is kept, and tests cov
 - **Benchmark version.** Notebook 02 runs the paper-version code (3bb9507) through our CSV loader. That is an exploratory development screen only. The final result must be produced at 89a1854 by `benchmark.py`, with the dataset registered natively. That step is planned after the screen.
 
 **Policy frozen at build 8.** The GPU screen (v7 first, then v1; LightGBM + CatBoost; folds 0–2) uses build 8 unchanged. Later rule changes would need a new build and a new screen.
+
+## Update: first official screen of build 8 (v7) and the v8 variant
+
+**Official-code screen, v7, build 8 (commit f8dbdd4, paper-version benchmark 3bb9507), folds 0–2, AUROC mean:**
+
+| Learner | Structured | Text | Joint Frozen | Joint TAR | Joint Signal | TAR Gain |
+|---|---|---|---|---|---|---|
+| LightGBM | 0.774 | 0.811 | 0.847 | 0.850 | +0.036 | +0.003 |
+| CatBoost | 0.801 | 0.816 | 0.854 | 0.863 | +0.038 | +0.010 |
+
+Per fold:
+
+- **Joint Signal** was positive in all 6 learner-fold pairs (+0.031 to +0.045).
+- **TAR Gain** was positive in 4 of 6:
+  - LightGBM: +0.002, −0.005, +0.013
+  - CatBoost: +0.012, −0.002, +0.019
+
+For comparison:
+
+- **v1 (build 2, fold 0):** TAR Gain was about 0.
+- **Median of the accepted classification datasets:** Joint Signal +0.016, TAR Gain +0.004.
+
+These results support the hypothesis that the reporter's own wording gives target-aware fine-tuning something the frozen encoder does not already capture.
+
+**What the TAR log shows.** MulTaBench fine-tunes one E5 encoder on (column name, cell) pairs from every text column: 8,096 rows × 5 columns = 40,480 examples. Four of v7's five text columns are mostly "none reported" (52–84%). So about 80% of the fine-tuning examples were background cells, and only 20% the reaction description. Fine-tuning stopped at epoch 10, best cell-level validation AUROC 0.607 at epoch 9.
+
+**v8** = v7 with the four background fields merged into one `patient_background` cell (the v3 format: "history: …; medications: …"). It has the same rows, the same excerpt and the same information, and 2 text columns instead of 5, so half of the TAR fine-tuning examples are the reaction description. The extraction policy is unchanged. Next: build v8, then screen it with LightGBM + CatBoost on folds 0–2, against v7.
+
+## Update: TAR diagnosis and v9 (case-enriched)
+
+See `vaers_decision_log.md`, entries 9–10. In short, TAR fine-tuning on v7 is under-fed rather than over-fitted:
+
+- the validation loss starts at the 7.9% base-rate entropy (0.275) and improves only 6%
+- about 80% of the fine-tuning examples are near-empty background cells
+
+Two variants follow:
+
+- **v8** merges the background into one cell.
+- **v9** = v8 case-enriched to 25% serious (about 20k rows). This gives about 2,500 serious reports per training fold instead of about 700, and about 500 per test fold instead of about 157, so the standard error of one test AUROC drops from about 0.020 to 0.011.
+
+Per-fold statistics come from `research/scripts/vaers/screen_stats.py`. The v7 screen extract is in `research/data/screens/`.

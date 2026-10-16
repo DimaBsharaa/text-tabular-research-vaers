@@ -328,6 +328,33 @@ class BuildVaersTest(unittest.TestCase):
         self.assertEqual(schema["provenance"], {"commit": "abc"})
         self.assertIn("never the label", schema["narrative_onset_policy"])
 
+    def test_v8_is_v7_with_merged_background(self):
+        v8, meta = bv.build([self.zip], "v8", n_rows=100000)
+        v7, _ = bv.build([self.zip], "v7", n_rows=100000)
+        self.assertEqual(meta["text_columns"], ["patient_background", "narrative_onset"])
+        self.assertEqual(list(v8.report_id), list(v7.report_id))           # same rows
+        self.assertEqual(list(v8.narrative_onset), list(v7.narrative_onset))  # same excerpt
+        self.assertEqual(list(v8.serious), list(v7.serious))
+        for c in bv.TEXT_SOURCES:
+            self.assertNotIn(c, v8.columns)
+        row = v7.iloc[0]
+        expected = bv.merge_background(row)
+        self.assertEqual(v8.patient_background.iloc[0], expected)
+
+    def test_v9_is_case_enriched_v8(self):
+        v9, meta = bv.build([self.zip], "v9", n_rows=100000)
+        v8, _ = bv.build([self.zip], "v8", n_rows=100000)
+        self.assertEqual(meta["text_columns"], ["patient_background", "narrative_onset"])
+        self.assertEqual(set(v8[v8.serious == 1].report_id), set(v9[v9.serious == 1].report_id))  # all serious kept
+        self.assertTrue(set(v9.report_id) <= set(v8.report_id))
+        share = v9.serious.mean()
+        self.assertAlmostEqual(share, bv.ENRICHED_POSITIVE_SHARE, delta=0.02)
+        self.assertEqual(meta["counts"]["enrichment"]["serious_kept"], int(v9.serious.sum()))
+        again, _ = bv.build([self.zip], "v9", n_rows=100000)
+        pd.testing.assert_frame_equal(v9, again)  # deterministic
+        csv = bv.write(v9, meta, self.tmp / "v9", "v9")
+        self.assertIn("Case-enriched", json.loads((csv.parent / "schema.json").read_text())["sampling"])
+
     def test_v7_has_no_coded_symptoms(self):
         out, meta = bv.build([self.zip], "v7", n_rows=100000)
         self.assertEqual(meta["text_columns"], [*bv.TEXT_SOURCES, "narrative_onset"])

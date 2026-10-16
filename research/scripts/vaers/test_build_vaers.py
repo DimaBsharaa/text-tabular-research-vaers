@@ -275,17 +275,58 @@ class BuildVaersTest(unittest.TestCase):
             self.assertGreaterEqual(meta["counts"]["with_symptom_terms"] - meta["counts"]["with_onset_excerpt"], 1)
         self.assertTrue((built.narrative_onset != bv.EMPTY_TEXT).all())
 
-    def test_build7_vitals_and_capitalised_problem_lists(self):
+    def test_build8_policy_cases(self):
         f = bv.onset_narrative
+        # Numeric vital signs end the excerpt, in common formats.
         self.assertEqual(f("Chest pain began an hour later. BP 137/82, pulse 102."), "Chest pain began an hour later.")
-        self.assertEqual(f("HYPOTENSION HYPERKALEMIA ACUTE HYPERCAPNIC RESPIRATORY FAILURE HYPOXIA"), bv.EMPTY_TEXT)
-        self.assertEqual(f("HYPOTENSION - CHRONIC HYPOTENSION - CHRONIC HYPOTENSION"), bv.EMPTY_TEXT)
-        self.assertEqual(f("MY ARM WAS SWOLLEN AND RED THE NEXT DAY."), "MY ARM WAS SWOLLEN AND RED THE NEXT DAY.")
-        self.assertEqual(f("Fever, chills and headache that night."), "Fever, chills and headache that night.")
-        self.assertEqual(f("Sore arm. Fever 101 at home."), "Sore arm. Fever 101 at home.")
-        # Lay wording that only looks like vitals is kept.
+        self.assertEqual(f("Rash started. HR 120, RR 28, T 39.1."), "Rash started.")
+        # A home monitor without a reading, or wording that only looks like vitals, is kept.
+        self.assertEqual(f("My home blood pressure monitor read low after the shot. I felt dizzy."),
+                         "My home blood pressure monitor read low after the shot. I felt dizzy.")
         self.assertEqual(f("I sat down after 1 hr 30 min. My pulse was racing."),
                          "I sat down after 1 hr 30 min. My pulse was racing.")
+        self.assertEqual(f("Sore arm. Fever 101 at home."), "Sore arm. Fever 101 at home.")
+        # Runs of 4+ capitalised words (exported problem lists) end the excerpt, even with OF/AND/TO inside.
+        self.assertEqual(f("ACUTE HYPOXEMIC RESPIRATORY FAILURE ANEMIA OF CHRONIC DISEASE HYPOXIA"), bv.EMPTY_TEXT)
+        self.assertEqual(f("HYPOTENSION - CHRONIC HYPOTENSION - CHRONIC HYPOTENSION"), bv.EMPTY_TEXT)
+        self.assertEqual(f("Moderna vaccine was administered - reported by patient ACUTE NON ST ELEVATION MI ACUTE"),
+                         "Moderna vaccine was administered - reported by patient")
+        # Short capitalised symptom lists (< 4 words) are kept.
+        self.assertEqual(f("FEVER CHILLS HEADACHE"), "FEVER CHILLS HEADACHE")
+        self.assertEqual(f("Fever, chills and headache that night."), "Fever, chills and headache that night.")
+        # Disability statements are outcome text.
+        self.assertEqual(f("Arm pain for weeks. The patient is now confined to a wheelchair and cannot work."),
+                         "Arm pain for weeks.")
+        self.assertEqual(f("Legs weak. She cannot work anymore."), "Legs weak.")
+        out = f("Rash. ACUTE KIDNEY INJURY WITH SEPSIS. Fever.")
+        self.assertFalse(bv.CAPS_RUN.search(out))
+
+    def test_build8_event_dedup_and_schema(self):
+        data, vax, sym = self.raw
+        data = data.copy(); vax = vax.copy(); sym = sym.copy()
+        first = data.iloc[2].copy()
+        follow = first.copy(); follow["VAERS_ID"] = str(int(first["VAERS_ID"]) + 900_000)
+        data = pd.concat([data, follow.to_frame().T], ignore_index=True)
+        v = vax[vax.VAERS_ID == first.VAERS_ID].copy(); v["VAERS_ID"] = follow.VAERS_ID
+        vax = pd.concat([vax, v], ignore_index=True)
+        s_ = sym[sym.VAERS_ID == first.VAERS_ID].copy(); s_["VAERS_ID"] = follow.VAERS_ID
+        extra = pd.DataFrame([{"VAERS_ID": follow.VAERS_ID, "SYMPTOM1": "Malaise"}])
+        # The follow-up adds one coded term, so stage 1 (identical coded terms) misses it.
+        sym = pd.concat([sym, s_, extra], ignore_index=True)
+        z = self.tmp / "followup.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data), ("VAERSVAX", vax), ("VAERSSYMPTOMS", sym)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        out, meta = bv.build([z], "v7", n_rows=100000)
+        ids = set(out.report_id)
+        self.assertFalse(str(first.VAERS_ID) in ids and str(follow.VAERS_ID) in ids)
+        self.assertGreaterEqual(meta["counts"]["event_dedup_reports_removed"], 1)
+        self.assertIn("vax_type", meta["counts"]["cohort_filter"])
+        csv = bv.write(out, meta, self.tmp / "b8", "v7", provenance={"commit": "abc"})
+        schema = json.loads((csv.parent / "schema.json").read_text())
+        self.assertIn("non-empty narrative excerpt", schema["population"])
+        self.assertEqual(schema["provenance"], {"commit": "abc"})
+        self.assertIn("never the label", schema["narrative_onset_policy"])
 
     def test_v7_has_no_coded_symptoms(self):
         out, meta = bv.build([self.zip], "v7", n_rows=100000)

@@ -2,6 +2,7 @@
 copy of the notebook still prints the current checks after `git pull`."""
 from __future__ import annotations
 
+import builtins
 import json
 import re
 from pathlib import Path
@@ -12,24 +13,36 @@ from research.scripts.vaers import proxy_screen as ps
 
 
 def report(csv: Path, show=print) -> dict:
+    """Print the audit and save the same text to audit.txt next to the CSV (kept with the build)."""
     csv = Path(csv)
+    log = []
+    _print = builtins.print
+
+    def print(*args):  # noqa: A001 - mirror every printed line into audit.txt
+        line = " ".join(str(a) for a in args)
+        log.append(line)
+        _print(line)
+
+    def show_(obj):
+        log.append(obj.to_string() if hasattr(obj, "to_string") else str(obj))
+        show(obj)
     schema = json.loads((csv.parent / "schema.json").read_text())
     df = pd.read_csv(csv)
     print(f"===== {csv.parent.name}  (build {schema.get('build_version')}, {len(df)} rows, "
           f"positive rate {df[schema['target']].mean():.4f})")
-    show(ps.profile(df, schema))
+    show_(ps.profile(df, schema))
     res = ps.run(csv, csv.parent / "schema.json")
-    show(pd.Series({k: res[k] for k in res if k != "top_positive_ngrams"}))
+    show_(pd.Series({k: res[k] for k in res if k != "top_positive_ngrams"}))
     print("Top positive n-grams (leakage audit):"); print("\n".join(res["top_positive_ngrams"]))
     print("Column audit, each column ALONE (a high score is a reason to investigate, not proof of leakage):")
-    show(ps.column_audit(csv, csv.parent / "schema.json"))
+    show_(ps.column_audit(csv, csv.parent / "schema.json"))
     counts = schema.get("counts", {})
-    print("Onset excerpt empty share by label, BEFORE the build-6 filter:",
+    print("Onset excerpt empty share by label, BEFORE the cohort filter:",
           counts.get("narrative_onset_empty_share_by_label"),
           "| rows before/after the filter:", counts.get("with_symptom_terms"), "->", counts.get("with_onset_excerpt"))
     if "narrative_onset" in df:
         terms = [t.split("__", 1)[1].rsplit(" (", 1)[0] for t in res["top_positive_ngrams"]
-                 if t.startswith("txt_narrative_onset__")][:10]
+                 if t.startswith("txt_narrative_onset__")][:15]
         print("Where the strongest onset words come from (3 serious examples each):")
         for term in terms:
             hits = df[(df.serious == 1) & df.narrative_onset.str.contains(rf"\b{re.escape(term)}\b", case=False)]
@@ -42,5 +55,8 @@ def report(csv: Path, show=print) -> dict:
                 print(f"  [{lab}] {txt[:220]}")
     for c in ["admin_by", "vax_type", "report_year", "state"]:
         print(f"serious rate by {c}:")
-        show(df.groupby(c).serious.agg(["mean", "size"]).sort_values("size", ascending=False).head(8).round(3))
+        show_(df.groupby(c).serious.agg(["mean", "size"]).sort_values("size", ascending=False).head(8).round(3))
+    print("Cohort filter (retained vs excluded, by year and vaccine type):")
+    print(json.dumps(counts.get("cohort_filter", {}), indent=1)[:4000])
+    (csv.parent / "audit.txt").write_text("\n".join(log) + "\n")
     return res

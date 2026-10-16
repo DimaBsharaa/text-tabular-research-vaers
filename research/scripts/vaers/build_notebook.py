@@ -67,7 +67,11 @@ code("""
     built = {}
     for v in VARIANTS:
         out, meta = bv.build(zips, v, n_rows=ROWS)
-        csv = bv.write(out, meta, Path(OUT_BASE) / f"vaers_{v}", v)
+        commit = subprocess.check_output(["git", "-C", str(PROJECT), "rev-parse", "HEAD"], text=True).strip()
+        provenance = {"commit": commit, "build_version": bv.BUILD_VERSION,
+                      "inputs": {z.name: __import__("hashlib").sha256(z.read_bytes()).hexdigest() for z in zips}}
+        # Every build gets its own folder, so earlier builds are never overwritten.
+        csv = bv.write(out, meta, Path(OUT_BASE) / f"build{bv.BUILD_VERSION}" / f"vaers_{v}", v, provenance)
         built[v] = csv
         print(v, json.dumps(meta["counts"]), "positive rate", round(out.serious.mean(), 4))
         print("   outcome words still present per text column (leak counter; 0 expected except symptoms):",

@@ -35,10 +35,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BUILD_VERSION = 7  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
+BUILD_VERSION = 8  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
                    # 5 = onset excerpt also cut at chart/diagnosis-list language; joined excerpt re-checked.
                    # 6 = population limited to reports with a non-empty onset excerpt (all variants).
                    # 7 = excerpt also cut at vital signs and capitalised EHR problem lists.
+                   # 8 = written excerpt policy; caps-run rule; numeric vitals only; event dedup without coded terms;
+                   #     cohort-filter counts; population text and provenance in schema.
 # 3 = background/narrative outcome masking, symptom-aware dedup, duplicate-input guard.
 # Reports of the infection the vaccine targets (breakthrough COVID etc.) or of vaccine failure are not reactions to
 # the vaccine, and serious breakthrough cases were reported preferentially (hospitalised/fatal cases were the ones
@@ -93,7 +95,8 @@ OUTCOME_SENTENCE = re.compile(r"hospital|admit|admission|discharg|\bicu\b|intens
                               r"ventilat|life.?threat|resuscitat|\bcpr\b|disab|inpatient|ambulance|\bems\b|911|"
                               r"paramedic|transport|taken to|transferred|observation unit|telemetry|life support|"
                               r"hospice|code blue|serious|birth defect|congenital|permanent|\bward\b|overnight|"
-                              r"\bstay(?:ed)?\b|\bbedside\b", re.I)  # ward/overnight/stay: inpatient stays without the word "hospital"
+                              r"\bstay(?:ed)?\b|\bbedside\b|wheelchair|bed-?bound|bedridden|"
+                              r"(?:unable to|cannot|can't|could not|couldn't) (?:return to )?work", re.I)  # ward/overnight/stay: inpatient stays without the word "hospital"
 NARRATIVE_OUTCOME = OUTCOME_SENTENCE  # Backwards-compatible name.
 # Reporter-system boilerplate seen in narratives ("Reported Symptoms: 10016256:FATIGUE; Narrative: ...") and
 # identifiers (lot numbers, long code numbers) that describe the report, not the patient.
@@ -228,28 +231,30 @@ CHART_SENTENCE = re.compile(r"unspecified|\binit\b|encntr|\bencounter\b|sequela|
                             r"\bassessment\b|\bimpression\b|\bplan\s*:|\bpatient\s+is\s+a\b", re.I)
 
 
-# Clinician-measured vital signs ("BP 137/82, pulse 102", "sats 88%") are part of the care record.
-VITALS = re.compile(r"\bbp\b|blood pressure|\bpulse\s*ox|\bpulse (?:of )?\d|heart rate (?:of |was )?\d|"
-                    r"\bspo2\b|\bsats\b|\bsat\s*\d|saturation|\bbpm\b|mmhg", re.I)
-# Build 6 examples showed EHR problem lists exported in capitals with no prose, e.g. "HYPOTENSION HYPERKALEMIA ACUTE
-# HYPERCAPNIC RESPIRATORY FAILURE HYPERKALEMIA HYPOXIA". A sentence that is (almost) all capitals AND contains no
-# ordinary narrative word is treated as such a list. Lay reporters who write in capitals ("MY ARM WAS SWOLLEN") keep
-# their text because it contains narrative words.
-NARRATIVE_WORD = re.compile(r"\b(?:i|my|me|he|she|his|her|they|we|was|were|had|has|have|is|got|after|then|and|the|"
-                            r"of|to|on|at|in|with|felt|began|started|developed|received)\b", re.I)
-
-
-def _problem_list(sentence: str) -> bool:
-    letters = [c for c in sentence if c.isalpha()]
-    if len(letters) < 8:
-        return False
-    upper_share = sum(c.isupper() for c in letters) / len(letters)
-    return upper_share >= 0.8 and not NARRATIVE_WORD.search(sentence)
+# Written policy for the onset excerpt (also saved in schema.json). The excerpt may contain what the reporter says
+# happened: the reaction, its timing and its course as experienced or observed, including medical words for it.
+# It stops at the first sentence that (a) states an outcome category of the label (death, life threat,
+# hospitalisation, disability, birth defect) or a care setting, (b) describes care, treatment, testing or a clinician,
+# (c) carries clinical-record content: ICD/EHR wording, numeric vital signs, or text in running capitals (4+ capitalised
+# words in a row, the format of exported EHR problem lists). Rules are matched on the text only, never on the label.
+ONSET_POLICY = ("Reporter's opening account of the reaction (at most 3 sentences), cut at the first sentence that "
+                "states an outcome category or care setting, describes care/treatment/testing/a clinician, or carries "
+                "clinical-record content (ICD/EHR wording, numeric vital signs, runs of 4+ capitalised words). "
+                "Rules match text only, never the label.")
+# Numeric vital signs only ("BP 137/82", "pulse 102", "SpO2 88%", "HR 120"); a home monitor mentioned without a
+# reading, "I sat down" or "1 hr 30 min" are not vitals. HR/RR/T are matched in capitals only.
+VITALS = re.compile(r"(?i:\bbp\s*(?:of|was|:)?\s*\d|\b\d{2,3}/\d{2,3}\b|mmhg|\bspo2\b|\bsats?\s*(?:of|was|:)?\s*\d|"
+                    r"\bsats\b|saturation|o2 sat|pulse\s*ox|\bpulse (?:of |was )?\d{2,3}\b|"
+                    r"heart rate (?:of |was )?\d|\bbpm\b)|\bHR\s*:?\s*\d{2,3}\b|\bRR\s*:?\s*\d{1,2}\b|"
+                    r"\bT\s*:?\s*\d{2,3}(?:\.\d)?\b")
+# Runs of 4+ capitalised words (each 2+ characters): exported EHR problem lists, e.g. "ACUTE HYPOXEMIC RESPIRATORY
+# FAILURE ANEMIA OF CHRONIC DISEASE". Build 7's "no narrative word" test missed these because of "OF"/"TO"/"AND".
+CAPS_RUN = re.compile(r"(?:\b[A-Z][A-Z0-9'/-]+\b[\s,;:.-]*){4,}")
 
 
 def _cuts(sentence: str) -> bool:
     return bool(OUTCOME_SENTENCE.search(sentence) or CARE_SENTENCE.search(sentence) or CHART_SENTENCE.search(sentence)
-                or VITALS.search(sentence) or _problem_list(sentence))
+                or VITALS.search(sentence))
 
 
 def onset_narrative(text) -> str:
@@ -268,12 +273,18 @@ def onset_narrative(text) -> str:
             continue
         if _cuts(sentence):
             break
+        run = CAPS_RUN.search(sentence)
+        if run:  # keep the prose before the capitalised record text, then stop
+            prefix = sentence[:run.start()].strip(" -,;:")
+            if prefix:
+                kept.append(prefix)
+            break
         kept.append(sentence.strip())
         if len(kept) == MAX_ONSET_SENTENCES:
             break
     # The sentence splitter can break inside a match ("seen by Dr. Lee" splits after "Dr."), so the joined excerpt
     # is checked again and shortened until it is clean. The leak counter is then 0 by construction.
-    while kept and _cuts(" ".join(kept)):
+    while kept and (_cuts(" ".join(kept)) or CAPS_RUN.search(" ".join(kept))):
         kept.pop()
     return clean_text(re.sub(r"\s+", " ", " ".join(kept)))
 
@@ -286,7 +297,7 @@ def outcome_mentions(df: pd.DataFrame, columns) -> dict:
         counts["narrative_onset_care_words"] = int(df.narrative_onset.astype(str).str.contains(CARE_SENTENCE).sum())
         counts["narrative_onset_chart_words"] = int(df.narrative_onset.astype(str).str.contains(CHART_SENTENCE).sum())
         counts["narrative_onset_vitals"] = int(df.narrative_onset.astype(str).str.contains(VITALS).sum())
-        counts["narrative_onset_problem_lists"] = int(df.narrative_onset.astype(str).map(_problem_list).sum())
+        counts["narrative_onset_caps_runs"] = int(df.narrative_onset.astype(str).str.contains(CAPS_RUN).sum())
     return counts
 
 
@@ -354,6 +365,34 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     dup = keyed & data.sort_values("_id_num").duplicated(subset=key).reindex(data.index)
     data = data[~dup]
     counts["after_secondary_dedup"] = len(data)
+    # Stage 2 (build 8): an updated follow-up report can add or recode a term, so the same event can survive stage 1.
+    # Reports that agree on ALL of vaccination date, onset date, age, sex, state, vaccine type and a non-blank lot,
+    # AND whose coded-term sets overlap strongly (one contains the other, or Jaccard >= 0.5), are one event; the
+    # earliest VAERS_ID is kept. Same-key reports with unrelated terms stay (likely different patients).
+    key2 = key[:-1]
+    keyed2 = data[key2].notna().all(axis=1) & data.VAX_LOT.astype(str).str.strip().ne("")
+    terms = data["_coded_terms"].fillna("").map(lambda x: frozenset(t for t in x.split("; ") if t))
+    drop2, n_clusters2, conflicts2 = set(), 0, 0
+    for _, idx in data[keyed2].groupby(key2, dropna=False).groups.items():
+        if len(idx) < 2:
+            continue
+        kept_ids = []
+        merged_here = False
+        for rid in sorted(idx, key=lambda r: data.at[r, "_id_num"]):
+            a = terms[rid]
+            match = next((k for k in kept_ids if a <= terms[k] or terms[k] <= a or
+                          len(a & terms[k]) / max(1, len(a | terms[k])) >= 0.5), None)
+            if match is None:
+                kept_ids.append(rid)
+            else:
+                drop2.add(rid); merged_here = True
+                conflicts2 += int(data.at[rid, "_serious"] != data.at[match, "_serious"])
+        n_clusters2 += int(merged_here)
+    counts["event_dedup_clusters_merged"] = n_clusters2
+    counts["event_dedup_reports_removed"] = len(drop2)
+    counts["event_dedup_pairs_with_label_conflict"] = conflicts2
+    data = data[~data.index.isin(drop2)]
+    counts["after_event_dedup"] = len(data)
     out = pd.DataFrame(index=data.index)
     out["report_id"] = data.index.astype(str)
     flags = [c for c in OUTCOME_FLAGS if c in data.columns]  # BIRTH_DEFECT exists only on the VAERS 2 form.
@@ -419,7 +458,17 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     # Build 6: keep only reports whose narrative OPENS with an account of the reaction (non-empty excerpt), in every
     # variant. In build 5 an empty excerpt meant "the report starts with care, chart or outcome text", which is far
     # more common in serious reports (29% vs 12%), so emptiness itself carried the label (missing-flag AUROC 0.588).
-    out = out[onset.reindex(out.index) != EMPTY_TEXT]
+    keep = onset.reindex(out.index) != EMPTY_TEXT
+    year = out.report_year if "report_year" in out else pd.Series("all", index=out.index)
+    cohort = {}
+    for name, group in [("report_year", year), ("vax_type", out.vax_type)]:
+        g = pd.DataFrame({"g": group.astype(str), "keep": keep, "y": out.serious})
+        cohort[name] = {k: {"retained": int(v.keep.sum()), "excluded": int((~v.keep).sum()),
+                            "serious_rate_retained": round(float(v.y[v.keep].mean()), 4) if v.keep.any() else None,
+                            "serious_rate_excluded": round(float(v.y[~v.keep].mean()), 4) if (~v.keep).any() else None}
+                        for k, v in g.groupby("g") if len(v) >= 200}
+    counts["cohort_filter"] = cohort
+    out = out[keep]
     counts["with_onset_excerpt"] = len(out)
     # Population is defined WITHOUT reference to the variant, so every variant has the same report IDs:
     # exact duplicates are judged on all source fields, and the sample is a fixed hash of the report ID.
@@ -443,7 +492,7 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     return out, meta
 
 
-def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
+def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str, provenance: dict | None = None) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     csv = out_dir / f"vaers_{variant}.csv"
     out.to_csv(csv, index=False)
@@ -474,7 +523,13 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
         "task_framing": "Retrospective classification of recorded report seriousness from restricted report "
                         "contents. Not a forecast at vaccination time and not evidence about vaccine causation.",
         "population": f"Domestic, non-manufacturer reports of reactions with onset 0-{MAX_ONSET_DAYS} days after "
-                      "vaccination (or unknown onset); infection/breakthrough and vaccine-failure reports excluded.",
+                      "vaccination (or unknown onset); infection/breakthrough and vaccine-failure reports excluded; "
+                      "likely secondary reports of the same event collapsed. Restricted to reports for which the "
+                      "fixed extraction procedure retains a non-empty narrative excerpt (narrative_onset_policy). "
+                      "This disproportionately excludes serious reports (see counts.narrative_onset_empty_share_by_label "
+                      "and counts.cohort_filter); results apply to this selected cohort.",
+        "narrative_onset_policy": ONSET_POLICY,
+        "provenance": provenance or {},
         "scope": "Reports with at least one reaction term left after removing outcome, care-process and "
                  "vaccination-process terms (pure administration-error reports are out of scope).",
         "sources": meta["sources"],

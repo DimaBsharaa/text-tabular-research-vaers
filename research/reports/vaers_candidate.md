@@ -269,3 +269,41 @@ Lay wording such as "I sat down" or "my pulse was racing" is kept, and tests cov
 
 - Some excerpts are only a diagnosis name ("Acute kidney injury."). This carries the same information as the coded MedDRA terms in v1. We do not try to remove it.
 - First-person reports ("my", 706 serious rows) are more often serious. This is a reporter-type effect present at filing time, not outcome text.
+
+## Update: build 7 results, fourth review, build 8
+
+**Build 7 (notebook 06 at 6791e60):**
+
+- 65,575 reports with an excerpt → 60,000 sampled; serious rate 7.8%.
+- Empty-excerpt share before the filter: 34.7% of serious reports vs 12.7% of non-serious.
+- Max single table column AUROC 0.705.
+
+| Variant | Structured | Text | Joint | Joint − best single |
+|---|---|---|---|---|
+| v1 | 0.780 | 0.870 | 0.882 | +0.013 |
+| v6 | 0.780 | 0.887 | 0.891 | +0.005 |
+| v7 | 0.780 | 0.833 | 0.850 | +0.017 |
+
+**A real failure of the build-7 problem-list rule:** "ACUTE HYPOXEMIC RESPIRATORY FAILURE ANEMIA OF CHRONIC DISEASE …" survived, because "OF" counted as a narrative word. The fourth review showed the same with "AND".
+
+**Fourth review (Codex), and what changed:**
+
+- **Policy before rules.** The excerpt now follows a written policy (`ONSET_POLICY`, saved in `schema.json` as `narrative_onset_policy`):
+  - It may contain what the reporter says happened, including medical words for the reaction.
+  - It stops at the first sentence that states an outcome category or care setting, describes care, treatment, testing or a clinician, or carries clinical-record content.
+  - Rules match the text only, never the label. We do not add filters only because a word predicts seriousness.
+- **Clinical-record content, redefined:**
+  - **Runs of 4+ capitalised words** (`CAPS_RUN`) replace the build-7 rule. The prose before such a run is kept ("Moderna vaccine was administered - reported by patient"); short capitalised symptom lists ("FEVER CHILLS HEADACHE") are kept.
+  - **Vital signs only with a numeric reading:** "BP 137/82", "HR 120, RR 28, T 39.1", "SpO2 88%". "My home blood pressure monitor read low" is kept.
+- **Disability statements are outcome text:** wheelchair, bed-bound, bedridden, and "cannot/unable to work". A disability is one of the label's outcome categories.
+- **Event duplicates, stage 2.** Reports that agree on vaccination date, onset date, age, sex, state, vaccine type and a non-blank lot, and whose coded terms overlap strongly (one set contains the other, or Jaccard ≥ 0.5), are one event; the earliest ID is kept. Same-key reports with unrelated terms stay, as the second review asked. Counts: `event_dedup_*`.
+- **Cohort reporting.**
+  - `schema.population` now states the excerpt restriction and that it disproportionately excludes serious reports.
+  - `counts.cohort_filter` gives retained/excluded counts and serious rates by year and by vaccine type.
+- **Provenance.**
+  - Each build is written to its own folder (`candidates/build8/vaers_vX/`).
+  - `schema.provenance` records the commit and the SHA-256 of every input ZIP.
+  - `audit.txt` (the full printed audit) is saved next to the CSV.
+- **Benchmark version.** Notebook 02 runs the paper-version code (3bb9507) through our CSV loader. That is an exploratory development screen only. The final result must be produced at 89a1854 by `benchmark.py`, with the dataset registered natively. That step is planned after the screen.
+
+**Policy frozen at build 8.** The GPU screen (v7 first, then v1; LightGBM + CatBoost; folds 0–2) uses build 8 unchanged. Later rule changes would need a new build and a new screen.

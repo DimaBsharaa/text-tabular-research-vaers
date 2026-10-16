@@ -35,9 +35,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BUILD_VERSION = 6  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
+BUILD_VERSION = 7  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
                    # 5 = onset excerpt also cut at chart/diagnosis-list language; joined excerpt re-checked.
                    # 6 = population limited to reports with a non-empty onset excerpt (all variants).
+                   # 7 = excerpt also cut at vital signs and capitalised EHR problem lists.
 # 3 = background/narrative outcome masking, symptom-aware dedup, duplicate-input guard.
 # Reports of the infection the vaccine targets (breakthrough COVID etc.) or of vaccine failure are not reactions to
 # the vaccine, and serious breakthrough cases were reported preferentially (hospitalised/fatal cases were the ones
@@ -227,8 +228,28 @@ CHART_SENTENCE = re.compile(r"unspecified|\binit\b|encntr|\bencounter\b|sequela|
                             r"\bassessment\b|\bimpression\b|\bplan\s*:|\bpatient\s+is\s+a\b", re.I)
 
 
+# Clinician-measured vital signs ("BP 137/82, pulse 102", "sats 88%") are part of the care record.
+VITALS = re.compile(r"\bbp\b|blood pressure|\bpulse\s*ox|\bpulse (?:of )?\d|heart rate (?:of |was )?\d|"
+                    r"\bspo2\b|\bsats\b|\bsat\s*\d|saturation|\bbpm\b|mmhg", re.I)
+# Build 6 examples showed EHR problem lists exported in capitals with no prose, e.g. "HYPOTENSION HYPERKALEMIA ACUTE
+# HYPERCAPNIC RESPIRATORY FAILURE HYPERKALEMIA HYPOXIA". A sentence that is (almost) all capitals AND contains no
+# ordinary narrative word is treated as such a list. Lay reporters who write in capitals ("MY ARM WAS SWOLLEN") keep
+# their text because it contains narrative words.
+NARRATIVE_WORD = re.compile(r"\b(?:i|my|me|he|she|his|her|they|we|was|were|had|has|have|is|got|after|then|and|the|"
+                            r"of|to|on|at|in|with|felt|began|started|developed|received)\b", re.I)
+
+
+def _problem_list(sentence: str) -> bool:
+    letters = [c for c in sentence if c.isalpha()]
+    if len(letters) < 8:
+        return False
+    upper_share = sum(c.isupper() for c in letters) / len(letters)
+    return upper_share >= 0.8 and not NARRATIVE_WORD.search(sentence)
+
+
 def _cuts(sentence: str) -> bool:
-    return bool(OUTCOME_SENTENCE.search(sentence) or CARE_SENTENCE.search(sentence) or CHART_SENTENCE.search(sentence))
+    return bool(OUTCOME_SENTENCE.search(sentence) or CARE_SENTENCE.search(sentence) or CHART_SENTENCE.search(sentence)
+                or VITALS.search(sentence) or _problem_list(sentence))
 
 
 def onset_narrative(text) -> str:
@@ -264,6 +285,8 @@ def outcome_mentions(df: pd.DataFrame, columns) -> dict:
     if "narrative_onset" in columns:
         counts["narrative_onset_care_words"] = int(df.narrative_onset.astype(str).str.contains(CARE_SENTENCE).sum())
         counts["narrative_onset_chart_words"] = int(df.narrative_onset.astype(str).str.contains(CHART_SENTENCE).sum())
+        counts["narrative_onset_vitals"] = int(df.narrative_onset.astype(str).str.contains(VITALS).sum())
+        counts["narrative_onset_problem_lists"] = int(df.narrative_onset.astype(str).map(_problem_list).sum())
     return counts
 
 

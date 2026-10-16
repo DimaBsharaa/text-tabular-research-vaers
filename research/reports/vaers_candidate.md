@@ -233,3 +233,39 @@ So some excerpts are pasted hospital diagnosis lists. They reveal the hospital c
 - Whitespace is collapsed after dates and codes are removed (the care-word fix above).
 - The notebook's audit printing moved into `research/scripts/vaers/audit_report.py`, so an older notebook copy still prints the current checks after `git pull`.
 - **GPU screen priority:** v7 (largest joint gain, most free text), then v1. v6 adds little over v1 in the proxy and goes last.
+
+## Update: build 6 results and build 7
+
+**Build 6 (notebook 06 at f1ed4a6):**
+
+- Population: 75,944 → 66,760 reports with an onset excerpt; 60,000 sampled; serious rate 8.3%.
+- Care and chart words left: 0. No table column alone is above 0.716.
+
+| Variant | Structured | Text | Joint | Joint − best single |
+|---|---|---|---|---|
+| v1 | 0.813 | 0.904 | 0.913 | +0.009 |
+| v6 | 0.813 | 0.914 | 0.918 | +0.003 |
+| v7 | 0.813 | 0.852 | 0.868 | +0.016 |
+
+**The real examples behind the top onset words** were mostly first-hand accounts:
+
+- "Hours after my 4 month old received …"
+- "Stroke within a few days of vaccination."
+- "Loss of speech and memory."
+
+Two leftover chart patterns appeared:
+
+- **Capitalised EHR problem lists:** "HYPOTENSION HYPERKALEMIA ACUTE HYPERCAPNIC RESPIRATORY FAILURE HYPERKALEMIA HYPOXIA", "HYPOXIA BENIGN NEOPLASM, LEFT CHOROID".
+- **Measured vital signs:** "Chest pain and hypoxia, BP 137/82, pulse 102."
+
+**Build 7** also cuts the excerpt at:
+
+- vital-sign patterns: BP, mmHg, SpO2, sats, pulse ox, "pulse 102"
+- sentences that are almost all capitals and contain no ordinary narrative word, i.e. problem lists. "MY ARM WAS SWOLLEN" is kept.
+
+Lay wording such as "I sat down" or "my pulse was racing" is kept, and tests cover both cases. New counters: `narrative_onset_vitals` and `narrative_onset_problem_lists`, both 0 by construction.
+
+**Known, documented limitations:**
+
+- Some excerpts are only a diagnosis name ("Acute kidney injury."). This carries the same information as the coded MedDRA terms in v1. We do not try to remove it.
+- First-person reports ("my", 706 serious rows) are more often serious. This is a reporter-type effect present at filing time, not outcome text.

@@ -275,6 +275,18 @@ class BuildVaersTest(unittest.TestCase):
             self.assertGreaterEqual(meta["counts"]["with_symptom_terms"] - meta["counts"]["with_onset_excerpt"], 1)
         self.assertTrue((built.narrative_onset != bv.EMPTY_TEXT).all())
 
+    def test_build7_vitals_and_capitalised_problem_lists(self):
+        f = bv.onset_narrative
+        self.assertEqual(f("Chest pain began an hour later. BP 137/82, pulse 102."), "Chest pain began an hour later.")
+        self.assertEqual(f("HYPOTENSION HYPERKALEMIA ACUTE HYPERCAPNIC RESPIRATORY FAILURE HYPOXIA"), bv.EMPTY_TEXT)
+        self.assertEqual(f("HYPOTENSION - CHRONIC HYPOTENSION - CHRONIC HYPOTENSION"), bv.EMPTY_TEXT)
+        self.assertEqual(f("MY ARM WAS SWOLLEN AND RED THE NEXT DAY."), "MY ARM WAS SWOLLEN AND RED THE NEXT DAY.")
+        self.assertEqual(f("Fever, chills and headache that night."), "Fever, chills and headache that night.")
+        self.assertEqual(f("Sore arm. Fever 101 at home."), "Sore arm. Fever 101 at home.")
+        # Lay wording that only looks like vitals is kept.
+        self.assertEqual(f("I sat down after 1 hr 30 min. My pulse was racing."),
+                         "I sat down after 1 hr 30 min. My pulse was racing.")
+
     def test_v7_has_no_coded_symptoms(self):
         out, meta = bv.build([self.zip], "v7", n_rows=100000)
         self.assertEqual(meta["text_columns"], [*bv.TEXT_SOURCES, "narrative_onset"])

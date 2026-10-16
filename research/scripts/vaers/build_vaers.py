@@ -14,8 +14,9 @@ Leakage rules (all enforced in code and recorded in schema.json):
     Other post-event fields are also excluded: ER/office visits, HOSPDAYS, RECOVD, dates of death, LAB_DATA.
   * MedDRA symptom terms that name an outcome or a care setting (Death, Hospitalisation, Intensive care,
     Endotracheal intubation, ...) are removed from the symptom text; the removed list is saved.
-  * Variant v1 (default) excludes the free narrative SYMPTOM_TEXT. Variant v2 adds it with every sentence that
-    mentions an outcome/care-setting keyword removed (an experimental, riskier variant).
+  * v1/v3 exclude the free narrative SYMPTOM_TEXT. v4/v5 include it after removing reporter boilerplate,
+    identifiers and every sentence that mentions an outcome or care setting (the same masking is applied to the
+    four background fields in every variant).
   * Manufacturer reports (non-empty SPLTTYPE) are dropped: they are mandated mainly for serious events and use a
     templated text format, which would let the model learn the reporter type instead of the medicine.
   * Likely secondary/duplicate reports (same vaccination date, onset date, age, sex, state, vaccine type and lot)
@@ -34,7 +35,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-VARIANTS = ("v1", "v2", "v3")  # v3: the four background fields merged into one column.
+BUILD_VERSION = 3  # 3 = background/narrative outcome masking, symptom-aware dedup, duplicate-input guard.
+# v1: coded symptoms + 4 background fields. v3: background merged into one column.
+# v4: v1 + the reporter's free-text narrative (outcome sentences removed). v5: narrative instead of coded symptoms.
+# (v2, an earlier narrative variant, was dropped after the first screen.)
+VARIANTS = ("v1", "v3", "v4", "v5")
 OUTCOME_FLAGS = ["DIED", "L_THREAT", "HOSPITAL", "X_STAY", "DISABLE", "BIRTH_DEFECT"]
 TEXT_SOURCES = {"history": "HISTORY", "current_illness": "CUR_ILL", "other_meds": "OTHER_MEDS", "allergies": "ALLERGIES"}
 EMPTY_TEXT = "none reported"
@@ -45,7 +50,7 @@ NULL_LIKE = re.compile(r"^\s*(none|no|n/?a|na|nka|nkda|nkfa|unknown|unk|not know
 OUTCOME_TERM = re.compile(r"death|died|autopsy|post ?mortem|hospital|intensive care|intubation|mechanical ventilation|"
                           r"resuscitation|life support|hospice|palliative|emergency care|bedridden|disabilit|dialysis|"
                           r"tracheostomy|oxygen therapy|transfusion|surgery|induction of coma|critical illness|"
-                          r"life threatening", re.I)
+                          r"life.?threatening|congenital anomaly|birth defect|fatal", re.I)
 OUTCOME_TERM_KEEP = {"hyperventilation", "hypoventilation", "fear of death", "near death experience",
                      "death of relative", "hypertensive emergency"}
 # Care-process terms: tests, scans and treatments say how intensively the patient was handled (a proxy for
@@ -63,10 +68,19 @@ ADMIN_TERM = re.compile(r"^no adverse event$|product|administ|vaccination error|
 ADMIN_TERM_KEEP = {"productive cough", "shoulder injury related to vaccine administration",
                    "administration related reaction"}
 ADMIN_TERM_KEEP_PREFIX = "administration site"  # Local reactions (pain, swelling, ...) are real reactions, keep them.
-NARRATIVE_OUTCOME = re.compile(r"hospital|admit|admission|discharg|\bicu\b|intensive care|\ber\b|emergency|\bed\b|"
-                               r"urgent care|died|death|dead|deceased|passed away|expired|autopsy|fatal|intubat|"
-                               r"ventilat|life.?threat|resuscitat|\bcpr\b|disab|inpatient|ambulance|\bems\b|911|"
-                               r"transferred|observation unit|telemetry|life support|hospice|code blue|serious", re.I)
+# Sentences that state the outcome or the care setting of THIS event. Used on every free-text field (background
+# fields and the narrative). Deliberately broad: an old admission mentioned in the history is also removed, which
+# costs some legitimate background but keeps the label out of the text. Removal counts are saved in the schema.
+OUTCOME_SENTENCE = re.compile(r"hospital|admit|admission|discharg|\bicu\b|intensive care|\ber\b|emergency|\bed\b|"
+                              r"urgent care|died|death|dead|deceased|passed away|expired|autopsy|fatal|intubat|"
+                              r"ventilat|life.?threat|resuscitat|\bcpr\b|disab|inpatient|ambulance|\bems\b|911|"
+                              r"paramedic|transport|taken to|transferred|observation unit|telemetry|life support|"
+                              r"hospice|code blue|serious|birth defect|congenital|permanent", re.I)
+NARRATIVE_OUTCOME = OUTCOME_SENTENCE  # Backwards-compatible name.
+# Reporter-system boilerplate seen in narratives ("Reported Symptoms: 10016256:FATIGUE; Narrative: ...") and
+# identifiers (lot numbers, long code numbers) that describe the report, not the patient.
+NARRATIVE_HEADER = re.compile(r"^.*?\bnarrative:\s*", re.I | re.S)
+IDENTIFIER = re.compile(r"\blot\s*(?:#|no\.?|number)?\s*:?\s*[A-Z0-9-]{4,}\b|\b\d{6,}\b", re.I)
 STRUCTURED = ["age_years", "sex", "state", "onset_days", "vax_type", "vax_manu", "vax_dose_series", "vax_route",
               "vax_site", "n_vaccines", "admin_by", "report_year"]
 NUMERIC = ["age_years", "onset_days", "n_vaccines", "report_year"]
@@ -82,6 +96,7 @@ def load_year_files(paths: list[Path]) -> dict[str, pd.DataFrame]:
     """Concatenate DATA / VAX / SYMPTOMS tables from yearly ZIPs or CSVs."""
     parts = {"DATA": [], "VAX": [], "SYMPTOMS": []}
     sources = []
+    seen_files, seen_hashes = set(), set()
     for path in paths:
         members = []
         if path.suffix.lower() == ".zip":
@@ -96,8 +111,14 @@ def load_year_files(paths: list[Path]) -> dict[str, pd.DataFrame]:
             kind = next((k for k in ("SYMPTOMS", "VAX", "DATA") if upper.endswith(f"VAERS{k}.CSV")), None)
             if kind is None:
                 continue
+            digest = hashlib.sha256(raw).hexdigest()
+            file_key = Path(name).name.upper()
+            if file_key in seen_files or digest in seen_hashes:
+                # e.g. a yearly ZIP AND its extracted CSVs: would double-count vaccines and reports.
+                raise ValueError(f"Duplicate VAERS input {name} (pass each year once: ZIP or CSVs, not both)")
+            seen_files.add(file_key); seen_hashes.add(digest)
             parts[kind].append(_read(name, raw))
-            sources.append({"file": f"{path.name}:{name}", "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)})
+            sources.append({"file": f"{path.name}:{name}", "sha256": digest, "bytes": len(raw)})
     missing = [k for k, v in parts.items() if not v]
     if missing:
         raise FileNotFoundError(f"No VAERS {missing} files among {paths}")
@@ -142,13 +163,35 @@ def merge_background(row) -> str:
     return "; ".join(parts) if parts else EMPTY_TEXT
 
 
-def mask_narrative(text) -> str:
+def mask_outcome_sentences(text) -> str:
+    """Drop every sentence/clause that mentions an outcome or care setting; EMPTY_TEXT if nothing is left."""
     text = clean_text(text)
     if text == EMPTY_TEXT:
         return text
-    sentences = re.split(r"(?<=[.!?;])\s+", text)
-    kept = [s for s in sentences if not NARRATIVE_OUTCOME.search(s)]
-    return " ".join(kept).strip() or EMPTY_TEXT
+    tokens = re.split(r"(\s*[;\n]\s*|(?<=[.!?])\s+)", text)  # pieces at even positions, separators at odd
+    out, sep = [], ""
+    for i, tok in enumerate(tokens):
+        if i % 2:
+            sep = tok
+            continue
+        if tok.strip() and not OUTCOME_SENTENCE.search(tok):
+            out.append((sep if out else "") + tok)  # keep the original separator ("; " or ". ") between kept pieces
+    return clean_text("".join(out))
+
+
+def mask_narrative(text) -> str:
+    """Narrative: strip reporter boilerplate and identifiers, then outcome sentences."""
+    text = clean_text(text)
+    if text == EMPTY_TEXT:
+        return text
+    text = NARRATIVE_HEADER.sub("", text)
+    text = IDENTIFIER.sub(" ", text)
+    return mask_outcome_sentences(text)
+
+
+def outcome_mentions(df: pd.DataFrame, columns) -> dict:
+    """Leak counter: cells per text column that still match the outcome/care-setting pattern."""
+    return {c: int(df[c].astype(str).str.contains(OUTCOME_SENTENCE).sum()) for c in columns}
 
 
 def cap_categories(s: pd.Series, k: int = MAX_CATEGORIES) -> pd.Series:
@@ -180,15 +223,28 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     data["n_vaccines"] = n_vax.reindex(data.index).astype(float)
     counts["with_vaccine_record"] = len(data)
 
-    # Likely secondary reports of the same event: keep the earliest VAERS_ID.
-    key = ["VAX_DATE", "ONSET_DATE", "AGE_YRS", "SEX", "STATE", "VAX_TYPE", "VAX_LOT"]
+    symptoms, removed_terms = symptom_text(sym)  # dict: outcome / care_process / administration
+    raw_terms = sym.melt(id_vars="VAERS_ID", value_vars=[c for c in sym.columns if re.fullmatch(r"SYMPTOM\d+", c)],
+                         value_name="t").dropna(subset=["t"])
+    raw_terms = raw_terms[raw_terms.t.str.strip() != ""]
+    data["_coded_terms"] = raw_terms.groupby("VAERS_ID").t.agg(lambda x: "; ".join(sorted(set(x)))).reindex(data.index)
+
+    # Likely secondary reports of the same event: same vaccination/onset dates, patient, vaccine lot AND the same
+    # coded terms (two different patients rarely match on all of these). Keep the earliest VAERS_ID; count clusters
+    # whose seriousness label disagrees, for the audit.
+    key = ["VAX_DATE", "ONSET_DATE", "AGE_YRS", "SEX", "STATE", "VAX_TYPE", "VAX_LOT", "_coded_terms"]
     data["_id_num"] = pd.to_numeric(data.index, errors="coerce")
     keyed = data[key].notna().all(axis=1)
+    flags_present = [c for c in OUTCOME_FLAGS if c in data.columns]
+    data["_serious"] = data[flags_present].fillna("").eq("Y").any(axis=1)
+    clusters = data[keyed].groupby(key, dropna=False)
+    sizes = clusters.size()
+    counts["dedup_clusters_merged"] = int((sizes > 1).sum())
+    counts["dedup_reports_removed"] = int((sizes - 1).clip(lower=0).sum())
+    counts["dedup_clusters_with_label_conflict"] = int((clusters._serious.nunique() > 1).sum())
     dup = keyed & data.sort_values("_id_num").duplicated(subset=key).reindex(data.index)
     data = data[~dup]
     counts["after_secondary_dedup"] = len(data)
-
-    symptoms, removed_terms = symptom_text(sym)  # dict: outcome / care_process / administration
     out = pd.DataFrame(index=data.index)
     out["report_id"] = data.index.astype(str)
     flags = [c for c in OUTCOME_FLAGS if c in data.columns]  # BIRTH_DEFECT exists only on the VAERS 2 form.
@@ -208,8 +264,12 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     out["admin_by"] = cap_categories(data.V_ADMINBY)
     out["report_year"] = pd.to_datetime(data.RECVDATE, errors="coerce").dt.year.astype(float)
     out["symptoms"] = symptoms.reindex(out.index).fillna(EMPTY_TEXT)
+    masked = {}
     for col, src in TEXT_SOURCES.items():
-        out[col] = data[src].map(clean_text) if src in data.columns else EMPTY_TEXT
+        raw = data[src].map(clean_text) if src in data.columns else pd.Series(EMPTY_TEXT, index=data.index)
+        out[col] = raw.map(mask_outcome_sentences)
+        masked[col] = int((out[col] != raw).sum())
+    counts["background_cells_with_outcome_text_removed"] = masked
     text_cols = ["symptoms", *TEXT_SOURCES]
     if variant == "v3":
         # One richer cell per patient instead of four mostly-empty ones (57-86% "none reported" in v1),
@@ -217,11 +277,16 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
         out["patient_background"] = out.apply(merge_background, axis=1)
         out = out.drop(columns=list(TEXT_SOURCES))
         text_cols = ["symptoms", "patient_background"]
-    if variant == "v2":
-        out["narrative_masked"] = data.SYMPTOM_TEXT.map(mask_narrative)
-        text_cols.append("narrative_masked")
+    if variant in ("v4", "v5"):
+        raw = data.SYMPTOM_TEXT.map(clean_text)
+        out["narrative"] = data.SYMPTOM_TEXT.map(mask_narrative)
+        counts["narrative_changed_by_masking"] = int((out.narrative != raw).sum())
+        counts["narrative_empty_after_masking"] = int((out.narrative == EMPTY_TEXT).sum())
+        text_cols = (["symptoms", *TEXT_SOURCES, "narrative"] if variant == "v4" else [*TEXT_SOURCES, "narrative"])
 
-    out = out[out.symptoms != EMPTY_TEXT]  # A report with no reaction term left carries no event description.
+    # Same row scope for every variant: a report needs at least one coded reaction term (even in v5, where the
+    # coded terms are not given to the model), so all variants describe the same population.
+    out = out[out.symptoms != EMPTY_TEXT]
     counts["with_symptom_terms"] = len(out)
     pred = STRUCTURED + text_cols
     out = out.drop_duplicates(subset=pred + ["serious"])
@@ -231,7 +296,10 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     out = out.sort_values("report_id", key=lambda s: pd.to_numeric(s, errors="coerce")).reset_index(drop=True)
     counts["final_rows"] = len(out)
     out = out[STRUCTURED + text_cols + ["serious", "report_id"]]
-    meta = {"counts": counts, "removed_terms": removed_terms, "sources": t["sources"], "text_columns": text_cols}
+    counts["outcome_mentions_left"] = outcome_mentions(out, text_cols)
+    vocab = {c: sorted(out[c].dropna().astype(str).unique().tolist()) for c in STRUCTURED if c not in NUMERIC}
+    meta = {"counts": counts, "removed_terms": removed_terms, "sources": t["sources"], "text_columns": text_cols,
+            "category_vocabulary": vocab}
     return out, meta
 
 
@@ -241,7 +309,7 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
     out.to_csv(csv, index=False)
     schema = {
         "dataset_id": f"BIN_TEXT_VAERS_SERIOUS_{variant.upper()}",
-        "build_version": 2,  # 2 = care-process and administration terms removed (after the first screen).
+        "build_version": BUILD_VERSION,
         "purpose": "candidate_dataset",
         "task": "binary",
         "target": "serious",
@@ -255,10 +323,16 @@ def write(out: pd.DataFrame, meta: dict, out_dir: Path, variant: str) -> Path:
         "rows": len(out),
         "positive_rate": round(float(out.serious.mean()), 4),
         "counts": meta["counts"],
-        "excluded_fields": ["SYMPTOM_TEXT (v1)", "LAB_DATA", "ER_VISIT", "ER_ED_VISIT", "OFC_VISIT", "HOSPDAYS", "RECOVD",
+        "excluded_fields": ["SYMPTOM_TEXT (v1, v3; masked narrative in v4, v5)", "LAB_DATA", "ER_VISIT", "ER_ED_VISIT", "OFC_VISIT", "HOSPDAYS", "RECOVD",
                             "DATEDIED", "RECVDATE/VAX_DATE/ONSET_DATE (raw dates)", "SPLTTYPE", "FORM_VERS", "VAX_LOT",
                             "VAX_NAME", "PRIOR_VAX", "TODAYS_DATE", "RPT_DATE", "V_FUNDBY"],
         "removed_terms": meta["removed_terms"],
+        "category_vocabulary": meta["category_vocabulary"],
+        "category_grouping": f"Label-free dataset definition: per categorical column, the {MAX_CATEGORIES - 1} most "
+                             "frequent values over the source reports are kept and the rest become OTHER (state: 59). "
+                             "Fixed once when the dataset is built, before any benchmark split; no labels used.",
+        "task_framing": "Retrospective classification of recorded report seriousness from restricted report "
+                        "contents. Not a forecast at vaccination time and not evidence about vaccine causation.",
         "scope": "Reports with at least one reaction term left after removing outcome, care-process and "
                  "vaccination-process terms (pure administration-error reports are out of scope).",
         "sources": meta["sources"],

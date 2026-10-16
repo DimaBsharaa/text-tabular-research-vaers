@@ -51,6 +51,8 @@ code("""
     SCHEMA_PATH = None  # The schema.json written next to CSV_PATH.
     # Optional learner subset for a cheap screen, e.g. ["light", "cat"] with MODE = "diagnostic".
     MODELS_OVERRIDE = None
+    # Optional folds for a less noisy screen, e.g. [0, 1, 2] with MODE = "diagnostic" (one fold moves TAR gain ~±0.01).
+    FOLDS_OVERRIDE = None
 """)
 md("""
     ## 1. Get our files and the separate, unchanged reference
@@ -268,14 +270,25 @@ code("""
         assert set(MODELS_OVERRIDE) <= {"light", "cat", "tabm", "tabpfnv2", "tabpfnv2p5"}, MODELS_OVERRIDE
         MODELS = list(MODELS_OVERRIDE)
     FOLDS = [0] if MODE != "full" else [0, 1, 2, 3, 4]
+    if FOLDS_OVERRIDE:
+        if MODE != "diagnostic":
+            raise ValueError("FOLDS_OVERRIDE is for diagnostic screens; full mode always runs folds 0-4")
+        assert set(FOLDS_OVERRIDE) <= {0, 1, 2, 3, 4}, FOLDS_OVERRIDE
+        FOLDS = sorted(set(FOLDS_OVERRIDE))
     CONDITIONS = ["structured_only", "text_only", "joint_frozen", "joint_tar"]
-    try:
-        from google.colab import userdata
-        token = userdata.get("HF_TOKEN")
-    except Exception:
-        token = None
-    if token:
-        os.environ["HF_TOKEN"] = token  # Never printed or saved in artifacts.
+    # HF_TOKEN: Hugging Face read token. TABPFN_TOKEN: Prior Labs key (https://ux.priorlabs.ai, accept the licence);
+    # TabPFN-2.5 cannot download its checkpoint without it. Values are never printed or saved in artifacts.
+    for secret in ["HF_TOKEN", "TABPFN_TOKEN"]:
+        try:
+            from google.colab import userdata
+            value = userdata.get(secret)
+        except Exception:
+            value = None
+        if value:
+            os.environ[secret] = value
+        print(f"{secret}: {'set' if value else 'MISSING (add it in Colab Secrets if TabPFN runs)'}")
+    if "tabpfnv2p5" in MODELS and not os.environ.get("TABPFN_TOKEN"):
+        raise RuntimeError("TabPFN-2.5 needs TABPFN_TOKEN in Colab Secrets (Prior Labs licence); add it or drop the learner")
     if SAVE_TO_DRIVE:
         from google.colab import drive
         drive.mount("/content/drive")

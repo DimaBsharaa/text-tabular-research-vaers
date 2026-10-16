@@ -72,3 +72,35 @@ Tests: `python3 -m unittest research.scripts.vaers.test_build_vaers -v` (12 test
 
 - **Israeli disability-benefit files and bariatric follow-up records:** there is no public version with free text. They are private health and benefits data, and research use would need ethics approval.
 - **ClinicalTrials.gov early termination (backup):** about 154k trials, 18.5% stopped. A 2026 leakage audit shows that actual enrollment, `why_stopped` and the summary or eligibility text (edited after a trial stops) leak the label ([NeurIPS 2026](https://neurips.cc/virtual/2026/163735)). A clean version needs the first-registered version of each record.
+
+## Update, October 16: first official screen and build version 3
+
+**Official-code screen, VAERS v1 (build 2), fold 0** (`paper_version` code through our CSV loader; AUROC):
+
+| Learner | Structured | Text | Joint Frozen | Joint TAR | Joint Signal | TAR Gain |
+|---|---|---|---|---|---|---|
+| LightGBM | 0.919 | 0.948 | 0.968 | 0.961 | +0.020 | −0.007 |
+| CatBoost | 0.928 | 0.950 | 0.962 | 0.964 | +0.012 | +0.002 |
+| TabM | 0.921 | 0.949 | 0.963 | 0.962 | +0.014 | −0.001 |
+| TabPFN-v2 | 0.927 | 0.953 | 0.964 | 0.963 | +0.011 | −0.001 |
+| TabPFN-2.5 | did not run (gated checkpoint: accept the licence on Hugging Face, add `HF_TOKEN`) | | | | | |
+
+- **Joint Signal** is positive for 4 of 4 learners. That is in the range of the accepted classification datasets: their median is +0.016.
+- **TAR Gain** is about zero (median +0.004 for the accepted ones). One fold moves TAR gain by roughly ±0.007 to ±0.011, but three of four learners slightly negative is a pattern.
+- **Hypothesis, not a result:** the coded MedDRA terms are a controlled vocabulary that frozen E5 already embeds well. TAR helps most on free language.
+
+**Build version 3** responds to the independent review (`vaers_codex_review.md`):
+
+- **Outcome masking everywhere:** every sentence or clause naming an outcome or care setting is removed from the four background fields as well as the narrative. This also removes some legitimate past history; per-field counts are in `counts.background_cells_with_outcome_text_removed`.
+- **Symptom filter gaps closed:** "Life-threatening …", "Congenital anomaly" and "birth defect" are now removed.
+- **Safer secondary-report merging:** the merge key now also requires the same coded terms. Clusters, removed reports and clusters with conflicting labels are counted.
+- **Duplicate-input guard:** passing a yearly ZIP together with its extracted CSVs now raises an error.
+- **Leak counter:** `counts.outcome_mentions_left` reports, per text column, the cells still matching the outcome pattern. It should be 0 for every column except `symptoms`, whose kept clinical terms ("Hypertensive emergency") can match by design.
+- **Frozen category vocabulary:** the category vocabulary is saved in `schema.json`. The grouping is label-free and fixed when the dataset is built.
+- **Task framing:** retrospective classification of recorded report seriousness. It is not a forecast and says nothing about vaccine causation.
+- **New variants:**
+  - **v4** = v1 + the reporter's free-text narrative, after removing boilerplate, lot and ID numbers, and outcome sentences.
+  - **v5** = the narrative instead of the coded terms.
+
+  Both use the same population as v1.
+- **Screening plan:** LightGBM + CatBoost, folds 0–2 (`FOLDS_OVERRIDE`), one variant per Colab session.

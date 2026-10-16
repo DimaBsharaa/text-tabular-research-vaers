@@ -37,8 +37,8 @@ code("""
     RAW_DIR = "/content/drive/MyDrive/text-tabular-research-2/vaers_raw"
     OUT_BASE = "/content/drive/MyDrive/text-tabular-research-2/candidates"
     ROWS = 60000      # Final rows per variant (the benchmark samples ≤10k train + ≤2k test per fold from these).
-    VARIANTS = ["v3"]  # v1 is already built and screened. v3 = symptoms + ONE merged "patient_background" column.
-    # ("v2", + masked narrative, was dropped after the first screen: reporter-template artifacts, no joint gain.)
+    VARIANTS = ["v4", "v5"]  # Build version 3. v4 = v1 + the reporter's narrative (outcome sentences removed);
+    # v5 = narrative instead of the coded symptom terms. (v1/v3 can be rebuilt too; v2 was dropped.)
 
     from google.colab import drive
     drive.mount("/content/drive")
@@ -70,6 +70,8 @@ code("""
         csv = bv.write(out, meta, Path(OUT_BASE) / f"vaers_{v}", v)
         built[v] = csv
         print(v, json.dumps(meta["counts"]), "positive rate", round(out.serious.mean(), 4))
+        print("   outcome words still present per text column (leak counter; 0 expected except symptoms):",
+              meta["counts"]["outcome_mentions_left"])
     for kind, terms in meta["removed_terms"].items():
         print(f"Removed {kind} terms ({len(terms)}), first 25:", terms[:25])
 """)
@@ -96,8 +98,9 @@ code("""
 md("""
     ## 3. Next: the official fold-0 screen on A100
 
-    Open notebook 02, set `MODE = "diagnostic"`, `MODELS_OVERRIDE = ["light", "cat"]` and the two paths printed
-    below, then Run all. That runs the unchanged official code: 2 learners × 4 conditions × fold 0, full TAR.
+    Open notebook 02, set `MODE = "diagnostic"`, `MODELS_OVERRIDE = ["light", "cat"]`, `FOLDS_OVERRIDE = [0, 1, 2]`
+    and the two paths printed below (one variant per Colab session), then Run all. Unchanged official code:
+    2 learners × 4 conditions × 3 folds, full TAR.
 """)
 code("""
     for v, csv in built.items():

@@ -166,12 +166,69 @@ class BuildVaersTest(unittest.TestCase):
         pd.testing.assert_frame_equal(a.loc[common], b.loc[common])
         self.assertEqual(out2.serious.sum(), 0)
 
-    def test_v2_narrative_masks_outcome_sentences(self):
-        out, meta = bv.build([self.zip], "v2", n_rows=100000)
-        self.assertIn("narrative_masked", meta["text_columns"])
-        self.assertFalse(out.narrative_masked.str.contains("admitted|hospital", case=False).any())
-        self.assertTrue(out.narrative_masked.str.contains("resolved with rest").any())
+    def test_v4_v5_narrative_variants_mask_outcomes_and_boilerplate(self):
+        out4, meta4 = bv.build([self.zip], "v4", n_rows=100000)
+        out5, meta5 = bv.build([self.zip], "v5", n_rows=100000)
+        self.assertEqual(meta4["text_columns"], ["symptoms", *bv.TEXT_SOURCES, "narrative"])
+        self.assertEqual(meta5["text_columns"], [*bv.TEXT_SOURCES, "narrative"])
+        self.assertNotIn("symptoms", out5.columns)
+        for out in (out4, out5):
+            self.assertFalse(out.narrative.str.contains("admitted|hospital", case=False).any())
+            self.assertTrue(out.narrative.str.contains("resolved with rest").any())
+        self.assertEqual(sorted(out4.report_id), sorted(out5.report_id))  # same population as each other
+        self.assertEqual(meta4["counts"]["outcome_mentions_left"]["narrative"], 0)
         self.assertEqual(bv.mask_narrative("Pt died. Fever began day 2."), "Fever began day 2.")
+        self.assertEqual(bv.mask_narrative("Reported Symptoms: 10016256:FATIGUE; Narrative: Tired all day. Lot# EW0182 given."),
+                         "Tired all day. given.")
+        self.assertEqual(bv.mask_narrative("Taken to the ER by ambulance; rash on arm"), "rash on arm")
+
+    def test_background_outcome_statements_are_removed(self):
+        self.assertEqual(bv.mask_outcome_sentences("Hospitalized after this event; patient died."), bv.EMPTY_TEXT)
+        self.assertEqual(bv.mask_outcome_sentences("Asthma. Admitted to ICU after vaccine. Diabetes"), "Asthma. Diabetes")
+        data, vax, sym = self.raw
+        data = data.copy()
+        data.loc[5, "HISTORY"] = "Asthma; Hospitalized after this event; patient died."
+        z = self.tmp / "bg.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data), ("VAERSVAX", vax), ("VAERSSYMPTOMS", sym)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        for variant in ("v1", "v3"):
+            out, meta = bv.build([z], variant, n_rows=100000)
+            row = out.set_index("report_id").loc[data.loc[5, "VAERS_ID"]]
+            text = " ".join(str(row[c]) for c in meta["text_columns"])
+            self.assertNotRegex(text.lower(), "hospitali|died")
+            self.assertIn("Asthma", text)
+            self.assertTrue(all(v == 0 for k, v in meta["counts"]["outcome_mentions_left"].items() if k != "symptoms"))
+
+    def test_symptom_filter_covers_life_threatening_and_birth_defect(self):
+        s = pd.DataFrame({"VAERS_ID": ["1", "1", "1"],
+                          "SYMPTOM1": ["Life-threatening illness", "Congenital anomaly", "Rash"]})
+        joined, removed = bv.symptom_text(s)
+        self.assertEqual(joined.get("1"), "Rash")
+        self.assertEqual(removed["outcome"], ["Congenital anomaly", "Life-threatening illness"])
+
+    def test_dedup_keeps_distinct_patients_with_same_keys(self):
+        data, vax, sym = self.raw
+        twin = dict(data.iloc[2]); twin["VAERS_ID"] = str(int(twin["VAERS_ID"]) + 800_000)
+        twin_sym = {"VAERS_ID": twin["VAERS_ID"], "SYMPTOM1": "Tinnitus"}  # same keys, different coded event
+        data2 = pd.concat([data, pd.DataFrame([twin])], ignore_index=True)
+        vax2 = pd.concat([vax, pd.DataFrame([dict(v) | {"VAERS_ID": twin["VAERS_ID"]}
+                                              for v in vax.to_dict("records") if v["VAERS_ID"] == data.iloc[2]["VAERS_ID"]])])
+        sym2 = pd.concat([sym, pd.DataFrame([twin_sym])], ignore_index=True)
+        z = self.tmp / "twin.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data2), ("VAERSVAX", vax2), ("VAERSSYMPTOMS", sym2)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        out, meta = bv.build([z], "v1", n_rows=100000)
+        self.assertIn(twin["VAERS_ID"], set(out.report_id))
+        self.assertEqual(meta["counts"]["dedup_reports_removed"], 1)  # only the true secondary copy
+
+    def test_zip_plus_extracted_csv_is_rejected(self):
+        d = self.tmp / "extracted"; d.mkdir(exist_ok=True)
+        with zipfile.ZipFile(self.zip) as zf:
+            zf.extractall(d)
+        with self.assertRaises(ValueError):
+            bv.build([self.zip, *sorted(d.glob("*.csv"))], "v1")
 
     def test_v3_merges_background_into_one_column(self):
         out, meta = bv.build([self.zip], "v3", n_rows=100000)

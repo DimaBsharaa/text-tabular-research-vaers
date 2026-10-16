@@ -35,7 +35,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BUILD_VERSION = 4  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
+BUILD_VERSION = 5  # 4 = scope: vaccine reactions only (no breakthrough/infection reports), onset 0-42 days.
+                   # 5 = onset excerpt also cut at chart/diagnosis-list language; joined excerpt re-checked.
 # 3 = background/narrative outcome masking, symptom-aware dedup, duplicate-input guard.
 # Reports of the infection the vaccine targets (breakthrough COVID etc.) or of vaccine failure are not reactions to
 # the vaccine, and serious breakthrough cases were reported preferentially (hospitalised/fatal cases were the ones
@@ -99,7 +100,8 @@ IDENTIFIER = re.compile(r"\blot\s*(?:#|no\.?|number)?\s*:?\s*[A-Z0-9-]{4,}\b|\b\
 STRUCTURED = ["age_years", "sex", "state", "onset_days", "vax_type", "vax_manu", "vax_dose_series", "vax_route",
               "vax_site", "n_vaccines", "admin_by", "report_year"]
 NUMERIC = ["age_years", "onset_days", "n_vaccines", "report_year"]
-MAX_CATEGORIES = 40  # Keeps categoricals below the official 100-distinct text detector threshold.
+MAX_CATEGORIES = 99  # Values are kept as-is; grouping happens only if a column would reach the official
+# 100-distinct text-detector threshold (then the rarest values become OTHER). Label-free, fixed at build time.
 
 
 def _read(name: str, raw: bytes) -> pd.DataFrame:
@@ -206,7 +208,9 @@ def mask_narrative(text) -> str:
 
 # Care, treatment and testing language. The onset narrative stops at the first sentence that contains any of it,
 # because what follows is usually the course of care, which reveals seriousness without stating it.
-CARE_SENTENCE = re.compile(r"\btreat|\btx\b|\bgiven\b|\biv\b|\bo2\b|oxygen|remdesivir|dexamethasone|steroid|"
+# ("given" alone is not a cut point: "Vaccine was given at noon." is part of the onset story.)
+CARE_SENTENCE = re.compile(r"\btreat|\btx\b|\bgiven (?:iv|o2|oxygen|fluids|epi|epinephrine|benadryl|steroids?|"
+                           r"medication|medicine|antibiotics?|a shot of|an injection of)|\biv\b|\bo2\b|oxygen|remdesivir|dexamethasone|steroid|"
                            r"epinephrine|epi-?pen|\bepi\b|antibiotic|\bheparin|\bcpap|bipap|\btests?\b|\blab|\bct\b|"
                            r"\bmri\b|x-?ray|\bscan|\bekg\b|\becg\b|echocardiogram|\becho\b|culture|biopsy|"
                            r"\bdoctor|\bdr\.?\s|physician|\bpcp\b|clinic|\bnurse|provider|presented|went to|"
@@ -214,6 +218,16 @@ CARE_SENTENCE = re.compile(r"\btreat|\btx\b|\bgiven\b|\biv\b|\bo2\b|oxygen|remde
 DATE_OR_CODE = re.compile(r"\b\d{1,2}[/-]\d{1,2}(?:[/-]\d{2,4})?\b|\b(?:19|20)\d{2}\b|\b[A-Z]\d{2}\.\d{1,4}\b|"
                           r"\b(?:pmhx?|hx|y/?o)\b", re.I)
 MAX_ONSET_SENTENCES = 3
+# Chart and diagnosis-list language (ICD-10 descriptors, EHR markers, clinical shorthand). Build 4's n-gram audit
+# showed "unspecified" and "init" (as in "..., unspecified, init encntr") among the strongest serious-class words:
+# hospital staff paste discharge diagnoses into the narrative, which reveals the hospital course without naming it.
+CHART_SENTENCE = re.compile(r"unspecified|\binit\b|encntr|\bencounter\b|sequela|\bnos\b|elsewhere classified|"
+                            r"without complication|\bhcc\b|\bs/p\b|\bc/o\b|\bh/o\b|chief complaint|\bhpi\b|"
+                            r"\bassessment\b|\bimpression\b|\bplan\s*:|\bpatient\s+is\s+a\b", re.I)
+
+
+def _cuts(sentence: str) -> bool:
+    return bool(OUTCOME_SENTENCE.search(sentence) or CARE_SENTENCE.search(sentence) or CHART_SENTENCE.search(sentence))
 
 
 def onset_narrative(text) -> str:
@@ -228,11 +242,15 @@ def onset_narrative(text) -> str:
     for sentence in re.split(r"(?<=[.!?;])\s+|\n+", text):
         if not sentence.strip():
             continue
-        if OUTCOME_SENTENCE.search(sentence) or CARE_SENTENCE.search(sentence):
+        if _cuts(sentence):
             break
         kept.append(sentence.strip())
         if len(kept) == MAX_ONSET_SENTENCES:
             break
+    # The sentence splitter can break inside a match ("seen by Dr. Lee" splits after "Dr."), so the joined excerpt
+    # is checked again and shortened until it is clean. The leak counter is then 0 by construction.
+    while kept and _cuts(" ".join(kept)):
+        kept.pop()
     return clean_text(re.sub(r"\s+", " ", " ".join(kept)))
 
 
@@ -242,11 +260,14 @@ def outcome_mentions(df: pd.DataFrame, columns) -> dict:
     counts = {c: int(df[c].astype(str).str.contains(OUTCOME_SENTENCE).sum()) for c in columns}
     if "narrative_onset" in columns:
         counts["narrative_onset_care_words"] = int(df.narrative_onset.astype(str).str.contains(CARE_SENTENCE).sum())
+        counts["narrative_onset_chart_words"] = int(df.narrative_onset.astype(str).str.contains(CHART_SENTENCE).sum())
     return counts
 
 
 def cap_categories(s: pd.Series, k: int = MAX_CATEGORIES) -> pd.Series:
     s = s.fillna("UNKNOWN").astype(str).str.strip().replace("", "UNKNOWN").str.upper()
+    if s.nunique() <= k:
+        return s  # no grouping needed
     top = s.value_counts().index[:k - 1]
     return s.where(s.isin(top), "OTHER")
 
@@ -284,9 +305,11 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     infection = data["_coded_terms"].fillna("").str.contains(OUT_OF_SCOPE_TERM)
     onset_num = pd.to_numeric(data.NUMDAYS, errors="coerce")
     late = onset_num > MAX_ONSET_DAYS
+    negative = onset_num < 0  # onset before vaccination: a data error, not "unknown"
     counts["removed_infection_or_failure_reports"] = int(infection.sum())
     counts["removed_onset_over_42_days"] = int((late & ~infection).sum())
-    data = data[~infection & ~late]
+    counts["removed_negative_onset"] = int((negative & ~infection).sum())
+    data = data[~infection & ~late & ~negative]
     counts["after_scope_vaccine_reactions"] = len(data)
 
     # Likely secondary reports of the same event: same vaccination/onset dates, patient, vaccine lot AND the same
@@ -349,6 +372,10 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     if variant in ("v6", "v7"):
         out["narrative_onset"] = data.SYMPTOM_TEXT.map(onset_narrative)
         counts["narrative_onset_empty"] = int((out.narrative_onset == EMPTY_TEXT).sum())
+        sev = data[[c for c in OUTCOME_FLAGS if c in data.columns]].fillna("").eq("Y").any(axis=1)
+        empty = out.narrative_onset == EMPTY_TEXT
+        counts["narrative_onset_empty_share_by_label"] = {"serious": round(float(empty[sev].mean()), 4),
+                                                          "not_serious": round(float(empty[~sev].mean()), 4)}
         text_cols = (["symptoms"] if variant == "v6" else []) + [*TEXT_SOURCES, "narrative_onset"]
     if variant in ("v4", "v5"):
         raw = data.SYMPTOM_TEXT.map(clean_text)
@@ -365,6 +392,7 @@ def build(paths: list[Path], variant: str = "v1", n_rows: int = 60000, seed: int
     # exact duplicates are judged on all source fields, and the sample is a fixed hash of the report ID.
     source_fields = data.reindex(out.index)[[c for c in ["AGE_YRS", "SEX", "STATE", "NUMDAYS", "VAX_TYPE", "VAX_MANU",
                                              "VAX_DOSE_SERIES", "VAX_ROUTE", "VAX_SITE", "V_ADMINBY", "RECVDATE",
+                                             "VAX_DATE", "ONSET_DATE", "VAX_LOT", "n_vaccines",
                                              "SYMPTOM_TEXT", *TEXT_SOURCES.values(), "_coded_terms"]
                                             if c in data.columns]].fillna("")
     out = out[~source_fields.duplicated()]

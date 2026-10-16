@@ -225,6 +225,38 @@ class BuildVaersTest(unittest.TestCase):
         self.assertEqual(len(ids["v1"]), 800)
         self.assertEqual(bv.mask_outcome_sentences("Asthma. An overnight stay on the ward was required."), "Asthma.")
 
+    def test_review_fixes_negative_onset_dedup_fields_given(self):
+        self.assertEqual(bv.onset_narrative("Vaccine was given at noon. Tingling began that evening."),
+                         "Vaccine was given at noon. Tingling began that evening.")
+        self.assertEqual(bv.onset_narrative("Arm swelled. Given epinephrine at pharmacy."), "Arm swelled.")
+        data, vax, sym = self.raw
+        data = data.copy()
+        neg_id = data.VAERS_ID.iloc[7]
+        data.loc[data.VAERS_ID == neg_id, "NUMDAYS"] = "-2"
+        z = self.tmp / "neg.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data), ("VAERSVAX", vax), ("VAERSSYMPTOMS", sym)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        out, meta = bv.build([z], "v1", n_rows=100000)
+        self.assertNotIn(neg_id, set(out.report_id))
+        self.assertEqual(meta["counts"]["removed_negative_onset"], 1)
+        s = pd.Series(["A", "B", "A", None])
+        self.assertEqual(bv.cap_categories(s).tolist(), ["A", "B", "A", "UNKNOWN"])  # no grouping below the cap
+
+    def test_onset_cut_at_chart_language_and_rechecked(self):
+        # ICD-style diagnosis lists end the excerpt.
+        self.assertEqual(bv.onset_narrative("Fever and chills that night. Acute respiratory failure with hypoxia, "
+                                            "unspecified. Hypotension."), "Fever and chills that night.")
+        self.assertEqual(bv.onset_narrative("Myocarditis, init encntr. Chest pain."), bv.EMPTY_TEXT)
+        self.assertEqual(bv.onset_narrative("Pt c/o chest pain."), bv.EMPTY_TEXT)
+        # A split inside "Dr. Lee" must not let care language through.
+        out = bv.onset_narrative("Arm was sore. She was seen by Dr. Lee the next day.")
+        self.assertEqual(out, "Arm was sore.")
+        self.assertFalse(bv.CARE_SENTENCE.search(out) or bv.CHART_SENTENCE.search(out))
+        # Ordinary first-person accounts survive.
+        self.assertEqual(bv.onset_narrative("My arm hurt within an hour. I felt dizzy."),
+                         "My arm hurt within an hour. I felt dizzy.")
+
     def test_v7_has_no_coded_symptoms(self):
         out, meta = bv.build([self.zip], "v7", n_rows=100000)
         self.assertEqual(meta["text_columns"], [*bv.TEXT_SOURCES, "narrative_onset"])

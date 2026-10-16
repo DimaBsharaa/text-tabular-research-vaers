@@ -143,7 +143,8 @@ The serious rate was **0.420 in 2023 against 0.059 in 2019**, and **0.536 for CO
 - Reports coded with the infection or failure terms in `OUT_OF_SCOPE_TERM` are excluded (vaccine breakthrough infection, COVID-19, SARS-CoV-2 test positive or infection, vaccination failure, drug ineffective).
 - Reports with **onset more than 42 days** after vaccination are excluded; unknown onset is kept.
 - Removal counts are in `schema.json`.
-- Notebook 06 now runs the column audit automatically. A rebuilt dataset is acceptable only if no single table column alone reaches the symptom-level score. `state`/`admin_by` are re-checked after the fix.
+- Notebook 06 now runs the column audit automatically. A high single-column score is a reason to investigate that column, not an acceptance rule. `state`/`admin_by` are re-checked after the fix.
+- **Status of this explanation:** the breakthrough-reporting story is a hypothesis. It is checked after the rebuild by comparing serious rates by year and vaccine type before and after the scope change. The scope rule is a cohort restriction (which reports the dataset covers), not a causal claim.
 
 ### Information boundary (why v7 exists)
 
@@ -153,7 +154,7 @@ Every VAERS field is recorded when the report is filed, which is after the event
 - **Early event:** onset days, and the reporter's opening account of the reaction (v6/v7 `narrative_onset`, cut before any care).
 - **Whole-report:** the coded MedDRA terms, coded from the full report, including findings made in hospital.
 
-**v7 drops the whole-report column.** Its question is: *from the patient's background and their first description of the reaction, did it turn out serious?* This is the closest public analogue of a caseworker's first phone call. v1/v6 keep the coded terms and must be described as retrospective report classification.
+**v7 drops the whole-report column.** It is classification using restricted narrative excerpts and background. It is still retrospective: the excerpt was written after the event, and the extractor's cut is a heuristic. For example, "Two weeks later she could no longer walk." can survive the cut. v1/v6/v7 are all described as retrospective report classification, not as forecasting.
 
 ### Follow-up to the second review (same build 4)
 
@@ -162,3 +163,51 @@ Every VAERS field is recorded when the report is filed, which is after the event
 - **Masking by label.** `counts.background_masked_share_by_label` reports how often background text was altered for serious vs non-serious reports.
 - **Non-monotonic audit.** For numeric columns the column audit now also scores an out-of-fold rate per value bin. A year that is much more serious than its neighbours is caught; the linear 0.562 for `report_year` understated this.
 - **Unchanged, documented.** Category grouping is a label-free dataset definition fixed at build time, not model preprocessing. VAERS seriousness rates are rates among *reported* events, not vaccine risk.
+
+### Follow-up to the third review
+
+- **Negative onset removed.** Reports where onset is before vaccination (NUMDAYS < 0) are now excluded (`counts.removed_negative_onset`). Before, they became a missing value.
+- **Exact-duplicate key widened.** It now also includes the vaccination date, onset date, lot and number of vaccines, so two different patients with identical text are no longer merged.
+- **Onset extractor.** "given" now cuts the excerpt only when it refers to treatment ("given epinephrine", "given IV fluids"). "Vaccine was given at noon." is kept. Notebook 06 prints real excerpts per label and `counts.narrative_onset_empty_share_by_label`. A large gap between labels in the empty share would itself be a signal to investigate.
+- **Category grouping.** It now applies only to a column with more than 99 distinct values, so none of the current columns are grouped.
+- **Before any GPU screen:** inspect the rebuilt CSV's real excerpts, the empty share per label, the duplicate counts and the column audit.
+
+## Update: build 4 results (CPU screen) and build 5
+
+**The scope change worked as predicted.** Compared with build 3 (same years, same 60,000-row size):
+
+| Check | Build 3 | Build 4 |
+|---|---|---|
+| Serious rate, 2023 reports | 0.420 | 0.164 |
+| Serious rate, COVID19 reports | 0.536 | 0.225 |
+| `onset_days` alone (AUROC) | 0.877 | 0.717 |
+| `vax_type` alone | 0.817 | 0.715 |
+| `state` alone | 0.768 | 0.586 |
+| `admin_by` alone | 0.714 | 0.628 |
+| `symptoms` alone | 0.957 | 0.923 |
+
+Build 4 removed 8,054 infection or failure reports and 10,592 reports with onset over 42 days. This supports the breakthrough-reporting hypothesis, but does not prove it. COVID reports remain more often serious (0.225 against 0.03–0.08 for other vaccines). This is consistent with the COVID emergency-use authorisations, which required providers to report serious adverse events; we read it as a reporting rule, not as vaccine risk. Unknown `state` has a serious rate of 0.294 (6.7% of rows), likely a reporter-type effect; it is documented, not removed.
+
+**CPU proxy (TF-IDF + logistic regression, one split; not the benchmark):**
+
+| Variant | Structured | Text | Joint | Joint − best single | Text − structured |
+|---|---|---|---|---|---|
+| v1 | 0.807 | 0.887 | 0.900 | +0.013 | +0.080 |
+| v6 | 0.807 | 0.898 | 0.907 | +0.009 | +0.091 |
+| v7 | 0.807 | 0.825 | 0.857 | +0.032 | +0.019 |
+
+**New finding: chart language in the onset excerpt.** Among the strongest serious-class words in `narrative_onset` were:
+
+- `unspecified` and `init`: ICD-10 wording, as in "…, unspecified, init encntr"
+- `acute`, `hypoxia`, `respiratory failure`: discharge-diagnosis wording
+- `chronic` and `obstructive sleep apnea`: comorbidity lists
+
+So some excerpts are pasted hospital diagnosis lists. They reveal the hospital course without naming it, the same problem as v4/v5 at a smaller scale. The keyword counter also found 85 excerpts with care words. These came from the sentence splitter breaking inside "Dr. Lee".
+
+**Build 5:**
+
+- The excerpt is now also cut at chart and diagnosis-list language: ICD descriptors (unspecified, init, encntr, sequela, NOS), EHR markers (HCC) and clinical shorthand (s/p, c/o, h/o, HPI, assessment, impression).
+- The joined excerpt is re-checked and shortened until no care, chart or outcome pattern matches, so both counters are 0 by construction.
+- Notebook 06 prints three serious-row examples for each of the strongest onset words, so we can read where each word comes from.
+- Clinical event words such as "stroke" or "seizure" in a first-hand account are kept. They describe the reaction itself, as the coded symptoms do.
+- Expected cost: more empty excerpts among serious reports. `narrative_onset_empty_share_by_label` and the missing-flag AUROC (build 4: 0.556) are watched for this.

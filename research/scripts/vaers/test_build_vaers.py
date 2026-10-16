@@ -182,6 +182,56 @@ class BuildVaersTest(unittest.TestCase):
                          "Tired all day. given.")
         self.assertEqual(bv.mask_narrative("Taken to the ER by ambulance; rash on arm"), "rash on arm")
 
+    def test_scope_excludes_breakthrough_and_late_onset(self):
+        data, vax, sym = self.raw
+        data, sym = data.copy(), sym.copy()
+        ids = data.VAERS_ID.iloc[[3, 4, 6]].tolist()
+        sym.loc[sym.VAERS_ID == ids[0], "SYMPTOM1"] = "Vaccine breakthrough infection"
+        sym.loc[sym.VAERS_ID == ids[1], "SYMPTOM1"] = "COVID-19"
+        data.loc[data.VAERS_ID == ids[2], "NUMDAYS"] = "120"
+        z = self.tmp / "scope.zip"
+        with zipfile.ZipFile(z, "w") as zf:
+            for name, df in [("VAERSDATA", data), ("VAERSVAX", vax), ("VAERSSYMPTOMS", sym)]:
+                buf = io.BytesIO(); df.to_csv(buf, index=False, encoding="latin-1"); zf.writestr(f"2023{name}.csv", buf.getvalue())
+        out, meta = bv.build([z], "v1", n_rows=100000)
+        self.assertFalse(set(ids) & set(out.report_id))
+        self.assertGreaterEqual(meta["counts"]["removed_infection_or_failure_reports"], 2)
+        self.assertGreaterEqual(meta["counts"]["removed_onset_over_42_days"], 1)
+        self.assertTrue((out.onset_days.dropna() <= bv.MAX_ONSET_DAYS).all())
+        # "COVID-19 vaccine"-like reaction terms that merely contain the word are not excluded
+        self.assertFalse(bv.OUT_OF_SCOPE_TERM.search("Injection site pain; Pyrexia"))
+        self.assertTrue(bv.OUT_OF_SCOPE_TERM.search("Fatigue; COVID-19; Pyrexia"))
+        self.assertFalse(bv.OUT_OF_SCOPE_TERM.search("Post-acute COVID-19 syndrome"))
+
+    def test_v6_onset_narrative_stops_before_care(self):
+        f = bv.onset_narrative
+        self.assertEqual(f("Tingling of lips and tongue. Started 10 min after. Given epinephrine at pharmacy. Resolved."),
+                         "Tingling of lips and tongue. Started 10 min after.")
+        self.assertEqual(f("On 1/5/21 pt developed SOB and fever. Started on remdesivir and O2."),
+                         "On pt developed SOB and fever.")
+        self.assertEqual(f("Reported Symptoms: 10016256:FATIGUE; Narrative: Tired all day. Went to the ER."), "Tired all day.")
+        self.assertEqual(f("Patient was admitted. Fever."), bv.EMPTY_TEXT)  # cut at the first outcome sentence
+        self.assertEqual(f("A. B. C. D. E."), "A. B. C.")
+        out, meta = bv.build([self.zip], "v6", n_rows=100000)
+        self.assertEqual(meta["text_columns"], ["symptoms", *bv.TEXT_SOURCES, "narrative_onset"])
+        left = meta["counts"]["outcome_mentions_left"]
+        self.assertEqual(left["narrative_onset"], 0)
+        self.assertEqual(left["narrative_onset_care_words"], 0)
+        self.assertFalse(out.narrative_onset.str.contains("admitted|hospital", case=False).any())
+
+    def test_variants_share_identical_report_ids(self):
+        ids = {v: sorted(bv.build([self.zip], v, n_rows=800, seed=3)[0].report_id) for v in ("v1", "v3", "v6", "v7")}
+        self.assertEqual(len({tuple(x) for x in ids.values()}), 1)
+        self.assertEqual(len(ids["v1"]), 800)
+        self.assertEqual(bv.mask_outcome_sentences("Asthma. An overnight stay on the ward was required."), "Asthma.")
+
+    def test_v7_has_no_coded_symptoms(self):
+        out, meta = bv.build([self.zip], "v7", n_rows=100000)
+        self.assertEqual(meta["text_columns"], [*bv.TEXT_SOURCES, "narrative_onset"])
+        self.assertNotIn("symptoms", out.columns)
+        v6, _ = bv.build([self.zip], "v6", n_rows=100000)
+        self.assertEqual(sorted(out.report_id), sorted(v6.report_id))  # same population
+
     def test_background_outcome_statements_are_removed(self):
         self.assertEqual(bv.mask_outcome_sentences("Hospitalized after this event; patient died."), bv.EMPTY_TEXT)
         self.assertEqual(bv.mask_outcome_sentences("Asthma. Admitted to ICU after vaccine. Diabetes"), "Asthma. Diabetes")

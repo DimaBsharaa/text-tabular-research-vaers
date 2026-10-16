@@ -88,3 +88,50 @@ if __name__ == "__main__":
     ap.add_argument("schema", type=Path)
     a = ap.parse_args()
     print(json.dumps(run(a.csv, a.schema), indent=2))
+
+
+def column_audit(csv: Path, schema_path: Path, seed: int = 0) -> pd.DataFrame:
+    """Leak audit: AUROC of EACH column alone (cross-fitted), and of its 'is missing / none reported' flag alone.
+    A single column near 0.9, or a strong missingness flag, points to a reporting artifact worth explaining."""
+    from sklearn.model_selection import StratifiedKFold, cross_val_predict
+    schema = json.loads(Path(schema_path).read_text())
+    df = pd.read_csv(csv)
+    y = df[schema["target"]].values
+    folds = StratifiedKFold(5, shuffle=True, random_state=seed)
+
+    def auc(score):
+        a = roc_auc_score(y, score)
+        return round(max(a, 1 - a), 3)
+
+    rows = []
+    for c in schema["structured_columns"]:
+        x = df[c]
+        if c in schema["numeric_columns"]:
+            # Linear ranking AND an out-of-fold rate per value bin (catches non-monotonic effects, e.g. one year
+            # far more serious than the years around it); the larger is reported.
+            linear = auc(x.fillna(x.median()))
+            bins = x.rank(method="dense") if x.nunique() <= 20 else pd.qcut(x, 10, labels=False, duplicates="drop")
+            bins = bins.fillna(-1).astype(str)
+            oof = np.zeros(len(df))
+            for tr, te in folds.split(df, y):
+                rate = pd.Series(y[tr]).groupby(bins.iloc[tr].values).mean()
+                oof[te] = bins.iloc[te].map(rate).fillna(y[tr].mean()).values
+            alone = max(linear, auc(oof))
+            flag = x.isna()
+        else:  # out-of-fold category rate: no row sees its own label
+            oof = np.zeros(len(df))
+            for tr, te in folds.split(df, y):
+                rate = pd.Series(y[tr]).groupby(x.iloc[tr].astype(str).values).mean()
+                oof[te] = x.iloc[te].astype(str).map(rate).fillna(y[tr].mean()).values
+            alone = auc(oof)
+            flag = x.astype(str).str.upper().isin(["UNKNOWN", "UNK", "U", "NAN"])
+        rows.append({"column": c, "kind": "table", "auroc_alone": alone,
+                     "auroc_missing_flag": auc(flag) if flag.any() and not flag.all() else None})
+    for c in schema["text_columns"]:
+        model = make_pipeline(TfidfVectorizer(ngram_range=(1, 2), min_df=3, max_features=20000, sublinear_tf=True),
+                              LogisticRegression(max_iter=2000, solver="liblinear"))
+        prob = cross_val_predict(model, df[c].astype(str), y, cv=folds, method="predict_proba")[:, 1]
+        flag = df[c].eq("none reported")
+        rows.append({"column": c, "kind": "text", "auroc_alone": auc(prob),
+                     "auroc_missing_flag": auc(flag) if flag.any() and not flag.all() else None})
+    return pd.DataFrame(rows).sort_values("auroc_alone", ascending=False).reset_index(drop=True)

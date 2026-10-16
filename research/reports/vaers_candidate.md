@@ -104,3 +104,61 @@ Tests: `python3 -m unittest research.scripts.vaers.test_build_vaers -v` (12 test
 
   Both use the same population as v1.
 - **Screening plan:** LightGBM + CatBoost, folds 0–2 (`FOLDS_OVERRIDE`), one variant per Colab session.
+
+## Update: v4/v5 rejected, v6 (onset narrative)
+
+The build-3 CPU screen of v4 and v5 passed the keyword leak counter: 0 outcome words were left in every masked column. Even so, the text-only model's strongest narrative n-grams were:
+
+- `remdesivir`, `iv`, `o2`, `tx`: inpatient treatment
+- `unspecified`: ICD diagnosis text
+- `pmhx`: chart shorthand
+- `21`, `2021`, `2022`: dates of the hospital course
+
+The full narrative therefore carries **hospital-chart language that reveals hospital care without naming it**. Sentence masking cannot remove this reliably, so v4 and v5 are rejected. That is a documented negative finding.
+
+**v6** keeps v1 and adds only the **opening** of the narrative: the reporter's own account of the reaction.
+
+- Boilerplate, identifiers, dates, ICD-like codes and chart abbreviations are removed first.
+- The text is then cut at the first sentence that mentions care, treatment, testing, a clinician or an outcome, and limited to at most 3 sentences.
+- The leak counter adds `narrative_onset_care_words` (expected 0).
+- The top-n-gram audit must show no care or chart language before any GPU screen.
+
+## Update: column leak audit found a selection artifact, so build 4 narrows the scope
+
+A per-column audit of v1 (each column alone, cross-fitted, 60,000 rows) gave:
+
+- `symptoms` 0.957
+- **`onset_days` 0.877**
+- `vax_manu` 0.818
+- `vax_type` 0.817
+- `state` 0.768
+- `admin_by` 0.714
+
+The serious rate was **0.420 in 2023 against 0.059 in 2019**, and **0.536 for COVID19** reports.
+
+**Diagnosis:** VAERS also holds breakthrough-infection reports: COVID disease weeks or months after vaccination. During the pandemic, hospitalised and fatal breakthrough cases were the ones required to be reported. Seriousness in those reports therefore follows from how they were collected, and long onset plus a COVID vaccine identifies them.
+
+**Build 4** restricts the population to **reactions to the vaccine**:
+
+- Reports coded with the infection or failure terms in `OUT_OF_SCOPE_TERM` are excluded (vaccine breakthrough infection, COVID-19, SARS-CoV-2 test positive or infection, vaccination failure, drug ineffective).
+- Reports with **onset more than 42 days** after vaccination are excluded; unknown onset is kept.
+- Removal counts are in `schema.json`.
+- Notebook 06 now runs the column audit automatically. A rebuilt dataset is acceptable only if no single table column alone reaches the symptom-level score. `state`/`admin_by` are re-checked after the fix.
+
+### Information boundary (why v7 exists)
+
+Every VAERS field is recorded when the report is filed, which is after the event. No column is guaranteed to have been *recorded* before the outcome. The fields differ in what they *describe*:
+
+- **Pre-existing by nature:** age, sex, state, the vaccine given (type, manufacturer, dose, route, site, facility), history, current illness at vaccination, medications and allergies.
+- **Early event:** onset days, and the reporter's opening account of the reaction (v6/v7 `narrative_onset`, cut before any care).
+- **Whole-report:** the coded MedDRA terms, coded from the full report, including findings made in hospital.
+
+**v7 drops the whole-report column.** Its question is: *from the patient's background and their first description of the reaction, did it turn out serious?* This is the closest public analogue of a caseworker's first phone call. v1/v6 keep the coded terms and must be described as retrospective report classification.
+
+### Follow-up to the second review (same build 4)
+
+- **Identical rows across variants.** Exact duplicates are now judged on all source fields, and the 60,000-row sample is a fixed hash of the report ID. v1/v3/v6/v7 therefore contain the same report IDs; a test checks this. This is needed for fair comparisons.
+- **Wider masking.** "ward", "overnight", "stay(ed)" and "bedside" are now masked. "An overnight stay on the ward was required." is removed. A zero keyword count is still only a screen, not proof; the n-gram audit and real examples complement it.
+- **Masking by label.** `counts.background_masked_share_by_label` reports how often background text was altered for serious vs non-serious reports.
+- **Non-monotonic audit.** For numeric columns the column audit now also scores an out-of-fold rate per value bin. A year that is much more serious than its neighbours is caught; the linear 0.562 for `report_year` understated this.
+- **Unchanged, documented.** Category grouping is a label-free dataset definition fixed at build time, not model preprocessing. VAERS seriousness rates are rates among *reported* events, not vaccine risk.

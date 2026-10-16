@@ -37,8 +37,8 @@ code("""
     RAW_DIR = "/content/drive/MyDrive/text-tabular-research-2/vaers_raw"
     OUT_BASE = "/content/drive/MyDrive/text-tabular-research-2/candidates"
     ROWS = 60000      # Final rows per variant (the benchmark samples ≤10k train + ≤2k test per fold from these).
-    VARIANTS = ["v4", "v5"]  # Build version 3. v4 = v1 + the reporter's narrative (outcome sentences removed);
-    # v5 = narrative instead of the coded symptom terms. (v1/v3 can be rebuilt too; v2 was dropped.)
+    VARIANTS = ["v1", "v6", "v7"]  # v6 = v1 + the OPENING of the reporter's narrative (cut before any care/treatment/test/outcome).
+    # v4/v5 (full masked narrative) were rejected: hospital-chart text (remdesivir, IV, O2, ICD codes) leaks seriousness.
 
     from google.colab import drive
     drive.mount("/content/drive")
@@ -94,6 +94,11 @@ code("""
         display(pd.Series({k: res[k] for k in res if k != "top_positive_ngrams"}))
         print("Top positive n-grams (leakage audit):"); print("\\n".join(res["top_positive_ngrams"]))
         display(df.sample(5, random_state=1)[schema["text_columns"] + ["serious"]])
+        print("Leak audit, each column ALONE (no single table column should be near 0.9):")
+        display(ps.column_audit(csv, csv.parent / "schema.json"))
+        for c in ["admin_by", "vax_type", "report_year", "state"]:
+            print(f"serious rate by {c}:")
+            display(df.groupby(c).serious.agg(["mean", "size"]).sort_values("size", ascending=False).head(8).round(3))
 """)
 md("""
     ## 3. Next: the official fold-0 screen on A100

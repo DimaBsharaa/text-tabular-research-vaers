@@ -1,0 +1,489 @@
+{
+  "plan": {
+    "parent_csv_sha256": "7f738f6024b424042f76ac9f11bfdfa8c855754b9a82d318c4577c0a9e2972e9",
+    "data_sha256": {
+      "v10": "378382a490d74efa80d66ee289192908b8c37e2b3f800fe090630c4aa0b0a1d2",
+      "v10_matched": "a7c524c6b688a0b73bc566fc804fd0bda0d787e6539380ad34bac541460deaf9",
+      "v9_control": "cffc0dcc9844dee6638890cb7233d45751a10cb2e1501a620d7776b71b4e622b"
+    },
+    "reference_archive_sha256": "07c558dac99a36d7941f9a061fbb9b880a78da27f5e99fbf5916278e7ac8c8f5",
+    "proxy": "TF-IDF (train-only vocabulary/IDF) + logistic; no frozen E5 or TAR",
+    "protocols": [
+      "all_parent_rows",
+      "same_eligible_rows"
+    ],
+    "folds": [
+      0,
+      1,
+      2
+    ],
+    "negative_controls": [
+      "fold0_permuted_training_labels",
+      "fold0_independently_shuffled_text"
+    ],
+    "diagnostic_code_sha256": "3faf553880d66dee13a89f1db7c852732fcdafdda8150f58e68aa08ac1b0d30c"
+  },
+  "means": [
+    {
+      "protocol": "all_parent_rows",
+      "variant": "v10",
+      "joint": 0.8621106666666667,
+      "structured": null,
+      "text": 0.8555322222222222
+    },
+    {
+      "protocol": "all_parent_rows",
+      "variant": "v9",
+      "joint": 0.8622302222222222,
+      "structured": 0.7843528888888889,
+      "text": 0.8555211111111111
+    },
+    {
+      "protocol": "negative_control",
+      "variant": "label_permutation",
+      "joint": 0.525526751241037,
+      "structured": null,
+      "text": null
+    },
+    {
+      "protocol": "negative_control",
+      "variant": "text_permutation",
+      "joint": 0.7785355763927192,
+      "structured": null,
+      "text": null
+    },
+    {
+      "protocol": "same_eligible_rows",
+      "variant": "v10",
+      "joint": 0.8623205041201434,
+      "structured": null,
+      "text": 0.8554316214291383
+    },
+    {
+      "protocol": "same_eligible_rows",
+      "variant": "v9",
+      "joint": 0.8624146594061907,
+      "structured": 0.7850154445209844,
+      "text": 0.8554026341612041
+    }
+  ],
+  "scores": [
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "structured",
+      "auroc": 0.7938879999999999,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8558326666666666,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8670880000000001,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8557973333333334,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8677026666666668,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "structured",
+      "auroc": 0.7918298400441257,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8567484831770548,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.86719249862107,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8560934914506342,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8664120242691671,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "label_permutation",
+      "protocol": "negative_control",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.525526751241037,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "text_permutation",
+      "protocol": "negative_control",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.7785355763927192,
+      "n_train": 9849,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "structured",
+      "auroc": 0.7775586666666667,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8530340000000001,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8568586666666665,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8535326666666666,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.857312,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "structured",
+      "auroc": 0.7783141780440754,
+      "n_train": 9837,
+      "n_test": 1974,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8521988651820224,
+      "n_train": 9837,
+      "n_test": 1974,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8570126586473599,
+      "n_train": 9837,
+      "n_test": 1974,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8528727410314443,
+      "n_train": 9837,
+      "n_test": 1974,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8573647863965455,
+      "n_train": 9837,
+      "n_test": 1974,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "structured",
+      "auroc": 0.781612,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8576966666666666,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.862744,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8572666666666668,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8613173333333334,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "structured",
+      "auroc": 0.7849023154747516,
+      "n_train": 9827,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.857260554124535,
+      "n_train": 9827,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8630388209501422,
+      "n_train": 9827,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8573286318053366,
+      "n_train": 9827,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8631847016947174,
+      "n_train": 9827,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    }
+  ],
+  "quality_checks": {
+    "protected_fields_unchanged": true,
+    "candidate_control_same_ordered_ids": true,
+    "remaining_extra_care_matches_in_candidate_excerpts": 0,
+    "remaining_explicit_post_event_matches_in_candidate_background": 0
+  },
+  "selection_flags": {
+    "post_event_background": {
+      "audit_only_flag_auroc": 0.5067540723083036,
+      "orientation_free_auroc": 0.5067540723083036
+    },
+    "eligible": {
+      "audit_only_flag_auroc": 0.4926499801350815,
+      "orientation_free_auroc": 0.5073500198649186
+    },
+    "excerpt_changed": {
+      "audit_only_flag_auroc": 0.5028804131903059,
+      "orientation_free_auroc": 0.5028804131903059
+    }
+  },
+  "limitations": [
+    "CPU proxy only; E5 Joint Frozen and TAR require notebook 02.",
+    "Previously inspected development folds; not a fresh confirmatory evaluation.",
+    "Eligible-row comparison fits both texts on the same restricted train/test rows.",
+    "Zero pattern hits validates implemented rules, not universal semantic absence of leakage."
+  ],
+  "build_counts": {
+    "parent_rows": 20136,
+    "kept_rows": 19834,
+    "removed_rows": 302,
+    "excerpt_changed": 533,
+    "background_changed": 1572,
+    "post_event_background_rows": 192,
+    "uninformative_excerpt_rows": 110,
+    "by_label": {
+      "0": {
+        "parent": 15102,
+        "retained": 14931,
+        "removed": 171
+      },
+      "1": {
+        "parent": 5034,
+        "retained": 4903,
+        "removed": 131
+      }
+    }
+  },
+  "refinement_policy_sha256": "4e5c9857ac441b9af7f8c5be0cf255ae07bddc38ff34ea297b28b28a89ffdc6c",
+  "interpretation": "Care-boundary repair preserves CPU proxy performance within roughly 0.0001 mean AUROC on matched eligible rows. No official E5/TAR increase has been measured.",
+  "next_gpu_test": {
+    "notebook": "02_tennis_official_benchmark_colab.ipynb",
+    "mode": "diagnostic",
+    "models": [
+      "light",
+      "cat"
+    ],
+    "folds": [
+      0
+    ],
+    "datasets": [
+      "v9_control",
+      "v10"
+    ],
+    "evaluations": 16
+  }
+}

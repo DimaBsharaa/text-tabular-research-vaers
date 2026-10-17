@@ -4,6 +4,8 @@ Technion NLP Final Project, **Standard Track 2**, due **October 26, 2026**. We a
 
 ## Current VAERS workflow (October 17, 2026)
 
+**Start here for the story:** [VAERS progress in one page](research/reports/vaers_progress.md) (v1 → v10: problem, fix, did it work, results).
+
 **For the current run: open 08 on CPU, then 02 on A100. Skip 06 if frozen v9 already exists.**
 
 | Step | Notebook | Input → output |

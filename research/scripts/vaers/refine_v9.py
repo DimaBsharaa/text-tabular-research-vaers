@@ -20,16 +20,20 @@ import pandas as pd
 from research.scripts.vaers import build_vaers as bv
 
 BUILD_VERSION = 9
-POLICY_VERSION = 'care-boundary-1'
+POLICY_VERSION = 'care-boundary-2'
 EMPTY = bv.EMPTY_TEXT
 # The inherited outcome/chart/vital checks still apply. These are additional
 # care classes, fixed from the audit's semantic failures, not fitted vocabulary.
 EXTRA_CARE = re.compile(
-    r'\b(?:surger(?:y|ies)|surgical(?!\s+tape)|transfusions?|dialysis|h(?:ae|e)modialysis|'
+    r'\b(?:surger(?:y|ies)|surgical(?:ly)?(?!\s+tape)|transfusions?|dialysis|h(?:ae|e)modialysis|'
     r'catheteri[sz]\w*|catheters?|stents?|defibrillat\w*|ablation|bypass|'
     r'arthroscop\w*|debridement|cardioversion|lumbar fusion|bone marrow transplant|'
     r'operating room|rescue squad|life flight|airlift\w*|medevac|'
-    r'medical leave|sick leave|physical therapy|occupational therapy)\b|'
+    r'medical leave|sick leave|physical therapy|occupational therapy|underwent|patholog\w*)\b|'
+    r'\bseen for (?:an? )?(?:outpatient|acute|appointment|visit)\b|'
+    r'\b(?:was|were) (?:then )?found to have\b|'
+    r'\b(?:the )?(?:tissue|clot|mass|lesion|implants?|tumou?r) (?:was|were) '
+    r'(?:then )?(?:removed|excised|resected|decompressed)\b|'
     r'\b(?:out of|off|absent from) work\b|'
     r'\b(?:monitored|monitoring) (?:vitals|vital signs)\b|'
     r'\b(?:dentist|specialist|therapist|cardiologist|neurologist|dermatologist)\b|'
@@ -232,7 +236,7 @@ def build(base, raw_paths, out_dir):
                           csv_sha256=hashlib.sha256(csv.read_bytes()).hexdigest(),
                           counts=counts, narrative_onset_policy='Literal prefix of frozen v9 excerpt, cut before care, functional outcome or record pointers; keep observed reaction before the cut. No generated facts.',
                           background_policy='Legacy outcome masking, omit unanchored invasive-care clauses and record pointers; explicit post-event background quarantines all background for matched sensitivity and excludes the row from v10.',
-                          population=schema['population'] + ' Further restricted by the label-blind care-boundary-1 eligibility rules. The resulting class ratio may differ from the parent 25%.',
+                          population=schema['population'] + f' Further restricted by the label-blind {POLICY_VERSION} eligibility rules. The resulting class ratio may differ from the parent 25%.',
                           sampling='Frozen case-enriched v9 IDs; no new sampling or rebalancing after text correction.',
                           policy_version=POLICY_VERSION,
                           provenance={'parent_csv_sha256': schema['csv_sha256'], 'parent_schema_sha256': parent_schema_sha,

@@ -1,0 +1,513 @@
+{
+  "plan": {
+    "parent_csv_sha256": "7f738f6024b424042f76ac9f11bfdfa8c855754b9a82d318c4577c0a9e2972e9",
+    "data_sha256": {
+      "v10": "995ac5f2db433482139fbb3c6181b3b3b1c534b0538b919c5bbffcb79ae8f03f",
+      "v10_matched": "4981fe3b41d370c3d0d5eac47949312fdcbbc6bbdf79f3ee45ff2158d05d74ae",
+      "v9_control": "a27eb2174f848780cd0e1929590fff3f5786492aa6b7ca104b472543b6932976"
+    },
+    "reference_archive_sha256": "07c558dac99a36d7941f9a061fbb9b880a78da27f5e99fbf5916278e7ac8c8f5",
+    "proxy": "TF-IDF (train-only vocabulary/IDF) + logistic; no frozen E5 or TAR",
+    "protocols": [
+      "all_parent_rows",
+      "same_eligible_rows"
+    ],
+    "folds": [
+      0,
+      1,
+      2
+    ],
+    "negative_controls": [
+      "fold0_permuted_training_labels",
+      "fold0_independently_shuffled_text"
+    ],
+    "diagnostic_code_sha256": "6d0e91d11d16fbea54a71675a6bc17986be87b7e411f3bd010cdcad3c345c9af"
+  },
+  "means": [
+    {
+      "protocol": "all_parent_rows",
+      "variant": "v10",
+      "joint": 0.8620964444444444,
+      "structured": null,
+      "text": 0.8554406666666666
+    },
+    {
+      "protocol": "all_parent_rows",
+      "variant": "v9",
+      "joint": 0.8622302222222222,
+      "structured": 0.7843528888888889,
+      "text": 0.8555211111111111
+    },
+    {
+      "protocol": "negative_control",
+      "variant": "label_permutation",
+      "joint": 0.4966064533921677,
+      "structured": null,
+      "text": null
+    },
+    {
+      "protocol": "negative_control",
+      "variant": "text_permutation",
+      "joint": 0.7731715388858246,
+      "structured": null,
+      "text": null
+    },
+    {
+      "protocol": "same_eligible_rows",
+      "variant": "v10",
+      "joint": 0.8624159725042814,
+      "structured": null,
+      "text": 0.8554114322483014
+    },
+    {
+      "protocol": "same_eligible_rows",
+      "variant": "v9",
+      "joint": 0.8625323019666146,
+      "structured": 0.7850969383348277,
+      "text": 0.8556043784362681
+    }
+  ],
+  "scores": [
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "structured",
+      "auroc": 0.7938879999999999,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8558326666666666,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8670880000000001,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8558733333333333,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8676733333333333,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "structured",
+      "auroc": 0.7918822393822393,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8568615554329839,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8672435190292332,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "text",
+      "auroc": 0.8561831218974076,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.8664933811362384,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "label_permutation",
+      "protocol": "negative_control",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.4966064533921677,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "text_permutation",
+      "protocol": "negative_control",
+      "fold": 0,
+      "condition": "joint",
+      "auroc": 0.7731715388858246,
+      "n_train": 9848,
+      "n_test": 1970,
+      "train_serious": 2430,
+      "test_serious": 490
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "structured",
+      "auroc": 0.7775586666666667,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8530340000000001,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8568586666666665,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8533886666666667,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8572919999999999,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "structured",
+      "auroc": 0.7785145961900394,
+      "n_train": 9837,
+      "n_test": 1973,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.8526535135598232,
+      "n_train": 9837,
+      "n_test": 1973,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8572840004311285,
+      "n_train": 9837,
+      "n_test": 1973,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "text",
+      "auroc": 0.852989296403669,
+      "n_train": 9837,
+      "n_test": 1973,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 1,
+      "condition": "joint",
+      "auroc": 0.8576073468733504,
+      "n_train": 9837,
+      "n_test": 1973,
+      "train_serious": 2435,
+      "test_serious": 487
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "structured",
+      "auroc": 0.781612,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8576966666666666,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.862744,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.85706,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v10",
+      "protocol": "all_parent_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8613239999999999,
+      "n_train": 9998,
+      "n_test": 2000,
+      "train_serious": 2499,
+      "test_serious": 500
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "structured",
+      "auroc": 0.7848939794322044,
+      "n_train": 9825,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8572980663159971,
+      "n_train": 9825,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v9",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8630693864394816,
+      "n_train": 9825,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "text",
+      "auroc": 0.8570618784438276,
+      "n_train": 9825,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    },
+    {
+      "variant": "v10",
+      "protocol": "same_eligible_rows",
+      "fold": 2,
+      "condition": "joint",
+      "auroc": 0.8631471895032552,
+      "n_train": 9825,
+      "n_test": 1967,
+      "train_serious": 2427,
+      "test_serious": 486
+    }
+  ],
+  "quality_checks": {
+    "protected_fields_unchanged": true,
+    "candidate_control_same_ordered_ids": true,
+    "remaining_extra_care_matches_in_candidate_excerpts": 0,
+    "remaining_explicit_post_event_matches_in_candidate_background": 0
+  },
+  "selection_flags": {
+    "post_event_background": {
+      "audit_only_flag_auroc": 0.5067540723083036,
+      "orientation_free_auroc": 0.5067540723083036
+    },
+    "eligible": {
+      "audit_only_flag_auroc": 0.4927161965302609,
+      "orientation_free_auroc": 0.5072838034697391
+    },
+    "excerpt_changed": {
+      "audit_only_flag_auroc": 0.5034763607469209,
+      "orientation_free_auroc": 0.5034763607469209
+    }
+  },
+  "limitations": [
+    "CPU proxy only; E5 Joint Frozen and TAR require notebook 02.",
+    "Previously inspected development folds; not a fresh confirmatory evaluation.",
+    "Eligible-row comparison fits both texts on the same restricted train/test rows.",
+    "Zero pattern hits validates implemented rules, not universal semantic absence of leakage."
+  ],
+  "build_counts": {
+    "parent_rows": 20136,
+    "kept_rows": 19832,
+    "removed_rows": 304,
+    "excerpt_changed": 543,
+    "background_changed": 1575,
+    "post_event_background_rows": 192,
+    "uninformative_excerpt_rows": 112,
+    "by_label": {
+      "0": {
+        "parent": 15102,
+        "retained": 14929,
+        "removed": 173
+      },
+      "1": {
+        "parent": 5034,
+        "retained": 4903,
+        "removed": 131
+      }
+    }
+  },
+  "refinement_policy_sha256": "7968c033d6c2ecf1afd1113ed32e0ec25ad181f335f3d5921f6a1877252ad6e4",
+  "independent_review": {
+    "surgery_words": 0,
+    "procedure_words": 0,
+    "document_pointers": 0,
+    "care_action_pattern_matches": 1,
+    "reviewed_exception": "2724315: outpatient vaccine administration before symptoms, not downstream care"
+  },
+  "interpretation": "Corrected text preserves CPU proxy discrimination to about 0.0001 mean AUROC on identical eligible rows; no official E5/TAR improvement has been measured.",
+  "next_gpu_test": {
+    "first": {
+      "dataset": "v10_matched",
+      "models": [
+        "light",
+        "cat"
+      ],
+      "folds": [
+        0
+      ],
+      "evaluations": 8,
+      "baseline": "completed v9 fold0 on identical parent IDs"
+    },
+    "second": {
+      "datasets": [
+        "v9_control",
+        "v10"
+      ],
+      "models": [
+        "light",
+        "cat"
+      ],
+      "folds": [
+        0
+      ],
+      "evaluations": 16
+    }
+  },
+  "validation": {
+    "combined_tests_passed": 80,
+    "portable_package_manifest_verified": true,
+    "all_excerpts_are_parent_prefixes_or_placeholders": true
+  }
+}

@@ -54,7 +54,7 @@ code('''
         RAW = sorted((HOME_DATA / 'vaers_raw').glob('*VAERSData.zip'))
         BUILD_DIR = HOME_DATA / 'candidates/build9'
         RESULT_ZIP = HOME_DATA / 'benchmark-results/20b24baf903ae7ac/tennis_diagnostic_20b24baf903ae7ac_results.zip'
-        DIAGNOSTIC_DIR = HOME_DATA / 'diagnostics/v10_care_boundary1'
+        DIAGNOSTIC_DIR = HOME_DATA / 'diagnostics/v10_care_boundary2'
     else:
         PROJECT = Path.cwd()
         if not (PROJECT / 'research/scripts/vaers/refine_v9.py').exists():
@@ -63,7 +63,7 @@ code('''
         RAW = [Path.home() / f'Downloads/{year}VAERSData.zip' for year in [2019, 2023, 2024]]
         BUILD_DIR = PROJECT.parent / 'vaers-research-cache/derived/build9'
         RESULT_ZIP = Path.home() / 'Downloads/tennis_diagnostic_20b24baf903ae7ac_results.zip'
-        DIAGNOSTIC_DIR = PROJECT.parent / 'vaers-research-cache/diagnostics/v10_care_boundary1'
+        DIAGNOSTIC_DIR = PROJECT.parent / 'vaers-research-cache/diagnostics/v10_care_boundary2'
     sys.path.insert(0, str(PROJECT))
     from research.scripts.vaers import refine_v9 as rv, diagnose_refinement as diagnostic
     print('policy:', rv.POLICY_VERSION, '| source sha256:', hashlib.sha256(Path(rv.__file__).read_bytes()).hexdigest())
@@ -139,7 +139,7 @@ code('''
 ''')
 code('''
     import matplotlib.pyplot as plt
-    common = means.loc['same_eligible_rows', ['structured', 'text', 'joint']]
+    common = means.loc['same_eligible_rows', ['structured', 'text', 'joint']].reindex(['v9', 'v10'])
     ax = common.T.plot.bar(figsize=(8, 4), ylim=(0.5, 1.0), rot=0, color=['#718096', '#168a74'])
     ax.set_ylabel('Mean development AUROC')
     ax.set_title('Same eligible rows: TF-IDF/logistic CPU proxy')
@@ -151,18 +151,21 @@ code('''
     display(scores[scores.protocol == 'negative_control'][['variant', 'auroc', 'n_train', 'n_test']])
 ''')
 md('''
-    ## Next GPU test: original versus corrected text on the same cohort
+    ## Next GPU tests, in two stages
 
-    In notebook 02, first run `v9_control`, then `v10`, with LightGBM/CatBoost and fold 0.
-    That is 8 evaluations per file, 16 total, including TAR. Reuse the existing pinned benchmark and
-    tokens. This measures the care correction; it is not an official final evaluation or a promise of improved gains.
-    Both schemas keep the 12 structured columns. Further folds are useful only after reviewing this comparison.
+    First run `v10_matched` in notebook 02 with LightGBM/CatBoost and fold 0: **8 evaluations**.
+    Compare with the completed v9 fold-0 results on exactly the same parent IDs; no baseline rerun is needed.
+    This is a sensitivity test, not the final cohort, because censored placeholders remain.
+
+    Then, if worth extending, run `v9_control` and `v10` on fold 0: **16 evaluations total**.
+    They have identical eligible IDs and labels, measuring the correction on the actual candidate cohort.
+    Keep the existing benchmark pin and tokens. No E5/TAR improvement has yet been measured.
 ''')
 code('''
     print('MODE = "diagnostic"')
     print('MODELS_OVERRIDE = ["light", "cat"]')
     print('FOLDS_OVERRIDE = [0]')
-    for variant in ['v9_control', 'v10']:
+    for variant in ['v10_matched', 'v9_control', 'v10']:
         folder = f'/content/drive/MyDrive/text-tabular-research-2/candidates/build9/vaers_{variant}'
         print(f'\\n{variant}:\\nCSV_PATH = "{folder}/vaers_{variant}.csv"\\nSCHEMA_PATH = "{folder}/schema.json"')
     print('No official benchmark source was changed. Results here are CPU proxies only.')

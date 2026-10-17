@@ -34,6 +34,17 @@ class RefineTextTest(unittest.TestCase):
         self.assertEqual(rv.strict_excerpt('Patient experienced swelling. She underwent surgery.')[0], 'Patient experienced swelling.')
         self.assertEqual(rv.strict_excerpt('Rash. I had to go see a specialist.')[0], 'Rash.')
 
+    def test_independent_scan_surgically_and_appointment_cases(self):
+        cases = {
+            'Lump in neck. The tissue was removed surgically.': 'Lump in neck.',
+            'Seen for outpatient acute appointment. Mother reported redness.': rv.EMPTY,
+            'Difficulty swallowing, hoarseness, underwent speech therapy.': 'Difficulty swallowing, hoarseness',
+            'Breast implants ruptured. Pathology indicated metaplasia. Surgically removed.': 'Breast implants ruptured.',
+            'Fever and bloody stools. He was then found to have Yersinia.': 'Fever and bloody stools.',
+        }
+        for text, expected in cases.items():
+            self.assertEqual(rv.strict_excerpt(text)[0], expected)
+
     def test_informative_severe_symptoms_and_negation_are_kept(self):
         for text in ['I had a stroke', 'Rash', 'No fever, no chest pain; mild redness.', 'Difficulty breathing with facial swelling']:
             self.assertEqual(rv.strict_excerpt(text)[0], text)

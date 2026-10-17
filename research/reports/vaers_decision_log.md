@@ -115,3 +115,33 @@ Each entry follows the same pattern: what we **saw**, what we **inferred**, what
     - 12 + 12 random reports, each showing the original opening next to the retained text
 
 12. **Rule.** Curation is frozen at build 8 + variant choice. v7, v8 and v9 come from one frozen extraction policy. We pick one variant from development screens, run the audit on it, and only then run the single official evaluation.
+
+## F. Auditor corrections and local validation
+
+October 17, 2026. Codex integrated update 15 locally at the user's request and corrected the auditor without changing the builder, dataset policy or official benchmark.
+
+- Encoder train/validation partitions must be unique, disjoint and exactly cover learner fitting. Missing conditions, missing evidence and unsuccessful runs are flagged; failed input identity/mechanics stops proxy fitting.
+- Duplicate sensitivity now excludes only candidate test members whose cluster also intersects that fold's training set. Exact token matches in large blocks are checked, and unsearched approximate comparisons are reported.
+- Conditional AUROCs are reported per fold, including year × vaccine type, with both class counts and insufficient-support notices. Overlapping folds are not pooled.
+- Style diagnostics include structured+style versus structured+style+excerpt; no causal or percentage attribution is claimed.
+- Original-text examples require source-ID matches and check source hashes when supplied. Full matched raw/retained examples are saved locally; absent raw files remain NOT_VERIFIED.
+- Notebook 07 runs auditor regression tests first, prints the auditor version, requires a fresh separate CPU runtime and saves progressive output.
+
+See `vaers_audit_local_validation.md`. The actual CSV/schema/raw sources were not found locally at this stage, so an end-to-end real-data content audit is **not** claimed. Tests and archive checks do not substitute for that missing audit.
+
+## G. Actual v7/source-data audit
+
+October 17, 2026. The exact screened CSV/schema and 2019/2023/2024 raw ZIPs were subsequently supplied. The corrected audit and a separate all-row source check were run locally; see [vaers_v7_data_audit.md](vaers_v7_data_audit.md) and its compact JSON evidence.
+
+- Both candidate fingerprints and all source-member fingerprints match. All 60,000 labels and 17 predictors reproduce from the supplied source records, with zero mismatches.
+- The initial source comparison exposed a leading-zero ID issue in the auditor, not a bad dataset join. This was corrected with collision checks and two regression cases; the rerun matches all 24 sampled original reports.
+- Recorded mechanics pass. The bounded duplicate detectors find 1/1/2 candidate test members across folds 0/1/2 and no cross-split complete raw-event-key clusters. This is not a global proof against secondary reports.
+- Conditional and style proxies show signal beyond the measured year/vaccine/style features, but cannot establish that the remaining signal is free of care/outcome proxies.
+- **Confirmed policy gap:** onset excerpts retain care such as blood transfusion, surgery and medical leave despite zero hits on the implemented care patterns. Some background fields explicitly describe subsequent care/testing. Therefore neither “no care information” nor “all background is pre-event” is justified.
+- Preserve v7 and completed results. Review these examples and agree on one information boundary before a separately versioned policy correction. v8/v9 inherit this extraction policy; merging or resampling does not itself fix these gaps. No builder or benchmark change has been made and nothing from this task has been pushed.
+
+## H. Supplied v8/v9 LightGBM/CatBoost screens
+
+October 17, 2026. Reviewed both complete 24-run archives plus their actual CSV/schema ZIPs. See [vaers_v8_v9_results_comparison.md](vaers_v8_v9_results_comparison.md) and JSON evidence: 756 recorded check instances pass, source labels/excerpts/merged backgrounds reproduce across every candidate row, and the means recompute from original result JSONs.
+
+V8 is a matched merge experiment on the exact v7 rows/folds. Its LightGBM TAR gap grows largely because Frozen weakens; final TAR is slightly lower than v7. CatBoost final TAR improves only +0.000916. V9 has positive TAR gains on all three folds for both learners, with mean gains about +0.010, but uses a different 25%-serious cohort and different test rows. V9 is promising for consistency, not a demonstrated improvement on a common population or acceptance across five learners. Both variants retain the confirmed care-policy gaps; no extraction correction or official evaluation was performed.

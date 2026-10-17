@@ -1,0 +1,413 @@
+{
+  "csv_sha256": "9ffdfad811ef6d0910fdf4e69af9d1e44a69870f31f308e80fd59750259a8922",
+  "schema_sha256": "3294eed03d7634fe319323caa9a55938dce2508fe5c25900d34eb60dbe721051",
+  "source_member_hashes_match": true,
+  "rows": 60000,
+  "serious": 4717,
+  "source_reconstruction_checks": [
+    {
+      "check": "target_from_raw_seriousness_flags",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "onset_excerpt_reproduced_by_current_extractor",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "history_reproduced_by_current_mask",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "current_illness_reproduced_by_current_mask",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "other_meds_reproduced_by_current_mask",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "allergies_reproduced_by_current_mask",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "age_years_from_source",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "onset_days_from_source",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "report_year_from_receipt_date",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "sex_from_source",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "n_vaccines_from_source_rows",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "state_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "admin_by_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "vax_type_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "vax_manu_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "vax_dose_series_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "vax_route_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    },
+    {
+      "check": "vax_site_from_source_and_declared_vocabulary",
+      "status": "PASS",
+      "rows_checked": 60000,
+      "mismatches": 0,
+      "example_ids": []
+    }
+  ],
+  "existing_rule_counters": {
+    "history": 0,
+    "current_illness": 0,
+    "other_meds": 0,
+    "allergies": 0,
+    "narrative_onset": 0,
+    "narrative_onset_care_words": 0,
+    "narrative_onset_chart_words": 0,
+    "narrative_onset_vitals": 0,
+    "narrative_onset_caps_runs": 0
+  },
+  "raw_event_key_candidates": {
+    "complete_key_rows": 40833,
+    "clusters": 13,
+    "member_rows": 26,
+    "cross_split": [
+      {
+        "fold": 0,
+        "candidate_clusters": 0,
+        "test_members": 0,
+        "groups": []
+      },
+      {
+        "fold": 1,
+        "candidate_clusters": 0,
+        "test_members": 0,
+        "groups": []
+      },
+      {
+        "fold": 2,
+        "candidate_clusters": 0,
+        "test_members": 0,
+        "groups": []
+      }
+    ]
+  },
+  "limitations": [
+    "Extractor replay is not independent semantic validation.",
+    "Review-pattern matches include legitimate prior history, negations and false positives.",
+    "Shared complete event keys are candidates, not proven same-patient events; changed or missing metadata can conceal repeats.",
+    "No predictor, label, cohort or model result has been modified."
+  ],
+  "date": "2026-10-17",
+  "scope": "Exact build-8 v7 CSV, three source yearly ZIPs and 24-run LightGBM/CatBoost archive; read-only audit plus CPU proxies.",
+  "audit_version": "update15-corrected-2",
+  "recorded_audit": {
+    "PASS_lines": 168,
+    "FLAG_checks": 0,
+    "source_matched_examples": 24
+  },
+  "candidate_duplicate_diagnostics": [
+    "Candidate text/metadata clusters in the whole CSV: 48 (119 rows; label-consistent clusters 47)",
+    "fold 0: clusters with members in both outer_train and outer_test = 1; test rows involved = 1 of 2000 (0.05%); same label in 1.00 of them",
+    "fold 1: clusters with members in both outer_train and outer_test = 1; test rows involved = 1 of 2000 (0.05%); same label in 1.00 of them",
+    "fold 2: clusters with members in both outer_train and outer_test = 2; test rows involved = 2 of 2000 (0.10%); same label in 1.00 of them"
+  ],
+  "duplicate_search_coverage": {
+    "approximate_pair_comparisons": 16474,
+    "blocks": 50890,
+    "large_blocks_exact_only": 0,
+    "rows": 60000,
+    "rows_in_large_blocks": 0
+  },
+  "proxy_diagnostics": [
+    "fold 0: proxy joint AUROC all test 0.8605; excluding cross-split candidate test members 0.8604 (\u0394 -0.0000, removed 1: serious=0, non-serious=1)",
+    "fold 1: proxy joint AUROC all test 0.8445; excluding cross-split candidate test members 0.8445 (\u0394 -0.0001, removed 1: serious=0, non-serious=1)",
+    "fold 2: proxy joint AUROC all test 0.8294; excluding cross-split candidate test members 0.8293 (\u0394 -0.0001, removed 2: serious=0, non-serious=2)",
+    "fold 0: text-only proxy AUROC 0.8468; n=2000, serious=158",
+    "fold 1: text-only proxy AUROC 0.8176; n=2000, serious=158",
+    "fold 2: text-only proxy AUROC 0.8046; n=2000, serious=158",
+    "fold 0: style-only AUROC 0.6468 vs full narrative_onset TF-IDF 0.8652",
+    "fold 0: structured+style 0.8016; structured+style+excerpt 0.8680; incremental proxy gain +0.0664 (association, not causal attribution)",
+    "fold 1: style-only AUROC 0.6137 vs full narrative_onset TF-IDF 0.8338",
+    "fold 1: structured+style 0.7826; structured+style+excerpt 0.8522; incremental proxy gain +0.0696 (association, not causal attribution)",
+    "fold 2: style-only AUROC 0.5912 vs full narrative_onset TF-IDF 0.8397",
+    "fold 2: structured+style 0.7522; structured+style+excerpt 0.8393; incremental proxy gain +0.0871 (association, not causal attribution)"
+  ],
+  "supported_crossed_strata": [
+    "fold 0 within report_year x vax_type=(2023.0, 'COVID19'): n=204, serious=49, non-serious=155; AUROC 0.7629",
+    "fold 0 within report_year x vax_type=(2024.0, 'COVID19'): n=177, serious=23, non-serious=154; AUROC 0.8693",
+    "fold 1 within report_year x vax_type=(2023.0, 'COVID19'): n=199, serious=41, non-serious=158; AUROC 0.8231",
+    "fold 2 within report_year x vax_type=(2023.0, 'COVID19'): n=186, serious=40, non-serious=146; AUROC 0.7844"
+  ],
+  "independent_review_counts": [
+    {
+      "pattern": "surgery_words",
+      "column": "history",
+      "matches": 241,
+      "serious": 42
+    },
+    {
+      "pattern": "surgery_words",
+      "column": "current_illness",
+      "matches": 77,
+      "serious": 9
+    },
+    {
+      "pattern": "surgery_words",
+      "column": "other_meds",
+      "matches": 5,
+      "serious": 0
+    },
+    {
+      "pattern": "surgery_words",
+      "column": "allergies",
+      "matches": 41,
+      "serious": 3
+    },
+    {
+      "pattern": "surgery_words",
+      "column": "narrative_onset",
+      "matches": 88,
+      "serious": 44
+    },
+    {
+      "pattern": "procedure_words",
+      "column": "history",
+      "matches": 169,
+      "serious": 27
+    },
+    {
+      "pattern": "procedure_words",
+      "column": "current_illness",
+      "matches": 22,
+      "serious": 5
+    },
+    {
+      "pattern": "procedure_words",
+      "column": "other_meds",
+      "matches": 4,
+      "serious": 1
+    },
+    {
+      "pattern": "procedure_words",
+      "column": "allergies",
+      "matches": 2,
+      "serious": 0
+    },
+    {
+      "pattern": "procedure_words",
+      "column": "narrative_onset",
+      "matches": 20,
+      "serious": 14
+    },
+    {
+      "pattern": "care_actions",
+      "column": "history",
+      "matches": 7,
+      "serious": 2
+    },
+    {
+      "pattern": "care_actions",
+      "column": "current_illness",
+      "matches": 8,
+      "serious": 3
+    },
+    {
+      "pattern": "care_actions",
+      "column": "other_meds",
+      "matches": 22,
+      "serious": 3
+    },
+    {
+      "pattern": "care_actions",
+      "column": "allergies",
+      "matches": 1,
+      "serious": 0
+    },
+    {
+      "pattern": "care_actions",
+      "column": "narrative_onset",
+      "matches": 14,
+      "serious": 8
+    },
+    {
+      "pattern": "document_pointers",
+      "column": "history",
+      "matches": 12,
+      "serious": 3
+    },
+    {
+      "pattern": "document_pointers",
+      "column": "current_illness",
+      "matches": 4,
+      "serious": 0
+    },
+    {
+      "pattern": "document_pointers",
+      "column": "other_meds",
+      "matches": 33,
+      "serious": 4
+    },
+    {
+      "pattern": "document_pointers",
+      "column": "allergies",
+      "matches": 7,
+      "serious": 2
+    },
+    {
+      "pattern": "document_pointers",
+      "column": "narrative_onset",
+      "matches": 5,
+      "serious": 1
+    },
+    {
+      "pattern": "later_course_words",
+      "column": "history",
+      "matches": 56,
+      "serious": 21
+    },
+    {
+      "pattern": "later_course_words",
+      "column": "current_illness",
+      "matches": 41,
+      "serious": 7
+    },
+    {
+      "pattern": "later_course_words",
+      "column": "other_meds",
+      "matches": 14,
+      "serious": 3
+    },
+    {
+      "pattern": "later_course_words",
+      "column": "allergies",
+      "matches": 7,
+      "serious": 1
+    },
+    {
+      "pattern": "later_course_words",
+      "column": "narrative_onset",
+      "matches": 3611,
+      "serious": 291
+    }
+  ],
+  "text_quality": {
+    "no_ascii_word_of_three_letters": 177,
+    "serious_among_these": 16,
+    "placeholder_cells_by_column": {
+      "history": 35559,
+      "current_illness": 50454,
+      "other_meds": 31119,
+      "allergies": 38144,
+      "narrative_onset": 0
+    },
+    "interpretation": "A narrow review trigger, not a language detector or definitive informativeness test."
+  },
+  "manual_policy_assessment": {
+    "status": "FAIL_WRITTEN_POLICY_CONFORMANCE",
+    "interpretation": "Confirmed care and later-course text survives the declared information boundary. This does not establish that it explains the measured benchmark gains.",
+    "counterexample_report_ids": [
+      "809322",
+      "820772",
+      "2554658",
+      "2760881",
+      "831877",
+      "804620"
+    ],
+    "overall_leakage_free_verdict": "NOT_ESTABLISHED"
+  },
+  "local_output_fingerprints": {
+    "v7_build8_a12d3b1c04dbbdd7.md": {
+      "bytes": 94972,
+      "sha256": "2fc2186803c93bea078c9dc65db4a8415b7017c33bbed5ef15ce774a9ee423ad"
+    },
+    "v7_build8_a12d3b1c04dbbdd7.examples.json": {
+      "bytes": 30859,
+      "sha256": "02e0b10001087e5f0a170696d66430d3aba64ce6126062e18fd116c16bbc6664"
+    },
+    "v7_source_rows.json": {
+      "bytes": 122379,
+      "sha256": "de7489811111ee6479f71c8b554f80ce696eaca1146662aa78d3b63384cea663"
+    }
+  },
+  "audit_code_fingerprints": {
+    "research/scripts/vaers/run_audit.py": "ffdd8efd18c61253bba20c5e85df4a683a2cd47125f931f1414b120f8912728b",
+    "research/scripts/vaers/audit_source_rows.py": "9d84f083deac9df561eca2a2bb880b3bdff70caa1af122e9c86bbcccc915c15b"
+  }
+}

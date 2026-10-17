@@ -1,0 +1,3535 @@
+{
+  "date": "2026-10-17",
+  "runs": {
+    "v8": {
+      "archive": "/Users/dimabshara/Downloads/tennis_diagnostic_c7b5b71aeb656d52_results.zip",
+      "archive_sha256": "76acb07be7a10159e43d576c3a9d3e30d179ff7936d93ed5ed1c65ac989abc61",
+      "variant": "v8",
+      "plan": {
+        "mode": "diagnostic",
+        "models": [
+          "light",
+          "cat"
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "conditions": [
+          "structured_only",
+          "text_only",
+          "joint_frozen",
+          "joint_tar"
+        ],
+        "csv_sha256": "e0415c324db629d9a7473b89cfd160f071f8db160c83db30c7d4c24e2be047cb",
+        "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+        "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+        "environment_sha256": "7df5fb9d1a87716410562b4307d844c6aa45a5b1682abbc6091dccae7e7d1735"
+      },
+      "checks": [
+        {
+          "check": "archive_crc_and_unique_names",
+          "status": "PASS"
+        },
+        {
+          "check": "plan_matches_dataset",
+          "status": "PASS"
+        },
+        {
+          "check": "no_process_errors",
+          "status": "PASS"
+        },
+        {
+          "check": "plan_id_matches_archive_name",
+          "status": "PASS"
+        },
+        {
+          "check": "unique_exported_run_ids",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "every run used this CSV (sha e0415c324db6\u2026): 24 runs",
+          "status": "PASS"
+        },
+        {
+          "check": "schema CSV fingerprint matches actual CSV bytes",
+          "status": "PASS"
+        },
+        {
+          "check": "every run used this exact schema file",
+          "status": "PASS"
+        },
+        {
+          "check": "every selected run has a successful result.json",
+          "status": "PASS"
+        },
+        {
+          "check": "no duplicate learner/fold/condition runs",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 0: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 1: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 2: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 0: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 1: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 2: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "Joint Frozen and Joint TAR use identical predictor columns",
+          "status": "PASS"
+        },
+        {
+          "check": "target / id column not among predictors []",
+          "status": "PASS"
+        },
+        {
+          "check": "requested_jobs_complete",
+          "status": "PASS"
+        },
+        {
+          "check": "cat: summary_arithmetic",
+          "status": "PASS"
+        },
+        {
+          "check": "light: summary_arithmetic",
+          "status": "PASS"
+        }
+      ],
+      "check_counts": {
+        "PASS": 378,
+        "FAIL": 0
+      },
+      "means": [
+        {
+          "model": "cat",
+          "joint_frozen": 0.8537042381927552,
+          "joint_tar": 0.864255052066869,
+          "structured_only": 0.8008745767992047,
+          "text_only": 0.8133157639146589,
+          "joint_signal_gain": 0.04038847427809633,
+          "tar_gain": 0.010550813874113829
+        },
+        {
+          "model": "light",
+          "joint_frozen": 0.8426838375092199,
+          "joint_tar": 0.8497871970019745,
+          "structured_only": 0.7739741246214673,
+          "text_only": 0.8178421226240052,
+          "joint_signal_gain": 0.024841714885214694,
+          "tar_gain": 0.007103359492754535
+        }
+      ],
+      "per_fold": [
+        {
+          "model": "cat",
+          "fold": 0,
+          "joint_frozen": 0.8724350252202476,
+          "joint_tar": 0.8858835333085942,
+          "structured_only": 0.8135763273272034,
+          "text_only": 0.8338195274811364,
+          "joint_signal_gain": 0.038615497739111215,
+          "tar_gain": 0.013448508088346522
+        },
+        {
+          "model": "cat",
+          "fold": 1,
+          "joint_frozen": 0.8537156915295704,
+          "joint_tar": 0.8505545705685893,
+          "structured_only": 0.7984063827155404,
+          "text_only": 0.8167305762860951,
+          "joint_signal_gain": 0.03698511524347525,
+          "tar_gain": -0.0031611209609810897
+        },
+        {
+          "model": "cat",
+          "fold": 2,
+          "joint_frozen": 0.8349619978284474,
+          "joint_tar": 0.8563270523234239,
+          "structured_only": 0.7906410203548703,
+          "text_only": 0.7893971879767452,
+          "joint_signal_gain": 0.044320977473577106,
+          "tar_gain": 0.0213650544949765
+        },
+        {
+          "model": "light",
+          "fold": 0,
+          "joint_frozen": 0.8507950906417077,
+          "joint_tar": 0.8685557800409571,
+          "structured_only": 0.7894109319809234,
+          "text_only": 0.8224498000247392,
+          "joint_signal_gain": 0.028345290616968444,
+          "tar_gain": 0.017760689399249463
+        },
+        {
+          "model": "light",
+          "fold": 1,
+          "joint_frozen": 0.8375218186066329,
+          "joint_tar": 0.8419680039582732,
+          "structured_only": 0.7696745419810608,
+          "text_only": 0.8165072362181998,
+          "joint_signal_gain": 0.021014582388433123,
+          "tar_gain": 0.004446185351640319
+        },
+        {
+          "model": "light",
+          "fold": 2,
+          "joint_frozen": 0.8397346032793195,
+          "joint_tar": 0.8388378070066933,
+          "structured_only": 0.7628368999024177,
+          "text_only": 0.8145693316290769,
+          "joint_signal_gain": 0.025165271650242627,
+          "tar_gain": -0.0008967962726261769
+        }
+      ],
+      "partitions": [
+        {
+          "fold": 0,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 785
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 158
+          }
+        },
+        {
+          "fold": 1,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 785
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 158
+          }
+        },
+        {
+          "fold": 2,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 785
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 158
+          }
+        }
+      ],
+      "cross_fold_test_overlap": [
+        {
+          "folds": [
+            0,
+            1
+          ],
+          "shared_test_ids": 65
+        },
+        {
+          "folds": [
+            0,
+            2
+          ],
+          "shared_test_ids": 71
+        },
+        {
+          "folds": [
+            1,
+            2
+          ],
+          "shared_test_ids": 84
+        }
+      ],
+      "candidate": {
+        "rows": 60000,
+        "serious": 4717,
+        "csv_sha256": "e0415c324db629d9a7473b89cfd160f071f8db160c83db30c7d4c24e2be047cb",
+        "schema_sha256": "44750d51a0008d4faae98799ef28bbd2c2753ec3888513ab3d81af86b680f4fc",
+        "source_members": [
+          {
+            "file": "2019VAERSData.zip:2019VAERSDATA.csv",
+            "sha256": "7278c62c0f67328f6c3d96988e984c203333b1cc4ccc1100929ed55de8e6c992",
+            "bytes": 45917834
+          },
+          {
+            "file": "2019VAERSData.zip:2019VAERSSYMPTOMS.csv",
+            "sha256": "04e2e4f750e7c1d68a6a05d60874255ab62512867dc62df8310035e36b198f90",
+            "bytes": 5208317
+          },
+          {
+            "file": "2019VAERSData.zip:2019VAERSVAX.csv",
+            "sha256": "3128f9b2ab9fdd43cd795ddc96a1dcaab24b456d002ba921af66abfe737dc43c",
+            "bytes": 4925316
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSDATA.csv",
+            "sha256": "9a8186c344d1ecaba4d8b237bd8aa488348c5ad2e5d486e8617501a8e86f0f78",
+            "bytes": 104740881
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSSYMPTOMS.csv",
+            "sha256": "abbf702ed226c3c62622ae582452fbea46ef9f066bbfe5c3620dc249995b4819",
+            "bytes": 11661248
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSVAX.csv",
+            "sha256": "e6ad4aec4a39218fc94009d9d399048fd71348b78b2a04a8f68649d38541543c",
+            "bytes": 10385145
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSDATA.csv",
+            "sha256": "c46fe44c43d79877bda5e41d227dd3ca22dfd53fb063e21b13196e0c88fbce2d",
+            "bytes": 51763135
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSSYMPTOMS.csv",
+            "sha256": "f2f3b2b2ceca41bb0cc546c8b368255a4c14e06954d8de0529f4d7d71c80fcdf",
+            "bytes": 5310689
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSVAX.csv",
+            "sha256": "3aaa80451a6c20d18c8aa707f1840822328667936055ee82238c99179323bdfb",
+            "bytes": 5245446
+          }
+        ]
+      }
+    },
+    "v9": {
+      "archive": "/Users/dimabshara/Downloads/tennis_diagnostic_20b24baf903ae7ac_results.zip",
+      "archive_sha256": "07c558dac99a36d7941f9a061fbb9b880a78da27f5e99fbf5916278e7ac8c8f5",
+      "variant": "v9",
+      "plan": {
+        "mode": "diagnostic",
+        "models": [
+          "light",
+          "cat"
+        ],
+        "folds": [
+          0,
+          1,
+          2
+        ],
+        "conditions": [
+          "structured_only",
+          "text_only",
+          "joint_frozen",
+          "joint_tar"
+        ],
+        "csv_sha256": "7f738f6024b424042f76ac9f11bfdfa8c855754b9a82d318c4577c0a9e2972e9",
+        "benchmark_commit": "3bb95079a6146ed35d45187e98bcad5b063273a1",
+        "adapter_sha256": "096e08ad2a49d1510f19a360201cb949e797cf6ac16ecc913333d3975cd855d4",
+        "environment_sha256": "7df5fb9d1a87716410562b4307d844c6aa45a5b1682abbc6091dccae7e7d1735"
+      },
+      "checks": [
+        {
+          "check": "archive_crc_and_unique_names",
+          "status": "PASS"
+        },
+        {
+          "check": "plan_matches_dataset",
+          "status": "PASS"
+        },
+        {
+          "check": "no_process_errors",
+          "status": "PASS"
+        },
+        {
+          "check": "plan_id_matches_archive_name",
+          "status": "PASS"
+        },
+        {
+          "check": "unique_exported_run_ids",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold2/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold1/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold0/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold1/text_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold2/structured_only: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: TAR_passage_counts",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_tar: TAR_settings",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: configuration_and_run_identity",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: plan_and_environment",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: score_export",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: recorded_ids_in_candidate",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: sizes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: pinned_reference_inventory",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: imported_reference_hashes",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold0/joint_frozen: logged_features",
+          "status": "PASS"
+        },
+        {
+          "check": "every run used this CSV (sha 7f738f6024b4\u2026): 24 runs",
+          "status": "PASS"
+        },
+        {
+          "check": "schema CSV fingerprint matches actual CSV bytes",
+          "status": "PASS"
+        },
+        {
+          "check": "every run used this exact schema file",
+          "status": "PASS"
+        },
+        {
+          "check": "every selected run has a successful result.json",
+          "status": "PASS"
+        },
+        {
+          "check": "no duplicate learner/fold/condition runs",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 0: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 1: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "cat/fold 2: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 0: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 1: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "light/fold 2: all four conditions present",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 0 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 1 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2: 8 runs share identical outer training/test sets",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_frozen: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 cat/text_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/joint_tar: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: required partitions recorded",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: partition IDs are unique",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: outer train/test disjoint and nonempty",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: learner partitions exactly divide training",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: detected text agrees with schema",
+          "status": "PASS"
+        },
+        {
+          "check": "fold 2 light/structured_only: exact predictor whitelist",
+          "status": "PASS"
+        },
+        {
+          "check": "Joint Frozen and Joint TAR use identical predictor columns",
+          "status": "PASS"
+        },
+        {
+          "check": "target / id column not among predictors []",
+          "status": "PASS"
+        },
+        {
+          "check": "requested_jobs_complete",
+          "status": "PASS"
+        },
+        {
+          "check": "cat: summary_arithmetic",
+          "status": "PASS"
+        },
+        {
+          "check": "light: summary_arithmetic",
+          "status": "PASS"
+        }
+      ],
+      "check_counts": {
+        "PASS": 378,
+        "FAIL": 0
+      },
+      "means": [
+        {
+          "model": "cat",
+          "joint_frozen": 0.8677857777777778,
+          "joint_tar": 0.8776635555555555,
+          "structured_only": 0.8058248888888889,
+          "text_only": 0.8411924444444443,
+          "joint_signal_gain": 0.02659333333333347,
+          "tar_gain": 0.009877777777777763
+        },
+        {
+          "model": "light",
+          "joint_frozen": 0.860508888888889,
+          "joint_tar": 0.871276888888889,
+          "structured_only": 0.7964953333333332,
+          "text_only": 0.831912888888889,
+          "joint_signal_gain": 0.028595999999999955,
+          "tar_gain": 0.010768
+        }
+      ],
+      "per_fold": [
+        {
+          "model": "cat",
+          "fold": 0,
+          "joint_frozen": 0.8777226666666667,
+          "joint_tar": 0.883368,
+          "structured_only": 0.8168186666666667,
+          "text_only": 0.8395153333333333,
+          "joint_signal_gain": 0.03820733333333337,
+          "tar_gain": 0.005645333333333391
+        },
+        {
+          "model": "cat",
+          "fold": 1,
+          "joint_frozen": 0.8560666666666668,
+          "joint_tar": 0.8692240000000001,
+          "structured_only": 0.7965426666666667,
+          "text_only": 0.831818,
+          "joint_signal_gain": 0.024248666666666807,
+          "tar_gain": 0.013157333333333354
+        },
+        {
+          "model": "cat",
+          "fold": 2,
+          "joint_frozen": 0.869568,
+          "joint_tar": 0.8803986666666667,
+          "structured_only": 0.8041133333333333,
+          "text_only": 0.8522439999999999,
+          "joint_signal_gain": 0.017324000000000117,
+          "tar_gain": 0.010830666666666655
+        },
+        {
+          "model": "light",
+          "fold": 0,
+          "joint_frozen": 0.8649773333333335,
+          "joint_tar": 0.8824666666666666,
+          "structured_only": 0.8116466666666666,
+          "text_only": 0.83229,
+          "joint_signal_gain": 0.03268733333333351,
+          "tar_gain": 0.017489333333333135
+        },
+        {
+          "model": "light",
+          "fold": 1,
+          "joint_frozen": 0.8534666666666666,
+          "joint_tar": 0.8623160000000001,
+          "structured_only": 0.7806420000000001,
+          "text_only": 0.8282446666666667,
+          "joint_signal_gain": 0.025221999999999856,
+          "tar_gain": 0.008849333333333487
+        },
+        {
+          "model": "light",
+          "fold": 2,
+          "joint_frozen": 0.8630826666666667,
+          "joint_tar": 0.8690480000000002,
+          "structured_only": 0.7971973333333333,
+          "text_only": 0.8352040000000001,
+          "joint_signal_gain": 0.027878666666666607,
+          "tar_gain": 0.005965333333333489
+        }
+      ],
+      "partitions": [
+        {
+          "fold": 0,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 2499
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 500
+          }
+        },
+        {
+          "fold": 1,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 2499
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 500
+          }
+        },
+        {
+          "fold": 2,
+          "outer_train": {
+            "rows": 9998,
+            "serious": 2499
+          },
+          "outer_test": {
+            "rows": 2000,
+            "serious": 500
+          }
+        }
+      ],
+      "cross_fold_test_overlap": [
+        {
+          "folds": [
+            0,
+            1
+          ],
+          "shared_test_ids": 187
+        },
+        {
+          "folds": [
+            0,
+            2
+          ],
+          "shared_test_ids": 179
+        },
+        {
+          "folds": [
+            1,
+            2
+          ],
+          "shared_test_ids": 219
+        }
+      ],
+      "candidate": {
+        "rows": 20136,
+        "serious": 5034,
+        "csv_sha256": "7f738f6024b424042f76ac9f11bfdfa8c855754b9a82d318c4577c0a9e2972e9",
+        "schema_sha256": "c47a8a15ff4fa65e63af7e809c61431a1d69a3d6c0f668836459be2b8b674f73",
+        "source_members": [
+          {
+            "file": "2019VAERSData.zip:2019VAERSDATA.csv",
+            "sha256": "7278c62c0f67328f6c3d96988e984c203333b1cc4ccc1100929ed55de8e6c992",
+            "bytes": 45917834
+          },
+          {
+            "file": "2019VAERSData.zip:2019VAERSSYMPTOMS.csv",
+            "sha256": "04e2e4f750e7c1d68a6a05d60874255ab62512867dc62df8310035e36b198f90",
+            "bytes": 5208317
+          },
+          {
+            "file": "2019VAERSData.zip:2019VAERSVAX.csv",
+            "sha256": "3128f9b2ab9fdd43cd795ddc96a1dcaab24b456d002ba921af66abfe737dc43c",
+            "bytes": 4925316
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSDATA.csv",
+            "sha256": "9a8186c344d1ecaba4d8b237bd8aa488348c5ad2e5d486e8617501a8e86f0f78",
+            "bytes": 104740881
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSSYMPTOMS.csv",
+            "sha256": "abbf702ed226c3c62622ae582452fbea46ef9f066bbfe5c3620dc249995b4819",
+            "bytes": 11661248
+          },
+          {
+            "file": "2023VAERSData.zip:2023VAERSVAX.csv",
+            "sha256": "e6ad4aec4a39218fc94009d9d399048fd71348b78b2a04a8f68649d38541543c",
+            "bytes": 10385145
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSDATA.csv",
+            "sha256": "c46fe44c43d79877bda5e41d227dd3ca22dfd53fb063e21b13196e0c88fbce2d",
+            "bytes": 51763135
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSSYMPTOMS.csv",
+            "sha256": "f2f3b2b2ceca41bb0cc546c8b368255a4c14e06954d8de0529f4d7d71c80fcdf",
+            "bytes": 5310689
+          },
+          {
+            "file": "2024VAERSData.zip:2024VAERSVAX.csv",
+            "sha256": "3aaa80451a6c20d18c8aa707f1840822328667936055ee82238c99179323bdfb",
+            "bytes": 5245446
+          }
+        ]
+      }
+    }
+  },
+  "data_comparisons": {
+    "v7_v8_identical_ordered_ids": true,
+    "v7_v8_identical_structured_labels_excerpt": true,
+    "v8_merged_background_matches_v7": true,
+    "v8_v9_common_ids": 19819,
+    "v9_ids_not_in_v8": 317,
+    "v8_v9_identical_all_fields_on_common_ids": true,
+    "v7_v8_same_outer_ids_by_fold": {
+      "0": true,
+      "1": true,
+      "2": true
+    }
+  },
+  "source_replay": {
+    "v8": {
+      "rows_checked": 60000,
+      "source_hashes_match": true,
+      "label_mismatches": 0,
+      "excerpt_mismatches": 0,
+      "merged_background_mismatches": 0,
+      "narrative_surgery_word_matches": 88,
+      "narrative_blood_transfusion_matches": 1
+    },
+    "v9": {
+      "rows_checked": 20136,
+      "source_hashes_match": true,
+      "label_mismatches": 0,
+      "excerpt_mismatches": 0,
+      "merged_background_mismatches": 0,
+      "narrative_surgery_word_matches": 58,
+      "narrative_blood_transfusion_matches": 1
+    }
+  },
+  "limitations": [
+    "Recorded partitions are adapter reconstructions, not independent tensor traces.",
+    "V9 changes both train and test populations; comparisons with v8 are not on a common test set.",
+    "Repeated folds overlap, development selection is adaptive, and paired predictions are unavailable.",
+    "No full semantic leakage clearance is implied; the shared extraction policy has documented care-text gaps."
+  ],
+  "auditor_negative_controls": {
+    "encoder_test_overlap": {
+      "detected": true,
+      "failed_checks": [
+        "light/fold0/joint_tar: TAR_passage_counts",
+        "fold 0 light/joint_tar: encoder partitions disjoint, exactly cover learner fitting, exclude test/learner validation"
+      ]
+    },
+    "exported_score_tamper": {
+      "detected": true,
+      "failed_checks": [
+        "light/fold1/joint_frozen: score_export"
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # VAERS: progress in one page
 
-**Read this first.** It tells the whole story in order. Every other VAERS report is evidence for one row of this file (see the map at the bottom). Last updated October 17, 2026 (v9_control finished; v10 3-fold screen next).
+**Read this first.** It tells the whole story in order. Every other VAERS report is evidence for one row of this file (see the map at the bottom). Last updated October 17, 2026 (v10 and v9_control finished; CPU idea tests done; v11a GPU screen next).
 
 **Task.** One row is one VAERS report. The target `serious` = 1 if the report's flags record death, a life-threatening event, hospitalisation (or a longer stay), disability or a birth defect. These flags build the label only and are never inputs. This is retrospective classification of recorded seriousness. It is not a forecast and not a causal claim about vaccines.
 
@@ -30,8 +30,10 @@ The final run uses `benchmark.py` at commit 89a1854.
 | 11 | **v8** | TAR fine-tunes on every text cell, and 4 of v7's 5 columns are mostly "none reported". | Merged the background into 1 column (2 text columns). Same rows and splits as v7. | **No.** Median Joint +0.028, TAR +0.007. LightGBM's TAR gain grew only because Joint Frozen fell. Dropped. |
 | 12 | **v9** | Only 7.9% serious: about 785 serious rows per training fold, 158 per test fold. | Case-enriched to 25% serious: all serious reports plus sampled non-serious; 20,136 rows. | **Most consistent so far.** Median Joint +0.027, TAR +0.010; both positive in **15/15** learner-fold runs. The population differs, so it is not "the same data, improved". |
 | 13 | Content audit of v7 | Excerpts still held care text that no rule caught (blood transfusion, surgery, medical leave). Some background fields describe care **after** the vaccine. | → v10. | — |
-| 14 | **v10** (build 9, care-boundary-2) | (row 13) | Cut excerpts before care, record pointers and functional outcomes; dropped rows whose background is explicitly post-event. 19,832 rows, 24.7% serious (304 v9 rows removed). | CPU proxy unchanged (joint 0.8625 → 0.8624). v10_matched fold 0: Joint/TAR positive for LightGBM and CatBoost. **3-fold v10 screen next** (see row 15). |
+| 14 | **v10** (build 9, care-boundary-2) | (row 13) | Cut excerpts before care, record pointers and functional outcomes; dropped rows whose background is explicitly post-event. 19,832 rows, 24.7% serious (304 v9 rows removed). | **Done** (LightGBM + CatBoost × 3 folds, Drive `benchmark-results/4f9a4eda6271a02b`). Joint gain +0.034 (v9_control +0.030), 6/6 pass. TAR gain median +0.008 (v9_control +0.007; means +0.006 vs +0.007; the gap is noise, since a 10-split CPU check gives v9 0.0216, v9_control 0.0201, v10 0.0204), 5/6 runs positive (LightGBM fold 2: −0.002; LightGBM mean still +0.004). Text-only fell 0.005 while Joint Frozen stayed the same, and the TAR gain did not change. So the removed care text was slightly informative, but it was not what drove TAR. |
 | 15 | **v9_control** | v10 changes two things at once (removes 304 rows and cleans text), so v10 vs v9 can't say which change mattered. | Same 19,832 rows as v10 but with v9's old text, so the splits are identical. v10 vs v9_control = the effect of the text cleanup alone. | **Done** (LightGBM + CatBoost × 3 folds, Drive `benchmark-results/0d1c69e9ba434cbe`). Both checks pass in 6/6. Mean TAR gain: LightGBM +0.006, CatBoost +0.008. Lower than v9 on the same folds; only 304 rows changed, so run-to-run noise is about ±0.005. |
+| 16 | **Idea tests (CPU proxy)** | TAR gain only at the benchmark median. Which dataset designs could raise it? | Rebuilt the full cohort from the raw ZIPs and tested 12 designs on a CPU proxy (section below). | **Matched controls (v11a) is the only clear win**: proxy TAR gain +0.030 vs +0.021 for v10, with a higher Joint gain too. Dropping background, longer excerpts, 50% serious, separate background columns and symptom matching did not help. A +0.1 TAR gain is out of reach for this text. |
+
 
 ## Screen results so far
 
@@ -42,11 +44,12 @@ Paper-version code, development only. Values are medians over learners.
 | v7 | 2×3 + 3×1 | 0.807 | 0.833 | 0.871 | 0.884 | +0.036 | +0.010 | 5/5 / 5/5 |
 | v8 | 3×3 + 1×2 | 0.790 | 0.824 | 0.857 | 0.866 | +0.028 | +0.007 | 4/4 / 4/4 |
 | v9 | 5×3 | 0.806 | 0.844 | 0.868 | 0.878 | +0.027 | +0.010 | 5/5 / 5/5 |
-| v9_control | 2×3 | 0.814 | 0.838 | 0.867 | 0.874 | +0.030 | +0.007 | 2/2 / 2/2 |
-| v10 | next: LightGBM + CatBoost × 3 folds | | | | | | | |
+| v9_control | 2×3 | 0.816 | 0.839 | 0.868 | 0.875 | +0.030 | +0.007 | 2/2 / 2/2 |
+| v10 | 2×3 | 0.816 | 0.834 | 0.867 | 0.875 | +0.034 | +0.008 | 2/2 / 2/2 |
+| v11a (matched controls) | next: LightGBM + CatBoost × 3 folds | | | | | | | |
 | *Accepted MulTaBench datasets (median of 23)* | | | | | | *+0.023* | *+0.0085* | |
 
-Per-learner and per-fold numbers: `vaers_v8_v9_results_comparison.md` and `research/data/screens/`.
+Per-learner and per-fold numbers: `vaers_v8_v9_results_comparison.md`, `research/data/screens/vaers_v9_v9control_v10_results.csv` and `research/data/screens/`. Rows here are medians over the 6 learner-fold runs (LightGBM + CatBoost × 3).
 
 ## Status, in one sentence each
 
@@ -54,12 +57,40 @@ Per-learner and per-fold numbers: `vaers_v8_v9_results_comparison.md` and `resea
 - **Leakage:** the known text paths are fixed in v10; universal absence cannot be proven.
 - **Official result:** not run yet. It needs native registration and `benchmark.py` at 89a1854, once, on the frozen final version.
 
+## Idea tests on a CPU proxy (October 17)
+
+**How.** The raw ZIPs were rebuilt here. v9, v10, v9_control and v10_matched all match their recorded sha256, so the reproducibility check is done. Each design was then scored with a CPU stand-in for the four conditions:
+- Frozen = TF-IDF compressed to 30 numbers per text column.
+- TAR = the same, plus a supervised text score per column.
+- Same split rules (seed 42 + fold, 10% test, 10k training cap); LightGBM.
+
+The proxy matches the real Structured and Joint Frozen levels. It overstates the TAR gain by 2–2.7× (v7: +0.013 vs real +0.006; v9: +0.022 vs +0.010; v9_control: +0.018 vs +0.007), but it ranks v7 < v9_control < v9 in the same order as the real runs. Scripts: `research/scripts/vaers/proxy_ideas/`. All numbers: `research/data/screens/idea_proxy_results.csv`.
+
+| Design | Proxy Joint gain | Proxy TAR gain | Verdict |
+|---|---|---|---|
+| v10 (baseline, 5 folds) | +0.035 | +0.021 | — |
+| **A2 = v11a: matched controls** (vaccine × year × age band × sex) | **+0.041** | **+0.030** | **Best; run on GPU** |
+| A3: also match on onset band | +0.028 | +0.030 | Same TAR gain, weaker Joint gain |
+| A / A4: fewer matching fields | +0.044 | +0.026 | Smaller win |
+| B: excerpt only (drop background) | +0.039 | +0.015 | Worse: background carries comorbidity signal |
+| C: up to 5 sentences | +0.037 | +0.017 | Worse: longer text helps Frozen more than TAR |
+| D: 50% serious (vs same-size 25%) | +0.043 | +0.022 (vs +0.023) | No effect |
+| G: 4 separate background columns | +0.037 | +0.018 | Worse |
+| F: symptom-matched pairs | +0.032 | +0.020 | No gain; text signal collapses (T 0.70) |
+
+**Why +0.1 is impossible here.** Suppose frozen E5 caught nothing at all from the text. Even then, adding the best supervised text model to the table raises AUROC by only +0.063 (v10) or +0.099 (v11a). The real TAR gain must be smaller, because frozen text already catches most of it (and must, for Joint Signal to pass). Realistic target: a real TAR gain of about +0.011 to +0.014 for v11a, versus +0.008 to +0.010 for v10. That would put it in the top third of the accepted datasets (about 5th to 9th of 24), well above the median of +0.0085.
+
+**Cut-position check (leakage).** The excerpt stops at the first care sentence, and serious reports hit that stop more often (38% vs 19%). So serious excerpts are slightly shorter (22.8 vs 24.7 words), even though serious raw narratives are longer (6.0 vs 3.9 sentences).
+- Shape features (length, sentence count, ending punctuation) alone reach AUROC 0.59.
+- Adding them to the joint proxy adds +0.009.
+- This is a small artifact of how the excerpt is cut; report it in the paper.
+- Mitigations to consider: always end the excerpt with a period, and report results with the shape features as a control.
+
 ## Next steps (in order)
 
-1. Run v10 in notebook 02 (`CSV_PATH`/`SCHEMA_PATH` = `candidates/build9/vaers_v10/`, `MODELS_OVERRIDE=["light","cat"]`, `FOLDS_OVERRIDE=[0,1,2]`).
-2. Compare v10 vs v9_control fold by fold. Same rows and splits, so the difference is the text cleanup alone.
-3. Try **one** TAR enhancement (best bet: TAR on the reaction text only, without the background columns), or freeze v10.
-4. Checks before freezing: truncation artifact (excerpts without ending punctuation, by label); fresh rebuild of v9/v10 from the raw ZIPs matches the recorded sha256.
+1. ~~Run v10~~ done. 2. ~~Compare v10 vs v9_control~~ done (row 14).
+3. Run **v11a** (matched controls; built from the raw ZIPs by `proxy_ideas/make_variants*.py`) in notebook 02: LightGBM + CatBoost, folds 0–2. Pre-set rule: choose v11a over v10 only if its median TAR gain is higher and Joint Signal passes in 6/6 runs; otherwise freeze v10.
+4. Checks before freezing: the cut-position artifact (done on the proxy; repeat on the final dataset); fresh rebuild from the raw ZIPs (**done**: hashes match); blind read of about 100 excerpts.
 5. A tiny native test at MulTaBench 89a1854, then the single official run (5 learners × 5 folds) with `benchmark.py`.
 6. Write the paper. Deadline Oct 26, 2026.
 

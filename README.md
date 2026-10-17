@@ -1,6 +1,20 @@
 # Text-tabular dataset research
 
-Technion NLP Final Project, **Standard Track 2**, due **October 26, 2026**. We are curating one new dataset in which structured features and natural-language text provide complementary predictive information. Tennis is our current investigation; it has **not** been selected or shown to qualify.
+Technion NLP Final Project, **Standard Track 2**, due **October 26, 2026**. We are curating one new dataset in which structured features and natural-language text provide complementary predictive information. VAERS v9 is our leading development candidate; v10 applies the care-boundary correction. Final qualification remains unproven. Earlier tennis work is preserved as research history.
+
+## Current VAERS workflow (October 17, 2026)
+
+**For the current run: open 08 on CPU, then 02 on A100. Skip 06 if frozen v9 already exists.**
+
+| Step | Notebook | Input → output |
+| --- | --- | --- |
+| Raw-data construction | [06 VAERS build](research/notebooks/06_vaers_candidate_build.ipynb), CPU | Official 2019/2023/2024 VAERS ZIPs → frozen build-8 v9 CSV/schema |
+| Care-boundary correction | [08 v10 refinement](research/notebooks/08_vaers_v10_refinement.ipynb), CPU | Verified raw ZIPs + frozen v9 → build-9 v10, all-row v10_matched, and matched v9_control; tests, text examples and CPU diagnostics |
+| Evaluation | [02 benchmark](research/notebooks/02_tennis_official_benchmark_colab.ipynb), GPU | Selected CSV/schema → Structured, Text, Joint Frozen and Joint TAR scores using unchanged official code |
+
+Raw sources are `2019VAERSData.zip`, `2023VAERSData.zip`, `2024VAERSData.zip`. In Colab they live under `MyDrive/text-tabular-research-2/vaers_raw/`; code is in Git, raw and generated text-bearing datasets are outside Git. Notebook 08 writes `candidates/build9/vaers_<variant>/` on Drive. Start the GPU check with **v10_matched, light + cat, fold 0** (8 evaluations), comparing with the completed v9 baseline; v10_matched is diagnostic-only. The final v10 candidate contains 19,832 rows.
+
+Construction is explicit in [build_vaers.py](research/scripts/vaers/build_vaers.py) and [refine_v9.py](research/scripts/vaers/refine_v9.py). Source/input hashes and row-lineage records link the stages. Frozen v9 and running v8/v9 experiments are preserved. Notebook 08 clones our code from GitHub automatically; no tools ZIP upload is needed.
 
 ## What are we trying to demonstrate?
 
@@ -13,9 +27,9 @@ For each learner—LightGBM, CatBoost, TabM, TabPFN 2.0 and TabPFN 2.5—we comp
 | Joint Frozen | Structured features plus frozen E5 embeddings |
 | Joint TAR | Structured features plus E5 embeddings adapted using training targets |
 
-**Joint Signal** is Joint Frozen minus the stronger single modality. **TAR Gain** is Joint TAR minus Joint Frozen. The goal is for the same **at least three of five learners** to meet both criteria. A high prediction score alone is insufficient. Exact threshold conventions and official settings are in the [evaluation plan](research/reports/evaluation_infrastructure_plan.md).
+**Joint Signal** is Joint Frozen minus the stronger single modality. **TAR Gain** is Joint TAR minus Joint Frozen. The course clarification requires **at least three of five learners for each criterion separately**; the learner sets may differ. A high prediction score alone is insufficient. Exact threshold conventions and official settings are in the [evaluation plan](research/reports/evaluation_infrastructure_plan.md).
 
-## Current position
+## Earlier tennis snapshot
 
 Updated October 15, 2026:
 

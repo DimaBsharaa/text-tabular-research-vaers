@@ -22,33 +22,30 @@ md('''
     and keeps all structured predictors and labels intact. It is retrospective report classification.
     The policy was fixed before these CPU scores. **These are development TF-IDF diagnostics, not E5/TAR.**
 
-    Local outputs below come from the actual supplied data. For a fresh Colab CPU run, upload
-    `vaers_v10_tools.zip` when prompted; it contains our tools, not the official benchmark.
+    Local outputs below come from the actual supplied data. Open this notebook from GitHub in a fresh
+    Colab CPU runtime and Run all; it clones our code automatically. No tools ZIP upload is needed.
     Use a separate CPU runtime while GPU notebooks continue. Raw yearly ZIPs and v9 remain on Drive.
+
+    **Pipeline:** raw 2019/2023/2024 VAERS ZIPs → notebook 06 / `build_vaers.py` → frozen build-8 v9
+    → this notebook / `refine_v9.py` (verified raw sources + frozen v9) → build-9 v10 and controls
+    → notebook 02 on GPU. Since frozen v9 already exists, skip 06 for the current run.
 ''')
 code('''
     from pathlib import Path
     import sys, json, hashlib, subprocess
     try:
-        from google.colab import drive, files
+        from google.colab import drive
         IN_COLAB = True
     except ImportError:
         IN_COLAB = False
     if IN_COLAB:
         drive.mount('/content/drive')
-        PROJECT = Path('/content/vaers-v10-tools')
-        bundle = Path('/content/vaers_v10_tools.zip')
-        if not bundle.exists():
-            print('Upload the prepared vaers_v10_tools.zip')
-            files.upload()
-        import zipfile
-        PROJECT.mkdir(exist_ok=True)
-        with zipfile.ZipFile(bundle) as z:
-            for member in z.infolist():
-                destination = (PROJECT / member.filename).resolve()
-                if not destination.is_relative_to(PROJECT.resolve()) or (member.external_attr >> 16) & 0o170000 == 0o120000:
-                    raise ValueError('Unsafe bundle member')
-            z.extractall(PROJECT)
+        PROJECT = Path('/content/text-tabular-research-2')
+        if not PROJECT.exists():
+            subprocess.run(['git', 'clone', '--depth', '1', 'https://github.com/DimaBsharaa/text-tabular-research-2.git', str(PROJECT)], check=True)
+        else:
+            subprocess.run(['git', '-C', str(PROJECT), 'pull', '--ff-only'], check=True)
+        print('project commit:', subprocess.check_output(['git', '-C', str(PROJECT), 'rev-parse', 'HEAD'], text=True).strip())
         HOME_DATA = Path('/content/drive/MyDrive/text-tabular-research-2')
         BASE = HOME_DATA / 'candidates/build8/vaers_v9/vaers_v9.csv'
         RAW = sorted((HOME_DATA / 'vaers_raw').glob('*VAERSData.zip'))

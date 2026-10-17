@@ -85,3 +85,33 @@ Each entry follows the same pattern: what we **saw**, what we **inferred**, what
 - Every build is written to its own folder with commit and input hashes, plus `audit.txt`.
 - Screens use the paper-version code (exploratory). The final result is produced once, at 89a1854, by `benchmark.py`, with the dataset registered natively.
 - A high single-feature score is a reason to investigate, not proof of leakage. Zero hits on a removal rule is a consistency check, not validation.
+
+## E. Status and the open audit (fifth review)
+
+**Status.** Every result so far comes from a *development screen*. The dataset is **not** yet established as leakage-free, and every report and the paper keep that distinction. The fact that five learners agree does not settle it: they share one dataset and one evaluation pipeline, so a single common mistake would help all five.
+
+11. **Saw.** The reviewer asked for evidence on six open questions:
+    - text that states the outcome indirectly
+    - the same event split across train and test
+    - TAR seeing held-out rows
+    - conditions evaluated on different test rows
+    - gains coming from reporting style
+    - over-tuning of the curation
+
+    **Did.** Wrote `run_audit.py` (with tests) and notebook 07 (CPU), which audit the exact CSV and run folder that produced a result.
+
+    **Checked so far, on the v7 run `a12d3b1c04dbbdd7` (24 runs), from its `splits.json` and `config.json`:**
+    - All runs used CSV sha `9ffdfad8…`.
+    - In every fold, all 8 runs share one outer test set (2,000 rows) and one outer training set (9,998 rows), with no overlap between them.
+    - The TAR encoder's 8,096 + 901 rows lie inside `learner_fit`, with none in the test set or the learner validation set.
+    - Joint Frozen and Joint TAR use the identical 17 predictor columns.
+    - The detected text columns match the schema, and neither the target nor the ID column is a predictor.
+    - The encoder starts from the public `intfloat/e5-small-v2` checkpoint (log: "Doing LoRA on last 3 layers of intfloat/e5-small-v2").
+
+    **Pending (notebook 07, on the real CSV):**
+    - near-duplicate events across train/test, and AUROC with those test rows removed
+    - the text signal within year, vaccine-group and facility strata
+    - style-only AUROC compared with the full excerpt
+    - 12 + 12 random reports, each showing the original opening next to the retained text
+
+12. **Rule.** Curation is frozen at build 8 + variant choice. v7, v8 and v9 come from one frozen extraction policy. We pick one variant from development screens, run the audit on it, and only then run the single official evaluation.

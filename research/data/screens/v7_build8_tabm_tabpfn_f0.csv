@@ -1,0 +1,13 @@
+model,condition,fold,auroc
+tabpfnv2p5,joint_tar,0,0.891241976937561
+tabpfnv2p5,joint_frozen,0,0.8810404898363089
+tabpfnv2,structured_only,0,0.8168250663148202
+tabpfnv2,text_only,0,0.8326633131296473
+tabpfnv2,joint_frozen,0,0.8705709946535823
+tabm,text_only,0,0.8634756524965984
+tabm,structured_only,0,0.8071097733613711
+tabm,joint_tar,0,0.8839147047100702
+tabm,joint_frozen,0,0.8733215134897402
+tabpfnv2,joint_tar,0,0.8884089940763342
+tabpfnv2p5,structured_only,0,0.821412127709287
+tabpfnv2p5,text_only,0,0.8535095314668976

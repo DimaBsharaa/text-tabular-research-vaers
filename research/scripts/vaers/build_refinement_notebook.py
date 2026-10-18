@@ -32,7 +32,25 @@ md('''
 ''')
 code('''
     from pathlib import Path
-    import sys, json, hashlib, subprocess
+    import base64, os, sys, json, hashlib, subprocess
+    REPO_URL = 'https://github.com/DimaBsharaa/text-tabular-research-vaers.git'
+
+    def github_env():
+        # The repo is private: git authenticates with the GH_TOKEN Colab secret. The token travels in an
+        # HTTP header set through environment variables, so it never appears in a printed command,
+        # an error message or .git/config.
+        try:
+            from google.colab import userdata
+            token = userdata.get('GH_TOKEN')
+        except Exception:
+            token = None
+        if not token:
+            raise RuntimeError('GH_TOKEN missing: add a GitHub token with read access to '
+                               'DimaBsharaa/text-tabular-research-vaers in Colab Secrets')
+        header = base64.b64encode(f'x-access-token:{token}'.encode()).decode()
+        return {**os.environ, 'GIT_TERMINAL_PROMPT': '0', 'GIT_CONFIG_COUNT': '1',
+                'GIT_CONFIG_KEY_0': 'http.https://github.com/.extraheader',
+                'GIT_CONFIG_VALUE_0': f'AUTHORIZATION: basic {header}'}
     try:
         from google.colab import drive
         IN_COLAB = True
@@ -40,11 +58,11 @@ code('''
         IN_COLAB = False
     if IN_COLAB:
         drive.mount('/content/drive')
-        PROJECT = Path('/content/text-tabular-research-2')
+        PROJECT = Path('/content/text-tabular-research-vaers')
         if not PROJECT.exists():
-            subprocess.run(['git', 'clone', '--depth', '1', 'https://github.com/DimaBsharaa/text-tabular-research-2.git', str(PROJECT)], check=True)
+            subprocess.run(['git', 'clone', '--depth', '1', REPO_URL, str(PROJECT)], check=True, env=github_env())
         else:
-            subprocess.run(['git', '-C', str(PROJECT), 'pull', '--ff-only'], check=True)
+            subprocess.run(['git', '-C', str(PROJECT), 'pull', '--ff-only'], check=True, env=github_env())
         print('project commit:', subprocess.check_output(['git', '-C', str(PROJECT), 'rev-parse', 'HEAD'], text=True).strip())
         HOME_DATA = Path('/content/drive/MyDrive/text-tabular-research-2')
         BASE = HOME_DATA / 'candidates/build8/vaers_v9/vaers_v9.csv'
@@ -55,7 +73,7 @@ code('''
     else:
         PROJECT = Path.cwd()
         if not (PROJECT / 'research/scripts/vaers/refine_v9.py').exists():
-            PROJECT = PROJECT / 'text-tabular-research-2'
+            PROJECT = PROJECT / 'text-tabular-research-vaers'
         BASE = Path.home() / 'Downloads/vaers_v9-20261017T080754Z-1-001.zip'
         RAW = [Path.home() / f'Downloads/{year}VAERSData.zip' for year in [2019, 2023, 2024]]
         BUILD_DIR = PROJECT.parent / 'vaers-research-cache/derived/build9'

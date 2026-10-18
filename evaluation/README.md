@@ -2,7 +2,7 @@
 
 Open [02_tennis_official_benchmark_colab.ipynb](../research/notebooks/02_tennis_official_benchmark_colab.ipynb) in Colab:
 
-[Open in Colab](https://colab.research.google.com/github/DimaBsharaa/text-tabular-research-2/blob/main/research/notebooks/02_tennis_official_benchmark_colab.ipynb)
+[Open in Colab](https://colab.research.google.com/github/DimaBsharaa/text-tabular-research-vaers/blob/main/research/notebooks/02_tennis_official_benchmark_colab.ipynb)
 
 Select **Runtime → Change runtime type → A100 GPU**, high RAM if offered, then run all cells. Authorize Drive mounting when prompted if you retain the default `SAVE_TO_DRIVE=True`. Hardware is subject to Colab availability. EDA and the tabular LightGBM/CatBoost fits use CPU; E5 encoding/fine-tuning and the neural learners use GPU through their official wrappers.
 

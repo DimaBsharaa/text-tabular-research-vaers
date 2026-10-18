@@ -101,6 +101,7 @@ The proxy matches the real Structured and Joint Frozen levels. It overstates the
 - Data builds: notebook 06 (`build_vaers.py`, v1–v9) and notebook 08 (`refine_v9.py`, v10 / v10_matched / v9_control), both from the raw VAERS ZIPs on Drive `vaers_raw/`.
 - Plan IDs: v7 `a12d3b1c04dbbdd7` + `721a59225d840c64`; v8 `c7b5b71aeb656d52` + `0343d0f8f1fc61a6`; v9 `20b24baf903ae7ac` + `a84e46ed50352f6a`; v10_matched `211cb027c8cf4486`; v9_control `0d1c69e9ba434cbe`.
 - Rules: never print or commit secrets (they live in Colab Secrets); one notebook run at a time; open notebooks fresh from GitHub.
+- Repo history: on 2026-10-18 the history was rewritten to remove a work email and moved to the private repo `DimaBsharaa/text-tabular-research-vaers` (content unchanged; tree hashes identical). Old commit ids recorded in Drive results map to new ones via [`commit_id_map.csv`](commit_id_map.csv).
 
 ## Map of the other VAERS reports
 

@@ -69,13 +69,31 @@ md("""
 """)
 code("""
     from pathlib import Path
-    import os, sys, subprocess, json, hashlib
+    import base64, os, sys, subprocess, json, hashlib
 
     if not Path("/content").exists():
         raise RuntimeError("Run this notebook in Google Colab; no local benchmark installation is needed.")
-    PROJECT = Path("/content/text-tabular-research-2")
+    PROJECT = Path("/content/text-tabular-research-vaers")
     REFERENCE = Path("/content/MulTaBench-reference")
     ENV = Path("/content/multabench-env")
+    REPO_URL = "https://github.com/DimaBsharaa/text-tabular-research-vaers.git"
+
+    def github_env():
+        # The repo is private: git authenticates with the GH_TOKEN Colab secret. The token travels in an
+        # HTTP header set through environment variables, so it never appears in a printed command,
+        # an error message or .git/config.
+        try:
+            from google.colab import userdata
+            token = userdata.get("GH_TOKEN")
+        except Exception:
+            token = None
+        if not token:
+            raise RuntimeError("GH_TOKEN missing: add a GitHub token with read access to "
+                               "DimaBsharaa/text-tabular-research-vaers in Colab Secrets")
+        header = base64.b64encode(f"x-access-token:{token}".encode()).decode()
+        return {**os.environ, "GIT_TERMINAL_PROMPT": "0", "GIT_CONFIG_COUNT": "1",
+                "GIT_CONFIG_KEY_0": "http.https://github.com/.extraheader",
+                "GIT_CONFIG_VALUE_0": f"AUTHORIZATION: basic {header}"}
 
     def command(args, **kwargs):
         # This bootstrap runs before our logging helper can be imported.
@@ -90,9 +108,9 @@ code("""
         return result
 
     if not PROJECT.exists():
-        command(["git", "clone", "--depth", "1", "https://github.com/DimaBsharaa/text-tabular-research-2.git", PROJECT])
+        command(["git", "clone", "--depth", "1", REPO_URL, PROJECT], env=github_env())
     else:
-        command(["git", "-C", PROJECT, "pull", "--ff-only"])  # Refresh our adapter; never alter the official checkout.
+        command(["git", "-C", PROJECT, "pull", "--ff-only"], env=github_env())  # Refresh our adapter; never alter the official checkout.
     if not REFERENCE.exists():
         command(["git", "clone", "--depth", "1", "--branch", "paper_version", "https://github.com/alanarazi7/MulTaBench.git", REFERENCE])
     head = subprocess.check_output(["git", "-C", str(REFERENCE), "rev-parse", "HEAD"], text=True).strip()

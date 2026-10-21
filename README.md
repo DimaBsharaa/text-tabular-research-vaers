@@ -8,6 +8,8 @@ official benchmark code, unchanged.
 **Task:** given what a report contains when it is filed, predict whether it describes a **serious** outcome
 (death, life-threatening event, hospitalisation, disability or birth defect).
 
+**Paper:** [VAERS-Serious: A Medical Text–Tabular Dataset Where Target-Aware Text Representations Pay Off](paper/VAERS_Serious_paper.pdf) (PDF, 4 pages + appendix).
+
 ## Results
 
 Official MulTaBench `benchmark.py` at commit [`c955466`](https://github.com/alanarazi7/MulTaBench/tree/c95546638be9bac472a2ee38afa7171060ab80bc)

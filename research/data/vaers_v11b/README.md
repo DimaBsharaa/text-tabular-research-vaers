@@ -48,7 +48,7 @@ Run [`research/scripts/vaers/build_v11b.py`](../../scripts/vaers/build_v11b.py) 
 3. **Care cleanup 3 (v11b)**: [`care_boundary_3_edits.csv`](care_boundary_3_edits.csv) records each edit — 503 excerpts
    cut to a shorter prefix (removing medication, treatment and procedure phrases such as "Gave TYLENOL…", "resolved with
    prednisone", "IVIG") and 4 reports removed because nothing informative was left. Edits only shorten text, never add or
-   rewrite it, and were decided from the text alone, without the label. The rule script that produced them was lost with a
-   deleted branch; the ledger stores its exact output and the build checks every row against it.
+   rewrite it, and were decided from the text alone, without the label. The build checks every row of the ledger before
+   applying it.
 
 Notebook [02](../../notebooks/02_vaers_eda_and_preprocessing.ipynb) runs these steps and shows the evidence behind each rule.

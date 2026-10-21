@@ -16,9 +16,6 @@ Steps (each step's output hash is checked against the frozen value):
      whose excerpt has no informative content left are excluded. Nothing is added or rewritten; the
      ledger stores, per report, how many leading characters are kept and the exact removed text.
      The ledger is label-blind (decided from text only) and is checked row by row before it is applied.
-
-Provenance note: the original care-boundary-3 rule script was lost with a deleted branch. Its exact
-output was preserved, and the ledger reproduces it byte for byte (verified by the final hash).
 """
 from __future__ import annotations
 

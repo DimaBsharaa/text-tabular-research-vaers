@@ -40,7 +40,7 @@ SHA_V11B = "8e59f09b19d0f7f174b38413ffe48052b005491fa1464877764d405911e16690"
 
 
 def csv_bytes(df: pd.DataFrame) -> bytes:
-    return df.to_csv(index=False).encode()
+    return df.to_csv(index=False, lineterminator="\n").encode()
 
 
 def sha(b: bytes) -> str:
@@ -48,7 +48,7 @@ def sha(b: bytes) -> str:
 
 
 def as_str(df: pd.DataFrame) -> pd.DataFrame:
-    d = pd.read_csv(io.StringIO(df.to_csv(index=False)), keep_default_na=False, dtype=str)
+    d = pd.read_csv(io.StringIO(df.to_csv(index=False, lineterminator="\n")), keep_default_na=False, dtype=str)
     d.report_id = d.report_id.map(rv.canonical_id)
     return d
 

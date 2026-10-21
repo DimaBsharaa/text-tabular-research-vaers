@@ -16,7 +16,9 @@ def code(text):
 
 
 md('''
-    # 08 — Repair v9's care boundary and test it on matched rows
+    # 04 — Care-boundary cleanup (v10) and matched-row test
+
+    > **Development notebook** — kept as a record of how the dataset was built. The final dataset and results are in the [main notebooks](../../README.md).
 
     v10 preserves observed symptoms before later care, excludes explicit post-event background,
     and keeps all structured predictors and labels intact. It is retrospective report classification.
@@ -188,7 +190,7 @@ code('''
 
 nb = {'nbformat': 4, 'nbformat_minor': 5, 'cells': cells,
       'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
-                   'language_info': {'name': 'python'}, 'colab': {'name': '08_vaers_v10_refinement.ipynb'}}}
-path = ROOT / 'research/notebooks/08_vaers_v10_refinement.ipynb'
+                   'language_info': {'name': 'python'}, 'colab': {'name': '04_vaers_care_cleanup.ipynb'}}}
+path = ROOT / 'research/notebooks/development/04_vaers_care_cleanup.ipynb'
 path.write_text(json.dumps(nb, indent=1) + '\n')
 print('Wrote', path)

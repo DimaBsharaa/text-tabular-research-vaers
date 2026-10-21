@@ -14,13 +14,13 @@ import matplotlib.pyplot as plt
 import IPython.display
 
 ROOT = Path(__file__).resolve().parents[2]
-PATH = ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb"
+PATH = ROOT / "research/notebooks/development/05_benchmark_screen_colab.ipynb"
 
 
 def main():
     nb = json.loads(PATH.read_text())
-    namespace = {"CSV": ROOT / "research/data/tennis_smoke/tennis_smoke.csv",
-                 "SCHEMA": ROOT / "research/data/tennis_smoke/schema.json", "json": json, "hashlib": hashlib}
+    namespace = {"CSV": ROOT / "tennis/data/smoke/tennis_smoke.csv",
+                 "SCHEMA": ROOT / "tennis/data/smoke/schema.json", "json": json, "hashlib": hashlib}
     original_display, original_show = IPython.display.display, plt.show
     count = 0
     try:

@@ -14,7 +14,7 @@ def code(text):
 md("""
 # Why do text-tabular datasets pass or fail MulTaBench?
 
-**Track 2 research notebook · October 14, 2026 · no new dataset chosen**
+**Benchmark study · October 2026 · written before any new dataset was chosen**
 
 We want evidence to guide a new dataset idea. This notebook studies the 56 original candidates, not a new benchmark experiment. All tables and plots below have saved outputs. Run the notebook offline with the cached sources. No learners, encoders, or fine-tuning run here.
 
@@ -24,7 +24,7 @@ Three evidence levels must stay separate:
 - **Historical released structure summaries:** 40 text datasets. Six extended releases change the original task, leaving 34 task-compatible profiles for outcome comparisons.
 - **Current-release previews:** 50 rows per released dataset, 2,000 rows total. A seeded contiguous block is deliberately small, potentially ordered, and **not a representative random sample**. Length, missingness, duplicates, and target frequencies refer only to these previews.
 
-The assignment PDF is the deliverable authority. Historical reconstruction follows the pinned official reproduction code; differences from the paper's wording are shown explicitly. No conclusions here certify that a new dataset will pass.
+Historical reconstruction follows the pinned official reproduction code; differences from the paper's wording are shown explicitly. No conclusions here certify that a new dataset will pass.
 """)
 code("""
 from pathlib import Path
@@ -400,7 +400,7 @@ GRAPH_INSIGHTS = {
     "02_pass_counts": """
 ### Insight — passing is demanding, and success has different strengths
 
-**What we see:** 23/56 candidates meet the three-learner quorum, while 33 do not. Only 11 pass all five learners. A few favorable learners are insufficient for the assignment.
+**What we see:** 23/56 candidates meet the three-learner quorum, while 33 do not. Only 11 pass all five learners. A few favorable learners are not enough to pass curation.
 
 **For our decision:** favor an idea with a clear reason for both modalities to contribute, rather than assuming that any table with a text column will pass. Later, check consistency across learners and aim for a meaningful margin instead of relying on one favorable result.
 """,
@@ -508,7 +508,7 @@ def with_graph_insights(original_cells):
     return annotated
 
 def main():
-    path = ROOT / "notebooks/01_multabench_dataset_analysis.ipynb"
+    path = ROOT / "notebooks/01_multabench_benchmark_analysis.ipynb"
     path.parent.mkdir(parents=True, exist_ok=True)
     annotated = with_graph_insights(cells)
     notebook = {"nbformat":4,"nbformat_minor":5,"metadata":{"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"},"language_info":{"name":"python","version":"3.14"}},"cells":annotated}

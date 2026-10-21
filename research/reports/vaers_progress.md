@@ -1,17 +1,17 @@
 # VAERS: progress in one page
 
-**Read this first.** It tells the whole story in order. Every other VAERS report is evidence for one row of this file (see the map at the bottom). Last updated October 17, 2026 (v10 and v9_control finished; CPU idea tests done; v11a GPU screen next).
+**Read this first.** It tells the whole story in order. Every other VAERS report is evidence for one row of this file (see the map at the bottom). Last updated October 21, 2026: **final.** v11b was chosen, and the official run passes both checks on 5/5 learners (rows 17–20).
 
 **Task.** One row is one VAERS report. The target `serious` = 1 if the report's flags record death, a life-threatening event, hospitalisation (or a longer stay), disability or a birth defect. These flags build the label only and are never inputs. This is retrospective classification of recorded seriousness. It is not a forecast and not a causal claim about vaccines.
 
 **Pipeline (reproducible from the raw files):**
 
-1. Download `2019VAERSData.zip`, `2023VAERSData.zip` and `2024VAERSData.zip` from vaers.hhs.gov.
-2. Notebook 06 runs `build_vaers.py` and produces v1…v9 (build 8).
-3. Notebook 08 runs `refine_v9.py` on v9 and the same raw ZIPs and produces v10 (build 9).
-4. Notebook 02 runs the official MulTaBench code: Structured, Text, Joint Frozen and Joint TAR.
-
-The final run uses `benchmark.py` at commit 89a1854.
+1. `2019VAERSData.zip`, `2023VAERSData.zip` and `2024VAERSData.zip` from vaers.hhs.gov (exact copies in `research/data/vaers_raw/`).
+2. Development notebook 03 runs `build_vaers.py` and produces v1…v9 (build 8).
+3. Development notebook 04 runs `refine_v9.py` on v9 and the same raw ZIPs and produces v10 (build 9).
+4. Development notebook 05 screens each version with MulTaBench's paper-version code: Structured, Text, Joint Frozen and Joint TAR.
+5. `build_v11b.py` rebuilds the final dataset end to end (full cohort → v11a matched controls → v11b care cleanup 3); notebook 02 runs it and shows the evidence.
+6. Notebook 07 runs the official `benchmark.py` at commit `c955466` (`master` as of 26 Jul 2026; the same code as `89a1854` apart from leaderboard analysis files). Notebook 08 analyses the results.
 
 ## The story: problem → fix → did it work?
 
@@ -33,6 +33,10 @@ The final run uses `benchmark.py` at commit 89a1854.
 | 14 | **v10** (build 9, care-boundary-2) | (row 13) | Cut excerpts before care, record pointers and functional outcomes; dropped rows whose background is explicitly post-event. 19,832 rows, 24.7% serious (304 v9 rows removed). | **Done** (LightGBM + CatBoost × 3 folds, Drive `benchmark-results/4f9a4eda6271a02b`). Joint gain +0.034 (v9_control +0.030), 6/6 pass. TAR gain median +0.008 (v9_control +0.007; means +0.006 vs +0.007; the gap is noise, since a 10-split CPU check gives v9 0.0216, v9_control 0.0201, v10 0.0204), 5/6 runs positive (LightGBM fold 2: −0.002; LightGBM mean still +0.004). Text-only fell 0.005 while Joint Frozen stayed the same, and the TAR gain did not change. So the removed care text was slightly informative, but it was not what drove TAR. |
 | 15 | **v9_control** | v10 changes two things at once (removes 304 rows and cleans text), so v10 vs v9 can't say which change mattered. | Same 19,832 rows as v10 but with v9's old text, so the splits are identical. v10 vs v9_control = the effect of the text cleanup alone. | **Done** (LightGBM + CatBoost × 3 folds, Drive `benchmark-results/0d1c69e9ba434cbe`). Both checks pass in 6/6. Mean TAR gain: LightGBM +0.006, CatBoost +0.008. Lower than v9 on the same folds; only 304 rows changed, so run-to-run noise is about ±0.005. |
 | 16 | **Idea tests (CPU proxy)** | TAR gain only at the benchmark median. Which dataset designs could raise it? | Rebuilt the full cohort from the raw ZIPs and tested 12 designs on a CPU proxy (section below). | **Matched controls (v11a) is the only clear win**: proxy TAR gain +0.030 vs +0.021 for v10, with a higher Joint gain too. Dropping background, longer excerpts, 50% serious, separate background columns and symptom matching did not help. A +0.1 TAR gain is out of reach for this text. |
+| 17 | **v11a** (matched controls) | Before matching, the vaccine alone told a lot (3% serious for shingles, 17% for COVID-19), so the table did the work and the text had little left to add. | Every serious report plus up to 3 non-serious reports in the same vaccine type × report year × age band × sex stratum, chosen by a fixed hash; no text used. 18,863 rows, 26% serious. | **Yes.** Screen (LightGBM + CatBoost × folds 0–2): Joint +0.038, **TAR +0.021**, about 3× v10. |
+| 18 | **v11a_control** | Is the TAR gain driven by the rows or by the text? | v11a's text on v11b's rows (4 rows fewer). | Joint +0.026, TAR +0.035. Only 4 rows differ from v11a, yet TAR moves by 0.013: **differences under about 0.01 are split noise.** |
+| 19 | **v11b** (care-boundary-3) | Some excerpts still named medications and procedures ("Gave TYLENOL…", "resolved with prednisone", "IVIG", "NICU"). | 503 excerpts cut to a shorter literal prefix and 4 reports removed, recorded in an edit ledger; label-blind. Also screened: v11b_context (one merged text column) and v11c (manufacturer added to the matching). | v11b: Joint +0.031, TAR +0.029; v11b_context +0.032 / +0.027; v11c +0.027 / +0.019. All within the noise band of each other; **v11b chosen as the cleanest text.** |
+| 20 | **Official run** | — | `benchmark.py` at `c955466`, unchanged; 5 learners × 4 conditions × 5 folds on v11b. | **Both checks pass on 5/5 learners.** Median Joint +0.031, TAR +0.020; all 25 learner-fold runs positive on both; folds 3–4, unseen during the version choice, stay positive. On the screened learners and folds it reproduces the v11b screen exactly. |
 
 
 ## Screen results so far
@@ -46,16 +50,30 @@ Paper-version code, development only. Values are medians over learners.
 | v9 | 5×3 | 0.806 | 0.844 | 0.868 | 0.878 | +0.027 | +0.010 | 5/5 / 5/5 |
 | v9_control | 2×3 | 0.816 | 0.839 | 0.868 | 0.875 | +0.030 | +0.007 | 2/2 / 2/2 |
 | v10 | 2×3 | 0.816 | 0.834 | 0.867 | 0.875 | +0.034 | +0.008 | 2/2 / 2/2 |
-| v11a (matched controls) | next: LightGBM + CatBoost × 3 folds | | | | | | | |
 | *Accepted MulTaBench datasets (median of 23)* | | | | | | *+0.023* | *+0.0085* | |
 
 Per-learner and per-fold numbers: `vaers_v8_v9_results_comparison.md`, `research/data/screens/vaers_v9_v9control_v10_results.csv` and `research/data/screens/`. Rows here are medians over the 6 learner-fold runs (LightGBM + CatBoost × 3).
 
+**Final version comparison** — mean of LightGBM and CatBoost over folds 0–2 (the bars in notebook 08; `research/data/screens/version_screens_light_cat_folds012.csv`):
+
+| Version | Structured | Text | Joint Frozen | Joint TAR | Joint gain | TAR gain |
+|---|---|---|---|---|---|---|
+| v9 | 0.801 | 0.837 | 0.864 | 0.875 | +0.028 | +0.010 |
+| v9_control | 0.814 | 0.838 | 0.867 | 0.874 | +0.030 | +0.007 |
+| v10 | 0.814 | 0.833 | 0.867 | 0.873 | +0.034 | +0.006 |
+| v11a | 0.739 | 0.775 | 0.813 | 0.834 | +0.038 | +0.021 |
+| v11a_control | 0.723 | 0.786 | 0.812 | 0.847 | +0.026 | +0.035 |
+| **v11b (chosen)** | 0.723 | 0.786 | 0.816 | 0.846 | +0.031 | +0.029 |
+| v11b_context | 0.723 | 0.774 | 0.805 | 0.832 | +0.032 | +0.027 |
+| v11c | 0.732 | 0.788 | 0.815 | 0.833 | +0.027 | +0.019 |
+
+**Official v11b result** (all 5 learners × 5 folds, `c955466`): medians Structured 0.735, Text 0.795, Joint Frozen 0.823, Joint TAR 0.843; Joint gain +0.031, TAR gain +0.020; both checks 5/5. See `results/official_c955466/` and notebook 08.
+
 ## Status, in one sentence each
 
 - **Mechanics** (same test rows across conditions, TAR trained on training rows only, exact CSV per run): verified on every archive.
-- **Leakage:** the known text paths are fixed in v10; universal absence cannot be proven.
-- **Official result:** not run yet. It needs native registration and `benchmark.py` at 89a1854, once, on the frozen final version.
+- **Leakage:** the known text paths are fixed through care-boundary-3 (v11b); universal absence cannot be proven. Notebook 02 part C shows the remaining checks.
+- **Official result:** done. Native registration plus `benchmark.py` at `c955466`, run once on the frozen v11b: both checks pass on 5/5 learners.
 
 ## Idea tests on a CPU proxy (October 17)
 
@@ -89,19 +107,20 @@ The proxy matches the real Structured and Joint Frozen levels. It overstates the
 ## Next steps (in order)
 
 1. ~~Run v10~~ done. 2. ~~Compare v10 vs v9_control~~ done (row 14).
-3. Run **v11a** (matched controls; built from the raw ZIPs by `proxy_ideas/make_variants*.py`) in notebook 02: LightGBM + CatBoost, folds 0–2. Pre-set rule: choose v11a over v10 only if its median TAR gain is higher and Joint Signal passes in 6/6 runs; otherwise freeze v10.
-4. Checks before freezing: the cut-position artifact (done on the proxy; repeat on the final dataset); fresh rebuild from the raw ZIPs (**done**: hashes match); blind read of about 100 excerpts.
-5. A tiny native test at MulTaBench 89a1854, then the single official run (5 learners × 5 folds) with `benchmark.py`.
-6. Write the paper. Deadline Oct 26, 2026.
+3. ~~Run v11a~~ done (row 17): its TAR gain was clearly higher than v10's and Joint Signal was positive for both learners, so the matched design replaced v10.
+4. ~~Checks before freezing~~ done: fresh rebuild from the raw ZIPs reproduces v11a and v11b byte for byte (`build_v11b.py`); excerpt lengths no longer differ by class (notebook 02, C4).
+5. ~~Official run~~ done (row 20), at `c955466`.
+6. Write the paper.
 
-## Starting a new chat? Read this
+## Project facts
 
-- Course: Technion NLP 097215, final project, Track 2 (benchmark). The dataset must pass MulTaBench curation: Joint Frozen > max(Structured, Text) **and** Joint TAR > Joint Frozen, each on ≥3 of 5 learners (LightGBM, CatBoost, TabM, TabPFN-v2, TabPFN-2.5). Bigger gains mean a better grade.
-- Development screens: notebook 02, paper-version code at 3bb9507, results on Drive in `MyDrive/text-tabular-research-2/benchmark-results/<plan_id>/results.csv`.
-- Data builds: notebook 06 (`build_vaers.py`, v1–v9) and notebook 08 (`refine_v9.py`, v10 / v10_matched / v9_control), both from the raw VAERS ZIPs on Drive `vaers_raw/`.
-- Plan IDs: v7 `a12d3b1c04dbbdd7` + `721a59225d840c64`; v8 `c7b5b71aeb656d52` + `0343d0f8f1fc61a6`; v9 `20b24baf903ae7ac` + `a84e46ed50352f6a`; v10_matched `211cb027c8cf4486`; v9_control `0d1c69e9ba434cbe`.
+- Curation rule: Joint Frozen > max(Structured, Text) **and** Joint TAR > Joint Frozen, each on ≥3 of 5 learners (LightGBM, CatBoost, TabM, TabPFN-v2, TabPFN-2.5), counted separately for the two checks, on unrounded scores.
+- Development screens: notebook 05 (development), paper-version code at 3bb9507, results on Drive in `MyDrive/text-tabular-research-2/benchmark-results/<plan_id>/results.csv`.
+- Data builds: development notebooks 03 (`build_vaers.py`, v1–v9) and 04 (`refine_v9.py`, v10 / v10_matched / v9_control); the final dataset with `build_v11b.py`.
+- Plan IDs: v7 `a12d3b1c04dbbdd7` + `721a59225d840c64`; v8 `c7b5b71aeb656d52` + `0343d0f8f1fc61a6`; v9 `20b24baf903ae7ac` + `a84e46ed50352f6a`; v10_matched `211cb027c8cf4486`; v9_control `0d1c69e9ba434cbe`; v11a `2c0763a91fe71895`; v11a_control `46d53676b1560c44`; v11b `46f84d4ab9bf09cf`; v11b_context `114d0c6c64cd8324`; v11c `fcb6180218b90e0e`.
+- Official run: Drive `official-final/vaers_v11b_c955466/`, copied to `results/official_c955466/`.
 - Rules: never print or commit secrets (they live in Colab Secrets); one notebook run at a time; open notebooks fresh from GitHub.
-- Repo history: on 2026-10-18 the history was rewritten to remove a work email and moved to the private repo `DimaBsharaa/text-tabular-research-vaers` (content unchanged; tree hashes identical). Old commit ids recorded in Drive results map to new ones via [`commit_id_map.csv`](commit_id_map.csv).
+- Repo history: on 2026-10-18 the history was rewritten (author identity corrected) and moved to `DimaBsharaa/text-tabular-research-vaers` (content unchanged; tree hashes identical). Old commit ids recorded in Drive results map to new ones via [`commit_id_map.csv`](commit_id_map.csv).
 
 ## Map of the other VAERS reports
 

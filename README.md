@@ -1,106 +1,123 @@
-# Text-tabular dataset research
+# VAERS-Serious: a new text + table dataset for MulTaBench
 
-Technion NLP Final Project, **Standard Track 2**, due **October 26, 2026**. We are curating one new dataset in which structured features and natural-language text provide complementary predictive information. VAERS v9 is our leading development candidate; v10 applies the care-boundary correction. Final qualification remains unproven. Earlier tennis work is preserved as research history.
+A curated dataset of **18,859 vaccine adverse-event reports** where neither the structured fields nor the free text is
+enough on its own: **combining them helps, and fine-tuning the text encoder helps further**. It passes both
+[MulTaBench](https://github.com/alanarazi7/MulTaBench) curation checks on **all 5 learners**, evaluated with the
+official benchmark code, unchanged.
 
-## Current VAERS workflow (October 17, 2026)
+**Task:** given what a report contains when it is filed, predict whether it describes a **serious** outcome
+(death, life-threatening event, hospitalisation, disability or birth defect).
 
-**Start here for the story:** [VAERS progress in one page](research/reports/vaers_progress.md) (v1 → v10: problem, fix, did it work, results).
+## Results
 
-**For the current run: open 08 on CPU, then 02 on A100. Skip 06 if frozen v9 already exists.**
+Official MulTaBench `benchmark.py` at commit [`c955466`](https://github.com/alanarazi7/MulTaBench/tree/c95546638be9bac472a2ee38afa7171060ab80bc)
+(`master` as of 26 Jul 2026), 5 learners × 4 conditions × 5 folds = 100 runs. AUROC, mean of 5 folds.
 
-| Step | Notebook | Input → output |
-| --- | --- | --- |
-| Raw-data construction | [06 VAERS build](research/notebooks/06_vaers_candidate_build.ipynb), CPU | Official 2019/2023/2024 VAERS ZIPs → frozen build-8 v9 CSV/schema |
-| Care-boundary correction | [08 v10 refinement](research/notebooks/08_vaers_v10_refinement.ipynb), CPU | Verified raw ZIPs + frozen v9 → build-9 v10, all-row v10_matched, and matched v9_control; tests, text examples and CPU diagnostics |
-| Evaluation | [02 benchmark](research/notebooks/02_tennis_official_benchmark_colab.ipynb), GPU | Selected CSV/schema → Structured, Text, Joint Frozen and Joint TAR scores using unchanged official code |
+| Learner | Structured only | Text only | Joint (frozen E5) | Joint (fine-tuned E5, TAR) | Joint gain | TAR gain |
+|---|---:|---:|---:|---:|---:|---:|
+| LightGBM | 0.721 | 0.778 | 0.809 | 0.839 | +0.031 | +0.030 |
+| CatBoost | 0.739 | 0.787 | 0.823 | 0.843 | +0.036 | +0.020 |
+| TabM | 0.725 | 0.799 | 0.832 | 0.847 | +0.033 | +0.015 |
+| TabPFN-v2 | 0.735 | 0.795 | 0.821 | 0.843 | +0.027 | +0.022 |
+| TabPFN-2.5 | 0.740 | 0.805 | 0.835 | 0.851 | +0.029 | +0.016 |
 
-Raw sources are `2019VAERSData.zip`, `2023VAERSData.zip`, `2024VAERSData.zip`. In Colab they live under `MyDrive/text-tabular-research-2/vaers_raw/`; code is in Git, raw and generated text-bearing datasets are outside Git. Notebook 08 writes `candidates/build9/vaers_<variant>/` on Drive. Start the GPU check with **v10_matched, light + cat, fold 0** (8 evaluations), comparing with the completed v9 baseline; v10_matched is diagnostic-only. The final v10 candidate contains 19,832 rows.
+- **Joint gain** = Joint frozen − max(Structured, Text). **TAR gain** = Joint TAR − Joint frozen. Curation needs each gain > 0 on at least 3 of 5 learners, counted separately for the two checks.
+- **Both checks pass on 5/5 learners**, and on **all 25 learner × fold runs** (smallest TAR gain +0.0065).
+- Median gains **+0.031 (Joint)** and **+0.020 (TAR)**, against +0.023 and +0.010 for the 20 accepted MulTaBench text datasets. The TAR gain ranks **3rd of 21**.
+- Structured-only ≈ 0.72 is real signal: with shuffled labels the same model scores 0.49 on average (max 0.51).
 
-Construction is explicit in [build_vaers.py](research/scripts/vaers/build_vaers.py) and [refine_v9.py](research/scripts/vaers/refine_v9.py). Source/input hashes and row-lineage records link the stages. Frozen v9 and running v8/v9 experiments are preserved. Notebook 08 clones our code from GitHub automatically; no tools ZIP upload is needed.
+Raw scores: [`results/official_c955466/`](results/official_c955466/) · analysis and charts: [notebook 08](research/notebooks/08_vaers_results.ipynb).
 
-## What are we trying to demonstrate?
+## The dataset
 
-For each learner—LightGBM, CatBoost, TabM, TabPFN 2.0 and TabPFN 2.5—we compare four conditions on the same dataset:
+Source: [VAERS](https://vaers.hhs.gov/data/datasets.html), the U.S. vaccine adverse-event reporting system (CDC/FDA, public data).
+Yearly files **2019, 2023 and 2024**: 2019 covers the usual mix of vaccines before COVID-19, and 2023–2024 are recent years
+after the 2021–2022 COVID-19 vaccine surge, which would otherwise dominate the data.
 
-| Condition | Inputs |
-| --- | --- |
-| Structured Only | Numerical and categorical features |
-| Text Only | Frozen E5 embeddings of the text |
-| Joint Frozen | Structured features plus frozen E5 embeddings |
-| Joint TAR | Structured features plus E5 embeddings adapted using training targets |
+| Column | Type | What it holds |
+|---|---|---|
+| `age_years`, `onset_days`, `n_vaccines`, `report_year` | numeric | age, days from vaccination to onset, number of vaccines given, year the report was received |
+| `sex`, `state`, `vax_type`, `vax_manu`, `vax_dose_series`, `vax_route`, `vax_site`, `admin_by` | categorical | patient, vaccine and administering-facility facts |
+| `patient_background` | text | history, allergies, medications and illness at vaccination |
+| `narrative_onset` | text | the opening of the symptom narrative (up to 3 sentences), cut before any care or outcome |
+| `serious` | target | 1 if the report's outcome flags record death, life threat, hospitalisation, prolonged stay, disability or birth defect |
+| `report_id` | audit | VAERS ID, dropped by the benchmark |
 
-**Joint Signal** is Joint Frozen minus the stronger single modality. **TAR Gain** is Joint TAR minus Joint Frozen. The course clarification requires **at least three of five learners for each criterion separately**; the learner sets may differ. A high prediction score alone is insufficient. Exact threshold conventions and official settings are in the [evaluation plan](research/reports/evaluation_infrastructure_plan.md).
+How 208,309 raw reports became 18,859 (full detail in [notebook 02](research/notebooks/02_vaers_eda_and_preprocessing.ipynb)):
 
-## Earlier tennis snapshot
+| Step | Reports |
+|---|---:|
+| Unique reports in the three yearly files | 208,309 |
+| Drop manufacturer-submitted reports (templated, a different serious rate) | 131,372 |
+| Keep reactions with onset 0–42 days (or unknown); drop infection / vaccine-failure reports | 112,726 |
+| Merge duplicate reports of the same event | 111,127 |
+| At least one reaction term after removing outcome and care terms | 75,925 |
+| Non-empty narrative excerpt (7.9% serious) | 63,564 |
+| Remove care text from excerpts and post-event background | 62,754 |
+| Matched controls: every serious report + up to 3 non-serious per serious, same vaccine × year × age band × sex | 18,863 |
+| Final care-text cleanup (503 excerpts shortened, 4 reports removed) | **18,859 (26.0% serious)** |
 
-Updated October 15, 2026:
+**Leakage controls.** The label flags, dates, hospital stay, lab data, recovery status and coded symptom terms are never inputs.
+The narrative is cut before the first sentence about treatment or outcome, because "admitted", "ICU" or "IVIG" give the label away.
+Controls are matched on structured fields only, never on text. Each rule and the evidence behind it is in notebook 02.
 
-- **Infrastructure works:** the official LightGBM smoke test completed all four conditions on a 488-row Kaggle fixture. This establishes execution, not dataset suitability. See the [observed run](research/data/tennis_smoke/observed_run/README.md).
-- **Cornell A is our leading tennis candidate:** genuine player interviews plus historical statistics. The original 4,052 provisional rows remain preserved locally; the refined version has **3,627 rows** after date/link/played-match rules.
-- **Text curation is explicit:** six extractive approaches fit the actual E5 512-token budget, including prefixes and special tokens. Notebook 05 shows real before/after examples and what each method loses.
-- **Small CPU results are negative so far:** structured-only development AUROC is **0.7684**; the best joint TF-IDF diagnostic is **0.7660**. None of the six text variants improves on structured alone. These are logistic-regression diagnostics, not official E5/TAR results.
-- **Leakage evidence is available:** 45 audit entries comprise 36 PASS, six ASSUMPTION, two FAIL and one NOT_RUN. The failures expose an older random-split design and a deliberately leaky negative control; no implemented current-v1 rule failed. The 749 reserved-test rows have **not been model-scored**.
-- **Uncertainty remains:** the three-calendar-day interview delay is an availability assumption, not proof of publication. Source-use/redistribution terms remain unresolved; transcript-bearing CSVs stay outside Git.
+## Reproduce
 
-## Open these notebooks
+```bash
+pip install -r research/requirements.txt
 
-The research notebooks contain saved tables and visualizations. Notebook 02 is the executable Colab runtime; its successful user-run export is stored separately.
+# 1. Raw files -> dataset (CPU, about 3 minutes). Stops if the result differs from the published sha256.
+#    The three raw VAERS ZIPs are in research/data/vaers_raw/ (exact copies of the files we used).
+python -m research.scripts.vaers.build_v11b research/data/vaers_raw/2019VAERSData.zip \
+    research/data/vaers_raw/2023VAERSData.zip research/data/vaers_raw/2024VAERSData.zip --out-dir out/
 
-| Notebook | What it contains | When to use it |
-| --- | --- | --- |
-| [01 — Historical benchmark EDA](research/notebooks/01_multabench_dataset_analysis.ipynb) · [HTML](research/notebooks/01_multabench_dataset_analysis.html) | Original candidates, pass/fail patterns, modality gains and text/column profiles; insights after each chart | Learn from previous dataset outcomes |
-| [02 — Official benchmark in Colab](research/notebooks/02_tennis_official_benchmark_colab.ipynb) · [Open in Colab](https://colab.research.google.com/github/DimaBsharaa/text-tabular-research-vaers/blob/main/research/notebooks/02_tennis_official_benchmark_colab.ipynb) | Setup, source-integrity proof, four-condition smoke run, dashboard and Drive export | Check the runtime on A100; its default CSV is an engineering fixture |
-| [03 — Cornell interviews EDA](research/notebooks/03_tennis_interviews_eda.ipynb) | Actual corpus hierarchy, lengths, content review, match-link quality and coverage | Understand the interview source |
-| [04 — Tennis dataset prototypes](research/notebooks/04_tennis_dataset_prototypes.ipynb) | A/B/C constructions, coverage and preliminary CPU comparisons; earlier A review | Understand why we prioritized real interviews over generated templates |
-| [05 — Current Cornell A validation](research/notebooks/05_tennis_interview_validation.ipynb) | Date sensitivity, six text policies, before/after examples, leakage checks and development scores | **Start here for the latest dataset findings** |
+# 2. Dataset -> official scores (Colab GPU, about 8 hours on an A100)
+#    Open research/notebooks/07_vaers_official_run_colab.ipynb in Colab and Run all.
 
-Rerunning 03–05 needs the existing local source cache; their saved outputs are readable without it. Notebook 02 uses a separate Python environment and GPU runtime, and still defaults to the Kaggle fixture, not Cornell A.
+# 3. Scores -> tables and charts (CPU, a few minutes)
+#    Open research/notebooks/08_vaers_results.ipynb in Jupyter and Run all.
+```
 
-## Our process
+**How we know it is the official benchmark.** Notebook 07 clones the MulTaBench repository, checks out `c955466` and asserts
+the commit hash, installs its pinned `requirements.txt`, and calls `benchmark.py` unchanged. The only addition is registering the
+dataset: one enum line, one file-path line, one curation recipe and the CSV, saved as
+[`registration.diff`](results/official_c955466/registration.diff). Every row of `results.csv` records the commit and the GPU.
 
-1. **Learn from the existing benchmark.** Reconstruct historical outcomes and inspect available previews: 23 accepted and 33 rejected candidates. TAR gain is a frequent bottleneck. Observed associations guide hypotheses, not guarantees.
-2. **Prepare evaluation.** Inspect the pinned official implementation, build our CSV adapter and results display around it, then verify execution with a bounded smoke test.
-3. **Compare candidate datasets.** Investigate tennis sources and three constructions: A, real interviews; B, charted tactical-statistic templates; C, verbalized ordinary match context. B/C did not show complementary gains in their CPU pilots.
-4. **Construct auditable rows.** Assign Player A/B independently of the winner; join earlier interviews; compute historical statistics using strictly earlier days; exclude target and provenance from predictors.
-5. **Curate text and check leakage.** Select original passages within the tokenizer limit, declare publication assumptions, use chronological partitions, and fit transformations only on training rows. Retain source IDs, passage spans, histories, hashes and automated evidence.
-6. **Run cheap diagnostics, then freeze a candidate.** We are here: useful language exists, but complementary predictive value remains unproven.
-7. **Evaluate the chosen candidate officially.** A bounded E5/TAR diagnostic should precede a full five-learner run. Keep the reserved test for final use. Official random holdouts and temporal forecasting diagnostics answer different questions and must be reported separately.
+## Notebooks
 
-## File guide
+| # | Notebook | What it answers |
+|---|---|---|
+| 01 | [MulTaBench benchmark study](research/notebooks/01_multabench_benchmark_analysis.ipynb) | Why do the 56 original candidate datasets pass or fail? What does a passing dataset look like? |
+| 02 | [VAERS EDA and preprocessing](research/notebooks/02_vaers_eda_and_preprocessing.ipynb) | What is in the raw data, which problems it has, and how each rule fixes one — run end to end from the raw files |
+| 07 | [Official run (Colab)](research/notebooks/07_vaers_official_run_colab.ipynb) | The 100 official runs, with their real outputs |
+| 08 | [Results](research/notebooks/08_vaers_results.ipynb) | Scores, permutation test, dataset versions, comparison with the benchmark |
 
-| Location | Contents |
-| --- | --- |
-| [research/README.md](research/README.md) | Detailed notebook/report/data/script guide and reproduction commands |
-| [research/notebooks/](research/notebooks/) | The five notebooks above; notebook 01 also has standalone HTML |
-| [research/reports/](research/reports/) | Findings, source comparisons, evaluation plan, text study and leakage report |
-| [research/data/](research/data/) | Historical benchmark tables, source manifests, bounded previews and tennis evidence |
-| [research/data/tennis_prototypes/README.md](research/data/tennis_prototypes/README.md) | Individual A/B/C and `a_v1_*` evidence files explained |
-| [research/scripts/](research/scripts/) | Historical EDA/report scripts; `tennis/` contains our construction, text, audit, diagnostic and test modules |
-| [evaluation/README.md](evaluation/README.md) | Colab instructions, presets, output files and the official-code boundary |
-| [evaluation/colab_runner.py](evaluation/colab_runner.py) | Our CSV/schema adapter, reference verification and per-job orchestration |
-| [evaluation/results.py](evaluation/results.py) | Our aggregation of four scores, gains, completeness and qualification flags |
-| [evaluation/colab_session.py](evaluation/colab_session.py) | Colab bootstrap/logging, export and runtime shutdown support |
-| [evaluation/tennis_temporal_pilot.py](evaluation/tennis_temporal_pilot.py) | Optional chronological adapter; validates provenance, defaults to checks only, and uses unchanged official classes if explicitly run |
+Notebooks 03–06 in [`research/notebooks/development/`](research/notebooks/development/) record how the dataset was built and screened.
 
-For conclusions, read the [current text study](research/reports/tennis_a_text_preprocessing.md), [leakage validation](research/reports/tennis_a_leakage_validation.md), [original A/B/C comparison](research/reports/tennis_variant_comparison.md) and [evaluation plan](research/reports/evaluation_infrastructure_plan.md). Older reports describe earlier stages; notebook 05 and the two current A reports take precedence for v1 counts/results.
+## How we got here
 
-## Dataset files: public evidence and local inputs
+1. **Study the benchmark** (notebook 01). Only 23 of the 56 original candidates passed, and the most common failure is the TAR check. The subject area does not predict success. What matters is that each modality carries information the other lacks, and that the text uses task-specific language a generic encoder only partly captures.
+2. **First candidate: tennis** — predict the match winner from statistics plus the players' press-conference interviews. The text added nothing over the statistics (joint 0.766 vs structured 0.768) and the sources could not be redistributed, so it was dropped. Full story: [`tennis/`](tennis/README.md).
+3. **VAERS**, version by version: remove leaking fields, keep only the opening of the narrative, fix the cohort, match the controls. Each version was screened with LightGBM + CatBoost on folds 0–2 before choosing **v11b**; folds 3–4 were first seen in the official run, and stay positive. Step-by-step log: [`research/reports/vaers_progress.md`](research/reports/vaers_progress.md).
 
-GitHub contains our code, executed notebooks, reports, counts, metadata, audit outcomes and prediction tables. Full tennis sources and text-bearing CSVs are in the **sibling** directory `../tennis-research-cache/`, configurable with `TENNIS_RESEARCH_CACHE`. They are not published because redistribution permission has not been established.
+## Limitations
 
-| Local path under `../tennis-research-cache/derived/` | Meaning |
-| --- | --- |
-| `variant_A.csv`, `variant_B.csv`, `variant_C.csv` | Original exploratory constructions; A has 4,052 provisional rows |
-| `candidate_A_v0_review/` | Earlier A review, preserved for comparison |
-| `candidate_A_v1/features_<policy>.csv` | Current 3,627 rows: one CSV per text policy, identical structured inputs and labels |
-| `candidate_A_v1/schema*.json` | Feature/target definitions, policy and explicit unresolved assumptions |
-| `candidate_A_v1/audit.csv`, `splits.csv` | Source dates/identities and fixed train/development/reserved-test membership |
-| `candidate_A_v1/*private*.jsonl.gz`, `history_lineage.jsonl.gz` | Exact passage provenance and contributing historical match IDs |
+- VAERS reports are unverified and self-selected. The label is what the reporter recorded, not a clinical judgement, and nothing here says anything about whether vaccines cause these events.
+- The 26% serious rate comes from the matched-control design (about 8% across all eligible reports). AUROC does not depend on the class ratio, but absolute probabilities do not transfer to the full population.
+- The narrative excerpt is defined by written rules. Hidden care language can never be ruled out completely; the rules, audits and edit ledger are published so they can be checked.
+- Each test fold has about 1,885 reports, so a single AUROC has a standard error of about ±0.01. The conclusions rely on all 25 runs, not one.
 
-Current A has ten numerical historical predictors, six match-context fields, and two text columns. Structured data can be categorical as well as numerical. Target, match ID, source IDs and winner/loser roles are excluded from predictors. The two course PDFs remain in the parent `NLP/` folder.
+## Repository layout
 
-## Official benchmark boundary
-
-The reference is [alanarazi7/MulTaBench](https://github.com/alanarazi7/MulTaBench), pinned to `paper_version` commit [`3bb9507`](https://github.com/alanarazi7/MulTaBench/tree/3bb95079a6146ed35d45187e98bcad5b063273a1). Our repository contains a **selected read-only source cache for inspection**, not a full benchmark clone. Colab clones it separately into `/content/MulTaBench-reference` and verifies tracked-file bytes and imported module origins.
-
-Our notebooks, adapters, construction and dashboard are our code. The official model implementations are unchanged. Smoke parameters are shorter than the official evaluation; smoke success is not a passing Track 2 result.
+```
+results/official_c955466/   official scores (100 runs), per-fold and summary tables, registration diff
+research/
+  data/vaers_v11b/           the dataset: CSV, schema, care-cleanup edit ledger
+  data/vaers_raw/            the three raw VAERS yearly files the dataset is built from
+  data/screens/              development screen results per version
+  notebooks/                 01, 02, 07, 08 (+ development/03–06)
+  scripts/vaers/             build pipeline (build_v11b.py is the entry point) and tests
+  reports/                   development log and audits
+evaluation/                  Colab adapter used for the development screens
+tennis/                      the earlier, dropped candidate (self-contained)
+```

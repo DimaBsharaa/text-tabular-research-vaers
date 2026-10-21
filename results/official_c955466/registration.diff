@@ -1,0 +1,58 @@
+diff --git a/multabench/datasets/all_datasets.py b/multabench/datasets/all_datasets.py
+index 0fc8010..e85764b 100644
+--- a/multabench/datasets/all_datasets.py
++++ b/multabench/datasets/all_datasets.py
+@@ -113,6 +113,7 @@ class MulTaBenchDatasetID(Enum):
+ 
+ 
+ class UrlDatasetID(Enum):
++    BIN_TEXT_VAERS_SERIOUS_V11B = "local://vaers_v11b.csv"
+     # Image Benchmark - Candidates
+     MUL_IMAGE_LEAGUE_OF_LEGENDS_SKIN_CATEGORY = "https://figshare.com/ndownloader/files/38077608"
+     # Text data
+diff --git a/multabench/datasets/annotated/BIN_TEXT_VAERS_SERIOUS_V11B.py b/multabench/datasets/annotated/BIN_TEXT_VAERS_SERIOUS_V11B.py
+new file mode 100644
+index 0000000..8f9c593
+--- /dev/null
++++ b/multabench/datasets/annotated/BIN_TEXT_VAERS_SERIOUS_V11B.py
+@@ -0,0 +1,28 @@
++from multabench.datasets.curation_objects import CuratedFeature, CuratedTarget
++from multabench.datasets.objects import SupervisedTask, FeatureType
++from multabench.datasets.utils import load_csv
++
++'''
++Dataset Name: BIN_TEXT_VAERS_SERIOUS_V11B
++====
++Source: VAERS (Vaccine Adverse Event Reporting System), public CDC/FDA data, report years 1990-2024.
++Target: serious = 1 if any of DIED, L_THREAT, HOSPITAL, X_STAY, DISABLE, BIRTH_DEFECT == 'Y'.
++Text: patient_background (history/allergies/medications/illness at vaccination) and
++      narrative_onset (opening of the symptom narrative, with outcome and care-process terms removed).
++Structured: age, sex, state, onset delay, vaccine type/manufacturer/dose/route/site, number of vaccines,
++            administering facility type, report year.
++report_id is an audit column and is dropped.
++'''
++
++CONTEXT = "VAERS vaccine adverse event reports: predict whether the report describes a serious outcome"
++TARGET = CuratedTarget(raw_name="serious", task_type=SupervisedTask.BINARY)
++COLS_TO_DROP = ["report_id"]
++FEATURES = [CuratedFeature(raw_name=c, feat_type=FeatureType.NUMERIC)
++            for c in ["age_years", "onset_days", "n_vaccines", "report_year"]]
++
++
++def load_df(dir_path):
++    return load_csv(dir_path, "vaers_v11b.csv")
++
++
++LOADING_FUNC = load_df
+diff --git a/multabench/datasets/downloading.py b/multabench/datasets/downloading.py
+index 01ce4cc..6dd629b 100644
+--- a/multabench/datasets/downloading.py
++++ b/multabench/datasets/downloading.py
+@@ -103,6 +103,7 @@ def get_csv_local_path(dataset_id: MultimodalDatasetID) -> Optional[str]:
+     if dataset_id in ZIP_DATASETS:
+         return None
+     dataset2local = {
++        UrlDatasetID.BIN_TEXT_VAERS_SERIOUS_V11B: "vaers_v11b.csv",
+         UrlDatasetID.REG_TEXT_CONSUMER_BABIES_R_US_PRICES: "babies_r_us.csv",
+         UrlDatasetID.REG_TEXT_CONSUMER_BIKE_PRICE_BIKEWALE: "bikewale.csv",
+         UrlDatasetID.REG_TEXT_PROFESSIONAL_EMPLOYEE_RENUMERATION_VANCOUBER: "vancouber.csv",

@@ -17,10 +17,10 @@ import pandas as pd
 from evaluation.colab_runner import load_csv, selected_columns, verify_reference, verify_import_origins, worker_environment, OFFICIAL_REPOSITORY
 from evaluation.results import CONDITIONS, summarize
 from evaluation.colab_session import run_logged_command
-from research.scripts.prepare_tennis_smoke import build
+from tennis.scripts.prepare_tennis_smoke import build
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "research/data/tennis_smoke"
+DATA = ROOT / "tennis/data/smoke"
 
 
 class TennisHistoryTests(unittest.TestCase):
@@ -137,7 +137,7 @@ class CommandDiagnosticsTests(unittest.TestCase):
         self.assertIn("Agg import and figure passed", result.stdout)
 
     def test_bootstrap_git_error_is_in_exception_before_helper_import(self):
-        nb = json.loads((ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb").read_text())
+        nb = json.loads((ROOT / "research/notebooks/development/05_benchmark_screen_colab.ipynb").read_text())
         cell = next(c for c in nb["cells"] if c["cell_type"] == "code" and "def command(" in c["source"])
         function = next(n for n in ast.parse(cell["source"]).body if isinstance(n, ast.FunctionDef) and n.name == "command")
         scope = {"subprocess": subprocess}
@@ -167,7 +167,7 @@ class CommandDiagnosticsTests(unittest.TestCase):
 
 class RuntimeShutdownTests(unittest.TestCase):
     def run_final_cell(self, saved):
-        nb = json.loads((ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb").read_text())
+        nb = json.loads((ROOT / "research/notebooks/development/05_benchmark_screen_colab.ipynb").read_text())
         source = nb["cells"][-1]["source"]
         calls = []
         colab = types.ModuleType("google.colab")

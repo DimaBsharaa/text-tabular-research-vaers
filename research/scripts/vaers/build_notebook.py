@@ -1,4 +1,4 @@
-"""Generate research/notebooks/06_vaers_candidate_build.ipynb (CPU Colab; no GPU needed)."""
+"""Generate research/notebooks/development/03_vaers_build_from_raw.ipynb (CPU Colab; no GPU needed)."""
 import json
 import textwrap
 from pathlib import Path
@@ -17,7 +17,9 @@ def code(s):
 
 
 md("""
-    # 06 — VAERS severity-triage candidate: build + cheap screen
+    # 03 — Build VAERS candidates from the raw files + cheap screen
+
+    > **Development notebook** — kept as a record of how the dataset was built. The final dataset and results are in the [main notebooks](../../README.md).
 
     **Task.** From what is known when a vaccine adverse-event report is filed — coded symptoms, the patient's
     background text (history, current illness, medications, allergies) and structured facts (age, sex, vaccine,
@@ -124,8 +126,8 @@ code("""
 """)
 
 nb = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "name": "python3"},
-                                   "language_info": {"name": "python"}, "colab": {"name": "06_vaers_candidate_build.ipynb"}},
+                                   "language_info": {"name": "python"}, "colab": {"name": "03_vaers_build_from_raw.ipynb"}},
       "nbformat": 4, "nbformat_minor": 5}
-path = ROOT / "research/notebooks/06_vaers_candidate_build.ipynb"
+path = ROOT / "research/notebooks/development/03_vaers_build_from_raw.ipynb"
 path.write_text(json.dumps(nb, indent=1) + "\n")
 print("wrote", path)

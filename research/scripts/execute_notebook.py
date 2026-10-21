@@ -42,7 +42,7 @@ def render_markdown(source):
     return '\n'.join(out)
 
 def main():
-    notebook_path = ROOT / 'notebooks/01_multabench_dataset_analysis.ipynb'
+    notebook_path = ROOT / 'notebooks/01_multabench_benchmark_analysis.ipynb'
     notebook = json.loads(notebook_path.read_text())
     original_dir = Path.cwd()
     os.chdir(ROOT)

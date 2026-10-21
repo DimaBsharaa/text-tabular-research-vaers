@@ -17,7 +17,9 @@ def code(source, local=False):
 
 
 md("""
-    # Tennis CSV → official MulTaBench: Colab smoke test
+    # 05 — Benchmark screen runner (Colab)
+
+    > **Development tool.** It began as a smoke test of the official evaluation on a small tennis fixture (still the default below) and was then used to screen the VAERS versions with LightGBM + CatBoost. It runs the MulTaBench **paper-version** code (`3bb9507`) through an adapter. The final numbers come from [notebook 07](../07_vaers_official_run_colab.ipynb), which runs the official `benchmark.py` at `c955466` unchanged.
 
     **Open this notebook, select Runtime → Change runtime type → A100 GPU (high RAM if available), then Run all.**
     The first run installs the official pinned dependencies in a separate Python 3.11 environment and downloads E5 weights.
@@ -43,8 +45,8 @@ code("""
     if AUTO_STOP_RUNTIME and not SAVE_TO_DRIVE:
         raise ValueError("Automatic shutdown requires Drive saving. Otherwise set AUTO_STOP_RUNTIME=False.")
     PAPER_COMMIT = "3bb95079a6146ed35d45187e98bcad5b063273a1"
-    DATA_REL = "research/data/tennis_smoke/tennis_smoke.csv"
-    SCHEMA_REL = "research/data/tennis_smoke/schema.json"
+    DATA_REL = "tennis/data/smoke/tennis_smoke.csv"
+    SCHEMA_REL = "tennis/data/smoke/schema.json"
     # Optional: evaluate a candidate built elsewhere (e.g. notebook 06 writes VAERS to Drive).
     # Example: CSV_PATH = "/content/drive/MyDrive/text-tabular-research-2/candidates/vaers_v1/vaers_v1.csv"
     CSV_PATH = None
@@ -475,10 +477,10 @@ code("""
 """)
 
 notebook = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
-            "language_info": {"name": "python"}, "colab": {"name": "02_tennis_official_benchmark_colab.ipynb"},
+            "language_info": {"name": "python"}, "colab": {"name": "05_benchmark_screen_colab.ipynb"},
             "accelerator": "GPU", "research_execution": {"model_execution": "not executed; run in Colab"}},
             "nbformat": 4, "nbformat_minor": 5}
-path = ROOT / "research/notebooks/02_tennis_official_benchmark_colab.ipynb"
+path = ROOT / "research/notebooks/development/05_benchmark_screen_colab.ipynb"
 for number, cell in enumerate(cells):
     cell["id"] = f"tennis-colab-{number:02}"
 path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False) + "\n")

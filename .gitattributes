@@ -1,0 +1,4 @@
+# Keep these files byte-for-byte on every platform (their sha256 is recorded):
+# the submitted dataset, and the raw benchmark output (written with CRLF line endings).
+research/data/vaers_v11b/vaers_v11b.csv -text
+results/official_c955466/results.csv -text

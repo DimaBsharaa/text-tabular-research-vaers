@@ -1,0 +1,508 @@
+report_id,action,kept_chars,removed_text
+380204,truncate,62, Gave TYLENOL at home to get fever down. Woke up next day gasping for air.
+780437,truncate,54, resolved with prednisone and benadryl.
+794330,truncate,84, Gave TYLENOL and stated it did not work to reduce fever.
+795265,truncate,144, Was told to use BENADRYL.
+795571,truncate,80," When asked did he take anything for it such as ibuprofen or TYLENOL, he said no, he doesn't take those. Appearance of arm is smooth with no redness, bruising or any markings present."
+795776,truncate,107, The patient's mother then gave the patient BENADRYL. She states the welts went away.
+796104,truncate,241,", TYLENOL]."
+796165,truncate,74, Patient instructed to take tablets of diphenhydramine 25mg and to call back if symptoms are not resolved or become worse.
+796360,truncate,92, I have to take Prednisone for a long period of time to keep pain down-which has bad side effects for me.
+796638,truncate,122," Mom gave him TYLENOL, but it wasn't helping."
+796788,truncate,15,", BENADRYL."
+797703,truncate,55, Acetaminophen/hydrocodone.
+798254,truncate,62,", resolved with benadryl."
+798671,truncate,68, pt had rectal supp of TYLENOL during nt and given tsp MOTRIN in office.
+799424,truncate,40,"-- TYLENOL given night before, and every 6 hours while awake (last dose of TYLENOL was 2 hours prior to highest temp). Fussy, difficult to console (very different from normal disposition). Pulling at ears and hair/back of head."
+799492,truncate,270," Mom gave him a dose of TYLENOL and almost immediately after taking the TYLENOL he began vomiting profusely and retching and vomiting repeatedly over several minutes and became very limp, poorly responsive, or facial contact, infrequent movements of his extremities, and floppiness."
+799731,truncate,173, TYLENOL then will feel better.
+800125,truncate,284," Child was given a warm bath, MOTRIN, and cold compresses, followed by TYLENOL after no relief."
+800305,truncate,86, TYLENOL helped with the fever.
+800542,truncate,142, He has taken ibuprofen and TYLENOL without relief.
+801114,truncate,127, FNP checked arm and advised patient's father to go home and give BENADRYL.
+801291,exclude,,Contacts Office Visit ? Wellness check Flu and pneumonia shot sent e-mail about my current condition Office Visit Radiology Started PT Future scheduled office appointment e-mail This is just an update in regards to my medical progress.
+802382,truncate,92," At first the pain was manageable with some Tylenol. but the last two weeks, the pain has been excruciating and unbearable."
+803257,truncate,102," DECADRON, BENADRYL, warm compress. erythema and swelling improving per mom."
+803463,truncate,201, He came to the pharmacy the day after and was advised to take BENADRYL.
+803965,truncate,201, He was given 50mg BENADRYL PO shortly thereafter but continued to feel worse.
+804349,truncate,29, Living on BENADRYL. Sorry neck.
+804362,truncate,78, medically induced coma at medical center developed saddle blood clot.
+804859,truncate,104, Cold Compress and Tylenol.
+805340,truncate,87," BENADRYL and TYLENOL, patient ended up coming to the pharmacy on Wednesday and and increased in size. Had not taken anything for it yet, but had increased in size to a length of about 6 inches and was warm to the touch."
+805713,truncate,83, Pt was instructed to take BENADRYL 25-50mg every 6 hours as needed. Use cool compress to area.
+805942,truncate,62," TYLENOL or ibuprofen. The site of the injection was flaming red, accompanied by a rash."
+806031,truncate,51," BENADRYL, by at 7:57am rash was better, still a little blotchy. Rash completely resolved by . Rash: Erythema on arms and legs;"
+806238,truncate,262, Gave BENADRYL here.
+806363,truncate,52, Ibuprofen has not helped and if anything it has gone from a generalized shoulder joint pain to possible rotator-cuff injury. My left shoulder was fine before the vaccine but I had right shoulder rotator-cuff
+806606,truncate,194, 8 days of intravenous immunoglobulin.
+807109,truncate,85, No response to Benadryl.
+807357,truncate,56, Fever went up to 102 but controlled well with TYLENOL. No other symptoms.
+807551,truncate,138,", Tylenol & Advil but it didn't help with the symptoms ..."
+808043,truncate,73," I advised her to monitor the rash and take BENADRYL. I also advised her to seek medical attention if the rash spreads, gets worse, or if she experiences trouble breathing."
+808561,truncate,283, He has used cool compresses and yesterday took a dose of ibuprofen without benefit.
+808998,truncate,40," 15 hours after injection I was awaken by extreme pain in my left armpit (same arm as injection sight), injection sight severe pain, and severe flu like symptoms, chills, aches, headache, stiffness, muscle aches, out of it, could not think straight or process simple things and I probably should not have driven...these symptoms were so severe I had to get Ibuprofen ingested and lay back down before I could even get out of bed to cancel a plane ticket by phone. I could not even think or walk."
+809090,truncate,84, 101.5 in office at 445pm after dose of Ibuprofen at 2pm per mom.
+809300,truncate,87, Needed ibuprofen to sleep due to body aches.
+809675,truncate,49, Benadryl was given with some ibuprofen. Called mom the next morning will come in @ 12:30 to get re-checked.
+809989,truncate,67, Temp 98.8 at office visit. Rash (pitryriasis Rosea).
+810143,truncate,136," Followed with mother today pt has subjective fever, mom gave tylenol."
+810630,truncate,71," I assumed it was all typical pain but gave him some Tylenol to help with the pain. A little over 24 hours after receiving immunizations, he was still complaining about pain, and I looked at his leg and realized he had a rash developing."
+810685,truncate,52, Temp does respond to tylenol.
+811061,truncate,24, She received prednisone taper and Benadryl
+811152,truncate,96, Dose of benadryl given after apt. At 12noon Second dose given at 9:30pm.
+811589,truncate,209, Medicated with Benadryl and cold compresses.
+811713,truncate,73, Has used Benadryl with no relief. Referred to medical office.
+811718,truncate,62," Infant Tylenol given, fever reduced in a day"
+812299,truncate,70, Benadryl administered after.
+812809,truncate,99, Headache relieved with Extra Strength Tylenol.
+812906,truncate,50, IBUPROFEN
+813155,truncate,49, Pain + fever not responsive to Tylenol and Ibuprofen.
+813644,truncate,135, By afternoon developed fever of 103.2 degrees (could not control fever with acetaminophen).
+813896,truncate,109," Recommended: Hydrocortisone 1% cream, Benadryl tab & IBU for pain."
+814221,truncate,56, Patient was give Benadryl 50mg and Tylenol 1000mg at 4:15pm and monitored until 4:50pm.
+814912,truncate,204," Two days after the shot a fever and pounding headache developed that lasted for hours but subsided with the use of Tylenol, the medics attributed this fever and headache to the anthrax shot as I did not have any other symptoms that would have explained the fever and headache."
+814915,truncate,150, About 4 days prior to office visit (15 days after immunization) she developed a diffuse numbness starting around the neck and going diffusely with no other symptoms.
+814984,truncate,141, improved with diphenhydramine.
+815266,truncate,68, Advised him he could take Tylenol for the pain if needed. Sister called the next day to question my method of giving vaccine.
+816363,truncate,74, Encouraged to rotate OTC Ibuprofen/Tylenol
+816379,truncate,20, acetaminophen
+816970,truncate,46, and ultrasound that reported no abnormal findings.
+817168,truncate,34, Applied Benadryl Cream. Soaked clothing with perspiration during sleep.
+817302,truncate,109, Took once dose of PO Tylenol right after.
+817516,truncate,49," Even with Benadryl, lasted days."
+817899,truncate,84," Benadryl and Ibuprofen given. On visit on at 8:20am, report was lesions 5cm x 4.5 cm oblong erythematous with hardened center ."
+818701,truncate,78, Instructed mom to give OTC Tylenol as needed/Benadryl before bed.
+819000,truncate,57," c-section. He remained in the NICU for 29 Days. He had blood sugar issues from day 1, and although he was immunocompromised, he was given his first vaccine, while in the NICU, less than 3 weeks after he was born."
+819291,truncate,75, to Rt arm-I had shooting pain from my fingers to my shoulder I had clindamycin 300mg cap- before or-after OR-back
+819445,truncate,28," after Tylenol, headache, pain/soreness at injection site, redness and heat at injection site, tiredness, mild nausea."
+820168,truncate,76, Benadryl. Pt waited 30 mins & was okay to go home (right thigh).
+820173,truncate,160, 4 mL of Benadryl was given in office.
+820557,truncate,154, She was instructed to ice it and take Tylenol.
+820664,truncate,105, Mom giving Benadryl
+820858,truncate,201, Sxs did improve some with Benadryl but have continued to wax and wane.
+820883,truncate,23,", resolved after Tylenol."
+821372,truncate,127, Used tylenol/ibuprofen.
+821490,truncate,135, On June 17 received Prednisone orally for 5 days. This provided substantial relief.
+822849,truncate,81, Recommended the patient use cold compresses as well as tylenol for the pain.
+824793,truncate,124, Patient used an oatmeal bath and benadryl .
+825250,truncate,66, Started Tylenol yesterday. The redness is not going away.
+825646,truncate,148," After I took prednisone, generic antihistamine (benadryl) and and clindamycin symptoms disappeared but I had a reaction to one or more of these medications--heartburn and shortness of breath--probably the clindamycin because I had never experienced problems with tendril or prednisone in the past."
+825777,truncate,261, Patient took 2 capsules of diphenhydramine 25mg at approximately 4pm.
+825863,truncate,21, Resolved with Tylenol.
+826709,truncate,34, Tylenol and ibufrophen From nite of injection for first 2 days bad t=3rd day better.
+826989,truncate,62, Advil & Benadryl given @ 9:00pm . Redness & swelling gradually improving as of 2:30pm .
+827041,truncate,61, tylenol. Baby woke up this morning with rash. Grandmother contacted public health office as baby does not have insurance currently.
+827330,truncate,44, Benadryl & rash gone.
+828378,truncate,126," The patient called me on Sunday evening, recommended take Benadryl and if still no relief to go the Prescriber"
+828909,truncate,244, Pt had history of cellulitis and staph so started on Clindamycin.
+829212,truncate,12," ibuprofen for a headache about 1 hour post- vaccine, with good effect. I started to feel some upper arm/ shoulder pain and tenderness around the injection site about hours after the vaccine was administered. The pain continued to worsen."
+829621,truncate,101, Recommended supportive care with cool compresses and Tylenol as needed.
+829795,truncate,93, Mom gave Benadryl at 10:40am.
+830179,truncate,74," tylenol, next day felt chills and fatigue and was unable to engage in normal activity napped for 3 hours. Arm is still warm to touch and painful today ."
+830268,truncate,101, rph gave patient a dose of tylenol 500mg and benadryl 25mg.
+830298,truncate,40," Tylenol, which didn't help much. Lasted 2 days and then symptoms resolved."
+830513,truncate,227," We administered Benadryl, to no noticeable effect."
+831448,truncate,185, I took of a tylenol with codeine for pain and Medrol.
+831631,truncate,131, She said ibuprofen nor Tylenol has helped her headache.
+831787,truncate,121, Patient would take some Tylenol to help with the pain and it helped alleviate the pain.
+831949,truncate,47, Benadryl for a few nights.
+831959,truncate,73, Benadryl as needed.
+832530,truncate,186, Patient was advised to apply ice and take ibuprofen to help reduce the swelling.
+832547,truncate,190," Ibuprofen relieved most pain. Also, redness about 3"" X 4"" at injection site started 2nd day and lasted until end of 3rd day."
+833509,truncate,92, Around 3:00pm she spiked a fever of 104.4 so I gave her Tylenol.
+833677,truncate,127, I was unable to move my arm for 2 days Ibuprofen helped.
+833921,truncate,131, Counseled patient via phone to take tylenol if needed and to apply ice as needed.
+834263,truncate,188, Diphenhydramine administered and observed for 25 minutes
+834438,truncate,271," Pt had an ice pack on her arm when she came in, which i recommended to keep using, along with ibuprofen. Pt said she ""wasn't complaining"" that she just wanted to notify us."
+834644,truncate,115, acetaminophen. My left arm became extremely painful and extremely hard to extend up or lean/lay on .
+834667,truncate,75," Tylenol, still not standing or walking and noticeable reduced movement of the legs , crying with passive movement of her legs."
+834747,truncate,199, The pharmacist on duty instructed the patient to take Benadryl for the swelling.
+834777,truncate,102, Tylenol was given for fever and cool wash cloth was used for swelling. Next day Thursday the 19th of September around 8:30 am I noticed extreme swelling and blisters forming.
+834927,truncate,131, Temp 100.8 Tylenol was taken and ice packs were applied to arm Tylenol taken for pain and ice packs applied to right arm No Tylenol take. Arm was red slightly swollen with induration
+835678,truncate,182," Suggested to patient to ice area, take benadryl and ibuprofen."
+835846,truncate,144, Symptoms began last night and remain unresolved with ice and ibuprofen.
+836735,truncate,93, The next couple of days that followed I was fighting the fever with ibuprofen and Tylenol.
+836751,truncate,64, Was in NICU for two weeks
+836863,truncate,185, Tylenol helped so I could go to work but symptoms came back after Tylenol wore off.
+837581,truncate,121, after another hour and a half the fever had not improved and Mom gave 7.5ml of Tylenol. After the Tylenol mother noticed that the Pt was staring off into space and would not acknowledge his mothers presence.
+838208,exclude,,"Office visit: History of Present Illness: Rash: The patient presents for rash. This episode began gradually and has lasted caries. The symptom(s) are described as moderate, unchanged and occurs daily."
+838295,truncate,68, Recommended Benadryl and NSAID to patient.
+838496,truncate,50," ibuprofen/tylenol. All over body aches, severe joint pain."
+838714,truncate,71," Benadryl, Cephalexin and Methylprednisolone"
+838830,truncate,169, Benadryl 10 ml PO was ordered.
+838886,truncate,79," She then slept all day Saturday and Sunday after brunch noticed a ""12x4 inch"" localized swelling/rash on her arm that reportedly did not respond to ice or Tylenol."
+839044,truncate,117," Hives controlled now with Benadryl (PO & topical), but hives reappear as Benadryl wears off. He was also taking a magnesium supplement when he received the vaccine, so he discontinued that when he saw the hives."
+839669,truncate,40, after Tylenol & Motrin given Headache - for an hour
+839946,truncate,72," counseled pt to take benadryl and ibuprofen and ice and to seek medical attention if gets worse or not better with medication, I contact Dr.'s office and reported incident with staff at mds and faxed pts immunization record over to office"
+840143,truncate,79, She took 2 ibuprofen Wednesday night and 2 Thursday morning and 2 on Friday morning. She still feels bad and very nauseous.
+840163,truncate,236, Employee suggested to use Benadryl gel and tablets and to call MD in the morning.
+840167,truncate,186, Pt administered self-care of ice pack and benadryl to relieve itch.
+840193,truncate,27, Myalgias and headaches relieved w ibuprofen. Nausea is very mild.
+840325,truncate,17, Controlling with ibuprofen.
+840674,truncate,35, IVIG x 3 + platelet
+840679,truncate,74," Patient stated he has iced site, applied moist heat to site, taken Ibuprofen and Tylenol to help with complaint."
+840937,truncate,89, I didnt do any psychical activity due to the pain and the stitches in my left thumb. After pain subsided I had limited movement in the right shoulder and shoulder blade area the injection was administered.
+841144,truncate,27," Benadryl per request. has had mild throat irritation "" scratchy""after vaccines in the past. Flu vaccine give at 8:33 AM 15 minutes after vaccine given developed throat scratching sensation, no airway swelling, no angioedema, no difficulty breathing."
+841314,truncate,112, Ibuprofen for pain. Valium for anxiety and depression.
+841499,truncate,66, Pt given cephalexin 500mg TID for 10 days.
+841656,truncate,39, Prednisone & monitor.
+841777,truncate,44, No injection abnormalities supportive care (Ibuprofen or naproxen) ice. No change-no worsening or improvement.
+842395,truncate,110," I told him to take Benadryl, cortisone on worse spots and aveeno baths to help control."
+842463,truncate,61, OTC Benadryl and warm compess.
+842791,truncate,75,", benadryl"
+843214,truncate,257," I was finally put on prednisone that helped, but the rash returned when I tapered off."
+843577,truncate,118," Aleve, Benadryl, and Icy hot was used per patient."
+843687,truncate,51,", Benadryl given 50Mg ice Pack Placed Monitored 30 minutes"
+843846,truncate,41," tylenol and ibuprofen. Headache, nausea vomiting, stuffy nose. Intense site pain."
+843951,truncate,97, Gave Tylenol approximately doses for her weight (per parent) and let her sleep. Seemed to improve more in the evening.
+844060,truncate,88, Short course prednisone. Tylenol prn - states allergy to Ibuprofen Ice
+844089,truncate,60, improved after prednisone and valtrex.
+844264,truncate,127," Had LUE swelling and redness same day, used Benadryl 50mg last night."
+844570,truncate,93, Temp max 103 - does respond to tylenol but comes straight back when tylenol wears off. Hives covering the whole body.
+844824,truncate,84," During routine annual mammogram/sonogram, radiologist noted an enlarged lymph node in left armpit attributed to the vaccine."
+845084,truncate,52, pt has used a cold compress for swelling and will use benadryl tonight to help with reaction. pain started yesterday and today the swelling and hives began to develop
+846729,truncate,35, office visit and at the time she received a flu and PPSV vaccine.
+846961,truncate,87, She came to work the next day and was helped in getting ring off her finger that was swollen and someone gave her a Benadryl. She states swelling was gone within 3 hours of the Benadryl.
+848595,truncate,197, She developed cellulitis and came to the office on November 11th and saw FNP-BC -she was given cephalexin 500mg qid x 7 days.
+848741,truncate,80, Short period of relief with naproxen.
+848764,truncate,141, We advised to take Tylenol for fever & pain.
+849101,truncate,40," Ice to the area, Tylenol or ibuprofen prn"
+849259,truncate,69, He had his blood drawn at that time as part of a routine office visit which showed at elevation in his white blood cells (see below).
+849286,truncate,146," i gave her an ice pack,she will take benadryl caps for reaction when she gets home,along with alternating tylenol and ibuprofen.she will let me know if it gets worse,and i will follow up with her via phone later and tomorrow"
+849486,truncate,132, Infant acetaminophen was given after 12 hours of her crying and this seemed to help a little as she was finally able to sleep for a short period of time but then was up crying again.
+849855,truncate,42, Ice-Tylenol Elocon 0.
+849987,truncate,24, with Tylenol. that started evening of immunizations.
+850070,truncate,133, Some relief with ibuprofen.
+851368,truncate,95, Initially tachycardic with WBC 16.6 -ceftriaxone 1 gm given with Imitrex.
+851637,truncate,58, Pt was started on a course of prednisone for 10 days for the rash/hives.
+852365,truncate,74," Injection site is also warm, red, and swollen Gave dose of ibuprofen for fever and pain at 9 AM on"
+852437,truncate,86, He was administered 30mg of liquid Benadryl & kept for observation for 45+min until symptoms began to resolve.
+852507,truncate,80," Mother reported giving Ibuprofen. Patient did report to mother that his arm ""hurt""."
+852563,truncate,87, Given Prelone & Benadryl.
+852655,truncate,87, Patient states she has had soreness in her neck since then and has to take ibuprofen prn. Recommended office visit to evaluate but patient declined.
+852674,truncate,140," days headache located in upper back, right of head, had no response to Tylenol or Motrin but felt better when I was lying down"
+852722,truncate,134," Came in and advised to take ibuprofen, pain persisted, Pt returned with worsening pain, mainly at from rolling onto shoulder while sleeping at night."
+854602,truncate,21," Instructed to apply ice, mom also gave patient Infants Acetaminophen."
+2548252,truncate,106, Patient has used a topical benadryl product along with zyrtec 10mg orally and famotidine 20mg orally
+2548782,truncate,389, benadryl
+2551624,truncate,210, Shoulder ultrasound confirms subacromial/subdeltoid bursitis.
+2556154,truncate,169," Regular Tylenol did not help it, her migraine medicine did not help it."
+2556851,truncate,108, Benadryl. No other adverse events reported.
+2559996,truncate,78, Had Benadryl 50mg IM administered at 12:10pm and symptoms improved after administration.
+2561415,truncate,76, Patient will receive and take Benadryl as a precaution.
+2563156,truncate,96, Cold compress applied & ibuprofen given.
+2563306,truncate,93," mother reported a fever and decreased movement starting Monday office visit - difficulty bearing weight, fever."
+2565039,truncate,149, I was told to take Benadryl which I did.
+2565170,truncate,141, The patient is using benadryl cream and caladryl for this rash.
+2566717,exclude,,"Office visit April 29, Patient is here today for symptoms following her covid-19 vaccine. She received the Pfizer vaccine, dose #1, seven days ago. 10 minutes after the shot, she developed a hot flush."
+2569023,truncate,52, infusions to correct.
+2574293,truncate,109, Was on Prednisone starting in May of 20mg.
+2574708,truncate,96," prednisone dose to 60mg/day starting October 26, . As of February 02, I have tapered to 13mg/day. My CRP is still elevated at 15.4."
+2575768,truncate,75, Still have pain at the same site as of today on and off taking motrin and alternating with tylenol.
+2575860,truncate,42, with tylenol. The low grade fever and chills lasted 36 hours. My normal oral temp is 97.
+2576597,truncate,63, and diphenhydramine
+2577343,truncate,41, discussed benadryl and ointment for supportive care.
+2578163,truncate,143, Remained in this state until starting prednisone to reduce inflammation in joints. Prednisone therapy started for 4 weeks.
+2578612,truncate,111, Benadryl and rash kept spreading all over body.
+2578701,truncate,79," ibuprofen, found to have tendonitis. also experiencing intermittent dizziness, flutter/palpations."
+2578921,truncate,162, Patient has been continually followed by neurology for an ongoing workup and is now on IVIG.
+2581512,truncate,70, ibuprofen without relief.
+2584039,truncate,98, Prednisone IM given approx minutes after start of symptoms. Zyrtec 20mg PO and Benadryl 50mg PO given at the same time.
+2584766,truncate,355," Rx Tylenol, fever went down to 102F after 1 hr ."
+2585068,truncate,99," Patient was given 2 rounds of prednisone to calm the reaction, with not much relief. Patient became unable to use right arm/hand for fine motor skills, and had to learn to use left hand for writing, eating, etc."
+2585634,truncate,85, Parents administered Benadryl.
+2586303,truncate,132, Prednisone daily to control flare.
+2590158,truncate,188, Loss of sleep and Tylenol doesn't help.
+2590309,truncate,4, office visit note dated : still struggling with arthritis and fatigue. This started after her last COVID booster and she still having a lot of stiffness in her hands and her right shoulder along with significant fatigue. All of this is keeping her from achieving her previous level of function
+2590736,truncate,127," Tylenol, bedrest (24 hours), liquid diet (36 hours), fatigue 72 hours"
+2592251,truncate,132, This pain was only somewhat alleviated with Naproxen and or acetaminophen for a month and half.
+2593592,truncate,224, Ivig no help.
+2594795,truncate,97, Patient's parent reported patient had good relief with Tylenol and no symptoms on day two post vaccine.
+2595155,truncate,83, took 800mg of OTC Ibuprofen @1630.
+2597671,truncate,82, Fever and pain responded to Tylenol. Tinnitus and mild dizziness developed on the date listed ( ) and has not abated (1.5 months).
+2598351,truncate,146, Saw internist on and she ordered ultrasound of legs and blood work.
+2603856,truncate,242,", Prednisone taper . Symptoms less severe and more intermittent. Usually opted out of flu vaccine due to adverse event in ."
+2604479,truncate,132," Benadryl 25mg PO given, waited x 30 mins. Itching improved"
+2607022,truncate,58, Resolved with Benadryl.
+2607992,truncate,151, Benadryl is not taken. They had welts that formed on their face that only lasted the evening of the vaccine. They now have a sensation of raised rough areas on the inside of their lips.
+2609982,truncate,102, I was able to take a little ibuprofen even though I have IBD and that helped.
+2610682,truncate,48," According to mother, next day morning she gave Tylenol and send baby day care. Day care called and informed mom that baby is fuzzy and refusing food."
+2613066,truncate,139, Mother did give another dose of Tylenol around 6pm as infant was fussy.
+2613830,truncate,69, The wife of the patient gave him Benadryl which helped with the rash. The wife called the pharmacy to report the event of a rash but patient was doing okay.
+2615069,truncate,277, Benadryl 2x Ibuprofen 800mg 1x
+2615742,truncate,34," Tylenol taken at 10 pm without relief of pain. Patient reports she felt as if ""fluid went down inside of arm"" when vaccine given but no pain until the evening."
+2618415,truncate,48," (wrist, back, under the breasts, low back, abdomen, back of legs) Benadryl at 10:30 on it has eased up a little but is still very present."
+2620299,truncate,16," infusion on , it was questioned whether I should get my booster in January before I started radiation therapy. After receiving booster for the next 4 days I became very ill with all the side effects I experienced with chemotherapy. Bone and muscle pain, nausea, vomiting, bloated,gas,very tired and neuropathy."
+2624732,truncate,68, and prednisone not helping);
+2628036,truncate,135, rx for ibuprofen TID w/ food.
+2628523,truncate,209, Seems to manage with Tylenol Arthritis and Plenty of Fluids.
+2629765,truncate,194, Patient took 50mg diphenhydramine and was further observed for 30 minutes. After that point she was looking and feeling better and decided to go home.
+2631034,truncate,128," benadryl given 20 mintues later gave 2.5 ml of benadryl with improvement of symptoms No wheezing @ 5, 10, 15 & 20 mintues"
+2634620,truncate,198," Patient was advised to apply ice, take Tylenol, and wait a couple of days to allow initial symptoms to resolve on their own."
+2637634,truncate,58," Tylenol , rest. ."
+2637682,truncate,35," and ultrasound performed and shows presence of 2 axillary lymph nodes demonstrating cortical thickening measuring upward of .5 cm Nauseu, fever, loss of appetite"
+2641605,truncate,98, Benadryl taken round the clock until resolution of symptoms
+2644063,truncate,48," on , IVIG started d/t possible AIDP per Brighton Criteria with mild improvement of symptoms."
+2645629,truncate,103, Fever did not respond to acetaminophen. Similar reaction in October to the Moderna bivalent COVID booster.
+2648020,truncate,109, Tylenol and ice pack did not alleviate discomfort.
+2648853,truncate,44," Within a few hours, while mom ran errands after the office visit, said ""my eye(lid) hurts"". The next day (yesterday), she woke up and right upper eyelid was slightly puffy."
+2649899,truncate,137, Tried hot packs and acetaminophen without effect.
+2650656,truncate,90, I took valtrex once recognized issue.
+2650810,truncate,52," tylenol 1000mg alternating with ibuprofen 400mg q6h. Also had chills and shakes, about 2 events on . These symptoms resolved by end of ."
+2653639,truncate,141," Of note Bandaid was ""latex free"" Mom refused to allow Benadryl to be given to child."
+2657720,truncate,140, Extreme anemia that wasn?t helped with iron infusions?
+2658332,truncate,8, requiring IVIG.
+2659335,truncate,71," Tylenol/Ice given, Zyrtec."
+2673700,truncate,91, Patient finally agreed to benadryl and swallowed one 25mg tablet about 10:47am.
+2675720,truncate,86, Pt.'s mom instructed to continue to use Tylenol and cold pack to injection site.
+2676225,truncate,113, She gave him benadryl and felt that helped his symptoms.
+2677532,truncate,165, She has taken Tylenol for the headache and pain with no relief.
+2678841,truncate,108," I advised ice (15 minutes a few times per day), and ibuprofen. I instructed patient to seek further medical care if they developed a fever or reaction site became hot and/or larger."
+2680976,truncate,174, He has taken Motrin and Tylenol for his symptoms.
+2681466,truncate,340, Fever slow to respond to Tylenol and cold compress.
+2681822,truncate,94," Appearing well otherwise, but mother of child was giving Tylenol with improvement of fevers."
+2682038,truncate,109, I took 2 ibuprofen at 6am and the pain dissipated a couple of hours later. The dizziness dissipated at 12 hours after injection and fatigue was gone by evening.
+2682377,truncate,131," However, for many NICU patients, they are NPO and have an NG tube."
+2682787,truncate,177, I recommended the patient take Benadryl to help with the inflammation and redness.
+2682809,truncate,188," Patient tried to use a brace but has not provided relief, ibuprofen has also not helped."
+2682998,truncate,56, She called and spoke with her MD who advised her to take Benadryl. She did this every 4 hours until around 1am when she was starting to feel better
+2683486,truncate,208, He told her to take an apirin and to take another Tylenol which she did.
+2684470,truncate,109, Had taken 2 tylenol but they came back up.
+2685161,truncate,15," with Tylenol. SEVERE body aches and pain, causing extreme distress(like being tortured.) I was moaning and crying all night long. I am still sick on day two, with no appetite, and extreme weakness."
+2685521,truncate,56, Improved with Acetaminophen and aleve. Temp this am 100.3
+2685525,truncate,53, They said to take Benadryl and keep an eye on it and make sure it doesn?t effect my breathing.
+2685950,truncate,132," acetaminophen, Nauzene, gas-x, heating pad, ice pack;"
+2686450,truncate,38, Did not take any Tylenol or Ibuprofen. Next day felt with increased body aches.
+2686464,truncate,48, Took two Benadryl and hives went away after 30 minutes.
+2686716,truncate,129," Recommend benadryl q4-6hrs x 24 hrs, ice to area and possible start of Keflex if concern for infection arises over the next 24 hours"
+2687000,truncate,49, PRN Tylenol given at .
+2687321,truncate,212, Put on course of strong 800mg ibuprofen to help with inflammation and additional monitoring of thigh.
+2687683,truncate,21, Tylenol did not help with the pain. Chills. Arm soreness
+2688666,truncate,107," He started having fever up to 101, used Tylenol form, did the cold thought trick. When he was going to"
+2688698,truncate,85, Immediately took OTC extra-strength Benadryl. Two does before bed.
+2688872,truncate,49, Recommended ice pack and tylenol as needed.
+2688990,truncate,188, Patient was informed to take benadryl and monitor swelling to see if condition worsens and to seek medical care if condition does not improve
+2689378,truncate,175," When I felt I might be able to make it to the cabinet to get benadryl (diphenhydramine antihistamine) to control my syptoms, I got up and tried to get to the cabinet."
+2689991,truncate,143, Tylenol. Patient's wife states that he could not remember her and he struggled to find the words to create sentences which is not his baseline and very apparent of a change in mental status. At this time patient was also having a stomach ache and possible vomiting episode.
+2690360,truncate,186, I have been around people that were under chemotherapy and this comes as close to chemotherapy as I imagine it to be.
+2690547,truncate,31, Improving after acetaminophen 500mg x2 over 4 hrs.
+2691909,truncate,150, She took 2 Tylenol and then when she got up around 8:30 AM she began to sweat.
+2691949,truncate,100, on prednisone taper
+2692107,truncate,8,"acetaminophen taken) Itchy rash on entire back, chest, abdomen and upper arms (antihistamine taken)"
+2692383,truncate,52," Horrific headache, early evening, would only get little relief with Tylenol and an ice pack on my head. Woke up this morning with a rash on the left side of lower back with itchy rash."
+2693052,truncate,154," Monitored by mother, patient advised by pharmacist to seek immediate medical care if any swelling of face, lips, or tongue occur, or rapid spike in fever, to take antihistamine for itching, ibuprofen or Tylenol to control fever, swelling, or any pain."
+2693422,truncate,53," headache and sore throat resolved with acetaminophen. (33 hrs post): ~2 hrs after retiring, awoke abruptly with acute depression: overwhelming invasive thoughts of lack of self-worth, dread and anxiety."
+2693578,truncate,213, Patient was given 1 dose of benadryl (25mg) and water.
+2693606,truncate,118," 600mg of Ibuprofen was taken, fever spiked to 101 at 10p with muscle aches worsening."
+2693631,truncate,95," received Tdap, Men A and HPV on during office visit with Dr."
+2694189,truncate,169, I took ALOT of Tylenol and it really helped.
+2694900,truncate,141, He took 50mg benadryl and laid lown
+2695640,truncate,124, I am on Acyclovir and Prednisone for the shingles. I am 37 years old and have had chicken pox before.
+2695688,truncate,144, I told her husband that she could be given extra strength tylenol and continue with fluids
+2696211,truncate,183, By morning headache had become a migraine followed by vomiting after which headache became more mild helped by ibuprofen.
+2696479,truncate,240, Patient self-managed symptoms with acetaminophen.
+2696545,truncate,172, She also started Cephalexin the same day.
+2696844,truncate,68," after tylenol 1000mg then headache, chills, extreme fatigue and intense nerve pain in extremities like being electrocuted followed. Was dulled by motrin 400-600mg tid fever had lowered to 100. Felt this way for 5 days."
+2697073,truncate,120, This happens mostly at night every other day and is relieved with Benadryl.
+2697171,truncate,62, Patient took 2 capsules of 25mg diphenhydramine.
+2697856,truncate,53, Topical Benadryl did not clear symptoms.
+2698195,truncate,155, Offered patient diphenhydramine for mild allergic-type reaction.
+2698716,truncate,140, Tylenol extra strength seemed to help.
+2699670,truncate,68, She reports no success with Benadryl but is now using hydrocortisone.
+2699829,truncate,55, Being put on benadryl and prednisone.
+2700124,truncate,90, During the night I drank water - took extra strength Tylenol. I was soaked from sweat and fever down to 100.
+2700329,truncate,89, I took two Ibuprofen.
+2700804,truncate,153, Counseled patient to take tylenol
+2700931,truncate,174," She is managing with ibuprofen, but still having pain in her right arm 12+ days after receiving the shot."
+2701332,truncate,110," Used Ibuprofen, Tylenol, naproxen, no appetite , lasted 2 weeks. Rash on right arm and scalp,"
+2701617,truncate,51, gave Tylenol Sunday and it seemed to help. he did his sleep study Sunday and did great.
+2702503,truncate,63," Pain unbearable for first two dayUnrelieved by ibuprofen, acetaminophen, ice or heat and continuing through day 12 after injection."
+2703321,truncate,131, naproxen in the past).
+2703989,truncate,94," benadryl and ibuprofen for both redness, swelling, and itching patient did state that redness and swelling had started to dissipate after 48 hour mark from injection"
+2705816,truncate,63, hives resolved after benadryl; vaccine site was warm/red
+2707246,truncate,159," Rash is itchy, red, non -blistering Left inner upper arm rash, rash is itchy, red , non-blistering Left inner forearm rash from wrist to elbow, rash is itchy, red, non-blistering Patient has been applying Benadryl spray to calm itch."
+2707364,truncate,76, required 18 stitches.
+2708234,truncate,258, The pain was a bit better the following morning so I saw my gp who recommended an ultrasound to rule out a blood clot.
+2708678,truncate,436," Took lots of Benadryl for my face, and it is much better today (02Nov20230"
+2709127,truncate,103, Tried Benadryl without response. Tried topical hydrocortisone without response.
+2709366,truncate,278, He did took an aspirin and Tylenol for his symptoms trying to break the fever.
+2709823,truncate,100, Managed with Tylenol for two days. Inflammation and fatigue still continues three weeks later.
+2709882,truncate,53, I tried Prednisone and Sudafed to reduce head congestion but to no avail. I tried ibuprofen before bed and i woke up the next morning with no signs of tinnitus.
+2710145,truncate,70," Over the course of the past 2 years I have taken the following: Olfactory training, Budesonide spray, Azelastine HCL spray, diphenhydramine, Cetirizine, sterimar nasal spray, saline nasal gel, vitamin a nasal drops, saline inhalation, oxytocin nasal spray, zinc, vitamin D3"
+2710177,truncate,52," Pt came back today to report issue pt has been using aloe vera, Benadryl ,and cortisone on area with mild improvement."
+2710273,truncate,91, tylenol or motrin.
+2710773,truncate,96, Suggested following up with his pediatrician and suggested Benadryl 25mg times a day for the itching and ibuprofen if there is pain.
+2713070,truncate,37,", prednisolone 60mg pre day Nothing got better still cant hear"
+2713189,truncate,121," FNP gave an order for Prednisone 40mg QD x5days, then 20mg QD x5days, then 10mg QD x5days, then 5mg QD x5days then stop and Atarax 10mg Q4hrs prn."
+2713202,truncate,134, Has taken Tylenol and used cold packs. Reporting on Monday and no resolution since.
+2713210,truncate,154, I have taken Tylenol Cold.
+2713583,truncate,42, Acetaminophen helps. Also some possible chest pain that began about a week after vaccination.
+2714019,truncate,219," He was able to fall asleep, but was awoken by the pain around 2am and had to take Ibuprofen 600mg to resolves the symptoms and to get back to sleep."
+2714089,truncate,55, Responded to Benadryl and Tylenol.
+2714311,truncate,107, Patient was monitored for 30 minutes and told to take Benadryl when she went home.
+2715487,truncate,113, Administered Benadryl to counteract reaction.
+2715659,truncate,90," Usually would take three Tylenol 650mg tablets and would not feel the Arthritis the rest of the day. Had a complete physical on , Dr."
+2716323,truncate,92," Have tried Tylenol, ice pack, lidocaine patch, still hurting"
+2716644,truncate,77, Patient agreed to only 25mg of benadryl instead of 50mg. She was given 25mg of benadryl at 2:57pm.
+2716817,truncate,127, Tylenol every 4 hours Symptoms continue
+2717638,truncate,122," Patient has taken ibuprofen and a muscle relaxant (tizantidine), the pain is just not in the muscle, but Joint/tendon."
+2718196,truncate,158, Took extra strength acetaminophen and rested as much as possible.
+2719103,truncate,159," Told patient to take tylenol , do stretches and alternate applying heat and ice to injection area."
+2720339,truncate,89, RN administered Benadryl 25mg x2 and symptoms resolved. Left via private auto.
+2720352,truncate,65, Also had severe itching through the body both were relieved with benadryl.
+2720396,truncate,54," I asked my husband to go get me the Benadryl, rolled over onto my back in bed, then fainted (he was in the bathroom getting the meds). I was fully laying down before and during, and I believe I fainted within 30 seconds of the nausea starting."
+2720779,truncate,149," She has been using, ibuprofen, benadryl and cold compress. She stated that today the injection site is itching."
+2720881,truncate,94, Water ruptured days later and baby was born by cesarean section.
+2722617,truncate,24, Mom gave her a warm bath and a dose of Benadryl and reports hives resolved after a few hours ( hours) and did not return.
+2723532,truncate,185, Now on tapering doses of prednisone with significant improvement.
+2723562,truncate,114," Mother developed gestational hypertension on December 1, , which turned into severe preeclampsia on December 7, (high blood pressure, protein in urine, severe headache, vomiting), resulting in immediate preterm delivery of baby by c-section."
+2724037,truncate,94, Followed by DVTs confirmed by ultrasound.
+2724075,truncate,112, Ibuprofen 400MG at bedtime. Slept .
+2724788,truncate,84," He notes that he has used multiple creams, benadryl without help."
+2725702,truncate,201, She took 25mg of Benadryl within an hour and repeated another dose in 4 hours.
+2725716,truncate,86," Recieved prednisolone, famotidine, diphenhydramine with resolution of symptoms."
+2725811,truncate,91, Has not responded to Prednisone
+2726233,truncate,381,", tylenol/ibuprofen 1."
+2726820,truncate,45, and ibuprofen
+2727089,truncate,77,", IVIG, plasmapheresis"
+2728187,truncate,191, Now on tapering doses of prednisone with significant improvement.
+2728196,truncate,193, Now on tapering doses of prednisone with significant improvement.
+2728210,truncate,126, Benadryl-which cleared the issue. Next day had all over body aches and joint pain-could barely get out of bed.
+2728836,truncate,77,", tylenol or ibuprofen. The pain is mild to moderate and has at times limited raising my arm above my head."
+2728931,truncate,139," I can not take NSAIDs due to a severe sensitivity to them (gastritis and peptic ulcers) and so I was started on prednisone, 25mg with a tapered dose each day."
+2730298,truncate,84, Benadryl and Ibuprophen had no effect.
+2730311,truncate,157," On , started prednisone and Benadryl which are helping relieve the itchiness."
+2730975,truncate,122, Patient was advised to take Benadryl and to seek medical attention if symptoms persisted or other issues arose.
+2731433,truncate,23," infusions for R/A on April 27, , thru September 21, . After getting my Covid Booster and Flu Shot on September 26, , per the Dr's orders. I started getting very sick."
+2731677,truncate,67," She has been using Ibuprofen, arm exercises and salt baths to help with pain."
+2732782,truncate,69, Benadryl helped with itching until it cleared up.
+2734625,truncate,230," Unaffected by Ibuprofen or acetominophen, benadryl."
+2739699,truncate,66, Headache did not go away but helped somewhat with ibuprofen and tylenol combination
+2740180,truncate,149, We suggested some benadryl.
+2741481,truncate,76, I'm now back on high-dose prednisone to get me back in remission.
+2742476,truncate,90, Tylenol and ibuprofen).
+2746097,truncate,131," Instructed to have patient take claritin, tylenol, an ice i needed."
+2746280,truncate,54," She has tried aleve, ibuprofen, aspirin, heat and ice."
+2746284,truncate,60," When mom was contacted about administration error, she reported that pt was having increased pain and swelling at the injection site with fussiness and had taken 7.5ml of ibuprofen for pain relief. No fever has been noted."
+2746475,truncate,81," PO Clindamycin 75mg/5mL, take 8 mL 3 x day for 10 days. Mupirocin oint."
+2747784,truncate,57, Benadryl given.
+2748328,truncate,88," A prescription of methylPREDNISolone, 4MG tablets for 6 days, was started on and provided relief on the second day and lasted 18 days. The stiffness has now returned and I am starting the prescription again today."
+2748713,truncate,151," Told parents to administer motrin or tylenol, warm compress, gentle massage, circle the area."
+2750034,truncate,179, Mom is doing local ice pack and Tylenol as needed.
+2750862,truncate,133, Pt was advised to take acetaminophen/ibuprofen.
+2753407,truncate,38," Tried Advil, Aleve, Tylenol, heat and ice to relieve pain with no success. Pain continued through Thursday ."
+2754168,truncate,49," 4"" x 3"" - gave Benadryl - less itchy, red"
+2754460,truncate,209," She woke up 6 am screaming was warm and we gave her chamomile all natural drops to help with her pain for her tooth, and after 20 minutes noticed she was still uncomfortable and gave her Genexa Acetametaphen and she was just so exhausted that day and her fever came back around PM and i gave her a little more Tylenol and fruit ice to help with the pain of the tooth."
+2755222,truncate,73," That night had a fever, reduced via Tylenol."
+2756815,truncate,46," Prednisone 60mg initially and weaning, 2 week course started on day 5. No relief."
+2759266,truncate,83, Mom gave Tylenol with no improvement. He was brought in for examination which did not reveal any signs of illness.
+2759501,truncate,220, Took CHLORPROMAZINE HCL 10MG TAB and 2 ACETAMINOPHEN 250/ASA 250/CAFF 65MG TAB.
+2760870,truncate,34,", Ibuprofen as needed, since the vaccine"
+2761257,truncate,46, prednisone by NP. Pt reported Spikevax vaccine given was given too high in shoulder and was causing her pain and movement problems.
+2761528,truncate,145," Patient took her regular Allegra and added topical Benadryl cream and they cleared up. Last night ( ) around the same time, she began to develop hoarseness in her voice and the hives re-appeared but this time they were covering her entire torso, upper arms, and upper legs."
+2762037,truncate,117," Daily activities still difficult unless he takes naproxen. Unclear if this would be ""severe"" or moderate, but the patient is still reporting symptoms a year later."
+2762102,truncate,116," This required a cardiology consult, holter monitor, and cardiac ultrasound."
+2762177,truncate,67," Headaches symptoms improved with tylenol 500mg Q4H. Overall, reports feeling 80% better days following administration in terms of fatigue and headache."
+2762352,truncate,188," I recommended patient apply an ice pack and consider taking oral analgesic like ibuprofen or APAP, but I am unsure if he did either."
+2763693,truncate,54," At around 5 am the following day, , she spiked a fever of 101, was given 2.5ml of Tylenol and returned to her crib when her fever went down around 6 am. At around 9 am that same day she was awake but lethargic in her crib."
+2764297,truncate,12,", IVIG, plasmapheresis, 6 months of PT/OT, still unable to walk or lift any weight with arms at month 6"
+2764668,truncate,71," I told her to ice it, take take ibuprofen if it was painful. patient called back to say that it looks like a half-dollar sized bruise, and it is dark in color (black/blue)."
+2765245,truncate,71, Responded to diphenhydramine. - Later had Janssen vaccine without issue Most likely had allergic reaction to Pfizer vaccine.
+2765987,truncate,46, Fever has persisted over 24 hours and has spiked to 103.6 F without the constant usage of fever-reducing medicines (Tylenol and ibuprofen).
+2766344,truncate,71," diphenhydramine 12.5mg/ 5ml oral take 8ml PO every hours as needed, RX hydrocortisone 2.5% topical cream apply 2 times every day a thin layer to affected area. to return on for re evaluation if needed. massage, heat, no pain meds unless fever above 102, fluids,"
+2766368,truncate,205, Employee did try to put Benadryl cream on the site to help with itching.
+2768456,truncate,119, Currently receiving IVIG.
+2769740,truncate,77," Recommend cold compress, Tylenol & Benadryl"
+2771968,truncate,209, Advised patient to take Tylenol for pain as she has an NSAID allergy and to ice the injection site.
+2772118,truncate,102, Mom gave oral and topical Benadryl and Tylenol. Symptoms slowly went away and by the 2nd morning he had no symptoms.
+2772528,truncate,58," ultrasound that showed cyst was in kidney. Had no issues before vaccine, just right after the vaccination this began. Left kidney was ""inflamed"" on ultrasound as if there was urine backflow but no signs of any obstruction or kidney stones."
+2773193,truncate,135, Benadryl helped reduced hives after initial doses.
+2773282,truncate,303, Avised PT to seek medical help if pain doesn't resolve with ibuprofen.
+2773316,truncate,416," tylenol/advil and benadryl if rash continued, aswell as following up with her primary md."
+2773601,truncate,294, Pt takes Benadryl every night for sleeping.
+2773864,truncate,345, She states she had to take tylenol and naproxen every 4 hours since to deal with the swelling pain and discomfort.
+2774324,truncate,398, Offered benadryl to pt and pt took 2 tablets.
+2775597,truncate,207, advised Dad to give her Benadryl every 6 hours and Tylenol as needed for her left arm being sore at the injection site.
+2776127,truncate,6, ultrasound at 16 weeks. 18 weeks received Covid booster.
+2776702,truncate,157," The mother stated the pediatrician recommended Benadryl and an ice pack to the area. The client's mother stated she noticed some slight redness to the upper left arm on Saturday, and it worsened by Sunday."
+2777120,truncate,106," Parent administered Tylenol, rash improved slightly."
+2777504,truncate,68, - prednisone. - started benadryl.
+2777507,truncate,87,-chemotherapy)
+2777771,truncate,54, Ibuprofen and Tylenol.
+2778405,truncate,36," Tylenol as she felt warm Then bathed. Looked a bit fussy. At 915pm mom noted her to be ""stiff"", said ""a a a "", few seconds, eyes open wide, when Mom petted her, she relaxed and stopped."
+2778664,truncate,209, She stated she had to take Tylenol around the clock to help manage the symptoms.
+2778669,truncate,103, Mother was giving patient Tylenol and Motrin for pain.
+2779765,truncate,178," She thought it was maybe from one of her medications, so she stopped her medications, continued to take an antihistamine, which she thinks is benadryl, but the itchiness was still there."
+2781538,truncate,100, Took one pill of Tylenol PM before bed. Noticed some white flashes in left eye on occasion over night and in morning.
+2782202,truncate,63, Resolved by next morning (about 12 hours after appearance) after receiving OTC benadryl 2.5 mL. No other symptoms.
+2782536,truncate,65," Mom told to give motrin and benadryl and ice. Continued to get further enlarged, Today with large 5"" ovoid patch to Rt thigh, with bruising/clearing to central aspect and redness to outside."
+2784859,truncate,136," On , pt reported a small rash/hives on chest and back that was nonreactive to benadryl."
+2785632,truncate,228, A prescription for Valtrex 1 g three times daily has been provided.
+2786096,truncate,225," Pt did not feel the need to take ibuprofen until , at which point, he experienced some pain/inflammation relief. As of , the area is still red."
+2786119,truncate,67," Falls over the past two years resulted in broken left wrist, broken nose, broken two on right foot, and disflodging of 3 teeth and stitches inner and ourter lip."
+2786417,truncate,76, Symptoms have improved with Ibuprofen.
+2786583,truncate,61, tylenol. I checked it again at 8am and it was around 100.8.
+2787026,truncate,148, Patient was told to take Benadryl and call if symptoms worsened.
+2787512,truncate,93, Used tylenol to relieve pain. Skin still very hot and painful 48 hours later.
+2788243,truncate,167," Antacid (Tums) and Pepto-Bismol, aspirin, ibuprofen helped to alleciate symptoms."
+2788476,truncate,89, I ask the patient to put ice on the injection site today and take some acetaminophen for the pain. Patient will report with me this afternoon to see if her symptoms have improved.
+2790130,truncate,112, She did take some Ibuprofen and Tylenol for those symptoms 2 times. The first day she took 600 Ibuprofen and 500 of Tylenol.
+2790482,truncate,80, Administered 1.25mL of Diphenhydramine 12.5mg/5mL. 20 minutes after diphenhydramine rash resolved.
+2790490,truncate,96, Took a three (3) week course of Prednisone. Followed after one (1) week with a two (2) week course of Clobetasol Propionate.
+2791120,truncate,14, pt has used acetaminophen without much relief.
+2791419,truncate,65, Benadryl in office.
+2791836,truncate,137," He says he still has the pain today ( ), pt says he gets some relief with tylenol and spray on icy hot."
+2792678,truncate,164," Benadryl. Patient explained he was have an allergic reaction because his eyes were ""puffy with pus coming out"". , Other Vaccines: VaccineTypeBrand: Fluzone High Dose;"
+2792707,truncate,111, She took Xyzal and Benadryl and it started getting better.
+2793405,truncate,49," prednisone, which is being used for ""injection site pain"" he stated that it is due to his IMZ received 3 weeks ago on . He is now having pain in shoulder and has to have follow up care"
+2793555,truncate,95," The next night, Tylenol was enough to keep it down, by the next night the pain was gone. But that's normal for a COVID shot."
+2794229,truncate,23, Benadryl no change
+2794496,truncate,59, Pt applied Benadryl cream which improved symptoms. Patient denied SOB/difficulty breathing.
+2794549,truncate,164, Mom gave Tylenol and Motrin every 4 hours continuously and fever remained at 104.
+2794887,truncate,58, Recommended Benadryl as needed
+2794966,truncate,25, diphenhydramine and prednisone but allergic reaction has continued.
+2795143,truncate,116, Have used Benadryl and Hydrocortisone 1% cream since Friday morning and still has rash under armpits and chest.
+2795163,truncate,207," Later took 400mg ibuprofen and 1000mg acetaminophen for muscle ache and chills, which resolved those symptoms for about hours before they started to return."
+2796163,truncate,122, i consumed Pepto bismol for nausea and acetaminophen for muscle pain and headache.
+2796569,truncate,188, I recommended Benadryl cream and Hydrocortisone cream to help alleviate the symtpoms
+2797475,truncate,206," EGA: 36 (Sep 27, @13:15) Due date by Ultrasound: Definitive EDD: Baby born 10/x/ , weight on 10/x/24 6.063 pounds"
+2797766,truncate,169, he said that it also was itching and was instructed to take benadryl.
+2798523,truncate,92, Benadryl to lower symptoms.
+2798656,truncate,77, Patient iced area and self-medicated with ibuprofen. States pain is slightly better on however bruising appears worse.
+2798684,truncate,94," Patient has had to take acetaminophen, ibuprofen, chloraseptic and nyquil for symptom relief."
+2799374,truncate,258, She was given an ice pack and some Tylenol.
+2799423,truncate,170, Has taken benadryl yesterday and this morning ( ).
+2799458,truncate,184, Patient was given 25mg of diphenhydramine.
+2799819,truncate,54, office visit. Age of patient during this visit was 16 weeks and four days old. Oldest age first dose can be given is 14 weeks old.
+2800018,truncate,188," ibuprofen and naproxen (not at the same time) which provided only marginal benefit. Today, she reports that it looks almost the same, improving only slightly. Recommended cold compress would be worthwhile and possibly Benadryl may reduce redness/swelling."
+2800510,truncate,66," Friday, nap, very warm no fever, slight headache that persisted the whole day despite Tylenol. Saturday, nap, headache better, so so so so so warm, temp never above 100.1 degrees."
+2800515,truncate,107, Advised to use OTC pain medication like ibuprofen for the pain and massage the area of pain and numbness as often as he can.
+2800568,truncate,158, Patient saw primary care md and received 5 days of prednisone along with referral to
+2802622,truncate,132, pt reports trying ice and otc ibuprofen but not really helping the pain.
+2802661,truncate,101, Trying tylenol to help with pain.
+2802859,truncate,53," Ultrasound of L breast done , concludes that Novavax vaccine given on is likely the cause of swollen lymph nodes in axillary area of L breast. Return for annual screening next year."
+2804095,truncate,196, His primary care was contacted and he was told to alternate tylenol and advil and ice the shoulder.
+2804683,truncate,228, Recommendation was OTC benadryl oral and/or topical along with oral analgesic of acetaminophen and ibuprofen for pain plus swelling.
+2805316,truncate,127, Patient was given 20mg prednisone by mouth twice daily for 5 days starting on .
+2805575,truncate,78," She has used OTC anti-itch medications, like hydrocortisone and Benadryl in cream, but none have helped with the itching or rash. By patient still has the rash."
+2807288,exclude,,"FROM NP NOTE: ""The patient states that she did do plenty of research that told her she should not receive any vaccines within 2 weeks of her Ocrevus infusion."
+2807369,truncate,32," radiological evidence suggestive of pre and post-septal cellulitis with myositis, left eye protrusion, facial peeling"
+2807584,truncate,122," But I had an ultrasound in my urologist office on September 18, which revealed two more small kidney stones."
+2807614,truncate,56, Put on prednisone eye drops.
+2808710,truncate,100, I took 2 Extra Strength Tylenol so I could sleep.
+2809342,truncate,47, Very itchy and had to be put on prescription prednisone for 16 days.
+2810166,truncate,59, and ultrasound confirmed fatty tissue
+2810515,truncate,74, diphenhydramine 25mg po.
+2810831,truncate,146, She has been alternating tylenol and aspirins for pain. These symptoms have lasted over a week so far.
+2811323,truncate,138, Benadryl;
+2811341,truncate,223," Benadryl, ibuprofen, and cold pack seemed to help and patient states it is improving as of ."
+2811343,truncate,147, Managed with ice and acetaminophen.
+2813203,truncate,134, Ibuprofen relieved symptoms and was used for about two days.
+2814518,truncate,94," First 24 hours, gave Tylenol every 4 hours, after that, alternated Tylenol and Motrin to control fever."
+2814902,truncate,150, Client alternated Tylenol with ibuprofen for the symptoms which helped some. This continued throughout the weekend and by Monday Dec.
+2815823,truncate,51, Benadryl
+2816542,truncate,191, Patient took two 25mg Diphenhydramine tablets by mouth and was observed with vital sign monitoring for 27 minutes.
+2817107,truncate,100,", ibuprofen, and RICE"
+2817297,truncate,58," Managing with antihistamine, cold compresses, and Tylenol"
+2818498,truncate,115, ultrasound same day).
+2818512,truncate,107," prednisone is helping but the shoulder is still sore. He stated that the immunizer injected high on the shoulder and it felt like it hit the bone. Severe pain, swelling and joint inflammation had him seek medical care and received prednisone."

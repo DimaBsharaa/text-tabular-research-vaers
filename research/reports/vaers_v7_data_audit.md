@@ -87,7 +87,7 @@ Keep v7 and its results immutable. v8/v9 merge or resample the same extraction p
 
 - [Corrected audit tool](../scripts/vaers/run_audit.py) and [tests](../scripts/vaers/test_run_audit.py): mechanics, duplicate sensitivity, conditional/style proxies, matched source examples. Version `update15-corrected-2` also handles source IDs with leading zeros, checking normalization collisions.
 - [All-row source auditor](../scripts/vaers/audit_source_rows.py) and [counterexample tests](../scripts/vaers/test_audit_source_rows.py): all 60,000 labels/predictors, source event keys, independent review patterns and text-quality counts.
-- [Notebook 07](../notebooks/07_vaers_run_audit.ipynb): both audits, tests and visible summary tables when opened with these local changes available.
+- [Notebook 07](../notebooks/development/06_vaers_screen_audit.ipynb): both audits, tests and visible summary tables when opened with these local changes available.
 - [Compact evidence](vaers_v7_data_audit.json): counts, fingerprints and limitations; full medical-text contexts remain outside Git.
 
 Validation: **65 tests passed**, including modified-label/background and wrong-source-fingerprint counterexamples. Notebook code cells parse, and the builder/runner remain unchanged. The earlier archive evidence remains a separate 894-check verification of saved run records.

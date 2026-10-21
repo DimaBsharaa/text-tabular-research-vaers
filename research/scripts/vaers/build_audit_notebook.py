@@ -1,4 +1,4 @@
-"""Generate research/notebooks/07_vaers_run_audit.ipynb (CPU Colab): independent audit of a finished screen."""
+"""Generate research/notebooks/development/06_vaers_screen_audit.ipynb (CPU Colab): independent audit of a finished screen."""
 import json
 import textwrap
 from pathlib import Path
@@ -17,7 +17,9 @@ def code(s):
 
 
 md("""
-    # 07: Audit of a finished screen (CPU only)
+    # 06 — Audit of a finished screen (CPU only)
+
+    > **Development notebook** — kept as a record of how the dataset was built. The final dataset and results are in the [main notebooks](../../README.md).
 
     It checks the exact CSV and the run folder that produced a result:
     - mechanics: same test rows for every condition, TAR encoder trained on training rows only
@@ -105,8 +107,8 @@ code("""
         print("NOT_VERIFIED: all-row source reconstruction requires the exact yearly raw files.")
 """)
 nb = {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "name": "python3"},
-                                   "language_info": {"name": "python"}, "colab": {"name": "07_vaers_run_audit.ipynb"}},
+                                   "language_info": {"name": "python"}, "colab": {"name": "06_vaers_screen_audit.ipynb"}},
       "nbformat": 4, "nbformat_minor": 5}
-path = ROOT / "research/notebooks/07_vaers_run_audit.ipynb"
+path = ROOT / "research/notebooks/development/06_vaers_screen_audit.ipynb"
 path.write_text(json.dumps(nb, indent=1) + "\n")
 print("wrote", path)
